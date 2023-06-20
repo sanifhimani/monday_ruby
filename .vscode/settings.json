@@ -1,3 +1,4 @@
 {
-  "ruby.rubocop.configFilePath": ".rubocop.yml"
+  "ruby.rubocop.configFilePath": ".rubocop.yml",
+  "files.trimTrailingWhitespace": true
 }
