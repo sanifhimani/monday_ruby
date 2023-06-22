@@ -1,31 +1,32 @@
 # frozen_string_literal: true
 
 module Monday
-  module Configuration
-    VALID_OPTIONS = %i[token host].freeze
-
-    DEFAULT_TOKEN = nil
+  class Configuration
     DEFAULT_HOST = "https://api.monday.com/v2"
+    private_constant :DEFAULT_HOST
 
-    attr_accessor *VALID_OPTIONS
+    CONFIGURATION_FIELDS = %i[
+      token
+      host
+    ].freeze
 
-    def self.extended(base)
-      base.reset
-    end
+    attr_accessor(*CONFIGURATION_FIELDS)
 
-    def configure
-      yield self
-    end
-
-    def options
-      VALID_OPTIONS.inject({}) do |option, key|
-        option.merge!(key => send(key))
+    def self.configure
+      new.tap do |instance|
+        yield(instance) if block_given?
       end
     end
 
-    def reset
-      self.token = DEFAULT_TOKEN
-      self.host = DEFAULT_HOST
+    def initialize(**config_args)
+      invalid_keys = config_args.keys - CONFIGURATION_FIELDS
+      raise ArgumentError, "Unknown arguments: #{invalid_keys}" unless invalid_keys.empty?
+
+      @host = DEFAULT_HOST
+
+      config_args.each do |key, value|
+        public_send("#{key}=", value)
+      end
     end
   end
 end
