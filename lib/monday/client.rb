@@ -13,7 +13,6 @@ require_relative "util"
 module Monday
   class Client
     include Resource
-    include Util
 
     JSON_CONTENT_TYPE = "application/json"
     private_constant :JSON_CONTENT_TYPE
