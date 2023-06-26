@@ -6,7 +6,7 @@ module Monday
 
     def initialize(response)
       @response = response
-      @status = errors? ? 400 : response.code.to_i
+      @status = response.code.to_i
       @body = parse_body
       @headers = parse_headers
     end

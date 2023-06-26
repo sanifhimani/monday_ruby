@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "monday_ruby"
+require "webmock/rspec"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -15,4 +16,8 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+def monday_url
+  "https://api.monday.com/v2"
 end
