@@ -7,12 +7,14 @@ require "json"
 require_relative "configuration"
 require_relative "request"
 require_relative "response"
-require_relative "resource"
+require_relative "resources"
 require_relative "util"
 
 module Monday
+  # Client executes requests against the Monday.com API and
+  # allows a user to mutate and retrieve resources.
   class Client
-    include Resource
+    include Resources
 
     JSON_CONTENT_TYPE = "application/json"
     private_constant :JSON_CONTENT_TYPE

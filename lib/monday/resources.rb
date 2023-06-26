@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "resource/board"
+require_relative "resources/board"
 
 module Monday
-  module Resource
+  module Resources
     include Board
   end
 end

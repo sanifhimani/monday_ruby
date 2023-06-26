@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 module Monday
+  # Encapsulates the response that comes back from
+  # the Monday.com API.
+  #
+  # Returns status code, parsed body and headers.
   class Response
     attr_reader :status, :body, :headers
 
@@ -11,6 +15,8 @@ module Monday
       @headers = parse_headers
     end
 
+    # Helper to determine if the response was successful.
+    # Monday.com API returns 200 status code when there are formatting errors.
     def success?
       (200..299).cover?(status) && !errors?
     end

@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 module Monday
+  # Encapsulates configuration for the Monday.com API.
+  #
+  # Configuration options:
+  #
+  # token: used to authenticate the requests
+  # host: defaults to https://api.monday.com/v2
   class Configuration
     DEFAULT_HOST = "https://api.monday.com/v2"
     private_constant :DEFAULT_HOST
