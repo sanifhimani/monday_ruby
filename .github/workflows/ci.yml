@@ -24,7 +24,7 @@ jobs:
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
-          ruby-versions: ${{ matrix.ruby-version }}
+          ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
       - name: Install dependencies
         run: bundle install
