@@ -9,7 +9,7 @@ module Monday
       # Retrieves all the boards.
       #
       # Allows users to filter boards using the args option.
-      # Users can also select the columns they want to retrieve using the select option.
+      # Users can also select the fields they want to retrieve using the select option.
       # By default, ID, name and description columns are retrieved.
       def boards(args: {}, select: DEFAULT_SELECT)
         query = "query { boards(#{Util.format_args(args)}) {#{Util.format_select(select)}} }"
@@ -20,7 +20,7 @@ module Monday
       # Creates a new boards.
       #
       # Allows users to customize creating a board using the args option.
-      # Users can also select the columns they want to retrieve using the select option.
+      # Users can also select the fields they want to retrieve using the select option.
       # By default, ID, name and description columns are retrieved.
       def create_board(args: {}, select: DEFAULT_SELECT)
         query = "mutation { create_board(#{Util.format_args(args)}) {#{Util.format_select(select)}} }"
@@ -31,7 +31,7 @@ module Monday
       # Duplicates a board.
       #
       # Allows users to customize duplicating the board using the args option.
-      # Users can also select the columns they want to retrieve using the select option.
+      # Users can also select the fields they want to retrieve using the select option.
       # By default, ID, name and description columns are retrieved.
       def duplicate_board(args: {}, select: DEFAULT_SELECT)
         query = "mutation { duplicate_board(#{Util.format_args(args)}) { board { #{Util.format_select(select)} } } }"
@@ -52,7 +52,7 @@ module Monday
       # Archives a board.
       #
       # Takes board_id as an argument.
-      # Users can also select the columns they want to retrieve using the select option.
+      # Users can also select the fields they want to retrieve using the select option.
       # By default, returns the ID of the board archived.
       def archive_board(board_id, select: ["id"])
         query = "mutation { archive_board(board_id: #{board_id}) {#{Util.format_select(select)}} }"
@@ -63,7 +63,7 @@ module Monday
       # Deletes a board.
       #
       # Takes board_id as an argument.
-      # Users can also select the columns they want to retrieve using the select option.
+      # Users can also select the fields they want to retrieve using the select option.
       # By default, returns the ID of the board deleted.
       def delete_board(board_id, select: ["id"])
         query = "mutation { delete_board(board_id: #{board_id}) {#{Util.format_select(select)}} }"
@@ -74,7 +74,7 @@ module Monday
       # Deletes the subscribers from a board.
       #
       # Takes board_id and user_ids as arguments.
-      # Users can also select the columns they want to retrieve using the select option.
+      # Users can also select the fields they want to retrieve using the select option.
       # By default, returns the board ID.
       def delete_board_subscribers(board_id, user_ids, select: ["id"])
         query = "mutation { delete_subscribers_from_board(" \

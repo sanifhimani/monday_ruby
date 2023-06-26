@@ -8,7 +8,7 @@ module Monday
 
       # Retrieves the users account.
       #
-      # Users can also select the columns they want to retrieve using the select option.
+      # Users can also select the fields they want to retrieve using the select option.
       # By default, ID and name are retrieved.
       def account(select: DEFAULT_SELECT)
         query = "query { users { account {#{Util.format_select(select)}}}}"
