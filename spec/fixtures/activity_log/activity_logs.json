@@ -1,0 +1,27 @@
+{
+  "data": {
+    "boards": [
+      {
+        "activity_logs": [
+          {
+            "id": "123-abc",
+            "event": "create_column",
+            "data": "{\"board_id\":123,\"column_id\":\"date0\",\"column_title\":\"Date\",\"column_type\":\"date\"}"
+          },
+          {
+            "id": "456-def",
+            "event": "create_column",
+            "data": "{\"board_id\":123,\"column_id\":\"status\",\"column_title\":\"Status\",\"column_type\":\"color\"}"
+          },
+          {
+            "id": "789-ghi",
+            "event": "create_column",
+            "data": "{\"board_id\":123,\"column_id\":\"name\",\"column_title\":\"Name\",\"column_type\":\"name\"}"
+          }
+        ]
+      }
+    ]
+  },
+ "account_id": 17512073
+}
+
