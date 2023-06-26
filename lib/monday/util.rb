@@ -17,16 +17,16 @@ module Monday
 
       private
 
-      def single_word?(word)
-        return word unless word.is_a?(String)
-
-        !word.strip.include?(" ")
-      end
-
       def formatted_args_value(value)
         return "\"#{value}\"" unless single_word?(value)
 
         value
+      end
+
+      def single_word?(word)
+        return word unless word.is_a?(String)
+
+        !word.strip.include?(" ")
       end
     end
   end

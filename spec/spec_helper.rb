@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require "monday/ruby"
+require "monday_ruby"
+require "vcr"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -8,6 +9,9 @@ RSpec.configure do |config|
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
+  config.color_mode = :on
+  config.formatter = :documentation
+  config.order = :random
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
