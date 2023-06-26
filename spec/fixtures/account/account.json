@@ -1,0 +1,13 @@
+{
+  "data": {
+    "users": [
+      {
+        "account": {
+          "id": 1234,
+          "name": "Test User's Team"
+        }
+      }
+    ]
+  },
+  "account_id": 123
+}

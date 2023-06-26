@@ -3,6 +3,7 @@
 require "monday_ruby"
 require "webmock/rspec"
 
+WebMock.disable_net_connect!(allow_localhost: true)
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
@@ -16,6 +17,14 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+def fixture_path
+  File.expand_path("fixtures", __dir__)
+end
+
+def fixture(file)
+  File.new("#{fixture_path}/#{file}")
 end
 
 def monday_url
