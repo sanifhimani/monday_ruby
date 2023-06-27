@@ -10,8 +10,8 @@ module Monday
 
       # Retrieves all the items for the boards.
       #
-      # Allows users to filter items using the args option.
-      # Users can also select the fields they want to retrieve using the select option.
+      # Allows filtering items using the args option.
+      # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and created_at fields are retrieved.
       def items(args: {}, select: DEFAULT_SELECT)
         query = "query { items(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
@@ -46,7 +46,7 @@ module Monday
       #
       # Requires item_id to archive item.
       # Allows customizing the values to retrieve using the select option.
-      # By default, ID is retrieved.
+      # By default, returns the ID of the archived item.
       def archive_item(item_id, select: %w[id])
         query = "mutation { archive_item(item_id: #{item_id}) {#{Util.format_select(select)}}}"
 
@@ -57,7 +57,7 @@ module Monday
       #
       # Requires item_id to delete item.
       # Allows customizing the values to retrieve using the select option.
-      # By default, ID is retrieved.
+      # By default, returns the ID of the deleted item.
       def delete_item(item_id, select: %w[id])
         query = "mutation { delete_item(item_id: #{item_id}) {#{Util.format_select(select)}}}"
 

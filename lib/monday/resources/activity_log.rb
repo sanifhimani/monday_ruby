@@ -9,8 +9,8 @@ module Monday
       # Retrieves the activity logs for boards.
       #
       # Requires board_ids to retrieve the logs.
-      # Allows users to filter activity logs using the args option.
-      # Users can also select the fields they want to retrieve using the select option.
+      # Allows filtering activity logs using the args option.
+      # Allows customizing the values to retrieve using the select option.
       # By default, ID, event and data are retrieved.
       def activity_logs(board_ids, args: {}, select: DEFAULT_SELECT)
         query = "query { boards(ids: #{board_ids}) " \

@@ -10,8 +10,8 @@ module Monday
 
       # Retrieves all the columns for the boards.
       #
-      # Allows users to filter columns using the args option.
-      # Users can also select the fields they want to retrieve using the select option.
+      # Allows filtering columns using the args option.
+      # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
       def columns(args: {}, select: DEFAULT_SELECT)
         query = "query { boards(#{Util.format_args(args)}) { columns {#{Util.format_select(select)}}}}"
@@ -21,8 +21,8 @@ module Monday
 
       # Retrieves metadata about one or a collection of columns.
       #
-      # Can pass board ids or item ids to filter column values
-      # Users can also select the fields they want to retrieve using the select option.
+      # Optionally requires board ids and item ids to filter metadata for column values.
+      # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
       def column_values(board_ids = [], item_ids = [], select: DEFAULT_SELECT)
         board_args = board_ids.empty? ? "" : "ids: #{board_ids}"
