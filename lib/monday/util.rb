@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "byebug"
+
 module Monday
   # Utility class to format arguments for Monday.com API.
   class Util
@@ -28,6 +30,7 @@ module Monday
 
       def formatted_args_value(value)
         return "\"#{value}\"" unless single_word?(value)
+        return value.to_json.to_json if value.is_a?(Hash)
 
         value
       end

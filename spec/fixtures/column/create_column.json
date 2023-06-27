@@ -1,0 +1,10 @@
+{
+  "data": {
+    "create_column": {
+      "id": "status",
+      "title": "Status",
+      "description": "Status Column"
+    }
+  },
+  "account_id": 123
+}

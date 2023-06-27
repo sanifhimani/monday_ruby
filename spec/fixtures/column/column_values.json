@@ -1,0 +1,148 @@
+{
+  "data": {
+    "boards": [
+      {
+        "items": [
+          {
+            "column_values": [
+              {
+                "id": "subitems",
+                "title": "Subitems",
+                "description": null
+              },
+              {
+                "id": "work_status",
+                "title": "Status",
+                "description": "New description"
+              },
+              {
+                "id": "keywords",
+                "title": "Keywords",
+                "description": "This is keywords column"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "items": [
+          {
+            "column_values": [
+              {
+                "id": "person",
+                "title": "Owner",
+                "description": null
+              },
+              {
+                "id": "status",
+                "title": "Status",
+                "description": null
+              },
+              {
+                "id": "date0",
+                "title": "Date",
+                "description": null
+              }
+            ]
+          },
+          {
+            "column_values": [
+              {
+                "id": "person",
+                "title": "Owner",
+                "description": null
+              },
+              {
+                "id": "status",
+                "title": "Status",
+                "description": null
+              },
+              {
+                "id": "date0",
+                "title": "Date",
+                "description": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "items": [
+          {
+            "column_values": [
+              {
+                "id": "subitems",
+                "title": "Subitems",
+                "description": null
+              },
+              {
+                "id": "person",
+                "title": "Person",
+                "description": null
+              },
+              {
+                "id": "status",
+                "title": "Status",
+                "description": null
+              },
+              {
+                "id": "date4",
+                "title": "Date",
+                "description": null
+              }
+            ]
+          },
+          {
+            "column_values": [
+              {
+                "id": "subitems",
+                "title": "Subitems",
+                "description": null
+              },
+              {
+                "id": "person",
+                "title": "Person",
+                "description": null
+              },
+              {
+                "id": "status",
+                "title": "Status",
+                "description": null
+              },
+              {
+                "id": "date4",
+                "title": "Date",
+                "description": null
+              }
+            ]
+          },
+          {
+            "column_values": [
+              {
+                "id": "subitems",
+                "title": "Subitems",
+                "description": null
+              },
+              {
+                "id": "person",
+                "title": "Person",
+                "description": null
+              },
+              {
+                "id": "status",
+                "title": "Status",
+                "description": null
+              },
+              {
+                "id": "date4",
+                "title": "Date",
+                "description": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "account_id": 123
+}

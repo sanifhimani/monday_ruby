@@ -1,0 +1,10 @@
+{
+  "data": {
+    "change_column_title": {
+      "id": "status",
+      "title": "New status",
+      "description": "Status Column"
+    }
+  },
+  "account_id": 123
+}

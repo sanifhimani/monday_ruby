@@ -1,0 +1,10 @@
+{
+  "data": {
+    "delete_column": {
+      "id": "status",
+      "title": "New Status",
+      "description": "New status description"
+    }
+  },
+  "account_id": 123
+}
