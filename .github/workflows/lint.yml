@@ -12,4 +12,4 @@ jobs:
           ruby-version: 2.6
       - run: bundle install
       - name: Rubocop
-        run: rubocop
+        run: bundle exec rake rubocop
