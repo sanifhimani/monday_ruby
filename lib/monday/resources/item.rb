@@ -4,7 +4,7 @@ require "byebug"
 
 module Monday
   module Resources
-    # Represents Monday.com's column resource.
+    # Represents Monday.com's item resource.
     module Item
       DEFAULT_SELECT = %w[id name created_at].freeze
 
