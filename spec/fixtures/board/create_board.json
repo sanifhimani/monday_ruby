@@ -1,0 +1,10 @@
+{
+  "data": {
+    "create_board": {
+      "id": "456",
+      "name": "New test board",
+      "description": null
+    }
+  },
+  "account_id": 123
+}

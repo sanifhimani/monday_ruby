@@ -1,0 +1,6 @@
+{
+  "data": {
+    "update_board": "{\"success\":true,\"undo_data\":{\"undo_record_id\":14638444200,\"action_type\":\"modify_project\",\"entity_type\":\"Board\",\"entity_id\":789,\"count\":1}}"
+  },
+ "account_id": 123
+}
