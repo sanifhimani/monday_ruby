@@ -1,4 +1,4 @@
-# Monday.com Ruby Library
+# Monday API Library for Ruby
 
 ![Build Status](https://github.com/sanifhimani/monday-ruby/actions/workflows/ci.yml/badge.svg)
 
