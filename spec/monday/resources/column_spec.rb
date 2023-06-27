@@ -268,7 +268,7 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.delete_column(board_id, column_id) }
 
     let(:query) do
-      "mutation { delete_column(board_id: 1234, column_id: status) {id title description}}"
+      "mutation { delete_column(board_id: 1234, column_id: status) {id}}"
     end
 
     let(:board_id) { 1234 }

@@ -104,7 +104,7 @@ module Monday
       # Requires board_id and column_id to delete.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
-      def delete_column(board_id, column_id, select: DEFAULT_SELECT)
+      def delete_column(board_id, column_id, select: %w[id])
         query = "mutation { delete_column(board_id: #{board_id}, column_id: #{column_id}) " \
                 "{#{Util.format_select(select)}}}"
 

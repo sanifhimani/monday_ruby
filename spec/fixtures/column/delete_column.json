@@ -1,9 +1,7 @@
 {
   "data": {
     "delete_column": {
-      "id": "status",
-      "title": "New Status",
-      "description": "New status description"
+      "id": "status"
     }
   },
   "account_id": 123
