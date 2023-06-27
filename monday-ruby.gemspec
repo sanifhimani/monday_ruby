@@ -2,23 +2,24 @@
 
 require_relative "lib/monday/version"
 
+version = Monday::VERSION
+repository = "https://github.com/sanifhimani/monday-ruby"
+
 Gem::Specification.new do |spec|
   spec.name = "monday-ruby"
-  spec.version = Monday::VERSION
+  spec.version = version
   spec.authors = ["Sanif Himani"]
   spec.email = ["sanifhimani92@gmail.com"]
 
-  spec.summary = "Ruby bindings to use the Monday.com API"
-  spec.description = "A Gem to interact with the Monday.com API using native Ruby"
-  spec.homepage = "https://github.com/sanifhimani/monday-ruby"
+  spec.summary = "Ruby bindings to use the monday.com API"
+  spec.description = "A Gem to easily interact with monday.com API using native Ruby"
+  spec.homepage = repository
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata = {
-    "allowed_push_host" => "TODO: Set to your gem server 'https://example.com'",
     "homepage_uri" => spec.homepage,
-    "source_code_uri" => "https://github.com/sanifhimani/monday-ruby",
-    "changelog_uri" => "https://github.com/sanifhimani/monday-ruby",
+    "changelog_uri" => "#{repository}/blob/v#{version}/CHANGELOG.md",
     "rubygems_mfa_required" => "true"
   }
 
@@ -28,6 +29,7 @@ Gem::Specification.new do |spec|
         f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor Gemfile])
     end
   end
+
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
