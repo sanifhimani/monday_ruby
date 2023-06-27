@@ -1,0 +1,26 @@
+{
+  "data": {
+    "boards": [
+      {
+        "views" : [
+          {
+            "type": "FormBoardView",
+            "name": "Contact Form",
+            "id": "55567306"
+          },
+          {
+            "type": "ItemsGalleryBoardView",
+            "name": "Cards",
+            "id": "212647324"
+          },
+          {
+            "type": "KanbanBoardView",
+            "name": "Kanban",
+            "id": "212644479"
+          }
+        ]
+      }
+    ]
+  },
+  "account_id": 123
+}
