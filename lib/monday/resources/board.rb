@@ -10,7 +10,7 @@ module Monday
       #
       # Allows users to filter boards using the args option.
       # Users can also select the fields they want to retrieve using the select option.
-      # By default, ID, name and description columns are retrieved.
+      # By default, ID, name and description fields are retrieved.
       def boards(args: {}, select: DEFAULT_SELECT)
         query = "query { boards(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
 
@@ -21,7 +21,7 @@ module Monday
       #
       # Allows users to customize creating a board using the args option.
       # Users can also select the fields they want to retrieve using the select option.
-      # By default, ID, name and description columns are retrieved.
+      # By default, ID, name and description fields are retrieved.
       def create_board(args: {}, select: DEFAULT_SELECT)
         query = "mutation { create_board(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
 
@@ -32,7 +32,7 @@ module Monday
       #
       # Allows users to customize duplicating the board using the args option.
       # Users can also select the fields they want to retrieve using the select option.
-      # By default, ID, name and description columns are retrieved.
+      # By default, ID, name and description fields are retrieved.
       def duplicate_board(args: {}, select: DEFAULT_SELECT)
         query = "mutation { duplicate_board(#{Util.format_args(args)}) { board {#{Util.format_select(select)}}}}"
 
@@ -75,7 +75,7 @@ module Monday
       #
       # Takes board_id and user_ids as arguments.
       # Users can also select the fields they want to retrieve using the select option.
-      # By default, returns the board ID.
+      # By default, returns the subscriber ID.
       def delete_board_subscribers(board_id, user_ids, select: ["id"])
         query = "mutation { delete_subscribers_from_board(" \
                 "board_id: #{board_id}, user_ids: #{user_ids}) {#{Util.format_select(select)}}}"
