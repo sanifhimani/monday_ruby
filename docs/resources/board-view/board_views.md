@@ -18,6 +18,7 @@ This will return the board views' ID, name and type fields by default.
 
 The response body from the above query would be as follows:
 
+{% code lineNumbers="true" %}
 ```json
 {
   "data": {
@@ -46,6 +47,7 @@ The response body from the above query would be as follows:
   "account_id": 123
 }
 ```
+{% endcode %}
 
 ### Filtering board views
 
