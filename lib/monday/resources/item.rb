@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "byebug"
-
 module Monday
   module Resources
     # Represents Monday.com's item resource.

@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-require "byebug"
-
 module Monday
   # Utility class to format arguments for Monday.com API.
   class Util
     class << self
-      # Converts the arguments object into a string.
+      # Converts the arguments object into a valid string for API.
       #
       # input: { key: "multiple word value" }
       # output: "key: \"multiple word value\""
@@ -16,17 +14,30 @@ module Monday
         end.join(", ")
       end
 
-      # Converts the select array into a string.
+      # Converts the select values into a valid string for API.
       #
       # input: ["id", "name", { "columns": ["id"] }]
       # output: "id name columns { id }"
-      def format_select(array)
-        array.map do |item|
-          item.is_a?(Hash) ? "#{item.keys.first} { #{item.values.join(" ")} }" : item.to_s
-        end.join(" ")
+      def format_select(value)
+        return format_hash(value) if value.is_a?(Hash)
+        return format_array(value) if value.is_a?(Array)
+
+        values
       end
 
       private
+
+      def format_array(array)
+        array.map do |item|
+          item.is_a?(Hash) ? format_hash(item) : item.to_s
+        end.join(" ")
+      end
+
+      def format_hash(hash)
+        hash.map do |key, value|
+          value.is_a?(Array) ? "#{key} { #{format_array(value)} }" : "#{key} { #{value} }"
+        end.join(" ")
+      end
 
       def formatted_args_value(value)
         return "\"#{value}\"" unless single_word?(value)
