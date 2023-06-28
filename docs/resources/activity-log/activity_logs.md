@@ -93,7 +93,3 @@ puts response.body
 {% endcode %}
 
 You can find the list of all the available fields for activity logs [here](https://developer.monday.com/api-reference/docs/activity-logs#fields).
-
-{% hint style="info" %}
-Visit monday.com's API documentation to know more about the [activity logs API](https://developer.monday.com/api-reference/docs/activity-logs).
-{% endhint %}

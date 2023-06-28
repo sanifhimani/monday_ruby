@@ -16,3 +16,6 @@ The boards API is used to access and mutate the board data. It includes the foll
 
 [delete\_board\_subscribers.md](delete\_board\_subscribers.md "mention")
 
+{% hint style="info" %}
+Visit monday.com's API documentation to know more about the [boards API](https://developer.monday.com/api-reference/docs/boards).
+{% endhint %}

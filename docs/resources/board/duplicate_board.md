@@ -91,8 +91,4 @@ puts response.body
 ```
 {% endcode %}
 
-You can find the list of all the available fields for board views [here](https://developer.monday.com/api-reference/docs/board-view-queries#fields).
-
-{% hint style="info" %}
-Visit monday.com's API documentation to know more about the [boards API](https://developer.monday.com/api-reference/docs/boards).
-{% endhint %}
+You can find the list of all the available fields for boards [here](https://developer.monday.com/api-reference/docs/board-view-queries#fields).

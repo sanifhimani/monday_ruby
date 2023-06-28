@@ -80,7 +80,3 @@ puts response.body
 {% endcode %}
 
 You can find the list of all the available fields for account [here](https://developer.monday.com/api-reference/docs/account#fields).
-
-{% hint style="info" %}
-Visit monday.com's API documentation to know more about the [account API](https://developer.monday.com/api-reference/docs/account).
-{% endhint %}
