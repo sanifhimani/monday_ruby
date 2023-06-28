@@ -4,8 +4,6 @@
 
 This library provides convenient access to the Monday.com API from the application written in the Ruby language. It includes a pre-defined set of actions for the API resources.
 
-The library also provides an easy configuration path for quick setup and use.
-
 **Visit https://monday-ruby.gitbook.io/docs/ for detailed documentation on how to use the library.**
 
 ## Installation
@@ -45,16 +43,6 @@ The library needs to be configured with your account's authentication token whic
 ```ruby
 require "monday_ruby"
 
-Monday.configure do |config|
-  config.token = "<AUTH_TOKEN>"
-end
-```
-
-You can also configure the auth token on the client directly:
-
-```ruby
-require "monday_ruby"
-
 client = Monday::Client.new(token: "<AUTH_TOKEN>")
 ```
 
@@ -63,7 +51,7 @@ client = Monday::Client.new(token: "<AUTH_TOKEN>")
 Get access to response objects by initializing a client and using the appropriate action you want to perform:
 
 ```ruby
-client = Monday::Client.new
+client = Monday::Client.new(token: "<AUTH_TOKEN>")
 response = client.boards
 
 puts response.body

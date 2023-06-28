@@ -18,12 +18,6 @@ module Monday
 
     attr_accessor(*CONFIGURATION_FIELDS)
 
-    def self.configure
-      new.tap do |instance|
-        yield(instance) if block_given?
-      end
-    end
-
     def initialize(**config_args)
       invalid_keys = config_args.keys - CONFIGURATION_FIELDS
       raise ArgumentError, "Unknown arguments: #{invalid_keys}" unless invalid_keys.empty?
