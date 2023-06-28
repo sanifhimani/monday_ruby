@@ -19,7 +19,7 @@ puts response.body
 ```
 {% endcode %}
 
-By default, this will return the ID and name of the account.
+This will return the accounts' ID and name fields by default.
 
 The response body from the above query would be as follows:
 

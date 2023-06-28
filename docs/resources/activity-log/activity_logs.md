@@ -17,7 +17,7 @@ puts response.body
 ```
 {% endcode %}
 
-By default, this will return the activity logs' ID, event and data fields.
+This will return the activity logs' ID, event and data fields by default.
 
 The response body from the above query would be as follows:
 
