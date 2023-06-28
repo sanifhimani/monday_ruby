@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     "homepage_uri" => spec.homepage,
+    "documentation_uri" => "https://monday-ruby.gitbook.io/docs/",
     "changelog_uri" => "#{repository}/blob/v#{version}/CHANGELOG.md",
     "rubygems_mfa_required" => "true"
   }
