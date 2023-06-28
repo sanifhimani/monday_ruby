@@ -3,10 +3,10 @@
 require_relative "lib/monday/version"
 
 version = Monday::VERSION
-repository = "https://github.com/sanifhimani/monday-ruby"
+repository = "https://github.com/sanifhimani/monday_ruby"
 
 Gem::Specification.new do |spec|
-  spec.name = "monday-ruby"
+  spec.name = "monday_ruby"
   spec.version = version
   spec.authors = ["Sanif Himani"]
   spec.email = ["sanifhimani92@gmail.com"]

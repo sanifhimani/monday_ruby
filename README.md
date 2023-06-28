@@ -1,6 +1,6 @@
 # Monday API Library for Ruby
 
-![Build Status](https://github.com/sanifhimani/monday-ruby/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://github.com/sanifhimani/monday_ruby/actions/workflows/ci.yml/badge.svg)
 
 This library provides convenient access to the Monday.com API from the application written in the Ruby language. It includes a pre-defined set of actions for the API resources.
 
@@ -13,13 +13,13 @@ The library also provides an easy configuration path for quick setup and use.
 You don't need the source code unless you want to modify the gem. If you want to use the package, run:
 
 ```sh
-gem install monday-ruby
+gem install monday_ruby
 ```
 
 If you want to build the gem from source:
 
 ```sh
-gem build monday-ruby.gemspec
+gem build monday_ruby.gemspec
 ```
 
 ### Requirements
@@ -33,7 +33,7 @@ If you are installing via bundler, you should be sure to use the https rubygems 
 ```ruby
 source "https://rubygems.org"
 
-gem "monday-ruby"
+gem "monday_ruby"
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ gem "monday-ruby"
 The library needs to be configured with your account's authentication token which is available on the Admin tab on monday.com. Elaborate documentation can be found [here](https://developer.monday.com/api-reference/docs/authentication).
 
 ```ruby
-require "monday-ruby"
+require "monday_ruby"
 
 Monday.configure do |config|
   config.token = "<AUTH_TOKEN>"
@@ -53,7 +53,7 @@ end
 You can also configure the auth token on the client directly:
 
 ```ruby
-require "monday-ruby"
+require "monday_ruby"
 
 client = Monday::Client.new(token: "<AUTH_TOKEN>")
 ```
@@ -165,7 +165,7 @@ bundle exec rake rubocop
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sanifhimani/monday-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sanifhimani/monday-ruby/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/sanifhimani/monday_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sanifhimani/monday_ruby/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
