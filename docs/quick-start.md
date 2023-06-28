@@ -4,7 +4,7 @@ The following is the minimum needed to fetch all the boards with their IDs and c
 
 {% code lineNumbers="true" %}
 ```ruby
-require "monday-ruby"
+require "monday_ruby"
 
 client = Monday::Client.new(token: <AUTH_TOKEN>)
 
@@ -80,7 +80,7 @@ The following is the minimum needed to fetch:
 
 {% code lineNumbers="true" %}
 ```ruby
-require "monday-ruby"
+require "monday_ruby"
 
 client = Monday::Client.new(token: <AUTH_TOKEN>)
 

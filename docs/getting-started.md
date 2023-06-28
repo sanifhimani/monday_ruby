@@ -5,13 +5,13 @@
 You don't need the source code unless you want to modify the gem. If you want to use the package, run the following:
 
 ```sh
-gem install monday-rubyuby
+gem install monday_ruby
 ```
 
 If you want to build the gem from the source:
 
 ```sh
-gem build monday-ruby.gemspec
+gem build monday_ruby.gemspec
 ```
 
 ### Bundler
@@ -21,5 +21,5 @@ If you are installing via bundler, you should be sure to use the HTTPS rubygems 
 ```ruby
 source "https://rubygems.org"
 
-gem "monday-ruby"
+gem "monday_ruby"
 ```
