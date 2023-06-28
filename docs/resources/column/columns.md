@@ -78,7 +78,7 @@ The response body from the above query would be as follows:
 ```
 {% endcode %}
 
-### Filtering board views
+### Filtering columns
 
 This method accepts various arguments to filter down the columns. You can find the complete list of arguments [here](https://developer.monday.com/api-reference/docs/columns#arguments).
 
