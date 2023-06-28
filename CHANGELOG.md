@@ -1,5 +1,3 @@
-## [Unreleased]
-
-## [0.0.1] - 2023-06-19
+## v0.1.0 (June 28, 2023)
 
 - Initial release
