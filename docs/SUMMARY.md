@@ -4,6 +4,7 @@
 * [Getting Started](getting-started.md)
 * [Client](client.md)
 * [Response](response.md)
+* [Quick Start](quick-start.md)
 * [Resources](resources/README.md)
   * [Account](resources/account/README.md)
     * [#accounts](resources/account/accounts.md)
