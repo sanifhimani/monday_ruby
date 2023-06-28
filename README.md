@@ -6,6 +6,8 @@ This library provides convenient access to the Monday.com API from the applicati
 
 The library also provides an easy configuration path for quick setup and use.
 
+**Visit https://monday-ruby.gitbook.io/docs/ for detailed documentation on how to use the library.**
+
 ## Installation
 
 You don't need the source code unless you want to modify the gem. If you want to use the package, run:
@@ -36,7 +38,7 @@ gem "monday-ruby"
 
 ## Usage
 
-***Complete list of actions along with examples is in the [wiki](https://github.com/sanifhimani/monday-ruby/wiki).***
+***Complete list of actions along with examples are provided [here](https://monday-ruby.gitbook.io/docs/).***
 
 The library needs to be configured with your account's authentication token which is available on the Admin tab on monday.com. Elaborate documentation can be found [here](https://developer.monday.com/api-reference/docs/authentication).
 
