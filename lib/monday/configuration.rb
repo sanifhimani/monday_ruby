@@ -11,6 +11,9 @@ module Monday
     DEFAULT_HOST = "https://api.monday.com/v2"
     private_constant :DEFAULT_HOST
 
+    DEFAULT_TOKEN = nil
+    private_constant :DEFAULT_HOST
+
     CONFIGURATION_FIELDS = %i[
       token
       host
@@ -23,6 +26,7 @@ module Monday
       raise ArgumentError, "Unknown arguments: #{invalid_keys}" unless invalid_keys.empty?
 
       @host = DEFAULT_HOST
+      @token = DEFAULT_TOKEN
 
       config_args.each do |key, value|
         public_send("#{key}=", value)
