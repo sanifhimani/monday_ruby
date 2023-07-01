@@ -7,11 +7,11 @@ RSpec.describe Monday::Client do
     let(:config_args) { {} }
 
     it "creates an instance of Monday::Client with the default token" do
-      expect(client.token).to be nil
+      expect(client.config.token).to be nil
     end
 
     it "creates an instance of Monday::Client with the default host" do
-      expect(client.host).to eq(monday_url)
+      expect(client.config.host).to eq(monday_url)
     end
   end
 
@@ -25,11 +25,11 @@ RSpec.describe Monday::Client do
     let(:token) { "test_token" }
 
     it "creates an instance of Monday::Client with the provided token" do
-      expect(client.token).to eq(token)
+      expect(client.config.token).to eq(token)
     end
 
     it "creates an instance of Monday::Client with the default host" do
-      expect(client.host).to eq(monday_url)
+      expect(client.config.host).to eq(monday_url)
     end
   end
 
