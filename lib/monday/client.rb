@@ -11,7 +11,7 @@ require_relative "resources"
 require_relative "util"
 
 module Monday
-  # Client executes requests against the Monday.com API and
+  # Client executes requests against the monday.com's API and
   # allows a user to mutate and retrieve resources.
   class Client
     include Resources
@@ -19,18 +19,19 @@ module Monday
     JSON_CONTENT_TYPE = "application/json"
     private_constant :JSON_CONTENT_TYPE
 
-    Monday::Configuration::CONFIGURATION_FIELDS.each do |config_key|
-      define_method(config_key) do
-        @config.public_send(config_key)
-      end
-    end
+    attr_reader :config
 
     def initialize(config_args = {})
-      @config = Monday::Configuration.new(**config_args)
-      yield(@config) if block_given?
+      @config = config_options(config_args)
     end
 
     private
+
+    def config_options(config_args)
+      return Monday.config if config_args.empty?
+
+      Monday::Configuration.new(**config_args)
+    end
 
     def uri
       URI(@config.host)
