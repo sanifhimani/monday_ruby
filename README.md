@@ -2,7 +2,12 @@
 
 ![Build Status](https://github.com/sanifhimani/monday_ruby/actions/workflows/ci.yml/badge.svg)
 
-This library provides convenient access to the Monday.com API from the application written in the Ruby language. It includes a pre-defined set of actions for the API resources.
+This library provides convenient access to the monday.com API from the application written in the Ruby language.
+
+The library provides:
+
+1. A pre-defined set of methods to easily interact with the API resources.
+2. Easy configuration path for fast setup and use.
 
 **Visit https://monday-ruby.gitbook.io/docs/ for detailed documentation on how to use the library.**
 
@@ -22,7 +27,7 @@ gem build monday_ruby.gemspec
 
 ### Requirements
 
-* Ruby 2.6+
+* Ruby 2.7+
 
 ### Bundler
 
@@ -40,6 +45,22 @@ gem "monday_ruby"
 
 The library needs to be configured with your account's authentication token which is available on the Admin tab on monday.com. Elaborate documentation can be found [here](https://developer.monday.com/api-reference/docs/authentication).
 
+### Configuration
+
+Once you have the authentication token, you can either globally configure the library or you can configure a specific client.
+
+#### Global config
+
+```ruby
+require "monday_ruby"
+
+Monday.configure do |config|
+  config.token = "<AUTH_TOKEN>"
+end
+
+```
+
+#### Client specific config
 ```ruby
 require "monday_ruby"
 
