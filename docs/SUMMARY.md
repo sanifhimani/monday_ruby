@@ -2,6 +2,7 @@
 
 * [Monday API Library for Ruby](README.md)
 * [Getting Started](getting-started.md)
+* [Configuration](configuration.md)
 * [Client](client.md)
 * [Response](response.md)
 * [Quick Start](quick-start.md)
