@@ -1,6 +1,7 @@
 # Monday API Library for Ruby
 
 ![Build Status](https://github.com/sanifhimani/monday_ruby/actions/workflows/ci.yml/badge.svg)
+[![Gem Version](https://badge.fury.io/rb/monday_ruby.svg)](https://badge.fury.io/rb/monday_ruby)
 
 This library provides convenient access to the monday.com API from the application written in the Ruby language.
 
