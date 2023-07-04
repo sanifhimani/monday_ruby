@@ -6,8 +6,7 @@ RSpec.shared_examples "unauthenticated client request" do
   end
 end
 
-RSpec.shared_examples "authenticated client request" do |fixture|
-
+RSpec.shared_examples "authenticated client request" do
   it "returns 200 status" do
     expect(response.status).to eq(200)
   end
