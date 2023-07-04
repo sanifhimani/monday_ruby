@@ -2,10 +2,12 @@
 
 require "dotenv"
 require "monday_ruby"
+require "simplecov"
 require "vcr"
 require "webmock/rspec"
 
 Dotenv.load
+SimpleCov.start
 
 WebMock.disable_net_connect!(allow_localhost: true)
 RSpec.configure do |config|
