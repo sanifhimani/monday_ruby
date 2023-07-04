@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.description = "A Gem to easily interact with monday.com API using native Ruby"
   spec.homepage = repository
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata = {
     "homepage_uri" => spec.homepage,
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
       (File.expand_path(f) == __FILE__) ||
-        f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor Gemfile])
+        f.start_with?(*%w[bin/ test/ spec/ features/ .git Gemfile])
     end
   end
 
