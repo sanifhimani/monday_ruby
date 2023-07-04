@@ -29,5 +29,10 @@ module Monday
         public_send("#{key}=", value)
       end
     end
+
+    def reset
+      @token = DEFAULT_TOKEN
+      @host = DEFAULT_HOST
+    end
   end
 end

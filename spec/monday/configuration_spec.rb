@@ -26,4 +26,20 @@ RSpec.describe Monday::Configuration do
       it { expect(config.token).to eq(test_token) }
     end
   end
+
+  describe ".reset" do
+    let(:config_args) do
+      {
+        token: test_token,
+        host: test_host
+      }
+    end
+
+    before do
+      config.reset
+    end
+
+    it { expect(config.host).to eq(described_class::DEFAULT_HOST) }
+    it { expect(config.token).to eq(described_class::DEFAULT_TOKEN) }
+  end
 end
