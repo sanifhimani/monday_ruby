@@ -9,10 +9,7 @@ module Monday
   # host: defaults to https://api.monday.com/v2
   class Configuration
     DEFAULT_HOST = "https://api.monday.com/v2"
-    private_constant :DEFAULT_HOST
-
     DEFAULT_TOKEN = nil
-    private_constant :DEFAULT_HOST
 
     CONFIGURATION_FIELDS = %i[
       token
@@ -31,6 +28,11 @@ module Monday
       config_args.each do |key, value|
         public_send("#{key}=", value)
       end
+    end
+
+    def reset
+      @token = DEFAULT_TOKEN
+      @host = DEFAULT_HOST
     end
   end
 end

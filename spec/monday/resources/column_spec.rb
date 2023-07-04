@@ -1,45 +1,18 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples "unauthenticated client request" do
-  before do
-    stub_request(:post, uri)
-      .with(body: body.to_json)
-      .to_return(status: 401, body: fixture("unauthenticated.json"))
-  end
-
   it "returns 401 status" do
     expect(response.status).to eq(401)
   end
 end
 
-RSpec.shared_examples "authenticated client request" do |fixture|
-  before do
-    stub_request(:post, uri)
-      .with(body: body.to_json)
-      .to_return(status: 200, body: fixture(fixture))
-  end
-
+RSpec.shared_examples "authenticated client request" do
   it "returns 200 status" do
     expect(response.status).to eq(200)
   end
 end
 
-RSpec.describe Monday::Resources::Column do
-  let(:uri) { URI.parse(monday_url) }
-  let(:body) do
-    {
-      query: query
-    }
-  end
-
-  let(:invalid_client) do
-    Monday::Client.new(token: nil)
-  end
-
-  let(:valid_client) do
-    Monday::Client.new(token: "xxx")
-  end
-
+RSpec.describe Monday::Resources::Column, :vcr do
   describe ".columns" do
     subject(:response) { client.columns }
 
@@ -54,7 +27,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/columns.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with column ID, title and description" do
+        expect(
+          response.body["data"]["boards"].first["columns"]
+        ).to match(array_including(hash_including("id", "title", "description")))
+      end
     end
   end
 
@@ -72,7 +51,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/column_values.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with columns values of items" do
+        expect(
+          response.body["data"]["boards"].first["items"]
+        ).to match(array_including(hash_including("column_values")))
+      end
     end
   end
 
@@ -80,18 +65,20 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.create_column(args: args) }
 
     let(:query) do
-      "mutation { create_column(board_id: 1234, title: Status, description: \"Status Column\", column_type: text) " \
-        "{id title description}}"
+      "mutation { create_column(board_id: #{board_id}, title: Status, description: \"Status Column\", " \
+        "column_type: text) {id title description}}"
     end
 
     let(:args) do
       {
-        board_id: 1234,
+        board_id: board_id,
         title: "Status",
         description: "Status Column",
         column_type: "text"
       }
     end
+
+    let(:board_id) { "4751837459" }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -102,7 +89,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/create_column.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with columns values of items" do
+        expect(
+          response.body["data"]["create_column"]
+        ).to match(hash_including("id", "title", "description"))
+      end
     end
   end
 
@@ -110,16 +103,19 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.change_column_title(args: args) }
 
     let(:query) do
-      "mutation { change_column_title(board_id: 1234, column_id: status, title: \"New status\") {id title description}}"
+      "mutation { change_column_title(board_id: #{board_id}, column_id: status, title: \"New status\") " \
+        "{id title description}}"
     end
 
     let(:args) do
       {
-        board_id: 1234,
+        board_id: board_id,
         column_id: "status",
         title: "New status"
       }
     end
+
+    let(:board_id) { "4751837459" }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -130,7 +126,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/change_column_title.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with columns values of items" do
+        expect(
+          response.body["data"]["change_column_title"]
+        ).to match(hash_including("id", "title", "description"))
+      end
     end
   end
 
@@ -138,19 +140,21 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.change_column_metadata(args: args) }
 
     let(:query) do
-      "mutation { change_column_metadata(board_id: 1234, column_id: status, " \
+      "mutation { change_column_metadata(board_id: #{board_id}, column_id: status, " \
         "column_property: description, value: \"New status description\") " \
         "{id title description}}"
     end
 
     let(:args) do
       {
-        board_id: 1234,
+        board_id: board_id,
         column_id: "status",
         column_property: "description",
         value: "New status description"
       }
     end
+
+    let(:board_id) { "4751837459" }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -161,7 +165,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/change_column_metadata.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with columns values of items" do
+        expect(
+          response.body["data"]["change_column_metadata"]
+        ).to match(hash_including("id", "title", "description"))
+      end
     end
   end
 
@@ -169,20 +179,23 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.change_column_value(args: args) }
 
     let(:query) do
-      "mutation { change_column_value(board_id: 1234, item_id: 4567, column_id: keywords, " \
-        "value: \"{\\\"labels\\\":[\\\"Tech\\\"]}\") {id name}}"
+      "mutation { change_column_value(board_id: #{board_id}, item_id: #{item_id}, " \
+        "column_id: status8, value: \"{\\\"label\\\":\\\"Working on it\\\"}\") {id name}}"
     end
 
     let(:args) do
       {
-        board_id: 1234,
-        item_id: 4567,
-        column_id: "keywords",
+        board_id: board_id,
+        item_id: item_id,
+        column_id: "status8",
         value: {
-          labels: ["Tech"]
+          label: "Working on it"
         }
       }
     end
+
+    let(:board_id) { "4751837459" }
+    let(:item_id) { "4751837477" }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -193,7 +206,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/change_column_value.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with ID and name of the updated item" do
+        expect(
+          response.body["data"]["change_column_value"]
+        ).to match(hash_including("id", "name"))
+      end
     end
   end
 
@@ -201,18 +220,21 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.change_simple_column_value(args: args) }
 
     let(:query) do
-      "mutation { change_simple_column_value(board_id: 1234, item_id: 4567, column_id: status, " \
-        "value: \"Working on it\") {id name}}"
+      "mutation { change_simple_column_value(board_id: #{board_id}, item_id: #{item_id}, " \
+        "column_id: status8, value: \"Stuck\") {id name}}"
     end
 
     let(:args) do
       {
-        board_id: 1234,
-        item_id: 4567,
-        column_id: "status",
-        value: "Working on it"
+        board_id: board_id,
+        item_id: item_id,
+        column_id: "status8",
+        value: "Stuck"
       }
     end
+
+    let(:board_id) { "4751837459" }
+    let(:item_id) { "4751837477" }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -223,7 +245,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/change_simple_column_value.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with ID and name of the updated item" do
+        expect(
+          response.body["data"]["change_simple_column_value"]
+        ).to match(hash_including("id", "name"))
+      end
     end
   end
 
@@ -231,25 +259,26 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.change_multiple_column_value(args: args) }
 
     let(:query) do
-      "mutation { change_multiple_column_values(board_id: 1234, item_id: 4567, " \
-        "column_values: \"{\\\"status\\\":{\\\"label\\\":\\\"Done\\\"}," \
-        "\\\"keywords\\\":{\\\"labels\\\":[\\\"Tech\\\",\\\"Marketing\\\"]}}\") {id name}}"
+      "mutation { change_multiple_column_values(board_id: #{board_id}, item_id: #{item_id}, " \
+        "column_values: \"{\\\"status\\\":\\\"Hello World\\\"," \
+        "\\\"status8\\\":{\\\"label\\\":\\\"Working on it\\\"}}\") {id name}}"
     end
 
     let(:args) do
       {
-        board_id: 1234,
-        item_id: 4567,
+        board_id: board_id,
+        item_id: item_id,
         column_values: {
-          status: {
+          status: "Hello World",
+          status8: {
             label: "Done"
-          },
-          keywords: {
-            labels: %w[Tech Marketing]
           }
         }
       }
     end
+
+    let(:board_id) { "4751837459" }
+    let(:item_id) { "4751837477" }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -260,7 +289,13 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/change_multiple_column_value.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with ID and name of the updated item" do
+        expect(
+          response.body["data"]["change_multiple_column_values"]
+        ).to match(hash_including("id", "name"))
+      end
     end
   end
 
@@ -268,11 +303,11 @@ RSpec.describe Monday::Resources::Column do
     subject(:response) { client.delete_column(board_id, column_id) }
 
     let(:query) do
-      "mutation { delete_column(board_id: 1234, column_id: status) {id}}"
+      "mutation { delete_column(board_id: #{board_id}, column_id: status) {id}}"
     end
 
-    let(:board_id) { 1234 }
-    let(:column_id) { "status" }
+    let(:board_id) { "4751837459" }
+    let(:column_id) { "text" }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -283,7 +318,11 @@ RSpec.describe Monday::Resources::Column do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "column/delete_column.json"
+      it "returns the body with the deleted columns ID" do
+        expect(
+          response.body["data"]["delete_column"]
+        ).to match(hash_including("id"))
+      end
     end
   end
 end
