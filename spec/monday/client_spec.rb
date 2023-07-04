@@ -6,6 +6,10 @@ RSpec.describe Monday::Client do
   context "when no args are provided" do
     let(:config_args) { {} }
 
+    before do
+      Monday.config.reset
+    end
+
     it "creates an instance of Monday::Client with the default token" do
       expect(client.config.token).to be nil
     end
