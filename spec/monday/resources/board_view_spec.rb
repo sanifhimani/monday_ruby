@@ -13,13 +13,6 @@ RSpec.shared_examples "authenticated client request" do
 end
 
 RSpec.describe Monday::Resources::BoardView, :vcr do
-  let(:uri) { URI.parse(monday_url) }
-  let(:body) do
-    {
-      query: query
-    }
-  end
-
   describe ".board_views" do
     subject(:response) { client.board_views(args: args) }
 

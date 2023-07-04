@@ -1,19 +1,11 @@
 # frozen_string_literal: true
 
 RSpec.describe Monday::Resources::ActivityLog, :vcr do
-  subject(:activity_logs) { client.activity_logs(board_ids) }
-
-  let(:uri) { URI.parse(monday_url) }
-  let(:query) { "query { boards(ids: #{board_ids}) { activity_logs() {id event data}}}" }
-  let(:body) do
-    {
-      query: query
-    }
-  end
-
-  let(:board_ids) { "4751501450" }
-
   describe ".activity_logs" do
+    subject(:activity_logs) { client.activity_logs(board_ids) }
+
+    let(:board_ids) { "4751501450" }
+
     context "when client is not authenticated" do
       let(:client) { invalid_client }
 

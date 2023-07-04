@@ -1,14 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe Monday::Resources::Account, :vcr do
-  let(:uri) { URI.parse(monday_url) }
-  let(:query) { "query { users { account {id name}}}" }
-  let(:body) do
-    {
-      query: query
-    }
-  end
-
   describe ".account" do
     subject(:account) { client.account }
 

@@ -13,13 +13,6 @@ RSpec.shared_examples "authenticated client request" do
 end
 
 RSpec.describe Monday::Resources::Item, :vcr do
-  let(:uri) { URI.parse(monday_url) }
-  let(:body) do
-    {
-      query: query
-    }
-  end
-
   describe ".items" do
     subject(:response) { client.items(args: args) }
 

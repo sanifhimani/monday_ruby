@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require "monday_ruby"
-require "webmock/rspec"
-require "vcr"
 require "dotenv"
+require "monday_ruby"
+require "vcr"
+require "webmock/rspec"
 
 Dotenv.load
 
@@ -29,14 +29,6 @@ VCR.configure do |config|
 
   config.filter_sensitive_data("<TOKEN>") { ENV.fetch("token", nil) }
   config.configure_rspec_metadata!
-end
-
-def fixture_path
-  File.expand_path("fixtures", __dir__)
-end
-
-def fixture(file)
-  File.new("#{fixture_path}/#{file}")
 end
 
 def invalid_client
