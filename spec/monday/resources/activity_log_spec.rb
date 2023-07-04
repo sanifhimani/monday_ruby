@@ -11,7 +11,7 @@ RSpec.describe Monday::Resources::ActivityLog, :vcr do
     }
   end
 
-  let(:board_ids) { "123" }
+  let(:board_ids) { "4751501450" }
 
   describe ".activity_logs" do
     context "when client is not authenticated" do
