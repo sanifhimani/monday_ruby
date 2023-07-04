@@ -1,30 +1,18 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples "unauthenticated client request" do
-  before do
-    stub_request(:post, uri)
-      .with(body: body.to_json)
-      .to_return(status: 401, body: fixture("unauthenticated.json"))
-  end
-
   it "returns 401 status" do
     expect(response.status).to eq(401)
   end
 end
 
-RSpec.shared_examples "authenticated client request" do |fixture|
-  before do
-    stub_request(:post, uri)
-      .with(body: body.to_json)
-      .to_return(status: 200, body: fixture(fixture))
-  end
-
+RSpec.shared_examples "authenticated client request" do
   it "returns 200 status" do
     expect(response.status).to eq(200)
   end
 end
 
-RSpec.describe Monday::Resources::BoardView do
+RSpec.describe Monday::Resources::BoardView, :vcr do
   let(:uri) { URI.parse(monday_url) }
   let(:body) do
     {
@@ -32,22 +20,15 @@ RSpec.describe Monday::Resources::BoardView do
     }
   end
 
-  let(:invalid_client) do
-    Monday::Client.new(token: nil)
-  end
-
-  let(:valid_client) do
-    Monday::Client.new(token: "xxx")
-  end
-
   describe ".board_views" do
     subject(:response) { client.board_views(args: args) }
 
-    let(:query) { "query { boards(ids: 123) { views {id name type}}}" }
+    let(:query) { "query { boards(ids: #{board_id}) { views {id name type}}}" }
 
+    let(:board_id) { "4751837459" }
     let(:args) do
       {
-        ids: 123
+        ids: board_id
       }
     end
 
@@ -60,7 +41,13 @@ RSpec.describe Monday::Resources::BoardView do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request", "board_view/board_views.json"
+      it_behaves_like "authenticated client request"
+
+      it "returns the body with board views" do
+        expect(
+          response.body["data"]["boards"]
+        ).to match(array_including(hash_including("views")))
+      end
     end
   end
 end
