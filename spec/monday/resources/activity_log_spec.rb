@@ -1,49 +1,38 @@
 # frozen_string_literal: true
 
-RSpec.describe Monday::Resources::ActivityLog do
+RSpec.describe Monday::Resources::ActivityLog, :vcr do
+  subject(:activity_logs) { client.activity_logs(board_ids) }
+
   let(:uri) { URI.parse(monday_url) }
   let(:query) { "query { boards(ids: #{board_ids}) { activity_logs() {id event data}}}" }
-  let(:board_ids) { [123] }
   let(:body) do
     {
       query: query
     }
   end
 
-  let(:invalid_client) do
-    Monday::Client.new(token: nil)
-  end
+  let(:board_ids) { "123" }
 
-  let(:valid_client) do
-    Monday::Client.new(token: "xxx")
-  end
-
-  describe ".account" do
+  describe ".activity_logs" do
     context "when client is not authenticated" do
-      subject(:account) { invalid_client.activity_logs(board_ids) }
-
-      before do
-        stub_request(:post, uri)
-          .with(body: body.to_json)
-          .to_return(status: 401, body: fixture("unauthenticated.json"))
-      end
+      let(:client) { invalid_client }
 
       it "returns 401 status" do
-        expect(account.status).to eq(401)
+        expect(activity_logs.status).to eq(401)
       end
     end
 
     context "when client is authenticated" do
-      subject(:account) { valid_client.activity_logs(board_ids) }
-
-      before do
-        stub_request(:post, uri)
-          .with(body: body.to_json)
-          .to_return(status: 200, body: fixture("activity_log/activity_logs.json"))
-      end
+      let(:client) { valid_client }
 
       it "returns 200 status" do
-        expect(account.status).to eq(200)
+        expect(activity_logs.status).to eq(200)
+      end
+
+      it "returns the body with activity ID, event and data" do
+        expect(
+          activity_logs.body["data"]["boards"].first["activity_logs"]
+        ).to match(array_including(hash_including("id", "event", "data")))
       end
     end
   end
