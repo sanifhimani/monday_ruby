@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "coveralls"
 require "dotenv"
 require "monday_ruby"
 require "simplecov"
@@ -8,6 +9,7 @@ require "webmock/rspec"
 
 Dotenv.load
 SimpleCov.start
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 
 WebMock.disable_net_connect!(allow_localhost: true)
 RSpec.configure do |config|
