@@ -5,8 +5,8 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation { delete_column(board_id: 4751837459, column_id:
-        text) {id}}"}'
+      string: '{"query":"mutation { create_column(board_id: 4751837459, title: Status,
+        description: \"Status Column\", column_type: text) {id title description}}"}'
     headers:
       Content-Type:
       - application/json
@@ -24,7 +24,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 04 Jul 2023 18:01:02 GMT
+      - Sun, 09 Jul 2023 22:57:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -104,32 +104,32 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Powered-By:
-      - Express
+      Vary:
+      - Origin, Accept-Encoding
       X-Monday-Auth:
       - 'true'
       X-Monday-Region:
       - undefined
+      X-Powered-By:
+      - Express
       Etag:
       - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
-      Vary:
-      - Origin, Accept-Encoding
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=mZBbDq6yiIB0UulFF7AXEmX_GGj4T6G3RYgJEjsrgGc-1688493662-0-Ad+NEC5c3yPgWMoxCB33EBl9aG+UW4svrGpU40vyHm0SwI6e10cUpMjJwwL2vdMBhZAw1xthE+bIUgnBcOeAZMx9xt2Kx6KT+1J7O4Jv1lmj;
-        path=/; expires=Tue, 04-Jul-23 18:31:02 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=HK8D8bEbr9oVJanuQ8_p82IAnGwjuBXjzizSzyHo8ZA-1688943436-0-AaparSJ9BHTTRBW88WjGNnK3hrmgilXRxD+NxE/+Ewt5u5tkG0PTqGtOMpihtJORtAgYo7QHQyL2WRiEdYOkTA6RBHopyU61ZxRKN8F6tiPr;
+        path=/; expires=Sun, 09-Jul-23 23:27:16 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e19456d3d55387e-YYZ
+      - 7e442a3cda6f07c9-IAD
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["Not Authenticated"]}'
-  recorded_at: Tue, 04 Jul 2023 18:01:02 GMT
+  recorded_at: Sun, 09 Jul 2023 22:57:16 GMT
 recorded_with: VCR 6.2.0

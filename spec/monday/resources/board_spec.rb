@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples "unauthenticated client request" do
-  it "returns 401 status" do
-    expect(response.status).to eq(401)
+  it "raises Monday::AuthorizationError error" do
+    expect { response }.to raise_error(Monday::AuthorizationError)
   end
 end
 

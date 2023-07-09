@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"query { items(ids: 4751837477) {id name created_at}}"}'
+      string: '{"query":"mutation { delete_board(board_id: 4751845270) {id}}"}'
     headers:
       Content-Type:
       - application/json
@@ -23,7 +23,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 04 Jul 2023 18:05:07 GMT
+      - Sun, 09 Jul 2023 22:53:53 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -103,32 +103,32 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Powered-By:
-      - Express
-      X-Monday-Auth:
-      - 'true'
       Vary:
       - Origin, Accept-Encoding
+      X-Monday-Auth:
+      - 'true'
       X-Monday-Region:
       - undefined
       Etag:
       - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
+      X-Powered-By:
+      - Express
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=uvAw_wFkVpOOTav1nw7NvNw0m0X.m.U0ZpddRf9HD9g-1688493907-0-AXFq9cIiAvnUsiZiTtXVfXIzURqSkkjBkOrd8/QEXlmZcYBk5aVM4t906WNtO7QJ1rjw8bXGxK2vXPEO45AQNJeQndcJW3gZG4bcjdmx705X;
-        path=/; expires=Tue, 04-Jul-23 18:35:07 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=VLFXPiwqQ.bybQbJwSEZ0WO0SCMh14Uvq5auntITtf4-1688943233-0-AXZ5wSnzxq6wb1Vm9TU2CVDTQklJUlgsgS9zjVEZdi2ARfu8sz7fVeWi3dnMHFRQQOPg9a6h9RkinlM0O1XCjR43DW41mJAB9O45l99j2zxg;
+        path=/; expires=Sun, 09-Jul-23 23:23:53 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e194b6a0fc7a241-YYZ
+      - 7e44254aba8738a0-IAD
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["Not Authenticated"]}'
-  recorded_at: Tue, 04 Jul 2023 18:05:07 GMT
+  recorded_at: Sun, 09 Jul 2023 22:53:53 GMT
 recorded_with: VCR 6.2.0

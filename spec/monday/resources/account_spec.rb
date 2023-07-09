@@ -7,8 +7,8 @@ RSpec.describe Monday::Resources::Account, :vcr do
     context "when client is not authenticated" do
       let(:client) { invalid_client }
 
-      it "returns 401 status" do
-        expect(account.status).to eq(401)
+      it "raises Monday::AuthorizationError error" do
+        expect { account }.to raise_error(Monday::AuthorizationError)
       end
     end
 

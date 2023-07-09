@@ -5,9 +5,8 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation { change_multiple_column_values(board_id: 4751837459,
-        item_id: 4751837477, column_values: \"{\\\"status\\\":\\\"Hello World\\\",\\\"status8\\\":{\\\"label\\\":\\\"Done\\\"}}\")
-        {id name}}"}'
+      string: '{"query":"mutation { create_board(board_name: \"New test board\", board_kind:
+        private) {id name description}}"}'
     headers:
       Content-Type:
       - application/json
@@ -25,7 +24,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 04 Jul 2023 17:56:04 GMT
+      - Sun, 09 Jul 2023 22:53:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -105,14 +104,14 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Powered-By:
-      - Express
       Vary:
       - Origin, Accept-Encoding
-      X-Monday-Region:
-      - undefined
       X-Monday-Auth:
       - 'true'
+      X-Powered-By:
+      - Express
+      X-Monday-Region:
+      - undefined
       Etag:
       - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
       X-Monday-Rgn:
@@ -120,17 +119,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=Twgnxj_V3taClLo1CeJsrmRPAkjuH.wlHnIjT61Kkgs-1688493364-0-AWBCK7q8fmA/ppx3hjcZTmoNLOUUvjqmiBs7zUD0gUrwFgAZX8yjoSj5nlNwT6tSBQxeIa0ebI15ZL6G9fl4ndrL23nETDpG0lgDho1eEx3J;
-        path=/; expires=Tue, 04-Jul-23 18:26:04 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=nLf841gNrIpCbEAkfk7Jgrk4Qawz9lIArw34yjKHJcI-1688943180-0-AVmy+P8L2fHM/Evv/jqVt6I2RIG+9HHG66TKdWFp93oIRkh1BqUhP0aHCrnL+LWUYCvg7MkRXxejZFtiX20fQs6cRHxsKvbVir6dzHA6/mqz;
+        path=/; expires=Sun, 09-Jul-23 23:23:00 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e193e2a1ca1a214-YYZ
+      - 7e4423fbf81207bc-IAD
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["Not Authenticated"]}'
-  recorded_at: Tue, 04 Jul 2023 17:56:04 GMT
+  recorded_at: Sun, 09 Jul 2023 22:53:00 GMT
 recorded_with: VCR 6.2.0

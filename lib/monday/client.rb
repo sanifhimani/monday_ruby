@@ -9,6 +9,7 @@ require_relative "request"
 require_relative "response"
 require_relative "resources"
 require_relative "util"
+require_relative "error"
 
 module Monday
   # Client executes requests against the monday.com's API and
@@ -30,7 +31,7 @@ module Monday
     def config_options(config_args)
       return Monday.config if config_args.empty?
 
-      Monday::Configuration.new(**config_args)
+      Configuration.new(**config_args)
     end
 
     def uri
@@ -45,8 +46,34 @@ module Monday
     end
 
     def make_request(body)
-      response = Monday::Request.post(uri, body, request_headers)
-      Monday::Response.new(response)
+      response = Request.post(uri, body, request_headers)
+
+      handle_response(Response.new(response))
+    end
+
+    def handle_response(response)
+      return response if response.success?
+
+      raise_errors(response)
+    end
+
+    def raise_errors(response)
+      raise default_exception(response) unless (200..299).cover?(response.status)
+
+      raise response_exception(response)
+    end
+
+    def response_exception(response)
+      error_code = response.body["error_code"]
+
+      return Error.new(response: response) if error_code.nil?
+
+      exception_klass, code = Util.response_error_exceptions_mapping(error_code)
+      exception_klass.new(message: error_code, response: response, code: code)
+    end
+
+    def default_exception(response)
+      Util.status_code_exceptions_mapping(response.status).new(response: response)
     end
   end
 end

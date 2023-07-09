@@ -5,7 +5,8 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation { archive_board(board_id: 4751845270) {id}}"}'
+      string: '{"query":"mutation { update_board(board_id: 4751845443, board_attribute:
+        description, new_value: \"New description\")}"}'
     headers:
       Content-Type:
       - application/json
@@ -23,7 +24,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 04 Jul 2023 16:31:07 GMT
+      - Sun, 09 Jul 2023 22:53:28 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -105,12 +106,12 @@ http_interactions:
       - 1; mode=block
       X-Powered-By:
       - Express
-      X-Monday-Auth:
-      - 'true'
-      Etag:
-      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
       Vary:
       - Origin, Accept-Encoding
+      Etag:
+      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
+      X-Monday-Auth:
+      - 'true'
       X-Monday-Region:
       - undefined
       X-Monday-Rgn:
@@ -118,17 +119,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=ix6tYDqKmjU2JRimfzqpZ0vIDwaAdsLCbmwOylFifwc-1688488267-0-AQH3K36j/bi364byb+O199sUTIj7VqQ/1Dh23feMNT5pdTVItx7kXecZL4SJWxSz9ONAxAqGUxoIWXX/l1B+mT8x6SuPlimn+3HZpFl/JWrW;
-        path=/; expires=Tue, 04-Jul-23 17:01:07 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=8lcdddqyYl2gVYOQT.Ao70Gyx9xnNhCi1q8S9o3MdE0-1688943208-0-ARZcf+7x9ZIGQehjfjucWkf3Z0xem8fjKGwApqH7PV0/osbx0QGdbwDQdn2SPWSc/ADaFvKKqXy4BRPm3i2BVeOSrQ4dWpamN6HxZSUQpeyK;
+        path=/; expires=Sun, 09-Jul-23 23:23:28 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e18c1b68f48a22e-YYZ
+      - 7e4424ab8e693b95-IAD
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["Not Authenticated"]}'
-  recorded_at: Tue, 04 Jul 2023 16:31:07 GMT
+  recorded_at: Sun, 09 Jul 2023 22:53:28 GMT
 recorded_with: VCR 6.2.0

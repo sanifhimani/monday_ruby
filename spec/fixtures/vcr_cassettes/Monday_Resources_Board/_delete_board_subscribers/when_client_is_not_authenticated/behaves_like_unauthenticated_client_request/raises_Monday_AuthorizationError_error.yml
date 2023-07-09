@@ -5,12 +5,13 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"query { users { account {id name}}}"}'
+      string: '{"query":"mutation { delete_subscribers_from_board(board_id: 4751787329,
+        user_ids: [44865791]) {id}}"}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - "<TOKEN>"
+      - invalid_token
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,31 +20,17 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
       Date:
-      - Sun, 09 Jul 2023 22:50:23 GMT
+      - Sun, 09 Jul 2023 22:54:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Api-Version:
-      - 2023-07
-      Vary:
-      - Origin, Accept-Encoding
-      Etag:
-      - W/"f7e249e9ccd3b2df75fc06fbabf6a38d"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a3e99c75-eaa6-950c-9ff1-403311d939e0
-      X-Runtime:
-      - '0.106291'
-      X-Envoy-Upstream-Service-Time:
-      - '108'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -117,23 +104,32 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Monday-Auth:
+      - 'true'
+      Etag:
+      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
+      Vary:
+      - Origin, Accept-Encoding
+      X-Monday-Region:
+      - undefined
+      X-Powered-By:
+      - Express
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=w7mpXmpJ22lPaPwxIm8sgLinRSng.mqDt1mYI0IISj4-1688943023-0-AdAshCEXQUQ0pdSsj9tIE0jyi37mq4HYCa32d3DzrIh168IcOE4X/FdRvRwBOEvAWFDB0tuO4u2QCIWkrsXhPRJTHFc5hGzKiUn4K+Sy3c7V;
-        path=/; expires=Sun, 09-Jul-23 23:20:23 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=MOPLRBdY3Tv.L68.DuxKgnYEP3IKfrzvP7oXT_CENQc-1688943245-0-AUVUpQoToItmBBM1VjJc1P7aCDqvMcxUreN0DGyrO8kPGvaMSnORJGGy5oeLTeZpZJma07dTVMA55cwG4o93bfDM0oNvzXImyvqjHVzNB7Vg;
+        path=/; expires=Sun, 09-Jul-23 23:24:05 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e442029f807080c-IAD
+      - 7e4425939a1a5b65-IAD
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"users":[{"account":{"id":17512073,"name":"sanifhimani92''s
-        Team"}}]},"account_id":17512073}'
-  recorded_at: Sun, 09 Jul 2023 22:50:23 GMT
+      string: '{"errors":["Not Authenticated"]}'
+  recorded_at: Sun, 09 Jul 2023 22:54:05 GMT
 recorded_with: VCR 6.2.0

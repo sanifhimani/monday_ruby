@@ -5,8 +5,7 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation { create_column(board_id: 4751837459, title: Status,
-        description: \"Status Column\", column_type: text) {id title description}}"}'
+      string: '{"query":"query { boards() { columns {id title description}}}"}'
     headers:
       Content-Type:
       - application/json
@@ -24,7 +23,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 04 Jul 2023 16:55:38 GMT
+      - Sun, 09 Jul 2023 22:56:55 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -104,32 +103,32 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
+      Etag:
+      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
+      X-Monday-Auth:
+      - 'true'
       X-Monday-Region:
       - undefined
       X-Powered-By:
       - Express
       Vary:
       - Origin, Accept-Encoding
-      X-Monday-Auth:
-      - 'true'
-      Etag:
-      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=l4K55U5xHiwBh5QW0QrSe_Y4.MeAN9tU1lI2MVOMmA8-1688489738-0-AaGYbSnGwA/Pq+b77CZiBQDZ+odX1H+ZvKPfTAA1+il9+KqbjojiS07aonp+hVbescgodfts1K3mRX+k3oTFAYAwWFr3H1rTtCZLamoWRYSH;
-        path=/; expires=Tue, 04-Jul-23 17:25:38 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=y0Z.us_BhMgBDzqSH0RnpuwOkJg2A04rbX8VEkjh784-1688943415-0-AUM7d2/W2IphstIO1ISEcFB0oTBT1PYmF05VJ49t1JqCZGR8PXdXc6PEDcqSHUbWnMyJVBgS5DstfJhHUH2k15nO05T7I/5kdSu08RdPIePO;
+        path=/; expires=Sun, 09-Jul-23 23:26:55 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e18e5a269803a04-YYZ
+      - 7e4429bc3ca82425-IAD
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["Not Authenticated"]}'
-  recorded_at: Tue, 04 Jul 2023 16:55:38 GMT
+  recorded_at: Sun, 09 Jul 2023 22:56:55 GMT
 recorded_with: VCR 6.2.0

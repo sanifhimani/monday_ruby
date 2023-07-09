@@ -5,8 +5,9 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"query { boards(ids: 4751501507) { activity_logs() {id event
-        data}}}"}'
+      string: '{"query":"mutation { create_item(board_id: 4751837459, item_name: \"New
+        item\", column_values: \"{\\\"status8\\\":{\\\"label\\\":\\\"Working on it\\\"}}\")
+        {id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -24,7 +25,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 04 Jul 2023 15:29:24 GMT
+      - Sun, 09 Jul 2023 23:00:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -104,32 +105,32 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Powered-By:
+      - Express
+      Etag:
+      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
       Vary:
       - Origin, Accept-Encoding
       X-Monday-Auth:
       - 'true'
       X-Monday-Region:
       - undefined
-      Etag:
-      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
-      X-Powered-By:
-      - Express
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=STicOtb6acz.fN_SuGM4261j6S3oTSWSkc1rA0azqQI-1688484564-0-Aepu9ETpgkdDeqDIugJLKG3Wi9PCGIY8D0eBaLdwz4n137ZcNCpToEVShdRRbm05GrcpoBvQZy+yJXT6Jiz1KRgw3xuSMorF293slt/JEZYE;
-        path=/; expires=Tue, 04-Jul-23 15:59:24 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=J_0UIHiL3hFxz_765bUPKbWTbpkUp4xY4azWapmFLzU-1688943617-0-AZGxlQHnN64eu+PRYpVY0Hv5p/QjcgWfUsIq/ZUw+AEYAWJuBtxxXPQqx4gS7TT6b5ucjssQX2PCLxpjrjYf2J8EuBiXws6I2PP2EguE5BO9;
+        path=/; expires=Sun, 09-Jul-23 23:30:17 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e18674cf93c36b2-YYZ
+      - 7e442eaa9ec15935-IAD
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["Not Authenticated"]}'
-  recorded_at: Tue, 04 Jul 2023 15:29:24 GMT
+  recorded_at: Sun, 09 Jul 2023 23:00:17 GMT
 recorded_with: VCR 6.2.0
