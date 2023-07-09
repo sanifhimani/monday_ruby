@@ -6,6 +6,9 @@ module Monday
   #
   # Returns status code, parsed body and headers.
   class Response
+    ERROR_OBJECT_KEYS = %w[errors error_code error_message].freeze
+    private_constant :ERROR_OBJECT_KEYS
+
     attr_reader :status, :body, :headers
 
     def initialize(response)
@@ -26,7 +29,7 @@ module Monday
     attr_reader :response
 
     def errors?
-      parse_body.key?("errors") || parse_body.key?("error_message")
+      (parse_body.keys & ERROR_OBJECT_KEYS).any?
     end
 
     def parse_body
