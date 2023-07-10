@@ -9,7 +9,7 @@ module Monday
       @message = error_message(message)
       @code = error_code(code)
 
-      super(message)
+      super(@message)
     end
 
     def error_data
@@ -42,7 +42,7 @@ module Monday
     def response_error_message
       return if response.nil?
 
-      response.body["error_message"].nil? ? response.body["errors"] : response.body["error_message"]
+      response.body["error_message"].nil? ? response.body["errors"].to_s : response.body["error_message"].to_s
     end
   end
 
