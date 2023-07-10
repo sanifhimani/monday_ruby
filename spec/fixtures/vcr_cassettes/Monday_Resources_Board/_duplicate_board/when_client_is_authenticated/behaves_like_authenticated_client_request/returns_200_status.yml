@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 04 Jul 2023 16:28:13 GMT
+      - Mon, 10 Jul 2023 15:12:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -36,15 +36,15 @@ http_interactions:
       Vary:
       - Origin, Accept-Encoding
       Etag:
-      - W/"e9b69d04880b900ddaab94eeb1988ab5"
+      - W/"0e3ae81d00820b862f9ce82087bc457f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8542a3a3-79ac-99bb-8286-c734b4a98776
+      - 42153900-ddd9-9baf-8b37-3ad79e5145ea
       X-Runtime:
-      - '0.031679'
+      - '0.782571'
       X-Envoy-Upstream-Service-Time:
-      - '34'
+      - '785'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -93,12 +93,13 @@ http_interactions:
         https://www.dropbox.com https://www.googletagmanager.com https://ipinfo.io
         https://*.cardinalcommerce.com https://www.bluesnap.com https://connect.facebook.net
         https://app.box.com https://code.highcharts.com https://js.live.net https://monday.zendesk.com
-        https://static.zdassets.com https://ekr.zdassets.com https://ekr.zendesk.com
-        https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com wss://*.zopim.com
-        https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye https://*.smooch.io
-        wss://*.zendesk.com/sc/faye https://www.google-analytics.com https://api.simpo.io
-        https://cdn.simpo.io https://zh081jts88wj.statuspage.io https://www.googleapis.com
-        https://cdn.eu.pendo.io https://app.eu.pendo.io https://data.eu.pendo.io https://pendo-eu-static-6485021788340224.storage.googleapis.com
+        https://monday-enterprise.zendesk.com https://static.zdassets.com https://ekr.zdassets.com
+        https://ekr.zendesk.com https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com
+        wss://*.zopim.com https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye
+        https://*.smooch.io wss://*.zendesk.com/sc/faye https://www.google-analytics.com
+        https://api.simpo.io https://cdn.simpo.io https://zh081jts88wj.statuspage.io
+        https://www.googleapis.com https://cdn.eu.pendo.io https://app.eu.pendo.io
+        https://data.eu.pendo.io https://pendo-eu-static-6485021788340224.storage.googleapis.com
         https://api.braintreegateway.com https://client-analytics.braintreegateway.com
         https://*.braintree-api.com https://*.paypal.com https://*.sentry.io https://cdn.jsdelivr.net
         https://prod-use1-crm-billing.s3.amazonaws.com https://prod-use1-crm-communication.s3.amazonaws.com
@@ -123,20 +124,18 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=QCQuSI9Jh8IkBki37s_oCacwhoL9cy7nYAs8QFfBHNE-1688488093-0-AWiKFQW2D9oK4+AUUbUzySAqCvBAatCQzDn1Ps56Y6XJrhH1QlcRdR9zzcFFdbuRsbblspPIBN4FBP8lzLs8WnmjY9x8/ezkR0Bp+wAah7uf;
-        path=/; expires=Tue, 04-Jul-23 16:58:13 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=K4_HvNhOP_HroTiOb5fyP_0W1w9JQudMOWmVNQfSYOE-1689001952-0-AcdQ8BczjvXdodC4M/BsWfVsGouSQAt8uMpbWYRhibafKO/f77xlK04LhLPRUAr1g4gnhhAB4OQ/NQjK0OysWONTn5+Kt/xvv6S7hXd85bIh;
+        path=/; expires=Mon, 10-Jul-23 15:42:32 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e18bd78ee9936d5-YYZ
+      - 7e49bed5bd4f36be-YYZ
     body:
       encoding: ASCII-8BIT
-      string: '{"error_code":"ComplexityException","status_code":429,"error_message":"Complexity
-        budget exhausted, query cost 300004 budget remaining 99990 out of 1000000
-        reset in 55 seconds","error_data":{},"errors":["Complexity budget exhausted,
-        query cost 300004 budget remaining 99990 out of 1000000 reset in 55 seconds"],"account_id":17512073}'
-  recorded_at: Tue, 04 Jul 2023 16:28:13 GMT
+      string: '{"data":{"duplicate_board":{"board":{"id":"4781400250","name":"Duplicate
+        of New test board","description":"New description"}}},"account_id":17512073}'
+  recorded_at: Mon, 10 Jul 2023 15:12:32 GMT
 recorded_with: VCR 6.2.0
