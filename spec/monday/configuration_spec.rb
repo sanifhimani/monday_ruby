@@ -5,6 +5,7 @@ RSpec.describe Monday::Configuration do
 
   let(:test_token) { "test-token" }
   let(:test_host) { "https://monday.com/api" }
+  let(:test_version) { "2023-07" }
 
   describe "initialize" do
     context "when config args are not given" do
@@ -12,18 +13,21 @@ RSpec.describe Monday::Configuration do
 
       it { expect(config.host).to eq(described_class::DEFAULT_HOST) }
       it { expect(config.token).to eq(described_class::DEFAULT_TOKEN) }
+      it { expect(config.version).to eq(described_class::DEFAULT_VERSION) }
     end
 
     context "when config args are given" do
       let(:config_args) do
         {
           token: test_token,
-          host: test_host
+          host: test_host,
+          version: test_version
         }
       end
 
       it { expect(config.host).to eq(test_host) }
       it { expect(config.token).to eq(test_token) }
+      it { expect(config.version).to eq(test_version) }
     end
   end
 
@@ -31,7 +35,8 @@ RSpec.describe Monday::Configuration do
     let(:config_args) do
       {
         token: test_token,
-        host: test_host
+        host: test_host,
+        version: test_version
       }
     end
 
@@ -41,5 +46,6 @@ RSpec.describe Monday::Configuration do
 
     it { expect(config.host).to eq(described_class::DEFAULT_HOST) }
     it { expect(config.token).to eq(described_class::DEFAULT_TOKEN) }
+    it { expect(config.version).to eq(described_class::DEFAULT_VERSION) }
   end
 end

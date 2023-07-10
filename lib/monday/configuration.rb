@@ -10,10 +10,12 @@ module Monday
   class Configuration
     DEFAULT_HOST = "https://api.monday.com/v2"
     DEFAULT_TOKEN = nil
+    DEFAULT_VERSION = "2023-07"
 
     CONFIGURATION_FIELDS = %i[
       token
       host
+      version
     ].freeze
 
     attr_accessor(*CONFIGURATION_FIELDS)
@@ -24,6 +26,7 @@ module Monday
 
       @host = DEFAULT_HOST
       @token = DEFAULT_TOKEN
+      @version = DEFAULT_VERSION
 
       config_args.each do |key, value|
         public_send("#{key}=", value)
@@ -33,6 +36,7 @@ module Monday
     def reset
       @token = DEFAULT_TOKEN
       @host = DEFAULT_HOST
+      @version = DEFAULT_VERSION
     end
   end
 end
