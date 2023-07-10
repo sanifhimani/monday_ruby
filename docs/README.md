@@ -6,6 +6,7 @@ The library provides:
 
 1. A pre-defined set of methods to easily interact with the API resources.
 2. Easy configuration path for fast setup and use.
+3. Easy error handling
 
 #### Requirements
 

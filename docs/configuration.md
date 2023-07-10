@@ -26,3 +26,15 @@ require "monday_ruby"
 client = Monday::Client.new(token: <AUTH_TOKEN>)
 ```
 
+You can optionally pass in the version of the API you want to use using the `version` configuration field.
+
+By default, the latest stable version is used. Read more about the version on monday.com's [official documentation](https://developer.monday.com/api-reference/docs/api-versioning).
+
+```ruby
+require "monday_ruby"
+
+Monday.configure do |config|
+  config.token = <AUTH_TOKEN>
+  config.version = "2023-10"
+end
+```

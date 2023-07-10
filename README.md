@@ -10,6 +10,7 @@ The library provides:
 
 1. A pre-defined set of methods to easily interact with the API resources.
 2. Easy configuration path for fast setup and use.
+3. Easy error handling.
 
 **Visit https://monday-ruby.gitbook.io/docs/ for detailed documentation on how to use the library.**
 
@@ -67,6 +68,17 @@ end
 require "monday_ruby"
 
 client = Monday::Client.new(token: "<AUTH_TOKEN>")
+```
+
+You can optionally pass in the version of the API you want to use using the version configuration field. By default, the latest stable version is used.
+
+```ruby
+require "monday_ruby"
+
+Monday.configure do |config|
+  config.token = "<AUTH_TOKEN>"
+  config.version = "2023-07"
+end
 ```
 
 ### Accessing a response object
