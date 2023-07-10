@@ -1,3 +1,11 @@
+## v0.3.0 (July 10, 2023)
+
+### Added
+
+- Improved error handling
+- Support to configure the API version
+- Coverage report
+
 ## v0.2.0 (July 04, 2023)
 
 ### Added
