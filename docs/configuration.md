@@ -25,4 +25,3 @@ require "monday_ruby"
 
 client = Monday::Client.new(token: <AUTH_TOKEN>)
 ```
-

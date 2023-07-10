@@ -6,6 +6,7 @@
 * [Client](client.md)
 * [Response](response.md)
 * [Quick Start](quick-start.md)
+* [Error Handling](error-handling.md)
 * [Resources](resources/README.md)
   * [Account](resources/account/README.md)
     * [#accounts](resources/account/accounts.md)
