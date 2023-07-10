@@ -16,3 +16,7 @@ Layout/LineLength:
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*_spec.rb"
+
+Metrics/MethodLength:
+  Exclude:
+    - "lib/monday/util.rb"

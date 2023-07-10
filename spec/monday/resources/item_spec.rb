@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples "unauthenticated client request" do
-  it "returns 401 status" do
-    expect(response.status).to eq(401)
+  it "raises Monday::AuthorizationError error" do
+    expect { response }.to raise_error(Monday::AuthorizationError)
   end
 end
 
@@ -14,7 +14,9 @@ end
 
 RSpec.describe Monday::Resources::Item, :vcr do
   describe ".items" do
-    subject(:response) { client.items(args: args) }
+    subject(:response) { client.items(args: args, select: select) }
+
+    let(:select) { %w[id name created_at] }
 
     let(:query) { "query { items(ids: #{item_id}) {id name created_at}}" }
 
@@ -41,6 +43,14 @@ RSpec.describe Monday::Resources::Item, :vcr do
         expect(
           response.body["data"]["items"]
         ).to match(array_including(hash_including("id", "name", "created_at")))
+      end
+
+      context "when a field that doesn't exist on items is requested" do
+        let(:select) { ["invalid_field"] }
+
+        it "raises Monday::Error error" do
+          expect { response }.to raise_error(Monday::Error)
+        end
       end
     end
   end
@@ -83,6 +93,17 @@ RSpec.describe Monday::Resources::Item, :vcr do
           response.body["data"]["create_item"]
         ).to match(hash_including("id", "name", "created_at"))
       end
+
+      context "when the board does not exist for the given board_id" do
+        let(:board_id) { "123" }
+
+        it "raises Monday::InvalidRequestError error" do
+          expect { response }.to raise_error(
+            Monday::InvalidRequestError,
+            /InvalidBoardIdException:/
+          )
+        end
+      end
     end
   end
 
@@ -114,6 +135,23 @@ RSpec.describe Monday::Resources::Item, :vcr do
           response.body["data"]["duplicate_item"]
         ).to match(hash_including("id", "name", "created_at"))
       end
+
+      context "when the board does not exist for the given board_id" do
+        let(:board_id) { "123" }
+
+        it "raises Monday::InternalServerError error" do
+          expect { response }.to raise_error(Monday::InternalServerError)
+        end
+      end
+
+      context "when the item does not exist for the given item_id" do
+        let(:board_id) { "4691485686" }
+        let(:item_id) { "123" }
+
+        it "raises Monday::InternalServerError error" do
+          expect { response }.to raise_error(Monday::InternalServerError)
+        end
+      end
     end
   end
 
@@ -140,6 +178,17 @@ RSpec.describe Monday::Resources::Item, :vcr do
           response.body["data"]["archive_item"]
         ).to match(hash_including("id"))
       end
+
+      context "when the item does not exist for the given item_id" do
+        let(:item_id) { "123" }
+
+        it "raises Monday::InvalidRequestError error" do
+          expect { response }.to raise_error(
+            Monday::InvalidRequestError,
+            /InvalidItemIdException:/
+          )
+        end
+      end
     end
   end
 
@@ -165,6 +214,17 @@ RSpec.describe Monday::Resources::Item, :vcr do
         expect(
           response.body["data"]["delete_item"]
         ).to match(hash_including("id"))
+      end
+
+      context "when the item does not exist for the given item_id" do
+        let(:item_id) { "123" }
+
+        it "raises Monday::InvalidRequestError error" do
+          expect { response }.to raise_error(
+            Monday::InvalidRequestError,
+            /InvalidItemIdException:/
+          )
+        end
       end
     end
   end

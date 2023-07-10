@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 04 Jul 2023 14:42:57 GMT
+      - Sun, 09 Jul 2023 22:50:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -39,11 +39,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8446c1ce-ab3b-9aa9-baef-72fc046c087e
+      - a3e99c75-eaa6-950c-9ff1-403311d939e0
       X-Runtime:
-      - '0.036681'
+      - '0.106291'
       X-Envoy-Upstream-Service-Time:
-      - '38'
+      - '108'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -122,18 +122,18 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=rdGxnlp_i9CE4LILcV2CnhD_S1dXgXJ71Qi5t_DhfZw-1688481777-0-AcOuAWxUroYEJEUphkUtruiuRrGfCFFrpi0H6gA2gPjYGVOB4mAPjIsBMj03T27DmXlZSCa+qytwgTB+qA7V53popGjfcVk1CABScCaH5rAY;
-        path=/; expires=Tue, 04-Jul-23 15:12:57 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=w7mpXmpJ22lPaPwxIm8sgLinRSng.mqDt1mYI0IISj4-1688943023-0-AdAshCEXQUQ0pdSsj9tIE0jyi37mq4HYCa32d3DzrIh168IcOE4X/FdRvRwBOEvAWFDB0tuO4u2QCIWkrsXhPRJTHFc5hGzKiUn4K+Sy3c7V;
+        path=/; expires=Sun, 09-Jul-23 23:20:23 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e1823456bfe369c-YYZ
+      - 7e442029f807080c-IAD
     body:
       encoding: ASCII-8BIT
       string: '{"data":{"users":[{"account":{"id":17512073,"name":"sanifhimani92''s
         Team"}}]},"account_id":17512073}'
-  recorded_at: Tue, 04 Jul 2023 14:42:57 GMT
+  recorded_at: Sun, 09 Jul 2023 22:50:23 GMT
 recorded_with: VCR 6.2.0
