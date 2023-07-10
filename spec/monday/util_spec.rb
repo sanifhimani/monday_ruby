@@ -4,24 +4,25 @@ STATUS_CODE_EXCEPTION_CLASS_MAP = [
   [500, Monday::InternalServerError],
   [429, Monday::RateLimitError],
   [404, Monday::ResourceNotFoundError],
+  [403, Monday::AuthorizationError],
   [401, Monday::AuthorizationError],
   [400, Monday::InvalidRequestError]
 ].freeze
 
 RESPONSE_ERROR_EXCEPTION_CLASS_MAP = [
-  ["ComplexityException", Monday::ComplexityError],
-  ["UserUnauthorizedException", Monday::AuthorizationError],
-  ["ResourceNotFoundException", Monday::ResourceNotFoundError],
-  ["InvalidUserIdException", Monday::InvalidRequestError],
-  ["InvalidVersionException", Monday::InvalidRequestError],
-  ["InvalidColumnIdException", Monday::InvalidRequestError],
-  ["InvalidBoardIdException", Monday::InvalidRequestError],
-  ["InvalidArgumentException", Monday::InvalidRequestError],
-  ["CreateBoardException", Monday::InvalidRequestError],
-  ["ItemsLimitationException", Monday::InvalidRequestError],
-  ["ItemNameTooLongException", Monday::InvalidRequestError],
-  ["ColumnValueException", Monday::InvalidRequestError],
-  ["CorrectedValueException", Monday::InvalidRequestError]
+  ["ComplexityException", [Monday::ComplexityError, 429]],
+  ["UserUnauthorizedException", [Monday::AuthorizationError, 403]],
+  ["ResourceNotFoundException", [Monday::ResourceNotFoundError, 404]],
+  ["InvalidUserIdException", [Monday::InvalidRequestError, 400]],
+  ["InvalidVersionException", [Monday::InvalidRequestError, 400]],
+  ["InvalidColumnIdException", [Monday::InvalidRequestError, 400]],
+  ["InvalidBoardIdException", [Monday::InvalidRequestError, 400]],
+  ["InvalidArgumentException", [Monday::InvalidRequestError, 400]],
+  ["CreateBoardException", [Monday::InvalidRequestError, 400]],
+  ["ItemsLimitationException", [Monday::InvalidRequestError, 400]],
+  ["ItemNameTooLongException", [Monday::InvalidRequestError, 400]],
+  ["ColumnValueException", [Monday::InvalidRequestError, 400]],
+  ["CorrectedValueException", [Monday::InvalidRequestError, 400]]
 ].freeze
 
 RSpec.describe Monday::Util do
@@ -98,12 +99,16 @@ RSpec.describe Monday::Util do
   describe ".response_error_exceptions_mapping" do
     subject(:response_error_exceptions_mapping) { described_class.response_error_exceptions_mapping(error_code) }
 
-    RESPONSE_ERROR_EXCEPTION_CLASS_MAP.each do |code, klass|
+    RESPONSE_ERROR_EXCEPTION_CLASS_MAP.each do |code, mapping|
       context "when the error code is #{code}" do
         let(:error_code) { code }
 
         it "returns the error class specific to the #{code} error code" do
-          expect(response_error_exceptions_mapping[0]).to eq(klass)
+          expect(response_error_exceptions_mapping[0]).to eq(mapping[0])
+        end
+
+        it "returns the error code specific to the #{code} error code" do
+          expect(response_error_exceptions_mapping[1]).to eq(mapping[1])
         end
       end
     end
@@ -113,6 +118,10 @@ RSpec.describe Monday::Util do
 
       it "returns the general error class" do
         expect(response_error_exceptions_mapping[0]).to eq(Monday::Error)
+      end
+
+      it "returns the error code as 400" do
+        expect(response_error_exceptions_mapping[1]).to eq(400)
       end
     end
   end

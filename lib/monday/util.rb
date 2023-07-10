@@ -29,8 +29,9 @@ module Monday
         {
           "500" => InternalServerError,
           "429" => RateLimitError,
-          "401" => AuthorizationError,
           "404" => ResourceNotFoundError,
+          "403" => AuthorizationError,
+          "401" => AuthorizationError,
           "400" => InvalidRequestError
         }[status_code.to_s] || Error
       end
@@ -38,7 +39,7 @@ module Monday
       def response_error_exceptions_mapping(error_code)
         {
           "ComplexityException" => [ComplexityError, 429],
-          "UserUnauthorizedException" => [AuthorizationError, 401],
+          "UserUnauthorizedException" => [AuthorizationError, 403],
           "ResourceNotFoundException" => [ResourceNotFoundError, 404],
           "InvalidUserIdException" => [InvalidRequestError, 400],
           "InvalidVersionException" => [InvalidRequestError, 400],
