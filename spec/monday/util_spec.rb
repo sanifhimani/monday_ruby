@@ -16,6 +16,7 @@ RESPONSE_ERROR_EXCEPTION_CLASS_MAP = [
   ["InvalidUserIdException", [Monday::InvalidRequestError, 400]],
   ["InvalidVersionException", [Monday::InvalidRequestError, 400]],
   ["InvalidColumnIdException", [Monday::InvalidRequestError, 400]],
+  ["InvalidItemIdException", [Monday::InvalidRequestError, 400]],
   ["InvalidBoardIdException", [Monday::InvalidRequestError, 400]],
   ["InvalidArgumentException", [Monday::InvalidRequestError, 400]],
   ["CreateBoardException", [Monday::InvalidRequestError, 400]],

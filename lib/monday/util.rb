@@ -44,6 +44,7 @@ module Monday
           "InvalidUserIdException" => [InvalidRequestError, 400],
           "InvalidVersionException" => [InvalidRequestError, 400],
           "InvalidColumnIdException" => [InvalidRequestError, 400],
+          "InvalidItemIdException" => [InvalidRequestError, 400],
           "InvalidBoardIdException" => [InvalidRequestError, 400],
           "InvalidArgumentException" => [InvalidRequestError, 400],
           "CreateBoardException" => [InvalidRequestError, 400],
