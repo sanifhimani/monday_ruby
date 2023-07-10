@@ -2,7 +2,9 @@
 
 RSpec.describe Monday::Resources::Account, :vcr do
   describe ".account" do
-    subject(:account) { client.account }
+    subject(:account) { client.account(select: select) }
+
+    let(:select) { %w[id name] }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
@@ -23,6 +25,14 @@ RSpec.describe Monday::Resources::Account, :vcr do
         expect(
           account.body["data"]["users"].first["account"]
         ).to match(hash_including("id", "name"))
+      end
+
+      context "when a field that doesn't exist on account is requested" do
+        let(:select) { ["logos"] }
+
+        it "raises Monday::Error error" do
+          expect { account }.to raise_error(Monday::Error)
+        end
       end
     end
   end

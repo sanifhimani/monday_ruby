@@ -14,7 +14,9 @@ end
 
 RSpec.describe Monday::Resources::Board, :vcr do
   describe ".boards" do
-    subject(:response) { client.boards }
+    subject(:response) { client.boards(select: select) }
+
+    let(:select) { %w[id name description] }
 
     let(:query) { "query { boards() {id name description}}" }
 
@@ -33,6 +35,14 @@ RSpec.describe Monday::Resources::Board, :vcr do
         expect(
           response.body["data"]["boards"]
         ).to match(array_including(hash_including("id", "name", "description")))
+      end
+
+      context "when a field that doesn't exist on boards is requested" do
+        let(:select) { ["invalid_field"] }
+
+        it "raises Monday::Error error" do
+          expect { response }.to raise_error(Monday::Error)
+        end
       end
     end
   end
@@ -66,6 +76,20 @@ RSpec.describe Monday::Resources::Board, :vcr do
         expect(
           response.body["data"]["create_board"]
         ).to match(hash_including("id", "name", "description"))
+      end
+
+      context "when a field that doesn't exist on boards is given" do
+        let(:args) do
+          {
+            board_name: "New test board",
+            board_kind: "private",
+            invalid_field: "test"
+          }
+        end
+
+        it "raises Monday::Error error" do
+          expect { response }.to raise_error(Monday::Error)
+        end
       end
     end
   end
@@ -103,6 +127,19 @@ RSpec.describe Monday::Resources::Board, :vcr do
           response.body["data"]["duplicate_board"]["board"]
         ).to match(hash_including("id", "name", "description"))
       end
+
+      context "when a the board with the given board ID does not exist" do
+        let(:args) do
+          {
+            board_id: "1234",
+            duplicate_type: "duplicate_board_with_structure"
+          }
+        end
+
+        it "raises Monday::ResourceNotFoundError error" do
+          expect { response }.to raise_error(Monday::ResourceNotFoundError)
+        end
+      end
     end
   end
 
@@ -139,6 +176,23 @@ RSpec.describe Monday::Resources::Board, :vcr do
           JSON.parse(response.body["data"]["update_board"])
         ).to match(hash_including("success", "undo_data"))
       end
+
+      context "when a the board with the given board ID does not exist" do
+        let(:args) do
+          {
+            board_id: "123",
+            board_attribute: "description",
+            new_value: "New description"
+          }
+        end
+
+        it "raises Monday::InvalidRequestError error" do
+          expect { response }.to raise_error(
+            Monday::InvalidRequestError,
+            /InvalidBoardIdException:/
+          )
+        end
+      end
     end
   end
 
@@ -164,6 +218,14 @@ RSpec.describe Monday::Resources::Board, :vcr do
         expect(
           response.body["data"]["archive_board"]
         ).to match(hash_including("id"))
+      end
+
+      context "when a the board with the given board ID does not exist" do
+        let(:board_id) { "123" }
+
+        it "raises Monday::AuthorizationError error" do
+          expect { response }.to raise_error(Monday::AuthorizationError)
+        end
       end
     end
   end
@@ -191,6 +253,17 @@ RSpec.describe Monday::Resources::Board, :vcr do
           response.body["data"]["delete_board"]
         ).to match(hash_including("id"))
       end
+
+      context "when a the board with the given board ID does not exist" do
+        let(:board_id) { "123" }
+
+        it "raises Monday::InvalidRequestError error" do
+          expect { response }.to raise_error(
+            Monday::InvalidRequestError,
+            /InvalidBoardIdException:/
+          )
+        end
+      end
     end
   end
 
@@ -201,7 +274,7 @@ RSpec.describe Monday::Resources::Board, :vcr do
       "mutation { delete_subscribers_from_board(board_id: #{board_id}, user_ids: #{user_ids}) {id}}"
     end
 
-    let(:board_id) { "4751787329" }
+    let(:board_id) { "4751837459" }
     let(:user_ids) { [44_865_791] }
 
     context "when client is not authenticated" do
@@ -213,10 +286,21 @@ RSpec.describe Monday::Resources::Board, :vcr do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it "returns the body with deleted boards ID" do
+      it "returns the body with deleted subscribers ID" do
         expect(
           response.body["data"]["delete_subscribers_from_board"]
         ).to match(array_including(hash_including("id")))
+      end
+
+      context "when a the board with the given board ID does not exist" do
+        let(:board_id) { "123" }
+
+        it "raises Monday::InvalidRequestError error" do
+          expect { response }.to raise_error(
+            Monday::InvalidRequestError,
+            /InvalidBoardIdException:/
+          )
+        end
       end
     end
   end

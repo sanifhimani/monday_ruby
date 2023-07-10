@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation { delete_subscribers_from_board(board_id: 4751787329,
+      string: '{"query":"mutation { delete_subscribers_from_board(board_id: 4751837459,
         user_ids: [44865791]) {id}}"}'
     headers:
       Content-Type:
@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 04 Jul 2023 16:41:36 GMT
+      - Mon, 10 Jul 2023 13:10:09 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -40,11 +40,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ca7c906f-e324-9441-9d42-3dfda3bc6e0d
+      - 17c24154-a8ae-9fb8-a3d2-24c4b30b2db7
       X-Runtime:
-      - '0.267455'
+      - '0.314328'
       X-Envoy-Upstream-Service-Time:
-      - '269'
+      - '322'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -93,12 +93,13 @@ http_interactions:
         https://www.dropbox.com https://www.googletagmanager.com https://ipinfo.io
         https://*.cardinalcommerce.com https://www.bluesnap.com https://connect.facebook.net
         https://app.box.com https://code.highcharts.com https://js.live.net https://monday.zendesk.com
-        https://static.zdassets.com https://ekr.zdassets.com https://ekr.zendesk.com
-        https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com wss://*.zopim.com
-        https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye https://*.smooch.io
-        wss://*.zendesk.com/sc/faye https://www.google-analytics.com https://api.simpo.io
-        https://cdn.simpo.io https://zh081jts88wj.statuspage.io https://www.googleapis.com
-        https://cdn.eu.pendo.io https://app.eu.pendo.io https://data.eu.pendo.io https://pendo-eu-static-6485021788340224.storage.googleapis.com
+        https://monday-enterprise.zendesk.com https://static.zdassets.com https://ekr.zdassets.com
+        https://ekr.zendesk.com https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com
+        wss://*.zopim.com https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye
+        https://*.smooch.io wss://*.zendesk.com/sc/faye https://www.google-analytics.com
+        https://api.simpo.io https://cdn.simpo.io https://zh081jts88wj.statuspage.io
+        https://www.googleapis.com https://cdn.eu.pendo.io https://app.eu.pendo.io
+        https://data.eu.pendo.io https://pendo-eu-static-6485021788340224.storage.googleapis.com
         https://api.braintreegateway.com https://client-analytics.braintreegateway.com
         https://*.braintree-api.com https://*.paypal.com https://*.sentry.io https://cdn.jsdelivr.net
         https://prod-use1-crm-billing.s3.amazonaws.com https://prod-use1-crm-communication.s3.amazonaws.com
@@ -123,17 +124,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=GmleLz0Qtvzm3z7kFXsvenL1g9nhfiO73pUqGEch.JU-1688488896-0-Aauj1upaizispMKZPTPyhgwpO/7p6IU4MGfI/CKbJL5aX0ThMe+jFC8KSJq3QfjZ5y8c+m4jrkbOPFZWjUwtgd5ZC6yRr+CTNKQ2hAcoTiaE;
-        path=/; expires=Tue, 04-Jul-23 17:11:36 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=pwZVY1hsy547isE8R5wmK4urnsI3EyF1HTAkYn4mzg8-1688994609-0-AdCdogt9nEwgchQlbeX7AJg3SwjhvRb8ilW2eFF7g949C2HYbL+faMxYI27p4pf4HwrqXMKZABmGwI4xdctzt12204LRz/jYPmdSOibnkGmX;
+        path=/; expires=Mon, 10-Jul-23 13:40:09 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains; preload
+      - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e18d10fbd97a208-YYZ
+      - 7e490b902a0336d8-YYZ
     body:
       encoding: ASCII-8BIT
       string: '{"data":{"delete_subscribers_from_board":[{"id":44865791}]},"account_id":17512073}'
-  recorded_at: Tue, 04 Jul 2023 16:41:36 GMT
+  recorded_at: Mon, 10 Jul 2023 13:10:09 GMT
 recorded_with: VCR 6.2.0
