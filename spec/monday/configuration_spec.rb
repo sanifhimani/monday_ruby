@@ -4,8 +4,8 @@ RSpec.describe Monday::Configuration do
   subject(:config) { described_class.new(**config_args) }
 
   let(:test_token) { "test-token" }
-  let(:test_host) { "https://monday.com/api" }
-  let(:test_version) { "2023-07" }
+  let(:test_host) { "https://monday.com/v2" }
+  let(:test_version) { "2023-10" }
 
   describe "initialize" do
     context "when config args are not given" do
