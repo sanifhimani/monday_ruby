@@ -53,7 +53,7 @@ RSpec.describe Monday::Resources::Workspace, :vcr do
     let(:query) do
       <<-QUERY.squish
         mutation {
-          create_workspace(name: \"New test workspace\", kind: \"open\", description: \"A new test workspace\") {
+          create_workspace(name: "New test workspace", kind: "open", description: "A new test workspace") {
             id name description}
         }
       QUERY
