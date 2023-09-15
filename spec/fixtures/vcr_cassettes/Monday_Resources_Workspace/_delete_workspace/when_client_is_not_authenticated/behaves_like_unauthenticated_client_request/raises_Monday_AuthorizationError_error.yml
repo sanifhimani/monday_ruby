@@ -23,7 +23,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Fri, 15 Sep 2023 22:07:12 GMT
+      - Fri, 15 Sep 2023 22:19:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -107,32 +107,32 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Monday-Auth:
+      - 'true'
+      Etag:
+      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
       X-Powered-By:
       - Express
       X-Monday-Region:
       - undefined
-      Etag:
-      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
       Vary:
       - Origin, Accept-Encoding
-      X-Monday-Auth:
-      - 'true'
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=ijrBkAJ4H109aAbsa5ynQqy5EXjhsR0VsWsKSWFsauw-1694815632-0-AXcfgGDOoLtkGxb+7URA4agiPmdMKJtc29jPv5bgrcHxECxv38ObUFxV9OnBdfoxe+YZbpDbFosNewuPsdznhrzOB8No66dAOFeUl71lnws0;
-        path=/; expires=Fri, 15-Sep-23 22:37:12 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=tEm9.dg6463DA1CVl0ZTSBC_x_2NykCtdFvBGmZJLJE-1694816378-0-AVF0GqLtdatpIBGn//Kh6Da1LMm7EutP6qUPr82OIQGlBC8dhpJOB9nzsvEliAquGP2tdGMczjq20mbJiuOnpse543RtpP6ffDCMbpiQbdT/;
+        path=/; expires=Fri, 15-Sep-23 22:49:38 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 80742e68dcfc08ee-LAX
+      - 8074409cc8b10fec-LAX
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["Not Authenticated"]}'
-  recorded_at: Fri, 15 Sep 2023 22:07:12 GMT
+  recorded_at: Fri, 15 Sep 2023 22:19:38 GMT
 recorded_with: VCR 6.2.0

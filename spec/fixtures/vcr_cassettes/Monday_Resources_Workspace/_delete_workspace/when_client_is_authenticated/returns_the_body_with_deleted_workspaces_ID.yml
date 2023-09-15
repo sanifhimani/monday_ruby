@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 15 Sep 2023 22:07:13 GMT
+      - Fri, 15 Sep 2023 22:19:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -39,11 +39,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2338fbc4-0b65-9724-bc94-fba49e3cf29b
+      - aea3ea7f-992a-9b07-934b-27a03d21fec2
       X-Runtime:
-      - '0.068331'
+      - '0.057389'
       X-Envoy-Upstream-Service-Time:
-      - '71'
+      - '61'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -126,17 +126,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=eIrjFk25dE6pBjBcvv2kONZkFe37zdYCUMo1WY3SeMA-1694815633-0-AZmsO+h9qfYtlNMVyYY7m//hVqeEy+YgeCvF8K9QWs9Zvv1/QOSPoCS3OX6U3mV+ONs7iJi58xeMUUtXqc5dbGdtSc3EgTeXaRZ+5STW4f/W;
-        path=/; expires=Fri, 15-Sep-23 22:37:13 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=_nQPoxGTatQa_6RnDbxpOzyhn3igVR.tF9tl0FwG1Gs-1694816378-0-AcXroQKCsQkLbs7gNd7Jk7oyg6fKiYk/y2biJzTVFG0R5rpIaSwBTPxELvRpoLRCS9nPLJi2ea34Xa6y/ZBsmJ4rZTMMJZvJ2+MsXIi5Pq7I;
+        path=/; expires=Fri, 15-Sep-23 22:49:38 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 80742e69acaf7c04-LAX
+      - 8074409dada40fd8-LAX
     body:
       encoding: ASCII-8BIT
       string: '{"data":{"delete_workspace":{"id":3230793}},"account_id":15314314}'
-  recorded_at: Fri, 15 Sep 2023 22:07:13 GMT
+  recorded_at: Fri, 15 Sep 2023 22:19:38 GMT
 recorded_with: VCR 6.2.0

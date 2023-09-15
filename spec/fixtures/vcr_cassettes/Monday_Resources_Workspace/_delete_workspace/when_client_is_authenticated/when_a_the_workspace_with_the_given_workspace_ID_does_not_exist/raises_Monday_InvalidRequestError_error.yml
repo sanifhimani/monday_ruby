@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 15 Sep 2023 22:07:13 GMT
+      - Fri, 15 Sep 2023 22:19:39 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -39,11 +39,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 645bd00d-64ae-9ab1-aa9f-94e71e8ab890
+      - 6250750b-9c13-974f-aead-beb1b2f5f87e
       X-Runtime:
-      - '0.032526'
+      - '0.044556'
       X-Envoy-Upstream-Service-Time:
-      - '36'
+      - '47'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -126,18 +126,18 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=VrvYlfCRv5YzQoZPhcToEY17Ig22zjy1.N8xuWSANZk-1694815633-0-ASDSmyi7JN8NFv/rieGtwf+sP9Zs6yNhnLufzkdEJNbF+/qHcenucauvv1TIz71JDKEol0LQPHuVqmTySGg6NLBNyfpDAOVIL8AmvZ25rv/p;
-        path=/; expires=Fri, 15-Sep-23 22:37:13 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=gTpe_Vy1lrCNIHjpXADTRDSxch_1dccixgK2VbNVQWY-1694816379-0-AS9okxongbr4QPiAXFYLgzBzpPPiO1/F7JrJO63N98YCtf1aLHJ83vHBBef3PuCvk1R+LYBOoQ1020/ElcblLAQu8QDc2RjQuAQuxgP2du71;
+        path=/; expires=Fri, 15-Sep-23 22:49:39 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 80742e6b19730cbf-LAX
+      - 807440a02e1e103c-LAX
     body:
       encoding: ASCII-8BIT
       string: '{"error_code":"InvalidWorkspaceIdException","status_code":200,"error_message":"The
         workspace does not exist. Please check your workspace ID and try again","error_data":{"workspace_id":123}}'
-  recorded_at: Fri, 15 Sep 2023 22:07:13 GMT
+  recorded_at: Fri, 15 Sep 2023 22:19:39 GMT
 recorded_with: VCR 6.2.0

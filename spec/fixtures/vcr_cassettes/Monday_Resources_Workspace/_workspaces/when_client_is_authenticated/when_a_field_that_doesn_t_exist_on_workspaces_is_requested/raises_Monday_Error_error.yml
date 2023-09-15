@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 15 Sep 2023 22:07:12 GMT
+      - Fri, 15 Sep 2023 22:19:40 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -39,11 +39,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cc4c7ff9-08bc-90dc-9d64-69a167476fb4
+      - 52dd7a37-61d0-9669-8316-ab647222b2ab
       X-Runtime:
-      - '0.016042'
+      - '0.027032'
       X-Envoy-Upstream-Service-Time:
-      - '18'
+      - '30'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -126,18 +126,18 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=k36frRsGlvjAidH_63_egdvQpz.4i.kY_bOPGudNGrY-1694815632-0-AegOBXdUzasf2vY+XbKHCSYEyyYl1FzB+KvyqoT/R+pjFKzczrnLVtXbIW2fequPlT/HZk1OXP4TS3IncjKf/HdBxYCMDlmuDE3y2iLqYFx6;
-        path=/; expires=Fri, 15-Sep-23 22:37:12 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=r1F7KuFnJP7W6FuxXhzZM.QrvdYHFlMVG9gWVmY09v4-1694816380-0-AZaLPBnfu7LxIN7hAEMgjx8vfiOkKwvnErwUrfuVsLZlJ+Xrx0BeCFMKUWwx9m3DcRzjh9bHgX7rRyyUxZolmp3ZdYIxJppWvyAxpz/ZRa/r;
+        path=/; expires=Fri, 15-Sep-23 22:49:40 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 80742e65dc0408fe-LAX
+      - 807440aa9ebc2f76-LAX
     body:
       encoding: ASCII-8BIT
       string: '{"errors":[{"message":"Field ''invalid_field'' doesn''t exist on type
         ''Workspace''","locations":[{"line":1,"column":21}],"path":["query","workspaces","invalid_field"],"extensions":{"code":"undefinedField","typeName":"Workspace","fieldName":"invalid_field"}}],"account_id":15314314}'
-  recorded_at: Fri, 15 Sep 2023 22:07:12 GMT
+  recorded_at: Fri, 15 Sep 2023 22:19:40 GMT
 recorded_with: VCR 6.2.0

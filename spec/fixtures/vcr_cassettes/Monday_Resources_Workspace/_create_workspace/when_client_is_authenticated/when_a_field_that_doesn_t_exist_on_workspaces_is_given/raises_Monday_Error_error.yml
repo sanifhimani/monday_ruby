@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 15 Sep 2023 22:07:14 GMT
+      - Fri, 15 Sep 2023 22:19:40 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -40,11 +40,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - eb5ec4ca-414f-9ad2-984e-ad8c150849ab
+      - 99260299-5649-9d42-9160-4c9df05dcd36
       X-Runtime:
-      - '0.035473'
+      - '0.025272'
       X-Envoy-Upstream-Service-Time:
-      - '40'
+      - '27'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -127,19 +127,19 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=eIulVs59rZLT9luNcUAQO4UlK8Chc3wbZsNrvZBnOFg-1694815634-0-AeLrfGzsL+wrDrxgRV0KSNFQYBjlQWQYaPILxJyyf1/W7GqKrwirzE+HYtMhQOXphQxLT6UpJ5hA1dT7ou3Z2McV9pxGeNIzmM+RfR5GR3kQ;
-        path=/; expires=Fri, 15-Sep-23 22:37:14 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=TH7CrIo6sBH9lRcsoRIJvl0POXjuZtGVsEuhtK00Ayo-1694816380-0-Abu1/Z0NHJAH4PG7Qkbvv4kmkF0P7jhV/JSm8hsplU77i+J0kJjbpKNZRWuH03JmqcxlNk47LZgi0LVUTSKK/a/ElF64jhrIdCWHEZ4t6u1N;
+        path=/; expires=Fri, 15-Sep-23 22:49:40 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 80742e70fd632b98-LAX
+      - 807440a85ccd2b9c-LAX
     body:
       encoding: ASCII-8BIT
       string: '{"errors":[{"message":"Argument ''kind'' on Field ''create_workspace''
         has an invalid value (private). Expected type ''WorkspaceKind!''.","locations":[{"line":1,"column":12}],"path":["mutation","create_workspace","kind"],"extensions":{"code":"argumentLiteralsIncompatible","typeName":"Field","argumentName":"kind"}},{"message":"Field
         ''create_workspace'' doesn''t accept argument ''invalid_field''","locations":[{"line":1,"column":72}],"path":["mutation","create_workspace","invalid_field"],"extensions":{"code":"argumentNotAccepted","name":"create_workspace","typeName":"Field","argumentName":"invalid_field"}}],"account_id":15314314}'
-  recorded_at: Fri, 15 Sep 2023 22:07:14 GMT
+  recorded_at: Fri, 15 Sep 2023 22:19:40 GMT
 recorded_with: VCR 6.2.0

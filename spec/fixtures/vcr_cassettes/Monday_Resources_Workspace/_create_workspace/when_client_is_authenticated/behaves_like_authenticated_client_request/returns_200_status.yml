@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 15 Sep 2023 22:07:14 GMT
+      - Fri, 15 Sep 2023 22:19:40 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -36,15 +36,15 @@ http_interactions:
       Vary:
       - Origin, Accept-Encoding
       Etag:
-      - W/"1d4429d7c078e5f627ee8cfe43313134"
+      - W/"145e92ba7f38ea84956ce5471e7632bb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3abae281-c653-9844-a149-d576e8b84522
+      - d5b18307-5a94-91dc-94d2-0f6d2769338e
       X-Runtime:
-      - '0.253765'
+      - '0.221824'
       X-Envoy-Upstream-Service-Time:
-      - '256'
+      - '225'
       Content-Security-Policy:
       - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
         https://*.bigbrain.me https://teams.microsoft.com https://*.teams.microsoft.com
@@ -127,18 +127,18 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=i65M.m_YvTJwn0UC42EqD.bzN420770EdSOsDK5OsTg-1694815634-0-AQUtjYeqxlkVHxAlt4wb6EFYa4/BpxuVL8ZtLri+psaEEdZrUgXVdDOzlwN/1C2YKyKuS4VLEJ/269GFxO8fiJk1KoVZQXntQR/b+Hw2Nqie;
-        path=/; expires=Fri, 15-Sep-23 22:37:14 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=eQTU78u369b7ZJ69Zwrj8VBpK5TZRgkXilAKcTX3IbM-1694816380-0-AXsjtXjFkyybDfMfesy3i/KcSGIBr3/yR5VsP/xKjSjY89Ak6eJns5OaxGZrUzelxQ0nR1A7uepjAjPr2s8AHvnRitXdbwC7H8oyy/8pnRQF;
+        path=/; expires=Fri, 15-Sep-23 22:49:40 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Server:
       - cloudflare
       Cf-Ray:
-      - 80742e6e782f3203-LAX
+      - 807440a4baef08f6-LAX
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_workspace":{"id":3230853,"name":"New test workspace","description":"A
+      string: '{"data":{"create_workspace":{"id":3230923,"name":"New test workspace","description":"A
         new test workspace"}},"account_id":15314314}'
-  recorded_at: Fri, 15 Sep 2023 22:07:14 GMT
+  recorded_at: Fri, 15 Sep 2023 22:19:40 GMT
 recorded_with: VCR 6.2.0
