@@ -35,6 +35,6 @@ require "monday_ruby"
 
 Monday.configure do |config|
   config.token = <AUTH_TOKEN>
-  config.version = "2023-10"
+  config.version = "2023-07"
 end
 ```

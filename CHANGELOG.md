@@ -1,3 +1,9 @@
+## v0.4.0 (September 15, 2023)
+
+### Added
+
+- Support for Reading, Creating and Deleting Workspaces
+
 ## v0.3.0 (July 10, 2023)
 
 ### Added

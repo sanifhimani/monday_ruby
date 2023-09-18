@@ -8,8 +8,8 @@ repository = "https://github.com/sanifhimani/monday_ruby"
 Gem::Specification.new do |spec|
   spec.name = "monday_ruby"
   spec.version = version
-  spec.authors = ["Sanif Himani"]
-  spec.email = ["sanifhimani92@gmail.com"]
+  spec.authors = ["Sanif Himani", "Wes Hays"]
+  spec.email = ["sanifhimani92@gmail.com", "weshays@gmail.com"]
 
   spec.summary = "Ruby bindings to use the monday.com API"
   spec.description = "A Gem to easily interact with monday.com API using native Ruby"
