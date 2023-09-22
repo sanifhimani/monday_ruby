@@ -81,7 +81,7 @@ module Monday
   #   InvalidUserIdException, InvalidVersionException, InvalidColumnIdException
   #   InvalidItemIdException, InvalidBoardIdException, InvalidArgumentException
   #   CreateBoardException, ItemsLimitationException, ItemNameTooLongException
-  #   ColumnValueException, CorrectedValueException
+  #   ColumnValueException, CorrectedValueException, InvalidGroupIdException
   class InvalidRequestError < Error
   end
 
