@@ -1,0 +1,1 @@
+SimpleCov.minimum_coverage 97
