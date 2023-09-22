@@ -1,3 +1,12 @@
+## v0.5.0 (September 21, 2023)
+
+### Added
+
+- Support for working with board groups:
+  - Reading, Creating, Deleting
+  - Archiving, Duplicating
+  - Moving an item to a group
+
 ## v0.4.0 (September 15, 2023)
 
 ### Added
