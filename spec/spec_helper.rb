@@ -10,11 +10,10 @@ require "webmock/rspec"
 Dotenv.load
 SimpleCov.start
 
-SimpleCov.formatter = if ENV.fetch("local_simplecov") == "true"
-                        SimpleCov::Formatter::HTMLFormatter
-                      else
-                        Coveralls::SimpleCov::Formatter
-                      end
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
 
 WebMock.disable_net_connect!(allow_localhost: true)
 RSpec.configure do |config|
