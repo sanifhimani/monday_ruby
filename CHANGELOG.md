@@ -3,7 +3,6 @@
 ### Added
 
 - Support for working with subitems:
-
   - Listing subitems
   - Creating a subitem
 
