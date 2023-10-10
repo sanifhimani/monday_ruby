@@ -1,3 +1,11 @@
+## v0.6.0 (October 9, 2023)
+
+### Added
+
+- Support for working with subitems:
+  - Listing subitems
+  - Creating a subitem
+
 ## v0.5.0 (September 21, 2023)
 
 ### Added
