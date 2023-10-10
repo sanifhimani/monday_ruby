@@ -7,6 +7,7 @@ require_relative "resources/board_view"
 require_relative "resources/column"
 require_relative "resources/group"
 require_relative "resources/item"
+require_relative "resources/subitem"
 require_relative "resources/workspace"
 
 module Monday
@@ -18,6 +19,7 @@ module Monday
     include Column
     include Group
     include Item
+    include Subitem
     include Workspace
   end
 end

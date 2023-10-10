@@ -79,7 +79,7 @@ module Monday
   #
   # It is also raised when the body returns the following error_codes:
   #   InvalidUserIdException, InvalidVersionException, InvalidColumnIdException
-  #   InvalidItemIdException, InvalidBoardIdException, InvalidArgumentException
+  #   InvalidItemIdException, InvalidSubitemIdException, InvalidBoardIdException, InvalidArgumentException
   #   CreateBoardException, ItemsLimitationException, ItemNameTooLongException
   #   ColumnValueException, CorrectedValueException, InvalidGroupIdException
   class InvalidRequestError < Error
