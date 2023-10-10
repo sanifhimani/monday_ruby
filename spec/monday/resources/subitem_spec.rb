@@ -75,7 +75,7 @@ RSpec.describe Monday::Resources::Subitem, :vcr do
         parent_item_id: item_id,
         item_name: "New Item Test",
         column_values: {
-          person: { personsAndTeams: [{ id: 42835270, kind: "person" }] },
+          person: { personsAndTeams: [{ id: 42_835_270, kind: "person" }] },
           status: "Done",
           date0: "2021-09-15"
         }
