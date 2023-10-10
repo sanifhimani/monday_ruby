@@ -3,8 +3,15 @@
 ### Added
 
 - Support for working with subitems:
+
   - Listing subitems
   - Creating a subitem
+
+- Support for working with updates:
+  - Create an Update
+  - Like an Update
+  - Clear an item's updates
+  - Delete an update
 
 ## v0.5.0 (September 21, 2023)
 
