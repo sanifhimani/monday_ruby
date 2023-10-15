@@ -1,3 +1,26 @@
+## v0.6.0 (October 9, 2023)
+
+### Added
+
+- Support for working with subitems:
+  - Listing subitems
+  - Creating a subitem
+
+- Support for working with updates:
+  - Create an Update
+  - Like an Update
+  - Clear an item's updates
+  - Delete an update
+
+## v0.5.0 (September 21, 2023)
+
+### Added
+
+- Support for working with board groups:
+  - Reading, Creating, Deleting
+  - Archiving, Duplicating
+  - Moving an item to a group
+
 ## v0.4.0 (September 15, 2023)
 
 ### Added

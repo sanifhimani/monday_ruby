@@ -33,7 +33,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.ignore_localhost = true
-  config.default_cassette_options = { record: :none }
+  config.default_cassette_options = { record: :once }
 
   config.filter_sensitive_data("<TOKEN>") { ENV.fetch("token", nil) }
   config.configure_rspec_metadata!
