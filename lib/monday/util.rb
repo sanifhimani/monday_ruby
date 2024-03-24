@@ -73,16 +73,14 @@ module Monday
       end
 
       def formatted_args_value(value)
-        return "\"#{value}\"" unless single_word?(value)
         return value.to_json.to_json if value.is_a?(Hash)
+        return value if integer?(value)
 
-        value
+        "\"#{value}\""
       end
 
-      def single_word?(word)
-        return word unless word.is_a?(String)
-
-        !word.strip.include?(" ")
+      def integer?(value)
+        value.is_a?(Integer)
       end
     end
   end
