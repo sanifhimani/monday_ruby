@@ -36,11 +36,21 @@ RSpec.describe Monday::Util do
       }
     end
 
-    context "when object has values that only contains single words" do
-      let(:value) { "hello" }
+    context "when object contains a single value" do
+      context "when the value is an integer" do
+        let(:value) { 1 }
 
-      it "returns the formatted object string with key value pairs" do
-        expect(format_args).to eq("key: hello")
+        it "returns the formatted object string with key value pairs" do
+          expect(format_args).to eq("key: 1")
+        end
+      end
+
+      context "when the value is a string" do
+        let(:value) { "hello" }
+
+        it "returns the formatted object string with key value pairs" do
+          expect(format_args).to eq("key: \"hello\"")
+        end
       end
     end
 
