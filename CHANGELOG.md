@@ -1,3 +1,9 @@
+## v0.6.1 (March 24, 2024)
+
+### Bug Fixes
+
+- Fix formatting error for single words (Issue)[https://github.com/sanifhimani/monday_ruby/issues/16]
+
 ## v0.6.0 (October 9, 2023)
 
 ### Added
