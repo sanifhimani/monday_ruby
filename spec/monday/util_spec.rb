@@ -30,35 +30,45 @@ RSpec.describe Monday::Util do
   describe ".format_args" do
     subject(:format_args) { described_class.format_args(object) }
 
-    let(:object) do
-      {
-        key: value
-      }
-    end
+    context "when object is empty" do
+      let(:object) { {} }
 
-    context "when object contains a single value" do
-      context "when the value is an integer" do
-        let(:value) { 1 }
-
-        it "returns the formatted object string with key value pairs" do
-          expect(format_args).to eq("key: 1")
-        end
-      end
-
-      context "when the value is a string" do
-        let(:value) { "hello" }
-
-        it "returns the formatted object string with key value pairs" do
-          expect(format_args).to eq("key: \"hello\"")
-        end
+      it "returns an empty string" do
+        expect(format_args).to eq("")
       end
     end
 
-    context "when object has values that contains multiple words" do
-      let(:value) { "hello world" }
+    context "when object is not empty" do
+      let(:object) do
+        {
+          key: value
+        }
+      end
 
-      it "returns the formatted object string with key value pairs" do
-        expect(format_args).to eq("key: \"hello world\"")
+      context "when object contains a single value" do
+        context "when the value is an integer" do
+          let(:value) { 1 }
+
+          it "returns the formatted object string with key value pairs" do
+            expect(format_args).to eq("(key: 1)")
+          end
+        end
+
+        context "when the value is a string" do
+          let(:value) { "hello" }
+
+          it "returns the formatted object string with key value pairs" do
+            expect(format_args).to eq("(key: \"hello\")")
+          end
+        end
+      end
+
+      context "when object has values that contains multiple words" do
+        let(:value) { "hello world" }
+
+        it "returns the formatted object string with key value pairs" do
+          expect(format_args).to eq("(key: \"hello world\")")
+        end
       end
     end
   end
