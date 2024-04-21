@@ -1,3 +1,9 @@
+## v0.6.2 (April 21, 2024)
+
+### Bug Fixes
+
+- Fix formatting args (Issue)[https://github.com/sanifhimani/monday_ruby/issues/18]
+
 ## v0.6.1 (March 24, 2024)
 
 ### Bug Fixes
