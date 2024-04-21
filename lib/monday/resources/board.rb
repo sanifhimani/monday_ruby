@@ -12,7 +12,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and description fields are retrieved.
       def boards(args: {}, select: DEFAULT_SELECT)
-        query = "query { boards(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "query { boards#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -23,7 +23,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and description fields are retrieved.
       def create_board(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { create_board(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { create_board#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -34,7 +34,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and description fields are retrieved.
       def duplicate_board(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { duplicate_board(#{Util.format_args(args)}) { board {#{Util.format_select(select)}}}}"
+        query = "mutation { duplicate_board#{Util.format_args(args)} { board {#{Util.format_select(select)}}}}"
 
         make_request(query)
       end
@@ -44,7 +44,7 @@ module Monday
       # Allows customizing updating the board using the args option.
       # Returns the ID of the updated board.
       def update_board(args: {})
-        query = "mutation { update_board(#{Util.format_args(args)})}"
+        query = "mutation { update_board#{Util.format_args(args)}}"
 
         make_request(query)
       end

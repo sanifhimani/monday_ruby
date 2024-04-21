@@ -12,7 +12,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and type fields are retrieved.
       def board_views(args: {}, select: DEFAULT_SELECT)
-        query = "query { boards(#{Util.format_args(args)}) { views {#{Util.format_select(select)}}}}"
+        query = "query { boards#{Util.format_args(args)} { views {#{Util.format_select(select)}}}}"
 
         make_request(query)
       end

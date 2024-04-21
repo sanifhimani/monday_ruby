@@ -12,7 +12,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
       def groups(args: {}, select: DEFAULT_SELECT)
-        query = "query { boards(#{Util.format_args(args)}) { groups{#{Util.format_select(select)}}}}"
+        query = "query { boards#{Util.format_args(args)} { groups{#{Util.format_select(select)}}}}"
 
         make_request(query)
       end
@@ -23,7 +23,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
       def create_group(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { create_group(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { create_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -33,7 +33,7 @@ module Monday
       # Allows customizing updating the group using the args option.
       # By default, returns the ID of the updated group.
       def update_group(args: {}, select: ["id"])
-        query = "mutation { update_group(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { update_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -44,7 +44,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the group deleted.
       def delete_group(args: {}, select: ["id"])
-        query = "mutation { delete_group(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { delete_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -55,7 +55,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the group archived.
       def archive_group(args: {}, select: ["id"])
-        query = "mutation { archive_group(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { archive_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -66,7 +66,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
       def duplicate_group(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { duplicate_group(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { duplicate_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -77,7 +77,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
       def move_item_to_group(args: {}, select: ["id"])
-        query = "mutation { move_item_to_group(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { move_item_to_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
