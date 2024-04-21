@@ -12,7 +12,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and created_at fields are retrieved.
       def items(args: {}, select: DEFAULT_SELECT)
-        query = "query { items(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "query { items#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -23,7 +23,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and created_at fields are retrieved.
       def create_item(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { create_item(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { create_item#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end

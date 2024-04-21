@@ -9,9 +9,13 @@ module Monday
       # input: { key: "multiple word value" }
       # output: "key: \"multiple word value\""
       def format_args(obj)
-        obj.map do |key, value|
+        return "" if obj.empty?
+
+        formatted = obj.map do |key, value|
           "#{key}: #{formatted_args_value(value)}"
         end.join(", ")
+
+        "(#{formatted})"
       end
 
       # Converts the select values into a valid string for API.

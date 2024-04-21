@@ -12,7 +12,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
       def columns(args: {}, select: DEFAULT_SELECT)
-        query = "query { boards(#{Util.format_args(args)}) { columns {#{Util.format_select(select)}}}}"
+        query = "query { boards#{Util.format_args(args)} { columns {#{Util.format_select(select)}}}}"
 
         make_request(query)
       end
@@ -37,7 +37,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
       def create_column(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { create_column(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { create_column#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -48,7 +48,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
       def change_column_title(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { change_column_title(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { change_column_title#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -59,7 +59,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
       def change_column_metadata(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { change_column_metadata(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { change_column_metadata#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -70,7 +70,7 @@ module Monday
       # Allows customizing the item values to retrieve using the select option.
       # By default, ID, and name fields are retrieved.
       def change_column_value(args: {}, select: %w[id name])
-        query = "mutation { change_column_value(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { change_column_value#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -81,7 +81,7 @@ module Monday
       # Allows customizing the item values to retrieve using the select option.
       # By default, ID, and name fields are retrieved.
       def change_simple_column_value(args: {}, select: %w[id name])
-        query = "mutation { change_simple_column_value(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { change_simple_column_value#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -92,7 +92,7 @@ module Monday
       # Allows customizing the item values to retrieve using the select option.
       # By default, ID, and name fields are retrieved.
       def change_multiple_column_value(args: {}, select: %w[id name])
-        query = "mutation { change_multiple_column_values(#{Util.format_args(args)}) {#{Util.format_select(select)}}}"
+        query = "mutation { change_multiple_column_values#{Util.format_args(args)} {#{Util.format_select(select)}}}"
 
         make_request(query)
       end

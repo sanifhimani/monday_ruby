@@ -14,7 +14,7 @@ module Monday
       # By default, ID, event and data are retrieved.
       def activity_logs(board_ids, args: {}, select: DEFAULT_SELECT)
         query = "query { boards(ids: #{board_ids}) " \
-                "{ activity_logs(#{Util.format_args(args)}) {#{Util.format_select(select)}}}}"
+                "{ activity_logs#{Util.format_args(args)} {#{Util.format_select(select)}}}}"
 
         make_request(query)
       end
