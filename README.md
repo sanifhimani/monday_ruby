@@ -4,7 +4,7 @@
 [![Gem Version](https://badge.fury.io/rb/monday_ruby.svg)](https://badge.fury.io/rb/monday_ruby)
 [![Coverage Status](https://coveralls.io/repos/github/sanifhimani/monday_ruby/badge.svg?branch=main)](https://coveralls.io/github/sanifhimani/monday_ruby?branch=main)
 
-This library provides convenient access to the monday.com API from the application written in the Ruby language.
+This library provides convenient access to the monday.com API from the application written in Ruby.
 
 The library provides:
 
@@ -12,39 +12,17 @@ The library provides:
 2. Easy configuration path for fast setup and use.
 3. Easy error handling.
 
-**Visit https://monday-ruby.gitbook.io/docs/ for detailed documentation on how to use the library.**
+**Check out the [Wiki](https://github.com/sanifhimani/monday_ruby/wiki) for detailed documentation on how to use the library.**
 
 ## Installation
 
-You don't need the source code unless you want to modify the gem. If you want to use the package, run:
-
-```sh
+```bash
 gem install monday_ruby
-```
-
-If you want to build the gem from source:
-
-```sh
-gem build monday_ruby.gemspec
-```
-
-### Requirements
-
-* Ruby 2.7+
-
-### Bundler
-
-If you are installing via bundler, you should be sure to use the https rubygems source in your Gemfile, as any gems fetched over http could potentially be compromised in transit and alter the code of gems fetched securely over https:
-
-```ruby
-source "https://rubygems.org"
-
-gem "monday_ruby"
 ```
 
 ## Usage
 
-***Complete list of actions along with examples are provided [here](https://monday-ruby.gitbook.io/docs/).***
+***Complete list of resources along with examples are provided in the [Wiki](https://github.com/sanifhimani/monday_ruby/wiki).***
 
 The library needs to be configured with your account's authentication token which is available on the Admin tab on monday.com. Elaborate documentation can be found [here](https://developer.monday.com/api-reference/docs/authentication).
 
@@ -60,7 +38,6 @@ require "monday_ruby"
 Monday.configure do |config|
   config.token = "<AUTH_TOKEN>"
 end
-
 ```
 
 #### Client specific config
@@ -70,7 +47,7 @@ require "monday_ruby"
 client = Monday::Client.new(token: "<AUTH_TOKEN>")
 ```
 
-You can optionally pass in the version of the API you want to use using the version configuration field. By default, the latest stable version is used.
+The version configuration field allows you to optionally pass in the version of the API you want to use. By default, the latest stable version is used.
 
 ```ruby
 require "monday_ruby"
@@ -89,35 +66,33 @@ Get access to response objects by initializing a client and using the appropriat
 client = Monday::Client.new(token: "<AUTH_TOKEN>")
 response = client.boards
 
+puts response.success?
 puts response.body
 ```
 
 ### Use cases
 
-Here are some common uses cases for the API client.
+Here are some common use cases for the API client.
 
 #### Fetching all the boards
 
-Initialize the client with the auth token and call the `boards` action.
+Initialize the client with the auth token and call the `boards` method.
 
 ```ruby
 client = Monday::Client.new(token: <AUTH_TOKEN>)
 
-response = client.boards
-# => <Monday::Response ...>
+response = client.boards # => <Monday::Response ...>
 
 # To check if the request was successful
-response.success?
-# => true
+response.success? # => true
 
 # To get the boards from the response
-response.dig("data", "boards")
-# => [...]
+response.dig("data", "boards") # => [...]
 ```
 
 #### Creating a new board
 
-Initialize the client with the auth token and call the `create_board` action.
+Initialize the client with the auth token and call the `create_board` method.
 
 ```ruby
 client = Monday::Client.new(token: <AUTH_TOKEN>)
@@ -128,21 +103,19 @@ args = {
   description: "Test board description"
 }
 
-response = client.create_board(args: args)
 # => <Monday::Response ...>
+response = client.create_board(args: args)
 
 # To check if the request was successful
-response.success?
-# => true
+response.success? # => true
 
 # To get the created board from the response
-response.dig("data", "create_board")
-# => { ... }
+response.dig("data", "create_board") # => { ... }
 ```
 
 #### Creating a new item on board
 
-Initialize the client with the auth token and call the `create_item` action.
+Initialize the client with the auth token and call the `create_item` method.
 
 ```ruby
 client = Monday::Client.new(token: <AUTH_TOKEN>)
@@ -160,35 +133,33 @@ args = {
   }
 }
 
-response = client.create_item(args: args)
 # => <Monday::Response ...>
+response = client.create_item(args: args)
 
 # To check if the request was successful
-response.success?
-# => true
+response.success? # => true
 
 # To get the created item from the response
-response.dig("data", "create_item")
-# => { ... }
+response.dig("data", "create_item") # => { ... }
 ```
 
 ## Development
 
 Run all tests:
 
-```sh
+```bash
 bundle exec rake spec
 ```
 
 Run linter:
 
-```sh
+```bash
 bundle exec rake rubocop
 ```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sanifhimani/monday_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sanifhimani/monday_ruby/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/sanifhimani/monday_ruby). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sanifhimani/monday_ruby/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
