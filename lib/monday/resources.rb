@@ -5,6 +5,7 @@ require_relative "resources/activity_log"
 require_relative "resources/board"
 require_relative "resources/board_view"
 require_relative "resources/column"
+require_relative "resources/folder"
 require_relative "resources/group"
 require_relative "resources/item"
 require_relative "resources/me"
@@ -19,6 +20,7 @@ module Monday
     include Board
     include BoardView
     include Column
+    include Folder
     include Group
     include Item
     include Me
