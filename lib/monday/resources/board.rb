@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require_relative "base"
+
 module Monday
   module Resources
     # Represents Monday.com's board resource.
-    module Board
+    class Board < Base
       DEFAULT_SELECT = %w[id name description].freeze
 
       # Retrieves all the boards.
@@ -11,10 +13,10 @@ module Monday
       # Allows filtering boards using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and description fields are retrieved.
-      def boards(args: {}, select: DEFAULT_SELECT)
-        query = "query { boards#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def query(args: {}, select: DEFAULT_SELECT)
+        request_query = "query{boards#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
-        make_request(query)
+        make_request(request_query)
       end
 
       # Creates a new boards.
@@ -22,8 +24,8 @@ module Monday
       # Allows customizing creating a board using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and description fields are retrieved.
-      def create_board(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { create_board#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def create(args: {}, select: DEFAULT_SELECT)
+        query = "mutation{create_board#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -33,8 +35,8 @@ module Monday
       # Allows customizing duplicating the board using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and description fields are retrieved.
-      def duplicate_board(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { duplicate_board#{Util.format_args(args)} { board {#{Util.format_select(select)}}}}"
+      def duplicate(args: {}, select: DEFAULT_SELECT)
+        query = "mutation{duplicate_board#{Util.format_args(args)}{board{#{Util.format_select(select)}}}}"
 
         make_request(query)
       end
@@ -43,8 +45,8 @@ module Monday
       #
       # Allows customizing updating the board using the args option.
       # Returns the ID of the updated board.
-      def update_board(args: {})
-        query = "mutation { update_board#{Util.format_args(args)}}"
+      def update(args: {})
+        query = "mutation{update_board#{Util.format_args(args)}}"
 
         make_request(query)
       end
@@ -54,8 +56,8 @@ module Monday
       # Requires board_id to archive board.
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the board archived.
-      def archive_board(board_id, select: ["id"])
-        query = "mutation { archive_board(board_id: #{board_id}) {#{Util.format_select(select)}}}"
+      def archive(board_id, select: ["id"])
+        query = "mutation{archive_board(board_id: #{board_id}){#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -65,8 +67,8 @@ module Monday
       # Requires board_id to delete the board.
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the board deleted.
-      def delete_board(board_id, select: ["id"])
-        query = "mutation { delete_board(board_id: #{board_id}) {#{Util.format_select(select)}}}"
+      def delete(board_id, select: ["id"])
+        query = "mutation{delete_board(board_id: #{board_id}){#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -76,9 +78,9 @@ module Monday
       # Requires board_id and user_ids to delete subscribers.
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the deleted subscriber IDs.
-      def delete_board_subscribers(board_id, user_ids, select: ["id"])
-        query = "mutation { delete_subscribers_from_board(" \
-                "board_id: #{board_id}, user_ids: #{user_ids}) {#{Util.format_select(select)}}}"
+      def delete_subscribers(board_id, user_ids, select: ["id"])
+        query = "mutation{delete_subscribers_from_board(" \
+                "board_id: #{board_id}, user_ids: #{user_ids}){#{Util.format_select(select)}}}"
 
         make_request(query)
       end

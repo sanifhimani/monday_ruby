@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require_relative "base"
+
 module Monday
   module Resources
     # Represents Monday.com's item resource.
-    module Item
+    class Item < Base
       DEFAULT_SELECT = %w[id name created_at].freeze
 
       # Retrieves all the items for the boards.
@@ -11,10 +13,10 @@ module Monday
       # Allows filtering items using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and created_at fields are retrieved.
-      def items(args: {}, select: DEFAULT_SELECT)
-        query = "query { items#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def query(args: {}, select: DEFAULT_SELECT)
+        request_query = "query{items#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
-        make_request(query)
+        make_request(request_query)
       end
 
       # Creates a new item.
@@ -22,8 +24,8 @@ module Monday
       # Allows customizing the item creation using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and created_at fields are retrieved.
-      def create_item(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { create_item#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def create(args: {}, select: DEFAULT_SELECT)
+        query = "mutation{create_item#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -33,9 +35,9 @@ module Monday
       # Allows customizing the item creation using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, name and created_at fields are retrieved.
-      def duplicate_item(board_id, item_id, with_updates, select: DEFAULT_SELECT)
-        query = "mutation { duplicate_item(board_id: #{board_id}, item_id: #{item_id}, " \
-                "with_updates: #{with_updates}) {#{Util.format_select(select)}}}"
+      def duplicate(board_id, item_id, with_updates, select: DEFAULT_SELECT)
+        query = "mutation{duplicate_item(board_id: #{board_id}, item_id: #{item_id}, " \
+                "with_updates: #{with_updates}){#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -45,8 +47,8 @@ module Monday
       # Requires item_id to archive item.
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the archived item.
-      def archive_item(item_id, select: %w[id])
-        query = "mutation { archive_item(item_id: #{item_id}) {#{Util.format_select(select)}}}"
+      def archive(item_id, select: %w[id])
+        query = "mutation{archive_item(item_id: #{item_id}){#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -56,8 +58,8 @@ module Monday
       # Requires item_id to delete item.
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the deleted item.
-      def delete_item(item_id, select: %w[id])
-        query = "mutation { delete_item(item_id: #{item_id}) {#{Util.format_select(select)}}}"
+      def delete(item_id, select: %w[id])
+        query = "mutation{delete_item(item_id: #{item_id}){#{Util.format_select(select)}}}"
 
         make_request(query)
       end
