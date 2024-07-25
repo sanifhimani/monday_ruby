@@ -13,26 +13,29 @@ RSpec.shared_examples "authenticated client request" do
 end
 
 RSpec.describe Monday::Resources::BoardView, :vcr do
-  describe ".board_views" do
-    subject(:response) { client.board_views(args: args) }
-
-    let(:query) { "query { boards(ids: #{board_id}) { views {id name type}}}" }
-
-    let(:board_id) { "4751837459" }
-    let(:args) do
-      {
-        ids: board_id
-      }
-    end
+  describe ".query" do
+    subject(:response) { client.board_view.query(args: args) }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
+      let(:args) { {} }
 
       it_behaves_like "unauthenticated client request"
     end
 
     context "when client is authenticated" do
       let(:client) { valid_client }
+
+      let(:args) do
+        {
+          ids: board_id
+        }
+      end
+
+      let!(:create_board) do
+        client.board.create(args: { board_name: "Test Board", board_kind: :private })
+      end
+      let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
       it_behaves_like "authenticated client request"
 

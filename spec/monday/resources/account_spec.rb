@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe Monday::Resources::Account, :vcr do
-  describe ".account" do
-    subject(:account) { client.account(select: select) }
+  describe ".query" do
+    subject(:account) { client.account.query(select: select) }
 
     let(:select) { %w[id name] }
 
@@ -28,7 +28,7 @@ RSpec.describe Monday::Resources::Account, :vcr do
       end
 
       context "when a field that doesn't exist on account is requested" do
-        let(:select) { ["logos"] }
+        let(:select) { ["invalid_field"] }
 
         it "raises Monday::Error error" do
           expect { account }.to raise_error(Monday::Error)
