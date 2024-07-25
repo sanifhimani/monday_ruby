@@ -105,7 +105,7 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID is retrieved.
       def delete(board_id, column_id, select: %w[id])
-        query = "mutation{delete_column(board_id: #{board_id}, column_id: #{column_id})" \
+        query = "mutation{delete_column(board_id: #{board_id}, column_id: \"#{column_id}\")" \
                 "{#{Util.format_select(select)}}}"
 
         make_request(query)
