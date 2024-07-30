@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require_relative "base"
+
 module Monday
   module Resources
     # Represents Monday.com's group resource.
-    module Group
+    class Group < Base
       DEFAULT_SELECT = %w[id title].freeze
 
       # Retrieves all the groups.
@@ -11,10 +13,10 @@ module Monday
       # Allows filtering groups using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
-      def groups(args: {}, select: DEFAULT_SELECT)
-        query = "query { boards#{Util.format_args(args)} { groups{#{Util.format_select(select)}}}}"
+      def query(args: {}, select: DEFAULT_SELECT)
+        request_query = "query{boards#{Util.format_args(args)}{groups{#{Util.format_select(select)}}}}"
 
-        make_request(query)
+        make_request(request_query)
       end
 
       # Creates a new group.
@@ -22,8 +24,8 @@ module Monday
       # Allows customizing creating a group using the args option.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
-      def create_group(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { create_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def create(args: {}, select: DEFAULT_SELECT)
+        query = "mutation{create_group#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -32,8 +34,8 @@ module Monday
       #
       # Allows customizing updating the group using the args option.
       # By default, returns the ID of the updated group.
-      def update_group(args: {}, select: ["id"])
-        query = "mutation { update_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def update(args: {}, select: ["id"])
+        query = "mutation{update_group#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -43,8 +45,8 @@ module Monday
       # Requires board_id and group_id in args option to delete the group.
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the group deleted.
-      def delete_group(args: {}, select: ["id"])
-        query = "mutation { delete_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def delete(args: {}, select: ["id"])
+        query = "mutation{delete_group#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -54,8 +56,8 @@ module Monday
       # Requires board_id and group_id in args option to archive the group.
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the ID of the group archived.
-      def archive_group(args: {}, select: ["id"])
-        query = "mutation { archive_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def archive(args: {}, select: ["id"])
+        query = "mutation{archive_group#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -65,8 +67,8 @@ module Monday
       # Requires board_id and group_id in args option to duplicate the group.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
-      def duplicate_group(args: {}, select: DEFAULT_SELECT)
-        query = "mutation { duplicate_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def duplicate(args: {}, select: DEFAULT_SELECT)
+        query = "mutation{duplicate_group#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end
@@ -76,8 +78,8 @@ module Monday
       # Requires item_id and group_id in args option to move an item to a group.
       # Allows customizing the values to retrieve using the select option.
       # By default, ID and title fields are retrieved.
-      def move_item_to_group(args: {}, select: ["id"])
-        query = "mutation { move_item_to_group#{Util.format_args(args)} {#{Util.format_select(select)}}}"
+      def move_item(args: {}, select: ["id"])
+        query = "mutation{move_item_to_group#{Util.format_args(args)}{#{Util.format_select(select)}}}"
 
         make_request(query)
       end

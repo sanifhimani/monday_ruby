@@ -13,23 +13,13 @@ RSpec.shared_examples "authenticated client request" do
 end
 
 RSpec.describe Monday::Resources::Update, :vcr do
-  describe ".updates" do
-    subject(:response) { client.updates(args: args, select: select) }
-
-    let(:select) { %w[id body created_at] }
-
-    # let(:query) { "query { updates(ids: #{item_id}) {id body created_at}}" }
-
-    let(:args) do
-      {
-        limit: 10
-      }
-    end
-
-    let(:item_id) { "5204603920" }
+  describe ".query" do
+    subject(:response) { client.update.query(args: args, select: select) }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
+      let(:args) { {} }
+      let(:select) { %w[id body created_at] }
 
       it_behaves_like "unauthenticated client request"
     end
@@ -37,85 +27,63 @@ RSpec.describe Monday::Resources::Update, :vcr do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request"
-
-      it "returns the body with item ID, body and created_at" do
-        expect(
-          response.body["data"]["updates"]
-        ).to match(array_including(hash_including("id", "body", "created_at")))
-      end
-
-      context "when a field that doesn't exist on items is requested" do
+      context "when an invalid field is requested" do
+        let(:args) do
+          {
+            limit: 10
+          }
+        end
         let(:select) { ["invalid_field"] }
 
         it "raises Monday::Error error" do
           expect { response }.to raise_error(Monday::Error)
         end
       end
-    end
-  end
 
-  describe ".create_update" do
-    subject(:response) { client.create_update(args: args) }
+      context "when valid fields are requested" do
+        let(:args) do
+          {
+            limit: 10
+          }
+        end
+        let(:select) { %w[id body created_at] }
 
-    # let(:query) do
-    #   "mutation { create_update(item_id: #{item_id}, " \
-    #     "body: \"This update will be added to the item\") {id body created_at}}"
-    # end
+        let!(:create_board) do
+          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        end
+        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
-    let(:args) do
-      {
-        item_id: item_id,
-        body: "This update will be added to the item"
-      }
-    end
+        let!(:create_item) do
+          client.item.create(
+            args: {
+              board_id: board_id,
+              item_name: "Test Item"
+            }
+          )
+        end
+        let(:item_id) { create_item.body["data"]["create_item"]["id"] }
 
-    let(:item_id) { "5204603920" }
+        before do
+          client.update.create(args: { item_id: item_id, body: "This update will be added to the item" })
+        end
 
-    context "when client is not authenticated" do
-      let(:client) { invalid_client }
+        it_behaves_like "authenticated client request"
 
-      it_behaves_like "unauthenticated client request"
-    end
-
-    context "when client is authenticated" do
-      let(:client) { valid_client }
-
-      it_behaves_like "authenticated client request"
-
-      it "returns the body with the created items ID, body and created_at" do
-        expect(
-          response.body["data"]["create_update"]
-        ).to match(hash_including("id", "body", "created_at"))
-      end
-
-      context "when the item_id does not exist" do
-        let(:item_id) { "123" }
-
-        it "raises Monday::InvalidRequestError error" do
-          expect { response }.to raise_error(Monday::InternalServerError)
+        it "returns the body with item ID, body and created_at" do
+          expect(
+            response.body["data"]["updates"]
+          ).to match(array_including(hash_including("id", "body", "created_at")))
         end
       end
     end
   end
 
-  describe ".like_update" do
-    subject(:response) { client.like_update(args: args) }
-
-    # let(:query) do
-    #   "mutation { like_update(update_id: #{update_id}) {id}}"
-    # end
-
-    let(:args) do
-      {
-        update_id: update_id
-      }
-    end
-
-    let(:update_id) { "2464728056" }
+  describe ".create" do
+    subject(:response) { client.update.create(args: args) }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
+      let(:args) { {} }
 
       it_behaves_like "unauthenticated client request"
     end
@@ -123,81 +91,126 @@ RSpec.describe Monday::Resources::Update, :vcr do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it_behaves_like "authenticated client request"
+      context "when the item does not exist for the given item ID" do
+        let(:args) do
+          {
+            item_id: item_id,
+            body: "This update will be added to the item"
+          }
+        end
 
-      it "returns the body with the update liked ID" do
-        expect(
-          response.body["data"]["like_update"]
-        ).to match(hash_including("id"))
+        let(:item_id) { "123" }
+
+        it "raises Monday::InternalServerError error" do
+          expect { response }.to raise_error(Monday::InternalServerError)
+        end
       end
 
+      context "when the args are valid" do
+        let(:args) do
+          {
+            item_id: item_id,
+            body: "This update will be added to the item"
+          }
+        end
+
+        let!(:create_board) do
+          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        end
+        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
+
+        let!(:create_item) do
+          client.item.create(
+            args: {
+              board_id: board_id,
+              item_name: "Test Item"
+            }
+          )
+        end
+        let(:item_id) { create_item.body["data"]["create_item"]["id"] }
+
+        it_behaves_like "authenticated client request"
+
+        it "returns the body with the created updates ID, body and created_at" do
+          expect(
+            response.body["data"]["create_update"]
+          ).to match(hash_including("id", "body", "created_at"))
+        end
+      end
+    end
+  end
+
+  describe ".like" do
+    subject(:response) { client.update.like(args: args) }
+
+    context "when client is not authenticated" do
+      let(:client) { invalid_client }
+      let(:args) { {} }
+
+      it_behaves_like "unauthenticated client request"
+    end
+
+    context "when client is authenticated" do
+      let(:client) { valid_client }
+
       context "when the update_id does not exist" do
+        let(:args) do
+          {
+            update_id: update_id
+          }
+        end
+
         let(:update_id) { "123" }
 
         it "raises Monday::AuthorizationError error" do
           expect { response }.to raise_error(Monday::AuthorizationError)
         end
       end
-    end
-  end
 
-  describe ".clear_item_updates" do
-    subject(:response) { client.clear_item_updates(args: args) }
+      context "when the args are valid" do
+        let(:args) do
+          {
+            update_id: update_id
+          }
+        end
 
-    # let(:query) do
-    #   "mutation { clear_item_updates(item_id: #{item_id}) {id}}"
-    # end
+        let!(:create_board) do
+          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        end
+        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
-    let(:args) do
-      {
-        item_id: item_id
-      }
-    end
+        let!(:create_item) do
+          client.item.create(
+            args: {
+              board_id: board_id,
+              item_name: "Test Item"
+            }
+          )
+        end
+        let(:item_id) { create_item.body["data"]["create_item"]["id"] }
 
-    let(:item_id) { "5204603920" }
+        let!(:create_update) do
+          client.update.create(args: { item_id: item_id, body: "This update will be added to the item" })
+        end
+        let(:update_id) { create_update.body["data"]["create_update"]["id"] }
 
-    context "when client is not authenticated" do
-      let(:client) { invalid_client }
+        it_behaves_like "authenticated client request"
 
-      it_behaves_like "unauthenticated client request"
-    end
-
-    context "when client is authenticated" do
-      let(:client) { valid_client }
-
-      it "returns the body with the archived item ID" do
-        expect(
-          response.body["data"]["clear_item_updates"]
-        ).to match(hash_including("id"))
-      end
-
-      context "when the item does not exist for the given item_id" do
-        let(:item_id) { "123" }
-
-        it "raises Monday::InvalidRequestError error" do
-          expect { response }.to raise_error(Monday::InternalServerError)
+        it "returns the body with the ID of the liked update" do
+          expect(
+            response.body["data"]["like_update"]
+          ).to match(hash_including("id"))
         end
       end
     end
   end
 
-  describe ".delete_update" do
-    subject(:response) { client.delete_update(args: args) }
-
-    # let(:query) do
-    #   "mutation { delete_update(id: #{update_id}) {id}}"
-    # end
-
-    let(:args) do
-      {
-        id: update_id
-      }
-    end
-
-    let(:update_id) { "2464725070" }
+  describe ".clear_item_updates" do
+    subject(:response) { client.update.clear_item_updates(args: args) }
 
     context "when client is not authenticated" do
       let(:client) { invalid_client }
+      let(:args) { {} }
 
       it_behaves_like "unauthenticated client request"
     end
@@ -205,17 +218,113 @@ RSpec.describe Monday::Resources::Update, :vcr do
     context "when client is authenticated" do
       let(:client) { valid_client }
 
-      it "returns the body with the deleted update ID" do
-        expect(
-          response.body["data"]["delete_update"]
-        ).to match(hash_including("id"))
+      context "when the item does not exist for the given item_id" do
+        let(:args) do
+          {
+            item_id: item_id
+          }
+        end
+
+        let(:item_id) { "123" }
+
+        it "raises Monday::InternalServerError error" do
+          expect { response }.to raise_error(Monday::InternalServerError)
+        end
       end
 
-      context "when the item does not exist for the given item_id" do
+      context "when the args are valid" do
+        let(:args) do
+          {
+            item_id: item_id
+          }
+        end
+
+        let!(:create_board) do
+          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        end
+        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
+
+        let!(:create_item) do
+          client.item.create(
+            args: {
+              board_id: board_id,
+              item_name: "Test Item"
+            }
+          )
+        end
+        let(:item_id) { create_item.body["data"]["create_item"]["id"] }
+
+        it_behaves_like "authenticated client request"
+
+        it "returns the body with the ID of the cleared update" do
+          expect(
+            response.body["data"]["clear_item_updates"]
+          ).to match(hash_including("id"))
+        end
+      end
+    end
+  end
+
+  describe ".delete" do
+    subject(:response) { client.update.delete(args: args) }
+
+    context "when client is not authenticated" do
+      let(:client) { invalid_client }
+      let(:args) { {} }
+
+      it_behaves_like "unauthenticated client request"
+    end
+
+    context "when client is authenticated" do
+      let(:client) { valid_client }
+
+      context "when the update does not exist for the given ID" do
+        let(:args) do
+          {
+            id: update_id
+          }
+        end
+
         let(:update_id) { "123" }
 
         it "raises Monday::ResourceNotFoundError error" do
           expect { response }.to raise_error(Monday::ResourceNotFoundError)
+        end
+      end
+
+      context "when the update exists" do
+        let(:args) do
+          {
+            id: update_id
+          }
+        end
+
+        let!(:create_board) do
+          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        end
+        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
+
+        let!(:create_item) do
+          client.item.create(
+            args: {
+              board_id: board_id,
+              item_name: "Test Item"
+            }
+          )
+        end
+        let(:item_id) { create_item.body["data"]["create_item"]["id"] }
+
+        let!(:create_update) do
+          client.update.create(args: { item_id: item_id, body: "This update will be added to the item" })
+        end
+        let(:update_id) { create_update.body["data"]["create_update"]["id"] }
+
+        it_behaves_like "authenticated client request"
+
+        it "returns the body with the ID of the deleted update" do
+          expect(
+            response.body["data"]["delete_update"]
+          ).to match(hash_including("id"))
         end
       end
     end

@@ -77,6 +77,7 @@ module Monday
       end
 
       def formatted_args_value(value)
+        return value if value.is_a?(Symbol)
         return value.to_json.to_json if value.is_a?(Hash)
         return value if integer?(value)
 
