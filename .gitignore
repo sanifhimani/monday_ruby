@@ -7,6 +7,9 @@
 /spec/reports/
 /tmp/
 
+# IDE files
+.vscode
+
 # rspec failure tracking
 .rspec_status
 
