@@ -1,3 +1,23 @@
+## v1.0.0 (July 30, 2024)
+
+### Changed
+
+- **Refactor: Flat API replaced by Resource Classes**
+  - The client now uses a modular approach with resource classes instead of a flat API.
+  - Introduced a `Base` class for resources to encapsulate common functionality.
+  - All resource-specific logic is now encapsulated within individual resource classes (e.g., `Account`, `Board`).
+
+### Added
+
+- Support for enums
+
+### Breaking Changes
+
+- **Accessing Resources**:
+  - The way resources are accessed has changed.
+  - **Old**: `client.account`, `client.create_board`
+  - **New**: `client.accounts.query`, `client.board.create`
+
 ## v0.6.2 (April 21, 2024)
 
 ### Bug Fixes
