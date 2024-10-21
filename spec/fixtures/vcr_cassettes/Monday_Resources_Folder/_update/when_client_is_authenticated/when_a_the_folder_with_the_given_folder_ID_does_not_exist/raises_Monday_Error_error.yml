@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{update_folder(folder_id: 1234567, name: \"Dogs\"){id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Oct 2024 02:01:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - 2024-10
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"e58b57ec00d18d470ec177c7587cb526"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - af3a4c14-a0ed-92fa-935d-29b299cd29bf
+      X-Runtime:
+      - '0.084396'
+      X-Envoy-Upstream-Service-Time:
+      - '86'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=qu420glk_U5TjSqNA4vcXWuV9PNZ5P_zXEDh7S5jPvU-1729476064-1.0.1.1-FSqqEZJ_Lg4ThW.Tq1UeNj7yFGGN1_7BUxKVAdiYq.DZB4j_HLsF5QMxKY1C9nY2dnrKnCejMlJDKdoTMrv5glT1Wnce3rXlZ9dq7UZI1vE;
+        path=/; expires=Mon, 21-Oct-24 02:31:04 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d5da8583db40d38-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"message":"The folder does not exist. Please check your
+        folder ID and try again","locations":[{"line":1,"column":10}],"path":["update_folder"],"extensions":{"code":"InvalidFolderIdException","status_code":200,"error_data":{"folder_id":1234567}}}],"error_message":"The
+        folder does not exist. Please check your folder ID and try again","error_code":"InvalidFolderIdException","error_data":{"folder_id":1234567},"status_code":200,"account_id":15314314}'
+  recorded_at: Mon, 21 Oct 2024 02:01:04 GMT
+recorded_with: VCR 6.2.0

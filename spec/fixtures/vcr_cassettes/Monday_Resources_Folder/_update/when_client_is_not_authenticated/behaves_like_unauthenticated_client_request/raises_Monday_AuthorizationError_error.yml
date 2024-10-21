@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{update_folder{id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - invalid_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 21 Oct 2024 02:00:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"20-1sxs6kzKvML1MCq/a35DgifHwjk"
+      X-Powered-By:
+      - Express
+      X-Monday-Auth:
+      - 'true'
+      X-Monday-Region:
+      - undefined
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Q06Ym.N3VKvf.AVDIzdFqiVuSw6xjZlwe26SzdLLk5I-1729476059-1.0.1.1-.aIZE_qqPnQGyNVb6kBiBxRv7PorFQcnPNhY9KYupHNB5qnB4GXXs8kdzGfSXlmCrZYkyA0FY0rJ8RA6l2JjvkpE4WFUDslFTfe2zZ8PD5U;
+        path=/; expires=Mon, 21-Oct-24 02:30:59 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d5da83d1a0a2aed-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":["Not Authenticated"]}'
+  recorded_at: Mon, 21 Oct 2024 02:00:59 GMT
+recorded_with: VCR 6.2.0
