@@ -12,9 +12,11 @@ module Monday
       #
       # Allows filtering columns using the args option.
       # Allows customizing the values to retrieve using the select option.
+      # Allows additional filtering using the filter_params option.
       # By default, ID, title and description fields are retrieved.
-      def query(args: {}, select: DEFAULT_SELECT)
-        request_query = "query{boards#{Util.format_args(args)}{columns{#{Util.format_select(select)}}}}"
+      def query(args: {}, select: DEFAULT_SELECT, filter_params: {})
+        formatted_filter = Util.format_filter_params(filter_params)
+        request_query = "query{boards#{Util.format_args(args)}{columns#{formatted_filter}{#{Util.format_select(select)}}}}"
 
         make_request(request_query)
       end
