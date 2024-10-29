@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"query{folders{id name}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Oct 2024 02:00:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - 2024-10
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"c407e74c1a39eba6cd0242f963afb49f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 22c99ee5-89dc-9cef-9b6b-afcc20295010
+      X-Runtime:
+      - '0.172934'
+      X-Envoy-Upstream-Service-Time:
+      - '177'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=LUKorA2X37bfkeMhbuQn6mGwMTyL4gfX.KRq3EEHJvI-1729476059-1.0.1.1-yVH4HHvf1nXO7eruSSHQyegJex95H8W52yo5JBtnpCi8g._P1G4mrgMna8A.C6waGBRO9AI9QuIpMoKpYDoF5s9zH2zZKJ8YW89Q_zOAB2A;
+        path=/; expires=Mon, 21-Oct-24 02:30:59 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d5da8390f282b94-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"folders":[{"id":"10918734","name":"LE Development Team"},{"id":"10977318","name":"CRM"},{"id":"11061563","name":"LB"},{"id":"12772091","name":"Projects"},{"id":"12774555","name":"Meetings"},{"id":"13019652","name":"1836"},{"id":"13145433","name":"Database"},{"id":"13145448","name":"Workspace"},{"id":"13155563","name":"Job
+        Flow"},{"id":"13156741","name":"Reporting"},{"id":"13156743","name":"Other"},{"id":"13157369","name":"Reports"},{"id":"13177585","name":"Rentvine"},{"id":"13190752","name":"RentVine
+        Sync"},{"id":"13201660","name":"Documentation"},{"id":"13214161","name":"Sandbox"},{"id":"13263615","name":"Finance"},{"id":"13999355","name":"zDatabase"},{"id":"13999356","name":"Workspace"},{"id":"13999554","name":"Database"},{"id":"13999560","name":"Workflows"},{"id":"14098003","name":"LaunchEngine"},{"id":"14219791","name":"Dashboards"},{"id":"14220129","name":"Documentation"},{"id":"14220141","name":"LaunchEngine"}]},"account_id":15314314}'
+  recorded_at: Mon, 21 Oct 2024 02:00:59 GMT
+recorded_with: VCR 6.2.0

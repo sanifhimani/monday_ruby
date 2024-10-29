@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{delete_folder(folder_id: \"invalid_folder_name\"){id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Oct 2024 02:01:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - 2024-10
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"983a989bbfd86c0fb5ad6ca4c7384187"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7fcc0bc9-b662-982a-a8c8-da83a77ab144
+      X-Runtime:
+      - '0.076583'
+      X-Envoy-Upstream-Service-Time:
+      - '81'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=aYTa41EgWz7YXJTnDFyhP0CRCNLJWob6ng.h920zXGk-1729476069-1.0.1.1-x7KkmKTSg27dHhUWFlwtSd0uRP4oU46L_3zj2cEtu1v0URH_M83xtJ1VG2jSHToIhA_9npTP35fDnlA49pnPxW07RG3oTXkhV.o1sc0v7GA;
+        path=/; expires=Mon, 21-Oct-24 02:31:09 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d5da876493a7bf2-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"message":"The folder does not exist. Please check your
+        folder ID and try again","locations":[{"line":1,"column":10}],"path":["delete_folder"],"extensions":{"code":"InvalidFolderIdException","status_code":200,"error_data":{"folder_id":0}}}],"error_message":"The
+        folder does not exist. Please check your folder ID and try again","error_code":"InvalidFolderIdException","error_data":{"folder_id":0},"status_code":200,"account_id":15314314}'
+  recorded_at: Mon, 21 Oct 2024 02:01:08 GMT
+recorded_with: VCR 6.2.0

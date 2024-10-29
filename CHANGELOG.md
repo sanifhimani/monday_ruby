@@ -1,3 +1,10 @@
+## v1.1.0 (August 20, 2024)
+- Support for working with workspace folders:
+  - Query folders
+  - Create a folder
+  - Update a folder
+  - Delete a folder
+
 ## v1.0.0 (July 30, 2024)
 
 ### Changed

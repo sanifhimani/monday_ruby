@@ -1,0 +1,207 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_workspace(name: \"Test Workspace\", kind:
+        open){id name description}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Oct 2024 02:01:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - 2024-10
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"847cd0e6393d37526b8825fc915c9553"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e17208fd-a978-931c-8c8b-47f839e0694a
+      X-Runtime:
+      - '0.419294'
+      X-Envoy-Upstream-Service-Time:
+      - '422'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=uMzYCKwSQw__jRKOHhQBXGyATdCdc6VYLn.qDmksA2c-1729476060-1.0.1.1-ifOQ7Rz82pMzbTvC5NdUpE8P2QMf.qXrNmDsnyCbVWwXuJLQ_6Olna5txq0IM0W0HeUM5X1OW6hys1272lv5clqaWSyh03il1Plcs_Rcl_Y;
+        path=/; expires=Mon, 21-Oct-24 02:31:00 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d5da83e0a042b63-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_workspace":{"id":"8529955","name":"Test Workspace","description":null}},"account_id":15314314}'
+  recorded_at: Mon, 21 Oct 2024 02:01:00 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_folder(workspace_id: \"8529955\", name: \"Database
+        boards\"){id name}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Oct 2024 02:01:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - 2024-10
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"5f28472da88ab72286657f8cae80cf0d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e0d5c31f-af7c-9285-8454-3c26702b76ce
+      X-Runtime:
+      - '0.330329'
+      X-Envoy-Upstream-Service-Time:
+      - '333'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=vaMvlhSodaRvEUNPywSHTiHYLsJRimnOKuH3CEMQ0eE-1729476060-1.0.1.1-2xy5Aqh0dRJy4hOwiCF2VerUoUSN.5ObK9cbuhFwKOZVcQLgyb7diDPfIuLSY7gE6Sz5EHWQakBIyD8H0ZT_ERbRl2zJUJX9lOmxomt4kyc;
+        path=/; expires=Mon, 21-Oct-24 02:31:00 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d5da841fdf608fc-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_folder":{"id":"15476750","name":"Database boards"}},"account_id":15314314}'
+  recorded_at: Mon, 21 Oct 2024 02:01:00 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{update_folder(folder_id: \"15476750\", name: \"Cool
+        boards\"){id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Oct 2024 02:01:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - 2024-10
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"cae798350afcdc6640dd9fe84f775587"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 476fe88c-209c-907d-807f-c5325e74c27d
+      X-Runtime:
+      - '0.233264'
+      X-Envoy-Upstream-Service-Time:
+      - '236'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=F1dm0IX.yTUxHCP1PAf78zH4jJDie2DMwZ.J_XL0ugM-1729476061-1.0.1.1-F6YSAzmXq6SUgE0N4QoqHI.nsjw.Z.KDccnfyemPW0rhIh3BVGpfVJyFLBvjNod2BwygfdUQ3.Qk4o9egXX_adZacam4NOLfEz4.rv4aXVM;
+        path=/; expires=Mon, 21-Oct-24 02:31:01 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d5da8453d1b5367-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"update_folder":{"id":"15476750"}},"account_id":15314314}'
+  recorded_at: Mon, 21 Oct 2024 02:01:01 GMT
+recorded_with: VCR 6.2.0
