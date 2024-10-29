@@ -59,6 +59,18 @@ RSpec.describe Monday::Resources::Column, :vcr do
             response.body["data"]["boards"].first["columns"]
           ).to match(array_including(hash_including("id", "title", "description")))
         end
+
+        context "when we pass filter_params" do
+          subject(:response) { client.column.query(select: select, filter_params: filter_params) }
+
+          let(:filter_params) { { types: %i[date status] } }
+
+          it "returns the body with column ID, title and description" do
+            expect(
+              response.body["data"]["boards"].first["columns"]
+            ).to match(array_including(hash_including("id", "title", "description")))
+          end
+        end
       end
     end
   end

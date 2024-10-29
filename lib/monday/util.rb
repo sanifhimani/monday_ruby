@@ -18,6 +18,13 @@ module Monday
         "(#{formatted})"
       end
 
+      def format_filter_params(params)
+        return "" if params.empty?
+
+        formatted = params.map { |key, value| "#{key}: #{format_filter_value(value)}" }.join(", ")
+        "(#{formatted})"
+      end
+
       # Converts the select values into a valid string for API.
       #
       # input: ["id", "name", { "columns": ["id"] }]
@@ -27,6 +34,17 @@ module Monday
         return format_array(value) if value.is_a?(Array)
 
         values
+      end
+
+      def format_filter_value(value)
+        case value
+        when String
+          "\"#{value}\""
+        when Array
+          "[#{value.map { |v| format_filter_value(v) }.join(", ")}]"
+        else
+          value.to_s
+        end
       end
 
       def status_code_exceptions_mapping(status_code)
