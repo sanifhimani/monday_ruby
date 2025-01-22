@@ -80,6 +80,7 @@ module Monday
         return value if value.is_a?(Symbol)
         return value.to_json.to_json if value.is_a?(Hash)
         return value if integer?(value)
+        return value if value.is_a?(Array)
 
         "\"#{value}\""
       end
