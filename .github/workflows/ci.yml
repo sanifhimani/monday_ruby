@@ -4,18 +4,21 @@ on:
   push:
     branches:
       - main
+      - 'release/**'
 
   pull_request:
     branches:
       - main
+      - 'release/**'
 
 jobs:
   rspec:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.ruby-version == 'head' }}
     strategy:
       fail-fast: false
       matrix:
-        ruby-version: ["2.7", "3.0", "3.1", "3.2", head]
+        ruby-version: ["2.7", "3.0", "3.1", "3.2", "3.3", "3.4", head]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby ${{ matrix.ruby-version }}
