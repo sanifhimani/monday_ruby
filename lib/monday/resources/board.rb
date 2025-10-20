@@ -79,6 +79,12 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, returns the deleted subscriber IDs.
       def delete_subscribers(board_id, user_ids, select: ["id"])
+        Deprecation.warn(
+          method_name: "delete_subscribers",
+          removal_version: "2.0.0",
+          alternative: "user.delete_from_board"
+        )
+
         query = "mutation{delete_subscribers_from_board(" \
                 "board_id: #{board_id}, user_ids: #{user_ids}){#{Util.format_select(select)}}}"
 
