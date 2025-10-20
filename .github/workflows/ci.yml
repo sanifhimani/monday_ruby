@@ -14,6 +14,7 @@ on:
 jobs:
   rspec:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.ruby-version == 'head' }}
     strategy:
       fail-fast: false
       matrix:
