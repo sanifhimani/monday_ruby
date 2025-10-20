@@ -6,9 +6,9 @@ source "https://rubygems.org"
 gemspec
 
 group :development do
-  gem "byebug", "~> 12.0"
+  gem "byebug", "~> 11.1"
   gem "coveralls_reborn", "~> 0.27"
-  gem "dotenv", "~> 3.1.0"
+  gem "dotenv", "~> 3.1"
   gem "rake", "~> 13.0"
   gem "rspec", "~> 3.0"
   gem "rubocop", "~> 1.21"
