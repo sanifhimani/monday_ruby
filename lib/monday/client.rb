@@ -26,7 +26,13 @@ module Monday
     end
 
     def make_request(body)
-      response = Request.post(uri, body, request_headers)
+      response = Request.post(
+        uri,
+        body,
+        request_headers,
+        open_timeout: @config.open_timeout,
+        read_timeout: @config.read_timeout
+      )
 
       handle_response(Response.new(response))
     end

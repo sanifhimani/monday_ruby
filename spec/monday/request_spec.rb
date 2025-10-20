@@ -45,5 +45,48 @@ RSpec.describe Monday::Request do
         expect(post.code).to eq("200")
       end
     end
+
+    context "with timeout configuration" do
+      let(:token) { "valid_token" }
+      let(:http_spy) { instance_double(Net::HTTP) }
+      let(:request_spy) { instance_double(Net::HTTP::Post) }
+      let(:response_double) { instance_double(Net::HTTPResponse, code: "200", body: '{"data":{}}') }
+
+      before do
+        allow(Net::HTTP).to receive(:new).with(uri.host, uri.port).and_return(http_spy)
+
+        allow(http_spy).to receive(:use_ssl=).with(true)
+        allow(http_spy).to receive(:open_timeout=)
+        allow(http_spy).to receive(:read_timeout=)
+        allow(http_spy).to receive(:request).and_return(response_double)
+
+        allow(Net::HTTP::Post).to receive(:new).with(uri.request_uri, headers).and_return(request_spy)
+        allow(request_spy).to receive(:body=)
+      end
+
+      it "sets default open_timeout to 10 seconds" do
+        described_class.post(uri, query, headers)
+
+        expect(http_spy).to have_received(:open_timeout=).with(10)
+      end
+
+      it "sets default read_timeout to 30 seconds" do
+        described_class.post(uri, query, headers)
+
+        expect(http_spy).to have_received(:read_timeout=).with(30)
+      end
+
+      it "sets custom open_timeout when provided" do
+        described_class.post(uri, query, headers, open_timeout: 15)
+
+        expect(http_spy).to have_received(:open_timeout=).with(15)
+      end
+
+      it "sets custom read_timeout when provided" do
+        described_class.post(uri, query, headers, read_timeout: 45)
+
+        expect(http_spy).to have_received(:read_timeout=).with(45)
+      end
+    end
   end
 end

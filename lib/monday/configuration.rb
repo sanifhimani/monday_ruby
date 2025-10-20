@@ -11,11 +11,15 @@ module Monday
     DEFAULT_HOST = "https://api.monday.com/v2"
     DEFAULT_TOKEN = nil
     DEFAULT_VERSION = "2023-07"
+    DEFAULT_OPEN_TIMEOUT = 10
+    DEFAULT_READ_TIMEOUT = 30
 
     CONFIGURATION_FIELDS = %i[
       token
       host
       version
+      open_timeout
+      read_timeout
     ].freeze
 
     attr_accessor(*CONFIGURATION_FIELDS)
@@ -27,6 +31,8 @@ module Monday
       @host = DEFAULT_HOST
       @token = DEFAULT_TOKEN
       @version = DEFAULT_VERSION
+      @open_timeout = DEFAULT_OPEN_TIMEOUT
+      @read_timeout = DEFAULT_READ_TIMEOUT
 
       config_args.each do |key, value|
         public_send("#{key}=", value)
@@ -37,6 +43,8 @@ module Monday
       @token = DEFAULT_TOKEN
       @host = DEFAULT_HOST
       @version = DEFAULT_VERSION
+      @open_timeout = DEFAULT_OPEN_TIMEOUT
+      @read_timeout = DEFAULT_READ_TIMEOUT
     end
   end
 end
