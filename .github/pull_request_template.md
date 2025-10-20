@@ -9,11 +9,22 @@ Please, include a summary of what the PR is for:
 
 ## How has this been tested?
 
-Please, describe the tests that you ran to verify your changes.
+Please, describe the tests that you ran to verify your changes. Provide instructions so reviewers can reproduce.
+
+## VCR Cassettes
+
+<!-- Only fill this out if you're adding/modifying API endpoints -->
+
+- [ ] N/A - No new API endpoints
+- [ ] I have recorded new VCR cassettes for the new API functionality
+- [ ] I need help recording VCR cassettes (don't have API access)
+- [ ] I have verified cassettes don't contain sensitive data
 
 ## Checklist:
 
 - [ ] I have performed a self-review of my own code.
 - [ ] I have added tests that prove my fix is effective or that my feature works.
-- [ ] I have updated the project documentation.
+- [ ] All tests pass locally (`bundle exec rake spec`).
+- [ ] RuboCop passes with no offenses (`bundle exec rake rubocop`).
+- [ ] I have updated the project documentation (README, Wiki, or inline docs).
 - [ ] I have added a changelog line.
