@@ -1,6 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
+  SuggestExtensions: false
   Exclude:
     - "spec/support/**/*.rb"
 
