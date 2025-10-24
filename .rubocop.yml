@@ -8,6 +8,7 @@ AllCops:
   SuggestExtensions: false
   Exclude:
     - "spec/support/**/*.rb"
+    - "vendor/**/*"
 
 Style/StringLiterals:
   Enabled: true
