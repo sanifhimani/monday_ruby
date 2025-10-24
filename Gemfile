@@ -11,7 +11,9 @@ group :development do
   gem "dotenv", "~> 2.8"
   gem "rake", "~> 13.0"
   gem "rspec", "~> 3.0"
-  gem "rubocop", "~> 1.21"
+  gem "rubocop", "~> 1.8"
+  gem "rubocop-rake", "~> 0.7", require: false
+  gem "rubocop-rspec", "~> 3.7", require: false
   gem "simplecov", "~> 0.22"
   gem "vcr", "~> 6.2"
   gem "webmock", "~> 3.18"
