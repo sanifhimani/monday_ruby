@@ -29,6 +29,18 @@ module Monday
         values
       end
 
+      # Formats a hash as a GraphQL input object (not JSON string)
+      # Used for complex input types like ItemsQuery
+      #
+      # input: { rules: [{ column_id: "status", compare_value: [1] }], operator: :and }
+      # output: { rules: [{ column_id: "status", compare_value: [1] }], operator: and }
+      def format_graphql_object(hash)
+        formatted = hash.map do |key, value|
+          "#{key}: #{format_graphql_value(value)}"
+        end.join(", ")
+        "{#{formatted}}"
+      end
+
       def status_code_exceptions_mapping(status_code)
         {
           "500" => InternalServerError,
@@ -43,7 +55,9 @@ module Monday
       def response_error_exceptions_mapping(error_code)
         {
           "ComplexityException" => [ComplexityError, 429],
+          "COMPLEXITY_BUDGET_EXHAUSTED" => [RateLimitError, 429],
           "UserUnauthorizedException" => [AuthorizationError, 403],
+          "USER_UNAUTHORIZED" => [AuthorizationError, 403],
           "ResourceNotFoundException" => [ResourceNotFoundError, 404],
           "InvalidUserIdException" => [InvalidRequestError, 400],
           "InvalidVersionException" => [InvalidRequestError, 400],
@@ -76,10 +90,26 @@ module Monday
         end.join(" ")
       end
 
+      def format_graphql_value(value)
+        case value
+        when Hash
+          format_graphql_object(value)
+        when Array
+          "[#{value.map { |v| format_graphql_value(v) }.join(", ")}]"
+        when Integer, TrueClass, FalseClass
+          value
+        when String
+          "\"#{value}\""
+        else
+          value.to_s
+        end
+      end
+
       def formatted_args_value(value)
         return value if value.is_a?(Symbol)
         return value.to_json.to_json if value.is_a?(Hash)
         return value if integer?(value)
+        return "[#{value.map { |v| formatted_args_value(v) }.join(", ")}]" if value.is_a?(Array)
 
         "\"#{value}\""
       end

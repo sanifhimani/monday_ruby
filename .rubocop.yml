@@ -1,6 +1,8 @@
 AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
+  Exclude:
+    - "spec/support/**/*.rb"
 
 Style/StringLiterals:
   Enabled: true
@@ -20,3 +22,7 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Exclude:
     - "lib/monday/util.rb"
+
+Metrics/ParameterLists:
+  Exclude:
+    - "lib/monday/resources/group.rb"
