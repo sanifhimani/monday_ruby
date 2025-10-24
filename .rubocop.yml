@@ -1,5 +1,6 @@
 plugins:
   - rubocop-rake
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 2.7
@@ -30,3 +31,25 @@ Metrics/MethodLength:
 Metrics/ParameterLists:
   Exclude:
     - "lib/monday/resources/group.rb"
+
+# RSpec cops disabled for now - to be fixed later
+RSpec/BeNil:
+  Enabled: false
+
+RSpec/ReceiveMessages:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
