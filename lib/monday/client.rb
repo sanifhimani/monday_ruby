@@ -69,16 +69,21 @@ module Monday
     end
 
     def response_exception(response)
-      error_code = response.body["error_code"]
-
-      if error_code.nil? && response.body["errors"].is_a?(Array) && !response.body["errors"].empty?
-        error_code = response.body.dig("errors", 0, "extensions", "code")
-      end
+      error_code = response_error_code(response)
 
       return Error.new(response: response) if error_code.nil?
 
       exception_klass, code = Util.response_error_exceptions_mapping(error_code)
       exception_klass.new(message: error_code, response: response, code: code)
+    end
+
+    def response_error_code(response)
+      error_code = response.body["error_code"]
+      return error_code unless error_code.nil?
+
+      return unless response.body["errors"].is_a?(Array) && !response.body["errors"].empty?
+
+      response.body.dig("errors", 0, "extensions", "code") || response.body.dig("errors", 0, "extensions", "error_code")
     end
 
     def default_exception(response)

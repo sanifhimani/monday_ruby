@@ -72,7 +72,8 @@ module Monday
           "ItemNameTooLongException" => [InvalidRequestError, 400],
           "ColumnValueException" => [InvalidRequestError, 400],
           "CorrectedValueException" => [InvalidRequestError, 400],
-          "InvalidWorkspaceIdException" => [InvalidRequestError, 400]
+          "InvalidWorkspaceIdException" => [InvalidRequestError, 400],
+          "INTERNAL_SERVER_ERROR" => [InternalServerError, 500]
         }[error_code] || [Error, 400]
       end
 

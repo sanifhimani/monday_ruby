@@ -56,7 +56,8 @@ RSpec.describe Monday::Client do
       let(:response) do
         instance_double(
           Monday::Response,
-          body: { "error_code" => "ComplexityException" }
+          body: { "error_code" => "ComplexityException" },
+          status: 200
         )
       end
 
@@ -80,7 +81,8 @@ RSpec.describe Monday::Client do
                 }
               }
             ]
-          }
+          },
+          status: 200
         )
       end
 

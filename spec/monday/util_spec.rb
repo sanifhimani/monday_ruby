@@ -25,7 +25,8 @@ RESPONSE_ERROR_EXCEPTION_CLASS_MAP = [
   ["ItemsLimitationException", [Monday::InvalidRequestError, 400]],
   ["ItemNameTooLongException", [Monday::InvalidRequestError, 400]],
   ["ColumnValueException", [Monday::InvalidRequestError, 400]],
-  ["CorrectedValueException", [Monday::InvalidRequestError, 400]]
+  ["CorrectedValueException", [Monday::InvalidRequestError, 400]],
+  ["INTERNAL_SERVER_ERROR", [Monday::InternalServerError, 500]]
 ].freeze
 
 RSpec.describe Monday::Util do
