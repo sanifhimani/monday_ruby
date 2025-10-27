@@ -34,7 +34,7 @@ Metrics/ParameterLists:
     - "lib/monday/resources/group.rb"
 
 RSpec/NestedGroups:
-  Enabled: false
+  Max: 5
 
 RSpec/MultipleMemoizedHelpers:
-  Enabled: false
+  Max: 10
