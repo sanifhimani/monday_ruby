@@ -4,9 +4,7 @@ RSpec.describe Monday::Response do
   subject(:response) { described_class.new(mock_response) }
 
   before do
-    allow(mock_response).to receive(:code).and_return(status_code)
-    allow(mock_response).to receive(:body).and_return(body.to_json)
-    allow(mock_response).to receive(:each_header).and_return(headers)
+    allow(mock_response).to receive_messages(code: status_code, body: body.to_json, each_header: headers)
   end
 
   let(:mock_response) { instance_double(Net::HTTPOK) }

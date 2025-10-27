@@ -565,10 +565,15 @@ RSpec.describe Monday::Resources::Group, :vcr do
           client.group.items_page(board_ids: [board_id], group_ids: group_id, limit: 10)
         end
 
-        it "accepts board_ids as an array and returns items" do
+        it "returns boards as an array" do
           boards = response.body.dig("data", "boards")
 
           expect(boards).to be_an(Array)
+        end
+
+        it "returns items_page structure with cursor and items" do
+          boards = response.body.dig("data", "boards")
+
           expect(boards.first["groups"].first["items_page"]).to include("cursor", "items")
         end
       end
@@ -578,10 +583,15 @@ RSpec.describe Monday::Resources::Group, :vcr do
           client.group.items_page(board_ids: board_id, group_ids: [group_id], limit: 10)
         end
 
-        it "accepts group_ids as an array and returns items" do
+        it "returns groups as an array" do
           groups = response.body.dig("data", "boards", 0, "groups")
 
           expect(groups).to be_an(Array)
+        end
+
+        it "returns items_page structure with cursor and items" do
+          groups = response.body.dig("data", "boards", 0, "groups")
+
           expect(groups.first["items_page"]).to include("cursor", "items")
         end
       end

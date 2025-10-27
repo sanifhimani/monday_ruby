@@ -11,7 +11,7 @@ RSpec.describe Monday::Client do
     end
 
     it "creates an instance of Monday::Client with the default token" do
-      expect(client.config.token).to be nil
+      expect(client.config.token).to be_nil
     end
 
     it "creates an instance of Monday::Client with the default host" do

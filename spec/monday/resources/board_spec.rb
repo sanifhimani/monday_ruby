@@ -374,10 +374,15 @@ RSpec.describe Monday::Resources::Board, :vcr do
           client.board.items_page(board_ids: [board_id], limit: 10)
         end
 
-        it "accepts board_ids as an array and returns items" do
+        it "returns boards as an array" do
           boards = response.body.dig("data", "boards")
 
           expect(boards).to be_an(Array)
+        end
+
+        it "returns items_page structure with cursor and items" do
+          boards = response.body.dig("data", "boards")
+
           expect(boards.first["items_page"]).to include("cursor", "items")
         end
       end
