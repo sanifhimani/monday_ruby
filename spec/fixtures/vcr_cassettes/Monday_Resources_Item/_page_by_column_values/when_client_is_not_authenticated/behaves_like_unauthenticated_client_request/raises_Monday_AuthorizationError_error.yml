@@ -5,7 +5,8 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item{id name created_at}}"}'
+      string: '{"query":"query{items_page_by_column_values(board_id: 123456, limit:
+        25){cursor items{id name}}}"}'
     headers:
       Content-Type:
       - application/json
@@ -23,7 +24,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Mon, 27 Oct 2025 02:15:53 GMT
+      - Mon, 27 Oct 2025 02:23:54 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,12 +32,14 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994eb02f8feeb1a2-YYZ
+      - 994ebbefaa16ab6d-YYZ
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
       - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
         connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Powered-By:
+      - Express
       Vary:
       - Origin, Accept-Encoding
       X-Monday-Auth:
@@ -45,17 +48,15 @@ http_interactions:
       - undefined
       Etag:
       - W/"56-jO0ghLOWWf8QDEiLlwC7K3Hc7eU"
-      X-Powered-By:
-      - Express
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=fOeLTW8V68vdvi1xR5RI6b.jozhiD9Eojka2Xf0egsU-1761531353-1.0.1.1-mk4OiPO1oVSxTkoBpO3ETJOS7pwWuLpl8QJNJjGOCTJ.EOJdSHEa3kFUdZtlEgTu22r80u_gxE_GSIeLSb8Jc5rVLa6XFEWxsO77j3AzbaCr2Oy6PiB5qb8m7d2SOOEX;
-        path=/; expires=Mon, 27-Oct-25 02:45:53 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=frALu9o74KTe_pNkg5G.wm9BCb.MyvG_sSZjWliq6Ys-1761531834-1.0.1.1-65YGKKqLr6pvOfYCYYnALa3SLtXk8kZSwLCSUxwanF8tPCD2BCjBZXvO6Qe8TJ3f3hO1oHl5IXHPKG9Pzdh7Q_ca2t75ywaxdw3NAKoIDzUNKOu5yVTjjfo_TgaB392q;
+        path=/; expires=Mon, 27-Oct-25 02:53:54 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=invYtRIYqKtDwhAfvg6r.GT0PF_iosFkmO.fXEQxJH0-1761531353594-0.0.1.1-604800000;
+      - _cfuvid=ry0nSUiqVeURGgQdHWj6YmEA.bDOyrMmwt1ynGNrTCE-1761531834870-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -64,5 +65,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"errors":[{"message":"Not authenticated","extensions":{"code":"NOT_AUTHENTICATED"}}]}'
-  recorded_at: Mon, 27 Oct 2025 02:15:53 GMT
+  recorded_at: Mon, 27 Oct 2025 02:23:54 GMT
 recorded_with: VCR 6.3.1

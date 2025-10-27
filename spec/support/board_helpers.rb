@@ -5,13 +5,27 @@ module BoardHelpers
   # @param client [Monday::Client] The authenticated client
   # @param board_name [String] Name of the board to create
   # @param item_count [Integer] Number of items to create in the board
-  # @return [Hash] Hash containing board_id and created item IDs
-  def create_test_board_with_items(client, board_name: "Test Board", item_count: 5)
+  # @param create_status_column [Boolean] Whether to create a status column (default: false)
+  # @return [Hash] Hash containing board_id, item_ids, and optionally status_column_id
+  def create_test_board_with_items(client, board_name: "Test Board", item_count: 5, create_status_column: false)
     # Create the board
     board_response = client.board.create(
       args: { board_name: board_name, board_kind: :private }
     )
     board_id = board_response.body.dig("data", "create_board", "id")
+
+    # Create status column if requested
+    status_column_id = nil
+    if create_status_column
+      status_column_response = client.column.create(
+        args: {
+          board_id: board_id,
+          title: "Status",
+          column_type: :status
+        }
+      )
+      status_column_id = status_column_response.body.dig("data", "create_column", "id")
+    end
 
     # Get existing items (Monday.com creates default items)
     existing_items_response = client.board.items_page(board_ids: board_id, limit: 500)
@@ -22,7 +36,9 @@ module BoardHelpers
       existing_items.each do |item|
         client.item.delete(item["id"])
       end
-      return { board_id: board_id, item_ids: [] }
+      result = { board_id: board_id, item_ids: [] }
+      result[:status_column_id] = status_column_id if create_status_column
+      return result
     end
 
     # Create the requested number of items
@@ -37,7 +53,9 @@ module BoardHelpers
       item_ids << item_response.body.dig("data", "create_item", "id")
     end
 
-    { board_id: board_id, item_ids: item_ids }
+    result = { board_id: board_id, item_ids: item_ids }
+    result[:status_column_id] = status_column_id if create_status_column
+    result
   end
 
   # Creates a test board with groups and items for group pagination testing
@@ -103,6 +121,46 @@ module BoardHelpers
     true
   rescue Monday::Error
     # Board might already be archived or doesn't exist
+    false
+  end
+
+  # Creates a test board with a single item for simple item testing
+  # @param client [Monday::Client] The authenticated client
+  # @param board_name [String] Name of the board to create
+  # @param item_name [String] Name of the item to create
+  # @param column_values [Hash, nil] Optional column values to set on the item
+  # @return [Hash] Hash containing board_id and item_id
+  def create_test_board_with_item(client, board_name: "Test Board", item_name: "Test Item", column_values: nil)
+    # Create the board
+    board_response = client.board.create(
+      args: { board_name: board_name, board_kind: :private }
+    )
+    board_id = board_response.body.dig("data", "create_board", "id")
+
+    # Create the item
+    item_args = {
+      board_id: board_id,
+      item_name: item_name
+    }
+    item_args[:column_values] = column_values if column_values
+
+    item_response = client.item.create(args: item_args)
+    item_id = item_response.body.dig("data", "create_item", "id")
+
+    { board_id: board_id, item_id: item_id }
+  end
+
+  # Safely deletes an item if it exists
+  # @param client [Monday::Client] The authenticated client
+  # @param item_id [String, Integer] The item ID to delete
+  # @return [Boolean] True if deleted, false if error occurred
+  def safely_delete_item(client, item_id)
+    return false unless item_id
+
+    client.item.delete(item_id)
+    true
+  rescue Monday::Error
+    # Item might already be deleted or doesn't exist
     false
   end
 end

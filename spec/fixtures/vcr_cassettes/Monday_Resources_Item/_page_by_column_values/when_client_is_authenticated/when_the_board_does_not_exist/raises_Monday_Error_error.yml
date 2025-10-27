@@ -5,9 +5,9 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"123\", item_name: \"Test
-        Item\", column_values: \"{\\\"status__1\\\":{\\\"label\\\":\\\"Done\\\"}}\"){id
-        name created_at}}"}'
+      string: '{"query":"query{items_page_by_column_values(board_id: 123456, limit:
+        25, columns: [{column_id: \"status\", column_values: [\"Done\"]}]){cursor
+        items{id name}}}"}'
     headers:
       Content-Type:
       - application/json
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 02:16:07 GMT
+      - Mon, 27 Oct 2025 02:26:13 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,20 +33,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994eb08758c7ebbc-YYZ
+      - 994ebf4e7d5936b0-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - a1140124-ecb2-99b5-8638-ababc4a4ba59
+      - 14412867-4d87-94c1-b074-e69ba062c21e
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '361'
+      - '314'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -57,10 +57,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=3.jdNN0iOMYdT1AL2YswG_lt4fOabF5BWL0qqNwsuqg-1761531367-1.0.1.1-graRchdREhK_oqeyePdoRkjh6t9wkJQ3wYrS6BMUdPrL6hV8kAK5mY39ccqMrABvuOh2pe0n0iVkemZK1bvPvQU2YVtEn7_BV2zXHi0QuktiJvB6xyACxee00bdbV0pO;
-        path=/; expires=Mon, 27-Oct-25 02:46:07 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=8NFc_a7Ti5k0qP9VxbFs4kB.dsj0RPregpjVISqVeZw-1761531973-1.0.1.1-l9ZhMQkbYDYCRl30ePPBjQKdVvZaH4XyrW2vaA8QzCBnwpl6GQRcbwGHTRABiAqWQBFBmIzYBkehV6f073H00cTaLyeOhmSxIS.CF8QittJiuZze9lz379FgsP7n.eRF;
+        path=/; expires=Mon, 27-Oct-25 02:56:13 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=.ASQ08goJE.l41luz9zfyUCIb1jBm1Tj8CSv7xMK.MU-1761531367991-0.0.1.1-604800000;
+      - _cfuvid=xZTykXzSHcWPO7urk5nrdI3n4XOnqG7aMdOuB1aP.RQ-1761531973238-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -68,7 +68,7 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":null},"errors":[{"message":"The board does not
-        exist. Please check your board ID and try again","locations":[{"line":1,"column":12}],"path":["create_item"],"extensions":{"code":"InvalidBoardIdException","status_code":200,"error_data":{"board_id":123},"service":"monolith"}}],"extensions":{"request_id":"a1140124-ecb2-99b5-8638-ababc4a4ba59"}}'
-  recorded_at: Mon, 27 Oct 2025 02:16:08 GMT
+      string: '{"data":null,"errors":[{"message":"The board does not exist. Please
+        check your board ID and try again","locations":[{"line":1,"column":3}],"path":["items_page_by_column_values"],"extensions":{"code":"InvalidBoardIdException","status_code":200,"error_data":{"board_id":123456},"service":"monolith"}}],"extensions":{"request_id":"14412867-4d87-94c1-b074-e69ba062c21e"}}'
+  recorded_at: Mon, 27 Oct 2025 02:26:13 GMT
 recorded_with: VCR 6.3.1
