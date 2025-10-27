@@ -9,7 +9,7 @@ RSpec.describe Monday::Error do
     let(:code) { nil }
 
     it "creates an empty error object" do
-      expect(error.message).to be nil
+      expect(error.message).to be_nil
     end
   end
 

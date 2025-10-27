@@ -33,24 +33,8 @@ Metrics/ParameterLists:
   Exclude:
     - "lib/monday/resources/group.rb"
 
-# RSpec cops disabled for now - to be fixed later
-RSpec/BeNil:
-  Enabled: false
-
-RSpec/ReceiveMessages:
-  Enabled: false
-
 RSpec/NestedGroups:
-  Enabled: false
+  Max: 5
 
 RSpec/MultipleMemoizedHelpers:
-  Enabled: false
-
-RSpec/MultipleExpectations:
-  Enabled: false
-
-RSpec/ExampleLength:
-  Enabled: false
-
-RSpec/LetSetup:
-  Enabled: false
+  Max: 10

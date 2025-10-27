@@ -5,8 +5,8 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_board(board_name: \"Group Pagination Test
-        Board\", board_kind: private){id name description}}"}'
+      string: '{"query":"mutation{create_board(board_name: \"Column Filter Test Board\",
+        board_kind: private){id name description}}"}'
     headers:
       Content-Type:
       - application/json
@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:22 GMT
+      - Mon, 27 Oct 2025 03:44:11 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -32,20 +32,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6d75fe5caad3-YYZ
+      - 994f317cb8523972-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 5cf9b716-f816-9de8-bfd5-ae0175a47bd1
+      - 5c0bd109-2b54-9513-aa65-b38c02fa5cb0
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '2152'
+      - '1881'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -56,10 +56,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=3bBl6U6yPxEbi4.HdhM_PlSe0UqtCDLGofZXMYQPBto-1761528622-1.0.1.1-TwdC.D20MFC0v487X61moPlDX_z6t1zs_aztYgXl2h0PxXcZdIaEW.iJOi85ed.OLw4u9UUGwLm0zYbvpoKZZb2eZkixXcgaI12bZsEH7D6IYFBS4a205xJUtN.KSjxZ;
-        path=/; expires=Mon, 27-Oct-25 02:00:22 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=piROn_gz_a70Wvy7yrV673t80lyB8VJ4mPRbtbqZd3U-1761536651-1.0.1.1-upLlWIbKRiHM33RNVZ.J_5WhWEfBB2gnMiKH9XyISyIb5PQ7mbEozZVDdOPVdeHdaVqqmImJgjPL9iTxweTTIRQFlIJrjf7mi1ZTc3MH5ZU39jMpGGLvURCcq.54q33E;
+        path=/; expires=Mon, 27-Oct-25 04:14:11 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=lhvjXre9Xxz34UVpPTzFiukNqsRXjnZn1DtdDTo5Uj8-1761528622709-0.0.1.1-604800000;
+      - _cfuvid=w_4HRq5F9CmFatCWI1XJevOpfq08BTVsOjOUn3BX9Ck-1761536651645-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -67,16 +67,16 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_board":{"id":"18273205951","name":"Group Pagination
-        Test Board","description":null}},"extensions":{"request_id":"5cf9b716-f816-9de8-bfd5-ae0175a47bd1"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:22 GMT
+      string: '{"data":{"create_board":{"id":"18273610901","name":"Column Filter Test
+        Board","description":null}},"extensions":{"request_id":"5c0bd109-2b54-9513-aa65-b38c02fa5cb0"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:11 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_group(board_id: \"18273205951\", group_name:
-        \"Test Group\"){id title}}"}'
+      string: '{"query":"query{boards(ids: [\"18273610901\"]){items_page(limit: 500){cursor
+        items{id name}}}}"}'
     headers:
       Content-Type:
       - application/json
@@ -94,7 +94,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:23 GMT
+      - Mon, 27 Oct 2025 03:44:12 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -102,20 +102,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6d8489b1aaca-YYZ
+      - 994f3188ff3bab82-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 5ec4f9d2-29ea-9f5e-8099-fe11c978b2c0
+      - c61bf4be-92a4-9dc7-98b4-3266f1d525cb
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '638'
+      - '726'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -126,10 +126,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=b5xhHr61kYxFCp88IuUlhY10UAlgzJeAE6bQqfca138-1761528623-1.0.1.1-cDE6hlVV2jmIJZD1TTqoOovikqCVVaThhdaFhCNnnaeebPIsx7UNNRczr9K8PG9IgqILYfhnbExCaVexGHSC2hgq0f4FY84oP12GAzJS.9POxIgV0xolnq67injDE.YO;
-        path=/; expires=Mon, 27-Oct-25 02:00:23 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=PIEJ3WF8dw_3AI1Qd1Oc3m7S8StF0EN27fXD4NC4k7k-1761536652-1.0.1.1-PXVo9WpYiRC9d01fnxz9P6VP4DZi1k0xtNwdEmkq3EthFtNUhjc6pv9tEBY1u0unkcCgxhS6q3mOPUUr0e.Iw75VM9_SHsbQ0bg2LhM4HD7HvBWdvFJAZtH_xUdjw3sg;
+        path=/; expires=Mon, 27-Oct-25 04:14:12 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=yu9nmfpG1bfwEnAcnTJMiE6a_lfPVe90YrIlnXsz4BM-1761528623517-0.0.1.1-604800000;
+      - _cfuvid=CN3L5JI.hrSCRvPCBRyPA1i6zbamW3izI8WI1KtY6b0-1761536652465-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -137,15 +137,16 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_group":{"id":"group_mkx45rx3","title":"Test Group"}},"extensions":{"request_id":"5ec4f9d2-29ea-9f5e-8099-fe11c978b2c0"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:23 GMT
+      string: '{"data":{"boards":[{"items_page":{"cursor":null,"items":[{"id":"18273610993","name":"Task
+        1"}]}}]},"extensions":{"request_id":"c61bf4be-92a4-9dc7-98b4-3266f1d525cb"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:12 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 1\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 1\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -163,7 +164,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:24 GMT
+      - Mon, 27 Oct 2025 03:44:13 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -171,20 +172,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6d892d02ab4b-YYZ
+      - 994f318eabefb1a2-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - e4def49c-4c39-9176-ba2d-b0deb0572c88
+      - 0f6d2236-6e90-905f-86a2-f4386fcd89c2
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '903'
+      - '865'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -195,10 +196,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=4Rq7djSBF15r8PJx9_92_ZA3nqyvO8iE0zfc1l44aR8-1761528624-1.0.1.1-2.9wM5Ug.TpeeWwCJStucQQ2.C0d1hB.0HbussPL2e2F9BcuN5nk5uhLSCCqNe_mKWVsZ4wcI71aTFIKt1jsv3JIeONrf0mZkwfTDCmDvffyKPguroXkoD7zRajjkD9R;
-        path=/; expires=Mon, 27-Oct-25 02:00:24 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=pfDYTdfdR9Y8pQeRwBV8H5kFrgyr0e4bdMREOfZUvjU-1761536653-1.0.1.1-eeFbthmGzIEGJu74qNOULel6C9DS3pn3A1hl7N7Nig7QXHiL1pSyqnhsGXMmw.J7mDyLBr6OdSuvc_0HPrxXE7lbO9xt3QHoYT7VdKC7E66JI1XKlsmQ_x1Unh0FoukN;
+        path=/; expires=Mon, 27-Oct-25 04:14:13 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=LAG2gDy4uuT.5UBm7AB.6AKUJH5_2daSPhbGolMYXss-1761528624716-0.0.1.1-604800000;
+      - _cfuvid=iQFM1AUsLli4uzSRTM4cjKdJcAagiwCCaz_6mQ8V5xo-1761536653505-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -206,15 +207,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206172","name":"Test Item 1","created_at":"2025-10-27T01:30:24Z"}},"extensions":{"request_id":"e4def49c-4c39-9176-ba2d-b0deb0572c88"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:24 GMT
+      string: '{"data":{"create_item":{"id":"18273611326","name":"Test Item 1","created_at":"2025-10-27T03:44:13Z"}},"extensions":{"request_id":"0f6d2236-6e90-905f-86a2-f4386fcd89c2"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:13 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 2\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 2\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -232,7 +233,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:25 GMT
+      - Mon, 27 Oct 2025 03:44:14 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -240,20 +241,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6d90ab3bac15-YYZ
+      - 994f31950e458ea1-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - c0b0b478-b8a2-9121-a6c0-ae654ddacf82
+      - 95ab19fc-b763-984d-a3ca-c4c293f96521
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '759'
+      - '724'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -264,10 +265,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=Vm7bwlPmwOtLL0WHDvi4gRunFsMTwqVOAWUSxIXdDjI-1761528625-1.0.1.1-UFK1cy4w1Z3pzpHXzno1CHCPrRefCNLaZ3J3C1scC2UsJfNUjdcyj5zF5WcaAIusOjauMbheXyNJ66yoAmKcS0XwRS09Wh6E_TU5gkGNG0mm7G09mbGPriuGAwgTovp8;
-        path=/; expires=Mon, 27-Oct-25 02:00:25 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=N4iuaZrTOZ9tqomXJ9BB.3x.pBNaOF_dSo_efEmC1wA-1761536654-1.0.1.1-DzIhUIlr0a1WAQn5zP.u_KjLT9U6VKt6yirpE.DSW9zMBlTkSCeV4Sp156IYpGcIT.HyPNpFhV0_mYMmnYTwyf4wyJgwQ2mfx47JxAZ2yc0XvKO.XriAf4p7lckFX4Vt;
+        path=/; expires=Mon, 27-Oct-25 04:14:14 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=V6jF4hL2VlkElnEuznwPpp9OotIRUNtm1EXD4Wzy2zs-1761528625634-0.0.1.1-604800000;
+      - _cfuvid=fAvEIu9A.4xhfMQxJFF.h2ksyb8CVZM0hduXlbvtxVI-1761536654375-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -275,15 +276,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206207","name":"Test Item 2","created_at":"2025-10-27T01:30:25Z"}},"extensions":{"request_id":"c0b0b478-b8a2-9121-a6c0-ae654ddacf82"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:25 GMT
+      string: '{"data":{"create_item":{"id":"18273611461","name":"Test Item 2","created_at":"2025-10-27T03:44:14Z"}},"extensions":{"request_id":"95ab19fc-b763-984d-a3ca-c4c293f96521"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:14 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 3\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 3\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -301,7 +302,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:26 GMT
+      - Mon, 27 Oct 2025 03:44:15 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -309,20 +310,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6d967884ab3b-YYZ
+      - 994f319a2b08a0c2-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - b183d96f-b0f9-9be2-b046-e77c1b7681e3
+      - 2dda0dcf-affb-9b78-9005-3aef69c33495
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '847'
+      - '852'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -333,10 +334,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=ZkwHv6CjoGF3HfHft79Bl0LzbUXcHu_WadYaJUFfNBI-1761528626-1.0.1.1-AQbZ6304f2ZwD3Kj.Qupgjpdf0Kb6GbpRj2Pwn._b2FIfhIrii066OnvaUYIvpoGZWd6fegZ8q6CRoabOghFdhaUqQeLkb9vTnP4VT8bwWrwqwDBrqiVYwQyMi8OQEqH;
-        path=/; expires=Mon, 27-Oct-25 02:00:26 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=SyXieqK8lTDD8nl6EXNixy.7FG205TfhbbNx2jFzJMs-1761536655-1.0.1.1-iT5fV2mIsw63TOh_jzbHslInxf0esLEqQ9trEqHk2.BMvzyJZPiT_T5Jqd2qxiMYX66l5MtPtwNeX6Z63.PvwuyFJ3Zxvk630AgWkJ4fdHeqF.Vj1GTDQRD54ZDVaQQC;
+        path=/; expires=Mon, 27-Oct-25 04:14:15 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=.sekOBT_punBOJ45.s3MlZs4QsX0N7NUd.cku3VyqBQ-1761528626608-0.0.1.1-604800000;
+      - _cfuvid=rfN0djYE6lKtsc46ryzrZJuUrBs65TpLFKIaSCU15L0-1761536655321-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -344,15 +345,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206242","name":"Test Item 3","created_at":"2025-10-27T01:30:26Z"}},"extensions":{"request_id":"b183d96f-b0f9-9be2-b046-e77c1b7681e3"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:26 GMT
+      string: '{"data":{"create_item":{"id":"18273611567","name":"Test Item 3","created_at":"2025-10-27T03:44:14Z"}},"extensions":{"request_id":"2dda0dcf-affb-9b78-9005-3aef69c33495"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:15 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 4\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 4\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -370,7 +371,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:27 GMT
+      - Mon, 27 Oct 2025 03:44:16 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -378,20 +379,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6d9c7ce7ac3c-YYZ
+      - 994f31a08fd239dd-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 3227d5ba-8517-918a-ab9f-f460d012a919
+      - 9979477e-080c-9cba-9216-305c24246921
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '987'
+      - '825'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -402,10 +403,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=DATZrAnb_hSTn9NrsCX8I7u2N4DkVh99c21H.YK7lFw-1761528627-1.0.1.1-4boZwQ.phdQz3gEZcqAdHgP85GYWysdovN9dxLuE7Kb2LJel_8dUNA9uVQ6UlkO65hDnXsSSWf67iHa5OBozidibGmfAhRVqN9q1AVKe.uE7RHwOWniJ_XUIQvHPa1ej;
-        path=/; expires=Mon, 27-Oct-25 02:00:27 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=Aawq4HnXsc54O1x1y7FBLQqFt22a_6380_kYe38OHd4-1761536656-1.0.1.1-jPqEqzYWHzzHpgx4bP03wnJLydeVKD80xJvBSFxX6sJ2NFPbCbagsvvSdCXT2_gdyb2EOsUt2YMBAvqMNNC.N8co34fzlWdYkMuLjA9Q7WLy5n7ltFgSN_5adtf0FZOW;
+        path=/; expires=Mon, 27-Oct-25 04:14:16 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=LHF8ZWbOM_w00w_OgRdqGXiHgJuiDVYdK3RBjBTvkHI-1761528627713-0.0.1.1-604800000;
+      - _cfuvid=yqbvKRKAaGCa2U1o2vmQNvlw0iaTKb8znXWcMTCNg9o-1761536656340-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -413,15 +414,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206288","name":"Test Item 4","created_at":"2025-10-27T01:30:27Z"}},"extensions":{"request_id":"3227d5ba-8517-918a-ab9f-f460d012a919"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:27 GMT
+      string: '{"data":{"create_item":{"id":"18273611604","name":"Test Item 4","created_at":"2025-10-27T03:44:15Z"}},"extensions":{"request_id":"9979477e-080c-9cba-9216-305c24246921"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:16 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 5\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 5\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -439,7 +440,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:28 GMT
+      - Mon, 27 Oct 2025 03:44:17 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -447,20 +448,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6da38a02ebb9-YYZ
+      - 994f31a6fdaeebc0-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - b42bd138-4eba-9c05-8719-39441d06739d
+      - c803e06e-57e6-9daa-990d-992b110700c6
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '958'
+      - '865'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -471,10 +472,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=.kgxqzDJmL1cUAcnO3u9GVI0KXD4S5oJp4drSF.d61o-1761528628-1.0.1.1-Hqxwr.Rt.xVDnr2GlffKlHi.RTtzKx_bos6sNzeADSfMqc8uC0XqG8O5SZMVbNre1UfbRNX3pMYMRowsLaiAX6biNJ67LFmzhBPt94u2ZyHkPAjpPPu9HRJjnHO3aGbu;
-        path=/; expires=Mon, 27-Oct-25 02:00:28 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=pueDFcDh88EIBJPlxpBGnxV4k4RRpcSCWk6Uc7_IjWo-1761536657-1.0.1.1-2WyywNylvqBI1a6EcPhzDXoAtqUj5ooU4FMs0.eQqP9ZDgXq1tQA53H.cWIpcFiAqg6p3PXVYvaZC6YyMu0lcCOjRkg7uEoNGHZa4IXOiB2Essu3uXT1eOfRMkkrVmsi;
+        path=/; expires=Mon, 27-Oct-25 04:14:17 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=5cnY2ij6BvYE1WAmi_Jkfz6IFOStUmwiVjVP_mO1ryI-1761528628779-0.0.1.1-604800000;
+      - _cfuvid=Tm0tPKmCIYiEcggbwvYZtnYuXA2B.ysBYUFg6Xqfcgw-1761536657379-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -482,15 +483,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206350","name":"Test Item 5","created_at":"2025-10-27T01:30:28Z"}},"extensions":{"request_id":"b42bd138-4eba-9c05-8719-39441d06739d"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:28 GMT
+      string: '{"data":{"create_item":{"id":"18273611622","name":"Test Item 5","created_at":"2025-10-27T03:44:16Z"}},"extensions":{"request_id":"c803e06e-57e6-9daa-990d-992b110700c6"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:17 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 6\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 6\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -508,7 +509,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:29 GMT
+      - Mon, 27 Oct 2025 03:44:18 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -516,20 +517,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6daa1e8daeb6-YYZ
+      - 994f31ad6cc239d5-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 1532a2c0-a46d-9de2-9dc9-b6a4a8c2a944
+      - 7d0b16b9-26a3-9e0b-8c9a-eb513305fcd7
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '916'
+      - '1186'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -540,10 +541,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=tUuDP5EVsmGOiNBZbbmKKaDZQMzVBCjqVLeuyVAGx.Y-1761528629-1.0.1.1-BHhqCkmn2PqIQ7ZMsWtNBvz98HawdxYt7xj6KOdNWOXbH_3lQCLjZc.fvbeZls6QSRu.HS2JcZWlBYQHfQGXbBQe76KgvKgpHzpX.oOsU6GV5kjtvIL_w7ZTLq5Pl5t9;
-        path=/; expires=Mon, 27-Oct-25 02:00:29 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=VNmVoZnASKt0v4XokhdSQLJBxF3Ur8kQsUvXMwwKi1Q-1761536658-1.0.1.1-mcbFlIz4xTczcr1H_snuzVerxSHIAJXrIbWcqeZfJg7cFojtMd_MyDvdgIQSx.XiQNLbM4a5S_T.1qXlJd.O8IcQXivfmvwCe.2Mq0zGZa9k8XzZST_cFqjbx2MtfueG;
+        path=/; expires=Mon, 27-Oct-25 04:14:18 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=A8qejBpRgbBcjbdtwu5W8tM01tCdWGZjvgT7IGlCPhc-1761528629842-0.0.1.1-604800000;
+      - _cfuvid=9A.WFP92jSrsRlvgpdn0MxtIvgJMs4z3WXvKij4vJ80-1761536658738-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -551,15 +552,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206844","name":"Test Item 6","created_at":"2025-10-27T01:30:29Z"}},"extensions":{"request_id":"1532a2c0-a46d-9de2-9dc9-b6a4a8c2a944"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:29 GMT
+      string: '{"data":{"create_item":{"id":"18273611661","name":"Test Item 6","created_at":"2025-10-27T03:44:18Z"}},"extensions":{"request_id":"7d0b16b9-26a3-9e0b-8c9a-eb513305fcd7"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:18 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 7\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 7\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -577,7 +578,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:31 GMT
+      - Mon, 27 Oct 2025 03:44:19 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -585,20 +586,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6db11b5babb5-YYZ
+      - 994f31b5aeadaab9-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 3a2d867d-d410-9996-857d-6f47006440fc
+      - f467a12d-6343-9e2c-9aab-ea578d1da0c8
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '1084'
+      - '1108'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -609,10 +610,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=lSDc4IO8gciHqHcBvOQ8IB.zOQgqf.6kajcB4dVEg08-1761528631-1.0.1.1-h.DYLoyGEqgbOPLNikSIoVVR3q4372ohR34uSYj5uoCH7cpybIkaD9K774VNhAEu78Jo77gKpeidLxniHMHbJnhkUPLrtyfRzfi8i9qvfyHJ86O6rZZy.rMyhBcZyjFT;
-        path=/; expires=Mon, 27-Oct-25 02:00:31 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=Xsmy0vXwLs_R_kgiz0i5d6aspvGdG4thikfM8exqnJ8-1761536659-1.0.1.1-PF2D1uMm2k7m8cQ6GzadDuP6JakD7KXqU_yh.uECk4EGF9eG6SQI2zDfWl.G36dzIeK0pZSZ_vX2iaQPzjXIgw50XY7K9lCXaHZVfb2rfzhh6js_BwWe8y1bCVofLPxj;
+        path=/; expires=Mon, 27-Oct-25 04:14:19 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=AiH54Le6jSzlt4eX3cKnBnZnc1QiyocX2iZDfidG7cs-1761528631100-0.0.1.1-604800000;
+      - _cfuvid=pcd36IaXIQ1yMDsfIYh2PVaPehninpFU.2M1cn_Qs7w-1761536659985-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -620,15 +621,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206890","name":"Test Item 7","created_at":"2025-10-27T01:30:30Z"}},"extensions":{"request_id":"3a2d867d-d410-9996-857d-6f47006440fc"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:31 GMT
+      string: '{"data":{"create_item":{"id":"18273611687","name":"Test Item 7","created_at":"2025-10-27T03:44:19Z"}},"extensions":{"request_id":"f467a12d-6343-9e2c-9aab-ea578d1da0c8"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:19 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 8\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 8\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -646,7 +647,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:32 GMT
+      - Mon, 27 Oct 2025 03:44:20 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -654,20 +655,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6db9894d38e4-YYZ
+      - 994f31bd5a653a09-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 695ba876-c4db-9ae3-9ae4-764e4c2a281d
+      - bd210521-ecfb-907c-906b-40e60e8d3e6b
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '692'
+      - '810'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -678,10 +679,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=whDM3veXfvt3m.fJAhJ6FovBIu7mb2QVR.cUyENRYX8-1761528632-1.0.1.1-gSbRSIN.hcpzzYcbsdCnRn7OyMg.qdoY723IL4LbapRqOzdhf0CBruopq1zYrifEAvbiTFfYq64..lDlsn54.Dp6SsiAI6E8H5cOm4Hgd2lrHidi8Ku9HB3EVywX_IaO;
-        path=/; expires=Mon, 27-Oct-25 02:00:32 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=7MVLY3kvoLzTT85nRhiEpt7OyagwM4ce6Fs6qy_kJYY-1761536660-1.0.1.1-zIphcOOdlpPNJLT6ArEyQL.q2UreO8rs3xB7BlLqCfkdd33MdjgPBRYOTLERMJ84CL2vsjhf2rRzQ7ScucCYH0WRq6wt054dsi4zSfx9rp_mPlHlVpCUJ70O8D97wFZN;
+        path=/; expires=Mon, 27-Oct-25 04:14:20 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=NdvbwAgWqvmU.yuJDBiSJmTwYFmP.6zNLsyEM7oZ3RA-1761528632122-0.0.1.1-604800000;
+      - _cfuvid=1dTdUNoxbq9aasR.gXEXbVzZAFZH5Td8CqfB5GldtCo-1761536660917-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -689,15 +690,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206933","name":"Test Item 8","created_at":"2025-10-27T01:30:31Z"}},"extensions":{"request_id":"695ba876-c4db-9ae3-9ae4-764e4c2a281d"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:32 GMT
+      string: '{"data":{"create_item":{"id":"18273611706","name":"Test Item 8","created_at":"2025-10-27T03:44:20Z"}},"extensions":{"request_id":"bd210521-ecfb-907c-906b-40e60e8d3e6b"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:20 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 9\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 9\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -715,7 +716,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:33 GMT
+      - Mon, 27 Oct 2025 03:44:21 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -723,20 +724,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6dbf98c836c5-YYZ
+      - 994f31c328cfac82-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 49b3b7fb-2e42-9b83-b682-bcd0896543af
+      - ebbb5910-760b-98ef-adf8-2ef1ae2a18ab
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '860'
+      - '892'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -747,10 +748,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=Qn_D_4krWg8ZE9ZHovd19JjTkg.6gVtTj0Jq9IHAjRo-1761528633-1.0.1.1-CkL_eK5QB8X3xIUwvlf3i3douYA_CyjUk9jNT2mhRwYOze7mvYrwF7GEfobcy7O78qBojw7f3mrI5SHw_M3HBznLRRvqiY6R1YKJdqBiUOhTMec5W3fwkLHWO39wie7X;
-        path=/; expires=Mon, 27-Oct-25 02:00:33 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=Y2vOQTwKCD3kJW_Z.x9VeHCF8L8.t.VII6zrGG09bgw-1761536661-1.0.1.1-A8PyWR06l8F2.fBid0VTdj_MaLSUb.4KTBbgRjonlzvBJMAu48BMj1c4jk6WGZqkkjXnkhJpA101zuYpf0e6n0n1v1nf0bgu1vsE_g8Y8gK53kHYsGPZuuYTe.7SK0tT;
+        path=/; expires=Mon, 27-Oct-25 04:14:21 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=Zlo380zlfMn7.THyOJXo.uLzASQGcrpGLYEYdCTle1c-1761528633261-0.0.1.1-604800000;
+      - _cfuvid=F7d2Ugbu2hQDGsyb1tmuMniAnSAVi.Kz9HNV5XxgXTI-1761536661924-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -758,15 +759,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273206965","name":"Test Item 9","created_at":"2025-10-27T01:30:32Z"}},"extensions":{"request_id":"49b3b7fb-2e42-9b83-b682-bcd0896543af"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:33 GMT
+      string: '{"data":{"create_item":{"id":"18273611764","name":"Test Item 9","created_at":"2025-10-27T03:44:21Z"}},"extensions":{"request_id":"ebbb5910-760b-98ef-adf8-2ef1ae2a18ab"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:21 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 10\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18273610901\", item_name:
+        \"Test Item 10\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -784,7 +785,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:34 GMT
+      - Mon, 27 Oct 2025 03:44:23 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -792,20 +793,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6dc7794636aa-YYZ
+      - 994f31c988dc5443-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - bb64e3a5-2b5f-9442-8907-e88e4e6cdba0
+      - 5cfc0167-fe1c-9dd2-b45a-325694d82f9a
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '961'
+      - '913'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -816,10 +817,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=6LF6i9BlaOMWju5hrpB1b9L5vrdpCgSGnrYJa_6ERTc-1761528634-1.0.1.1-NOs1WPoZjcDDJ2yZJsy9vmAli9954wI7WVbP8NL9VsZ2gMi.D0mHzHoM3L4ueQjeqLFIehkjkLleSO5pey2x74UIV049Cu5TW6aOraPjSsx4rr.Ml3RL4WKUSokJjYu7;
-        path=/; expires=Mon, 27-Oct-25 02:00:34 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=mlzCafUCnEMqdr0zYqIi9.KcVuflBfoCO9XJ_VPdVV0-1761536663-1.0.1.1-cAXuHVO3_cKZ42C6tdRhUiLiTD7KO2AzykhnEzNBiXoG8cU_4NbLForLqR9ZsvNv44ilrb3Z5bnKH6b8FdiufHmIoPzOTMaLKMKBdg1kJO9pckOXMqWk7MAXOSjxPX58;
+        path=/; expires=Mon, 27-Oct-25 04:14:23 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=B1BHYs5ddToBjgoVn7yVt1178G567QxFV55iz9ZPQ64-1761528634516-0.0.1.1-604800000;
+      - _cfuvid=IkSGZwfcMW3pp.aOK6h3a8AV.Gl1Ls64YH2owUHu68Q-1761536663012-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -827,15 +828,16 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273207012","name":"Test Item 10","created_at":"2025-10-27T01:30:34Z"}},"extensions":{"request_id":"bb64e3a5-2b5f-9442-8907-e88e4e6cdba0"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:34 GMT
+      string: '{"data":{"create_item":{"id":"18273611875","name":"Test Item 10","created_at":"2025-10-27T03:44:22Z"}},"extensions":{"request_id":"5cfc0167-fe1c-9dd2-b45a-325694d82f9a"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:23 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 11\"){id name created_at}}"}'
+      string: '{"query":"query{items_page_by_column_values(board_id: 18273610901,
+        limit: 25, columns: [{column_id: \"name\", column_values: [\"Test Item 1\"]}]){cursor
+        items{id name}}}"}'
     headers:
       Content-Type:
       - application/json
@@ -853,7 +855,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:35 GMT
+      - Mon, 27 Oct 2025 03:44:23 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -861,20 +863,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6dce8c1d39fd-YYZ
+      - 994f31d08b2bf80a-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 1656b50f-cba9-933a-a503-0d8d07bd91d7
+      - c00038a4-3d22-9efe-b7d6-d3a3714155a6
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '750'
+      - '606'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -885,10 +887,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=OWtPrAKD.LpkznzVDjyxBSo8QpUKcnMcX47QCTnbzEI-1761528635-1.0.1.1-Syf004ivBAeerl4QlaALp2Z1NzZr17mCtbNwzRQ.WDXmBSkSBKbG9L19jSPwUaIp5koCMu2psi1_bRZjkpmwXHwTJKvCGd0xUyFKFrWTgYYgJrEqVVqGh7XIrbCWsmvf;
-        path=/; expires=Mon, 27-Oct-25 02:00:35 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=1ayt1IXyjr8a91GIUJmvQI4KBqQhd3aRO2Zf09h4akw-1761536663-1.0.1.1-piMAix36zJ6PcKbXYkevSjRZwMuIoAUjrUj3I3dY1Ed7KoSJTtBq2RSc9hpC2DOm6NsNpqUgAyZtxC.FaOw7bv2tUqoi2zw7NNJ4AjU3uABjGcQcKj_JSnf1QwxL_KIz;
+        path=/; expires=Mon, 27-Oct-25 04:14:23 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=AM47vibH9H5P0ZESrewhQk4BdEsvy3r_K2bvycLyfac-1761528635477-0.0.1.1-604800000;
+      - _cfuvid=MQNcVpno0jtEKa0eOetpYKXYNUSyfaUdBegs16bZSHU-1761536663780-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -896,15 +898,15 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273207053","name":"Test Item 11","created_at":"2025-10-27T01:30:35Z"}},"extensions":{"request_id":"1656b50f-cba9-933a-a503-0d8d07bd91d7"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:35 GMT
+      string: '{"data":{"items_page_by_column_values":{"cursor":null,"items":[{"id":"18273611326","name":"Test
+        Item 1"}]}},"extensions":{"request_id":"c00038a4-3d22-9efe-b7d6-d3a3714155a6"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:23 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"18273205951\", group_id:
-        \"group_mkx45rx3\", item_name: \"Test Item 12\"){id name created_at}}"}'
+      string: '{"query":"mutation{delete_board(board_id: 18273610901){id}}"}'
     headers:
       Content-Type:
       - application/json
@@ -922,7 +924,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Oct 2025 01:30:36 GMT
+      - Mon, 27 Oct 2025 03:44:24 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -930,20 +932,20 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 994e6dd44d50aace-YYZ
+      - 994f31d50d6336c2-YYZ
       X-Api-Router:
       - 'true'
       Api-Version:
       - 2025-07
       X-Request-Id:
-      - 01f124af-69f5-912d-a3cb-8074bbdbc0d5
+      - b7438353-b5e8-9494-a0c9-e56c80f9b894
       Vary:
       - accept-encoding
       - origin
       Access-Control-Allow-Origin:
       - "*"
       X-Envoy-Upstream-Service-Time:
-      - '728'
+      - '790'
       Content-Security-Policy:
       - ";"
       Content-Security-Policy-Report-Only:
@@ -954,10 +956,10 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=hgLNjaGxOW0yi2Gl9I.Fqk5ZAsQeH3zfutycpXOCNiE-1761528636-1.0.1.1-zFSvDLLLWsAfnrqOOXUGm_m23VaEY2Jf1t9fOskFjfWdbFHpXyId2S5ieXaG2aQTz3ZWr7_dnTUZfmKRQkByO3eCju4kOdFxi_9roLV6Wdubn.tAypCBhz4rwrIg0kVD;
-        path=/; expires=Mon, 27-Oct-25 02:00:36 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=ChPd1Eg7vcuJh5JIeXXyp73Uw.Cv7P71gis2ZHSFkxE-1761536664-1.0.1.1-wcJcuNo4Ux4jzdYQDIweZmps6_UKSdlzGqRP5kVWmPH71KNmh2vRdox9UBdA5lncQPKpJOXKUrz_9E1iH3d8BK6sh7ZmtX5pCLQKL3QMyk1NprqDoLbWz1yb7B3DMMJ3;
+        path=/; expires=Mon, 27-Oct-25 04:14:24 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=JRBpj0KUZuw28N1W7agWJ9mkK15S0VoWu95NP2fhWbA-1761528636359-0.0.1.1-604800000;
+      - _cfuvid=iH010.vEFR9aohWab5d0kMnSC_OGjsjS2r.7waaihrY-1761536664715-0.0.1.1-604800000;
         path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -965,148 +967,6 @@ http_interactions:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"18273207093","name":"Test Item 12","created_at":"2025-10-27T01:30:36Z"}},"extensions":{"request_id":"01f124af-69f5-912d-a3cb-8074bbdbc0d5"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:36 GMT
-- request:
-    method: post
-    uri: https://api.monday.com/v2
-    body:
-      encoding: UTF-8
-      string: '{"query":"query{boards(ids: [\"18273205951\"]){groups(ids: [\"group_mkx45rx3\"]){items_page(limit:
-        10){cursor items{id name}}}}}"}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - "<TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Mon, 27 Oct 2025 01:30:37 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Cf-Ray:
-      - 994e6dda2b23ab64-YYZ
-      X-Api-Router:
-      - 'true'
-      Api-Version:
-      - 2025-07
-      X-Request-Id:
-      - 66bfe522-c528-98bd-ac06-6a77d8188a08
-      Vary:
-      - accept-encoding
-      - origin
-      Access-Control-Allow-Origin:
-      - "*"
-      X-Envoy-Upstream-Service-Time:
-      - '585'
-      Content-Security-Policy:
-      - ";"
-      Content-Security-Policy-Report-Only:
-      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
-        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
-      X-Monday-Rgn:
-      - use1
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=dR9eWdzAEu6rK8S4kHTWdUNAwpi7pTyH6DwoM.kHpUQ-1761528637-1.0.1.1-fjk7mBlFt77ZVDN5CCQiD7Bbkxx5K4S9OU.sMSqDAK6Bn4mZSIc_zLFo9d3ipBo10QM4tere403V26QWsfumnJ92PCHOvx1D8IwQTUugBTkj8KV7j119qjKNmNVn0PYy;
-        path=/; expires=Mon, 27-Oct-25 02:00:37 GMT; domain=.monday.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=k4h5YV3lzgERTW3gsyzl2Zd4p6ptJe_wwdaeZ2pqcrg-1761528637231-0.0.1.1-604800000;
-        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Server:
-      - cloudflare
-    body:
-      encoding: ASCII-8BIT
-      string: '{"data":{"boards":[{"groups":[{"items_page":{"cursor":"MSwxODI3MzIwNTk1MSw4SHBlYXZyclM5SnBMVmI1bWRqaTksMTIsMTAsZ3JvdXBfbWt4NDVyeDN8MzIwNTU4OTc0OQ","items":[{"id":"18273206172","name":"Test
-        Item 1"},{"id":"18273206207","name":"Test Item 2"},{"id":"18273206242","name":"Test
-        Item 3"},{"id":"18273206288","name":"Test Item 4"},{"id":"18273206350","name":"Test
-        Item 5"},{"id":"18273206844","name":"Test Item 6"},{"id":"18273206890","name":"Test
-        Item 7"},{"id":"18273206933","name":"Test Item 8"},{"id":"18273206965","name":"Test
-        Item 9"},{"id":"18273207012","name":"Test Item 10"}]}}]}]},"extensions":{"request_id":"66bfe522-c528-98bd-ac06-6a77d8188a08"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:37 GMT
-- request:
-    method: post
-    uri: https://api.monday.com/v2
-    body:
-      encoding: UTF-8
-      string: '{"query":"mutation{delete_board(board_id: 18273205951){id}}"}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - "<TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Mon, 27 Oct 2025 01:30:38 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Cf-Ray:
-      - 994e6ddeeb07b408-YYZ
-      X-Api-Router:
-      - 'true'
-      Api-Version:
-      - 2025-07
-      X-Request-Id:
-      - 68e21a76-a3f5-9fb6-9936-49864c531b89
-      Vary:
-      - accept-encoding
-      - origin
-      Access-Control-Allow-Origin:
-      - "*"
-      X-Envoy-Upstream-Service-Time:
-      - '901'
-      Content-Security-Policy:
-      - ";"
-      Content-Security-Policy-Report-Only:
-      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
-        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
-      X-Monday-Rgn:
-      - use1
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=dQ_WzOJSPRBN7AFlfBLOlTogMIIcjWjzZPd7BXUUQG8-1761528638-1.0.1.1-8aHciLJUR.ZlX075V6KWYk_QqMz.8llgxt8EdguDUAr2QqSbILwwYNHxt2Qphac8E_f8.yXz0FHQDISX8X42dKovnhmgL963zxT3SyD2bTG0okiAeoE7oDcPJmeUnD03;
-        path=/; expires=Mon, 27-Oct-25 02:00:38 GMT; domain=.monday.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=0rPyDbRMRbxlltQWx5sh9dTKSgOxpm6ycuHKClPnQC4-1761528638246-0.0.1.1-604800000;
-        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Server:
-      - cloudflare
-    body:
-      encoding: ASCII-8BIT
-      string: '{"data":{"delete_board":{"id":"18273205951"}},"extensions":{"request_id":"68e21a76-a3f5-9fb6-9936-49864c531b89"}}'
-  recorded_at: Mon, 27 Oct 2025 01:30:38 GMT
+      string: '{"data":{"delete_board":{"id":"18273610901"}},"extensions":{"request_id":"b7438353-b5e8-9494-a0c9-e56c80f9b894"}}'
+  recorded_at: Mon, 27 Oct 2025 03:44:24 GMT
 recorded_with: VCR 6.3.1

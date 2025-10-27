@@ -169,7 +169,7 @@ RSpec.describe Monday::Resources::Column, :vcr do
           client.board.create(args: { board_name: "Test Board", board_kind: :private })
         end
         let(:board_id) { create_board.body["data"]["create_board"]["id"] }
-        let!(:create_column) do
+        let(:create_column) do
           client.column.create(
             args: {
               board_id: board_id,
@@ -178,6 +178,8 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           )
         end
+
+        before { create_column }
 
         it_behaves_like "authenticated client request"
 
@@ -232,7 +234,7 @@ RSpec.describe Monday::Resources::Column, :vcr do
           client.board.create(args: { board_name: "Test Board", board_kind: :private })
         end
         let(:board_id) { create_board.body["data"]["create_board"]["id"] }
-        let!(:create_column) do
+        let(:create_column) do
           client.column.create(
             args: {
               board_id: board_id,
@@ -241,6 +243,8 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           )
         end
+
+        before { create_column }
 
         it "raises Monday::Error error" do
           expect { response }.to raise_error(Monday::Error)
@@ -260,7 +264,7 @@ RSpec.describe Monday::Resources::Column, :vcr do
           client.board.create(args: { board_name: "Test Board", board_kind: :private })
         end
         let(:board_id) { create_board.body["data"]["create_board"]["id"] }
-        let!(:create_column) do
+        let(:create_column) do
           client.column.create(
             args: {
               board_id: board_id,
@@ -269,6 +273,8 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           )
         end
+
+        before { create_column }
 
         it_behaves_like "authenticated client request"
 
@@ -352,11 +358,11 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           }
         end
-        let!(:create_board) do
+        let(:create_board) do
           client.board.create(args: { board_name: "Test Board", board_kind: :private })
         end
         let(:board_id) { create_board.body["data"]["create_board"]["id"] }
-        let!(:create_column) do
+        let(:create_column) do
           client.column.create(
             args: {
               board_id: board_id,
@@ -366,7 +372,7 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           )
         end
-        let!(:create_item) do
+        let(:create_item) do
           client.item.create(
             args: {
               board_id: board_id,
@@ -375,6 +381,12 @@ RSpec.describe Monday::Resources::Column, :vcr do
           )
         end
         let(:item_id) { create_item.body["data"]["create_item"]["id"] }
+
+        before do
+          create_board
+          create_column
+          create_item
+        end
 
         it_behaves_like "authenticated client request"
 
@@ -452,11 +464,11 @@ RSpec.describe Monday::Resources::Column, :vcr do
             value: "Working on it"
           }
         end
-        let!(:create_board) do
+        let(:create_board) do
           client.board.create(args: { board_name: "Test Board", board_kind: :private })
         end
         let(:board_id) { create_board.body["data"]["create_board"]["id"] }
-        let!(:create_column) do
+        let(:create_column) do
           client.column.create(
             args: {
               board_id: board_id,
@@ -466,7 +478,7 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           )
         end
-        let!(:create_item) do
+        let(:create_item) do
           client.item.create(
             args: {
               board_id: board_id,
@@ -475,6 +487,12 @@ RSpec.describe Monday::Resources::Column, :vcr do
           )
         end
         let(:item_id) { create_item.body["data"]["create_item"]["id"] }
+
+        before do
+          create_board
+          create_column
+          create_item
+        end
 
         it_behaves_like "authenticated client request"
 
@@ -564,11 +582,11 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           }
         end
-        let!(:create_board) do
+        let(:create_board) do
           client.board.create(args: { board_name: "Test Board", board_kind: :private })
         end
         let(:board_id) { create_board.body["data"]["create_board"]["id"] }
-        let!(:create_column) do
+        let(:create_column) do
           client.column.create(
             args: {
               board_id: board_id,
@@ -578,7 +596,7 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           )
         end
-        let!(:create_item) do
+        let(:create_item) do
           client.item.create(
             args: {
               board_id: board_id,
@@ -587,6 +605,12 @@ RSpec.describe Monday::Resources::Column, :vcr do
           )
         end
         let(:item_id) { create_item.body["data"]["create_item"]["id"] }
+
+        before do
+          create_board
+          create_column
+          create_item
+        end
 
         it "raises Monday::InvalidRequestError error" do
           expect { response }.to raise_error(
@@ -608,11 +632,11 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           }
         end
-        let!(:create_board) do
+        let(:create_board) do
           client.board.create(args: { board_name: "Test Board", board_kind: :private })
         end
         let(:board_id) { create_board.body["data"]["create_board"]["id"] }
-        let!(:create_column) do
+        let(:create_column) do
           client.column.create(
             args: {
               board_id: board_id,
@@ -622,7 +646,7 @@ RSpec.describe Monday::Resources::Column, :vcr do
             }
           )
         end
-        let!(:create_item) do
+        let(:create_item) do
           client.item.create(
             args: {
               board_id: board_id,
@@ -631,6 +655,12 @@ RSpec.describe Monday::Resources::Column, :vcr do
           )
         end
         let(:item_id) { create_item.body["data"]["create_item"]["id"] }
+
+        before do
+          create_board
+          create_column
+          create_item
+        end
 
         it_behaves_like "authenticated client request"
 

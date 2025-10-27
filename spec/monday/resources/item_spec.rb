@@ -328,10 +328,15 @@ RSpec.describe Monday::Resources::Item, :vcr do
             expect(items_page).to include("cursor", "items")
           end
 
-          it "returns items with default fields (id, name)" do
+          it "returns items as an array" do
             items = response.body.dig("data", "items_page_by_column_values", "items")
 
             expect(items).to be_an(Array)
+          end
+
+          it "returns items with default fields (id, name)" do
+            items = response.body.dig("data", "items_page_by_column_values", "items")
+
             expect(items).to all(include("id", "name"))
           end
         end
@@ -358,10 +363,15 @@ RSpec.describe Monday::Resources::Item, :vcr do
             safely_delete_board(client, board_id)
           end
 
-          it "returns filtered items based on all column criteria" do
+          it "returns items_page structure with cursor and items" do
             items_page = response.body.dig("data", "items_page_by_column_values")
 
             expect(items_page).to include("cursor", "items")
+          end
+
+          it "returns items as an array" do
+            items_page = response.body.dig("data", "items_page_by_column_values")
+
             expect(items_page["items"]).to be_an(Array)
           end
         end
@@ -377,10 +387,15 @@ RSpec.describe Monday::Resources::Item, :vcr do
             safely_delete_board(client, board_id)
           end
 
-          it "returns items matching any of the values in the column" do
+          it "returns items_page structure with cursor and items" do
             items_page = response.body.dig("data", "items_page_by_column_values")
 
             expect(items_page).to include("cursor", "items")
+          end
+
+          it "returns items as an array" do
+            items_page = response.body.dig("data", "items_page_by_column_values")
+
             expect(items_page["items"]).to be_an(Array)
           end
         end
@@ -412,29 +427,33 @@ RSpec.describe Monday::Resources::Item, :vcr do
         end
 
         context "with cursor for next page" do
+          let(:fetch_page) do
+            lambda do |cursor_value = nil|
+              columns = if cursor_value
+                          nil
+                        else
+                          [{ column_id: "name", column_values: ["Test Item 1", "Test Item 2", "Test Item 3"] }]
+                        end
+              client.item.page_by_column_values(
+                board_id: board_id,
+                columns: columns,
+                cursor: cursor_value,
+                limit: 1
+              )
+            end
+          end
+
+          let(:extract_page_data) do
+            lambda do |response|
+              items = response.body.dig("data", "items_page_by_column_values", "items")
+              cursor = response.body.dig("data", "items_page_by_column_values", "cursor")
+              [items, cursor]
+            end
+          end
+
           it "paginates through items without duplicates using cursor" do
-            first_page = client.item.page_by_column_values(
-              board_id: board_id,
-              columns: [{ column_id: "name", column_values: ["Test Item 1", "Test Item 2", "Test Item 3"] }],
-              limit: 1
-            )
-
-            first_page_items = first_page.body.dig("data", "items_page_by_column_values", "items")
-            cursor = first_page.body.dig("data", "items_page_by_column_values", "cursor")
-
-            expect(first_page_items).to be_an(Array)
-            expect(first_page_items.length).to eq(1)
-            expect(cursor).to be_a(String)
-
-            second_page = client.item.page_by_column_values(
-              board_id: board_id,
-              cursor: cursor,
-              limit: 1
-            )
-
-            second_page_items = second_page.body.dig("data", "items_page_by_column_values", "items")
-
-            expect(second_page_items).to be_an(Array)
+            first_page_items, cursor = extract_page_data.call(fetch_page.call)
+            second_page_items, = extract_page_data.call(fetch_page.call(cursor))
 
             first_page_ids = first_page_items.map { |item| item["id"] }
             second_page_ids = second_page_items.map { |item| item["id"] }
