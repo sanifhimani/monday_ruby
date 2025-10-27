@@ -1,9 +1,37 @@
-## v1.1.0 (August 20, 2024)
-- Support for working with workspace folders:
-  - Query folders
-  - Create a folder
-  - Update a folder
-  - Delete a folder
+## v1.1.0 (October 27, 2025)
+
+### Added
+
+- **Cursor-based pagination for items**:
+  - Added `items_page` method to `Board` resource for paginated item retrieval
+  - Added `items_page` method to `Group` resource for paginated group items
+  - Added `items_page` method to `Item` resource for paginated item queries
+  - Support for cursor-based pagination with customizable limits (up to 500 items per page)
+  - Support for filtered queries using `query_params` with rules and operators
+
+- **Deprecation warning system**:
+  - Added `Deprecation` module for issuing deprecation warnings
+  - Marked `delete_subscribers` method for deprecation in v2.0.0
+  - Provides clear migration paths for deprecated methods
+
+- **Configurable request timeouts**:
+  - Added `open_timeout` configuration option (default: 10 seconds)
+  - Added `read_timeout` configuration option (default: 30 seconds)
+  - Configurable at both global and client instance levels
+
+- **Documentation improvements**:
+  - Added CONTRIBUTING.md with development guidelines
+  - Added VCR testing guide in pull request template
+
+### Changed
+
+- Updated Ruby version support matrix in CI (added Ruby 3.3 and 3.4)
+- Updated base64 gem dependency to ~> 0.3.0
+- Improved RuboCop configuration and fixed linting issues
+
+### Fixed
+
+- CI workflow improvements and linting configurations
 
 ## v1.0.0 (July 30, 2024)
 

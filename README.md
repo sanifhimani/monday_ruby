@@ -58,6 +58,25 @@ Monday.configure do |config|
 end
 ```
 
+You can also configure request timeouts (new in v1.1.0):
+
+```ruby
+require "monday_ruby"
+
+Monday.configure do |config|
+  config.token = "<AUTH_TOKEN>"
+  config.open_timeout = 10  # seconds (default: 10)
+  config.read_timeout = 30  # seconds (default: 30)
+end
+
+# Or configure per client
+client = Monday::Client.new(
+  token: "<AUTH_TOKEN>",
+  open_timeout: 15,
+  read_timeout: 45
+)
+```
+
 ### Accessing a response object
 
 Get access to response objects by initializing a client and using the appropriate action you want to perform:
@@ -87,7 +106,7 @@ response = client.boards # => <Monday::Response ...>
 response.success? # => true
 
 # To get the boards from the response
-response.dig("data", "boards") # => [...]
+response.body.dig("data", "boards") # => [...]
 ```
 
 #### Creating a new board
@@ -110,7 +129,7 @@ response = client.create_board(args: args)
 response.success? # => true
 
 # To get the created board from the response
-response.dig("data", "create_board") # => { ... }
+response.body.dig("data", "create_board") # => { ... }
 ```
 
 #### Creating a new item on board
@@ -140,7 +159,63 @@ response = client.create_item(args: args)
 response.success? # => true
 
 # To get the created item from the response
-response.dig("data", "create_item") # => { ... }
+response.body.dig("data", "create_item") # => { ... }
+```
+
+#### Fetching items with pagination (New in v1.1.0)
+
+The library now supports efficient cursor-based pagination for retrieving large numbers of items. This is the recommended approach for working with boards, groups, or items that contain many records.
+
+```ruby
+client = Monday::Client.new(token: <AUTH_TOKEN>)
+
+# Fetch first page of items from a board (up to 500 items per page)
+response = client.board.items_page(
+  board_ids: <BOARD_ID>,
+  limit: 100
+)
+
+# Extract items and cursor from response
+items = response.body.dig("data", "boards", 0, "items_page", "items")
+cursor = response.body.dig("data", "boards", 0, "items_page", "cursor")
+
+# Fetch next page using cursor
+if cursor
+  next_response = client.board.items_page(
+    board_ids: <BOARD_ID>,
+    limit: 100,
+    cursor: cursor
+  )
+end
+
+# You can also filter items using query_params
+response = client.board.items_page(
+  board_ids: <BOARD_ID>,
+  limit: 50,
+  query_params: {
+    rules: [{ column_id: "status", compare_value: [1] }],
+    operator: :and
+  }
+)
+```
+
+Pagination is also available for groups and items:
+
+```ruby
+# Fetch paginated items from a group
+response = client.group.items_page(
+  board_ids: <BOARD_ID>,
+  group_ids: "group_id",
+  limit: 100
+)
+
+# Fetch paginated items with custom query
+response = client.item.items_page(
+  limit: 100,
+  query_params: {
+    rules: [{ column_id: "status", compare_value: [5] }]
+  }
+)
 ```
 
 ## Development
