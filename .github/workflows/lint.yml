@@ -10,6 +10,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
-      - run: bundle install
+          bundler-cache: true
       - name: Rubocop
         run: bundle exec rake rubocop

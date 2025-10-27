@@ -1,17 +1,5 @@
 # frozen_string_literal: true
 
-RSpec.shared_examples "unauthenticated client request" do
-  it "raises Monday::AuthorizationError error" do
-    expect { response }.to raise_error(Monday::AuthorizationError)
-  end
-end
-
-RSpec.shared_examples "authenticated client request" do
-  it "returns 200 status" do
-    expect(response.status).to eq(200)
-  end
-end
-
 RSpec.describe Monday::Resources::Board, :vcr do
   describe ".query" do
     subject(:response) { client.board.query(select: select) }
@@ -26,9 +14,11 @@ RSpec.describe Monday::Resources::Board, :vcr do
 
     context "when client is authenticated" do
       let(:client) { valid_client }
+      let(:test_data) { create_test_board_with_items(client, board_name: "Query Test Board", item_count: 0) }
+      let(:board_id) { test_data[:board_id] }
 
-      before do
-        client.board.create(args: { board_name: "Test Board", board_kind: :private })
+      after do
+        safely_delete_board(client, board_id)
       end
 
       it_behaves_like "authenticated client request"
@@ -66,7 +56,7 @@ RSpec.describe Monday::Resources::Board, :vcr do
         let(:args) do
           {
             board_name: "New test board",
-            board_kind: "private"
+            board_kind: "invalid_kind"
           }
         end
 
@@ -81,6 +71,12 @@ RSpec.describe Monday::Resources::Board, :vcr do
             board_name: "New test board",
             board_kind: :private
           }
+        end
+
+        let(:board_id) { response.body.dig("data", "create_board", "id") }
+
+        after do
+          safely_delete_board(client, board_id)
         end
 
         it_behaves_like "authenticated client request"
@@ -106,19 +102,17 @@ RSpec.describe Monday::Resources::Board, :vcr do
 
     context "when client is authenticated" do
       let(:client) { valid_client }
+      let(:test_data) { create_test_board_with_items(client, board_name: "Duplicate Test Board", item_count: 0) }
+      let(:board_id) { test_data[:board_id] }
+      let(:duplicated_board_id) { response.body.dig("data", "duplicate_board", "board", "id") }
 
       context "when args are invalid" do
         let(:args) do
           {
             board_id: board_id,
-            duplicate_type: "duplicate_board_with_structure"
+            duplicate_type: "invalid_type"
           }
         end
-
-        let!(:create_board) do
-          client.board.create(args: { board_name: "Test Board", board_kind: :private })
-        end
-        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
         it "raises Monday::Error error" do
           expect { response }.to raise_error(Monday::Error)
@@ -133,10 +127,10 @@ RSpec.describe Monday::Resources::Board, :vcr do
           }
         end
 
-        let!(:create_board) do
-          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        after do
+          safely_delete_board(client, board_id)
+          safely_delete_board(client, duplicated_board_id) if response&.status == 200
         end
-        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
         it_behaves_like "authenticated client request"
 
@@ -161,20 +155,17 @@ RSpec.describe Monday::Resources::Board, :vcr do
 
     context "when client is authenticated" do
       let(:client) { valid_client }
+      let(:test_data) { create_test_board_with_items(client, board_name: "Update Test Board", item_count: 0) }
+      let(:board_id) { test_data[:board_id] }
 
       context "when args are invalid" do
         let(:args) do
           {
             board_id: board_id,
-            board_attribute: "description",
+            board_attribute: "invalid_attribute",
             new_value: "New description"
           }
         end
-
-        let!(:create_board) do
-          client.board.create(args: { board_name: "Test Board", board_kind: :private })
-        end
-        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
         it "raises Monday::Error error" do
           expect { response }.to raise_error(Monday::Error)
@@ -190,10 +181,9 @@ RSpec.describe Monday::Resources::Board, :vcr do
           }
         end
 
-        let!(:create_board) do
-          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        after do
+          safely_delete_board(client, board_id)
         end
-        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
         it_behaves_like "authenticated client request"
 
@@ -228,10 +218,12 @@ RSpec.describe Monday::Resources::Board, :vcr do
       end
 
       context "when the board exists" do
-        let!(:create_board) do
-          client.board.create(args: { board_name: "Test Board", board_kind: :private })
+        let(:test_data) { create_test_board_with_items(client, board_name: "Archive Test Board", item_count: 0) }
+        let(:board_id) { test_data[:board_id] }
+
+        after do
+          safely_delete_board(client, board_id) if response&.status == 200
         end
-        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
 
         it "returns the body with archived boards ID" do
           expect(
@@ -267,15 +259,148 @@ RSpec.describe Monday::Resources::Board, :vcr do
       end
 
       context "when the board exists" do
-        let!(:create_board) do
-          client.board.create(args: { board_name: "Test Board", board_kind: :private })
-        end
-        let(:board_id) { create_board.body["data"]["create_board"]["id"] }
+        let(:test_data) { create_test_board_with_items(client, board_name: "Delete Test Board", item_count: 0) }
+        let(:board_id) { test_data[:board_id] }
 
         it "returns the body with deleted boards ID" do
           expect(
             response.body["data"]["delete_board"]
           ).to match(hash_including("id"))
+        end
+      end
+    end
+  end
+
+  describe ".items_page" do
+    subject(:response) { client.board.items_page(board_ids: board_id, limit: limit, cursor: cursor) }
+
+    let(:limit) { 5 }
+    let(:cursor) { nil }
+
+    context "when client is not authenticated" do
+      let(:client) { invalid_client }
+      let(:board_id) { "123456" }
+
+      it_behaves_like "unauthenticated client request"
+    end
+
+    context "when client is authenticated" do
+      let(:client) { valid_client }
+      let(:test_data) { create_test_board_with_items(client, board_name: "Pagination Test Board", item_count: 12) }
+      let(:board_id) { test_data[:board_id] }
+
+      after do
+        safely_delete_board(client, board_id)
+      end
+
+      it_behaves_like "authenticated client request"
+
+      it "returns items_page structure with cursor and items" do
+        items_page = response.body.dig("data", "boards", 0, "items_page")
+
+        expect(items_page).to include("cursor", "items")
+      end
+
+      it "returns the requested number of items" do
+        items = response.body.dig("data", "boards", 0, "items_page", "items")
+
+        expect(items.length).to eq(limit)
+      end
+
+      it "returns items with default fields (id, name)" do
+        items = response.body.dig("data", "boards", 0, "items_page", "items")
+
+        expect(items.first).to include("id", "name")
+      end
+
+      context "when using cursor for pagination" do
+        let(:first_page) { client.board.items_page(board_ids: board_id, limit: 5) }
+        let(:cursor) { first_page.body.dig("data", "boards", 0, "items_page", "cursor") }
+
+        it "returns the next page of items" do
+          first_page_items = first_page.body.dig("data", "boards", 0, "items_page", "items")
+          first_page_ids = first_page_items.map { |item| item["id"] }
+
+          second_page_items = response.body.dig("data", "boards", 0, "items_page", "items")
+          second_page_ids = second_page_items.map { |item| item["id"] }
+
+          expect(first_page_ids & second_page_ids).to be_empty
+        end
+
+        it "returns a cursor for the next page if more items exist" do
+          cursor_value = response.body.dig("data", "boards", 0, "items_page", "cursor")
+
+          expect(cursor_value).not_to be_nil
+        end
+      end
+
+      context "when requesting custom select fields" do
+        subject(:response) do
+          client.board.items_page(
+            board_ids: board_id,
+            limit: 3,
+            select: %w[id name state created_at]
+          )
+        end
+
+        it "returns items with requested fields" do
+          items = response.body.dig("data", "boards", 0, "items_page", "items")
+
+          expect(items.first).to include("id", "name", "state", "created_at")
+        end
+      end
+
+      context "when using query_params to filter items" do
+        subject(:response) do
+          client.board.items_page(
+            board_ids: board_id,
+            limit: 10,
+            query_params: {
+              rules: [{ column_id: "name", compare_value: ["Test Item 1"] }],
+              operator: :and
+            }
+          )
+        end
+
+        it "returns filtered items based on query_params" do
+          items = response.body.dig("data", "boards", 0, "items_page", "items")
+
+          expect(items).to be_an(Array)
+        end
+      end
+
+      context "when board_ids is an array" do
+        subject(:response) do
+          client.board.items_page(board_ids: [board_id], limit: 10)
+        end
+
+        it "returns boards as an array" do
+          boards = response.body.dig("data", "boards")
+
+          expect(boards).to be_an(Array)
+        end
+
+        it "returns items_page structure with cursor and items" do
+          boards = response.body.dig("data", "boards")
+
+          expect(boards.first["items_page"]).to include("cursor", "items")
+        end
+      end
+
+      context "when the board has no items" do
+        let(:empty_board_data) { create_test_board_with_items(client, board_name: "Empty Board", item_count: 0) }
+        let(:board_id) { empty_board_data[:board_id] }
+
+        it "returns empty items array" do
+          items = response.body.dig("data", "boards", 0, "items_page", "items")
+
+          expect(items).to be_empty
+        end
+
+        it "returns nil cursor when no items exist" do
+          cursor_value = response.body.dig("data", "boards", 0, "items_page", "cursor")
+
+          expect(cursor_value).to be_nil
         end
       end
     end

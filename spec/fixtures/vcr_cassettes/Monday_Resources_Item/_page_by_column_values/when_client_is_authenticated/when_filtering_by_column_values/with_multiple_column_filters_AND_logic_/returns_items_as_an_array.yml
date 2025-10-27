@@ -1,0 +1,1041 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_board(board_name: \"Column Filter Test Board\",
+        board_kind: private){id name description}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:35:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25697dc9aa9c-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 4330cf55-e9b4-9369-bfde-9cdb2c7c5678
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '1464'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=2k05QfRBbb_FVsW7KSRI2JXlzU2A8bBJmAMmKG.6Ehk-1761536156-1.0.1.1-FAdmFr8n19R5NZziEIEHnAdfUu9VeWBaxBIhb_2Cw5I0oiN7wK8hZoEFjFxBWnI8AX2jSiachluYnXIWFR7cfPROa_CL.hDyWKYCKHpOHfkgisjqysqsRBpcx4AYw8aC;
+        path=/; expires=Mon, 27-Oct-25 04:05:56 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=JNluKzkXiw1ZrJvGsuRnAKbQZ1bu5PzaQUKQmrj08Qk-1761536156631-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_board":{"id":"18273592968","name":"Column Filter Test
+        Board","description":null}},"extensions":{"request_id":"4330cf55-e9b4-9369-bfde-9cdb2c7c5678"}}'
+  recorded_at: Mon, 27 Oct 2025 03:35:56 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_column(board_id: \"18273592968\", title:
+        \"Status\", column_type: status){id title description}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:35:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25731c09a1f6-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 42912158-d270-9360-a5cd-e4b3b3520d66
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '975'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=ggoj9xOdYFU_TzBFrNmS98pqFyEbeEMniYLMEL.gmJw-1761536157-1.0.1.1-SKm1ypVEAUrwviPvEmj8Y.WaCJ_1M0Kd3BBdilowp55youYO97KMfPxXYn_xxtRql8FiUaihKvQrDuwTI8nVC7QUpCn.v5cgv8TXlZ.640W5mqMciY61SYB6icwXLVOf;
+        path=/; expires=Mon, 27-Oct-25 04:05:57 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=4AHOlWuWEPvYP6ySkd0Drn4dzr0Z9OurPs_WrA0XK0Q-1761536157702-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_column":{"id":"color_mkx4stgj","title":"Status","description":null}},"extensions":{"request_id":"42912158-d270-9360-a5cd-e4b3b3520d66"}}'
+  recorded_at: Mon, 27 Oct 2025 03:35:57 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"query{boards(ids: [\"18273592968\"]){items_page(limit: 500){cursor
+        items{id name}}}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:35:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f257a2843ac93-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 97858a03-3a0b-91ff-a66b-639ccbfc1c9b
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '595'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=0oZmG0D_PS1SIOnVvnD9fxy7d4vEJdAhBtagTOxtRSk-1761536158-1.0.1.1-7Bh0NDfiuBSbbbKE5YcOrPw4DR0M.IV75kim0eLWY0.WboecEELb75oVfMHojngdnxh0PIcwy4cTanICEUw.O.RvFljD2HxnPvYt3pBapfo3wrCnwC1D4_kFLlUEPyqT;
+        path=/; expires=Mon, 27-Oct-25 04:05:58 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=jLXJLfzywp9MaqrSbsJROEmD2ZEbIncXS74kmZA2X58-1761536158437-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"boards":[{"items_page":{"cursor":null,"items":[{"id":"18273592977","name":"Task
+        1"}]}}]},"extensions":{"request_id":"97858a03-3a0b-91ff-a66b-639ccbfc1c9b"}}'
+  recorded_at: Mon, 27 Oct 2025 03:35:58 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 1\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:35:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f257e9e15ebc0-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 807ae429-e1bc-9ef3-bfe7-4624acce83bc
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '793'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=VhcmOEayIQIwzs_fsOxZuAN8QuPFLwpf9qEnX3pDXSQ-1761536159-1.0.1.1-XYXDdy1mWVg3aamqEpltxUWQ_cgLkABnYw5Z2KVr6.fZW9j_p9gTQBW3gOo4hbCGVwgWLP.YpeB3k_rgWHrpGsMw1KVT0L94W6TA.uHOl05oDBovBuoBjd04LnH2kg7T;
+        path=/; expires=Mon, 27-Oct-25 04:05:59 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=10JKFf.HEQ6RdtP5FgrWwV.m9JhzWsTtUjrL11AvZWc-1761536159336-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593046","name":"Test Item 1","created_at":"2025-10-27T03:35:58Z"}},"extensions":{"request_id":"807ae429-e1bc-9ef3-bfe7-4624acce83bc"}}'
+  recorded_at: Mon, 27 Oct 2025 03:35:59 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 2\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25846e8dac45-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 7aaed437-3ea7-9528-848d-ed4803c6695a
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '929'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=QcMjPC.cmUzjGUHE23595iWn10hbpead1O7j6hAj1cQ-1761536160-1.0.1.1-PWEyY19Fdnee7.5re1Wn_1khi7n1HGtAkwxZ_JczdAjaB02nQOw8NH4oXzaR5vUcn6SeeIvfzd5B07ebI8ug7A4NPYBEBvlCafZVoy7pnUFxMhhKUwWM1jYhbhhlSaLa;
+        path=/; expires=Mon, 27-Oct-25 04:06:00 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=tLQK2H_hZPIUoScYY28SE_Hyd7kUNnbKi4WIx3fHddg-1761536160409-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593067","name":"Test Item 2","created_at":"2025-10-27T03:35:59Z"}},"extensions":{"request_id":"7aaed437-3ea7-9528-848d-ed4803c6695a"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:00 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 3\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f258acbc7a24c-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 34f8fdc5-5961-948d-9df0-53f11005f143
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '782'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=j3.X1_frkSG0vgHKJFBKt4pPZ5xiRh9ww0v9AKYPtY0-1761536161-1.0.1.1-RFEeq.qbTVKL5xs5NawTr4Gj36Je7YHJ_6Se4P9CG0MiLI.eAMD78_mbFOt9rmAdXjiXAwYW2aQAtHY463uZMxeyzz_XY60FDXWsbZcTGUXOYVSEhxhQC34WEjW7Y9kA;
+        path=/; expires=Mon, 27-Oct-25 04:06:01 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=PFjXRJhyP.9YCdOxTRHC_NGWwqBzKqYfdKtIg51nj3k-1761536161294-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593081","name":"Test Item 3","created_at":"2025-10-27T03:36:00Z"}},"extensions":{"request_id":"34f8fdc5-5961-948d-9df0-53f11005f143"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:01 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 4\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25905cd4a1ec-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 9e7b9d6b-310f-98c8-a848-cdf9fd6ec595
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '726'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=H4fwnvz5RccAnFNQ7LCAFd3HoXDwrx4qZJNrvTq2S6A-1761536162-1.0.1.1-QjXWgKi2lUwpXHuD0t4mbEqPZaYz5lv8gMKCHX2PwECKDmLNISUw8G6w_GsqW1PGO5C5EFRVDCYM_Vj9cwsbvpZ2HUoQBx83.MDRX2DXg5ZXa9ptmG1jFetXEvqjP_79;
+        path=/; expires=Mon, 27-Oct-25 04:06:02 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=_v6AQ2CCzVwiqI5J8JTH81L_TREM8CEV9iOD00FG408-1761536162190-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593105","name":"Test Item 4","created_at":"2025-10-27T03:36:01Z"}},"extensions":{"request_id":"9e7b9d6b-310f-98c8-a848-cdf9fd6ec595"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:02 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 5\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25967c0839e7-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 785d001f-5d32-93a0-a796-5670264f8e93
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '728'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=uT_gxxEBmTnxlBWNhgX448fGndpkzCZ_wxmbF1AaGg0-1761536163-1.0.1.1-LR5tPOnK_xwwVij6adeNy0mR0GSC_eiU7tgEtePHYST1nDMQoiABbWCuKkPw5vapxmE5CESm8NRFGBMesYHis0z18Jx3PUu8_jxjkgyGhXr5d0YocccGzTzpHmh4_SKg;
+        path=/; expires=Mon, 27-Oct-25 04:06:03 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=F8WXZTQxIaesgKEMLbD6DayOCSjex1layuwnoS8X5qQ-1761536163197-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593122","name":"Test Item 5","created_at":"2025-10-27T03:36:02Z"}},"extensions":{"request_id":"785d001f-5d32-93a0-a796-5670264f8e93"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:03 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 6\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:04 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f259ccc7e38e5-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - b7b2f57e-0acc-9de8-a1b1-4bf90d5288a2
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '767'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=NE6e2ae9bm5tjOE6bHBx91EdayPnqniKV7Bquinhl7A-1761536164-1.0.1.1-PgTf121odpoMnsPBXByf.le6PdhLnUpu4MqTpcs8.UPmtinYL._SlJyE5ZAn67yj3YrS1DvoNHLvbjziiqlKsPoSAmVtYoaB8CIDfkE4.gyP77tAmiWEUSGiE.MYN7Y5;
+        path=/; expires=Mon, 27-Oct-25 04:06:04 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=eXrNgbjr.OlQcOqx9o3CeDkvKCrUcjE7l41hqM8ID7g-1761536164151-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593140","name":"Test Item 6","created_at":"2025-10-27T03:36:03Z"}},"extensions":{"request_id":"b7b2f57e-0acc-9de8-a1b1-4bf90d5288a2"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:04 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 7\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25a28db0ab3c-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - fb5543d3-b7ad-9ec9-af87-ce496b3aec9c
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '856'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=NihlPY22EwFki.tkcw_QfD_J0fVY_oNQZVbuxCMe88A-1761536165-1.0.1.1-HyZ8hTr_5TG4DfnwH6QxjN31G2nyVg5bDQjwShjbY4Z4IgwwZOVkTiapL0bviOJJDREOzL59QniYoEbN3FquTMPu69XrjJ_85zG77_IqMKai4jGbw622FlYvox8KJB.n;
+        path=/; expires=Mon, 27-Oct-25 04:06:05 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=8pIqvLvYvfQ0Ik4A.2J2LEj9BNF4Fj6neO8VzbJTao0-1761536165244-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593169","name":"Test Item 7","created_at":"2025-10-27T03:36:04Z"}},"extensions":{"request_id":"fb5543d3-b7ad-9ec9-af87-ce496b3aec9c"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:05 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 8\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25a97ddd6e57-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 424786a5-9401-99d7-a3da-573b109e22af
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '786'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=LBRIZ7j4zQzpgfJMZsC3ueJQFKvCrM5Jm.Dyq2fMPr8-1761536166-1.0.1.1-dD5QKrnGGoVq8QuGjE6jYjKKwfw_vES99XbE9wvFDgkSloQVr644lanbGzOx8a43JiS7.2l2_sBOkPkKObIXBn6dzftpw6QFvg1yZGm7YNK1CteaXS4bC2mHswPFvRfW;
+        path=/; expires=Mon, 27-Oct-25 04:06:06 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=IvljIq9sNDmRTPqYSjRuy5uXJ0IeP5Zut11IEUlsiyU-1761536166193-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593194","name":"Test Item 8","created_at":"2025-10-27T03:36:05Z"}},"extensions":{"request_id":"424786a5-9401-99d7-a3da-573b109e22af"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:06 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 9\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25aeeb12a222-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - ef27dc9e-b578-94d6-b207-fa654c4879ec
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '1105'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=RorbIMdfgwlwFJVjgYv7SBwr23e.MPP8q37SexAZVfA-1761536167-1.0.1.1-.7p4xeap1F7tplb_KOWnyuCCbyJFIUPeQBIrczWImKa0WtcYNz5MVPE6wguLZ5eSyLLQl9MgapQkQHIk40IMq6bQcpyfm1jWM9sspXtKikUFrR07AvZBv3JUY43wD_55;
+        path=/; expires=Mon, 27-Oct-25 04:06:07 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=NNUFyFA7C0fcxrPOODOCYovI7hLukLMbORZUrO18ULU-1761536167392-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593222","name":"Test Item 9","created_at":"2025-10-27T03:36:06Z"}},"extensions":{"request_id":"ef27dc9e-b578-94d6-b207-fa654c4879ec"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:07 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18273592968\", item_name:
+        \"Test Item 10\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25b6e9e4398d-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 70089f1b-d9a2-9c18-b835-31a2fefb9a4d
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '883'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=ZKQ5Xz5H4l_Qw9NDWuNxnZ3JeURb8dOCntCT_z.DgTE-1761536168-1.0.1.1-M2x.OsMWCAbWXHVCL3e0_d0PyXMQNdNjz7.8FbGtjz.aSo7LcdVCC0ad0SFQwJSoIOVRuNNnq_mtW7xD4Fqwpkb8T.RmSL0KZGQmhnY2d5qrwEC_1Fu6GurYUryenPSW;
+        path=/; expires=Mon, 27-Oct-25 04:06:08 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=zz1dfLXSI9ZxHy7p166rsRSm_BqQvGX5FsX7kgZkXv8-1761536168456-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"18273593271","name":"Test Item 10","created_at":"2025-10-27T03:36:08Z"}},"extensions":{"request_id":"70089f1b-d9a2-9c18-b835-31a2fefb9a4d"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:08 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"query{items_page_by_column_values(board_id: 18273592968,
+        limit: 25, columns: [{column_id: \"name\", column_values: [\"Test Item 1\",
+        \"Test Item 2\"]}, {column_id: \"color_mkx4stgj\", column_values: [\"Done\"]}]){cursor
+        items{id name}}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25bd5cb8a24d-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - ba1e97a2-17bf-96cb-9b76-b44e8d68e35d
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '559'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=rJ.OcD3o0DkZIFKUL_LdtVKdO69ampguGWqbjxw2n5Q-1761536169-1.0.1.1-CuenyeJ_mvGkr1Vv9pvHbBkJW2Z8ef_bz6ZGoffiIn3BIxvvAb41CjV2jrIMjIRX5EzPDmdFZEvx6dIOhboMY64J3u2q5kRpzZYLrL_3cuHcyZY_hbPP9.B6Q89WsrK6;
+        path=/; expires=Mon, 27-Oct-25 04:06:09 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=BglRcS5tCfm5OqkMjz4W1ooXjBQqk2zpe357XM8sKV8-1761536169143-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"items_page_by_column_values":{"cursor":null,"items":[]}},"extensions":{"request_id":"ba1e97a2-17bf-96cb-9b76-b44e8d68e35d"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:09 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{delete_board(board_id: 18273592968){id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2025 03:36:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 994f25c148833739-YYZ
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - bb2482db-fbb5-9ae5-a174-f3b31e607ea4
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '880'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=yA2f_27epwxWNHznF3u1PC9eEFko_s44arXOAuANPHE-1761536170-1.0.1.1-nnCFnnKYDFxWulidBmaRWiAfMzwjEa8y1jPAavsU4fNz7Mc.6SvfPs39kC0Kox.FxFkgg8P7Sg1H0MyoEemvFRO0xbcyW7M5O0z1tSxu2FxUCGtjBxJF.zw502tuRSep;
+        path=/; expires=Mon, 27-Oct-25 04:06:10 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=KhB0v6aZvgMM8O6bUUkMNxfuRX2IWOdEQbT.FmHW_OY-1761536170112-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"delete_board":{"id":"18273592968"}},"extensions":{"request_id":"bb2482db-fbb5-9ae5-a174-f3b31e607ea4"}}'
+  recorded_at: Mon, 27 Oct 2025 03:36:10 GMT
+recorded_with: VCR 6.3.1

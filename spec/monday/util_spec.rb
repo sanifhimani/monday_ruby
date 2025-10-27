@@ -11,7 +11,9 @@ STATUS_CODE_EXCEPTION_CLASS_MAP = [
 
 RESPONSE_ERROR_EXCEPTION_CLASS_MAP = [
   ["ComplexityException", [Monday::ComplexityError, 429]],
+  ["COMPLEXITY_BUDGET_EXHAUSTED", [Monday::RateLimitError, 429]],
   ["UserUnauthorizedException", [Monday::AuthorizationError, 403]],
+  ["USER_UNAUTHORIZED", [Monday::AuthorizationError, 403]],
   ["ResourceNotFoundException", [Monday::ResourceNotFoundError, 404]],
   ["InvalidUserIdException", [Monday::InvalidRequestError, 400]],
   ["InvalidVersionException", [Monday::InvalidRequestError, 400]],
@@ -23,7 +25,8 @@ RESPONSE_ERROR_EXCEPTION_CLASS_MAP = [
   ["ItemsLimitationException", [Monday::InvalidRequestError, 400]],
   ["ItemNameTooLongException", [Monday::InvalidRequestError, 400]],
   ["ColumnValueException", [Monday::InvalidRequestError, 400]],
-  ["CorrectedValueException", [Monday::InvalidRequestError, 400]]
+  ["CorrectedValueException", [Monday::InvalidRequestError, 400]],
+  ["INTERNAL_SERVER_ERROR", [Monday::InternalServerError, 500]]
 ].freeze
 
 RSpec.describe Monday::Util do

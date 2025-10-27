@@ -11,7 +11,7 @@ RSpec.describe Monday::Client do
     end
 
     it "creates an instance of Monday::Client with the default token" do
-      expect(client.config.token).to be nil
+      expect(client.config.token).to be_nil
     end
 
     it "creates an instance of Monday::Client with the default host" do
@@ -46,6 +46,65 @@ RSpec.describe Monday::Client do
 
     it "raises ArgumentError" do
       expect { client }.to raise_error(ArgumentError, "Unknown arguments: [:args]")
+    end
+  end
+
+  describe "#response_exception" do
+    let(:client) { described_class.new(token: "test_token") }
+
+    context "when response has top-level error_code" do
+      let(:response) do
+        instance_double(
+          Monday::Response,
+          body: { "error_code" => "ComplexityException" },
+          status: 200
+        )
+      end
+
+      it "extracts error code from top level" do
+        exception = client.send(:response_exception, response)
+        expect(exception).to be_a(Monday::ComplexityError)
+      end
+    end
+
+    context "when response has GraphQL errors array with extensions.code" do
+      let(:response) do
+        instance_double(
+          Monday::Response,
+          body: {
+            "errors" => [
+              {
+                "message" => "User unauthorized to perform action",
+                "extensions" => {
+                  "code" => "USER_UNAUTHORIZED",
+                  "status_code" => 403
+                }
+              }
+            ]
+          },
+          status: 200
+        )
+      end
+
+      it "extracts error code from GraphQL errors array" do
+        exception = client.send(:response_exception, response)
+        expect(exception).to be_a(Monday::AuthorizationError)
+      end
+    end
+
+    context "when response has no recognizable error code" do
+      let(:response) do
+        instance_double(
+          Monday::Response,
+          body: { "errors" => "Some error message" },
+          status: 500
+        )
+      end
+
+      it "returns generic Monday::Error" do
+        exception = client.send(:response_exception, response)
+        expect(exception).to be_a(Monday::Error)
+      end
     end
   end
 end

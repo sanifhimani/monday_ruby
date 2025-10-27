@@ -25,6 +25,12 @@ module Monday
       # Allows customizing the values to retrieve using the select option.
       # By default, ID, title and description fields are retrieved.
       def column_values(board_ids = [], item_ids = [], select: DEFAULT_SELECT)
+        Deprecation.warn(
+          method_name: "column_values",
+          removal_version: "2.0.0",
+          alternative: "item.column_values"
+        )
+
         board_args = board_ids.empty? ? "" : "ids: #{board_ids}"
         item_args = item_ids.empty? ? "" : "ids: #{item_ids}"
         query = "query{boards(#{board_args}){items(#{item_args})" \

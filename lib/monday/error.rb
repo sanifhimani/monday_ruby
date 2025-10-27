@@ -56,13 +56,16 @@ module Monday
   # AuthorizationError is raised when the request returns
   # a 401 or 403 status code.
   #
-  # It is also raised when the body returns the following error_code:
-  #   UserUnauthorizedException
+  # It is also raised when the body returns the following error_codes:
+  #   UserUnauthorizedException, USER_UNAUTHORIZED
   class AuthorizationError < Error
   end
 
   # RateLimitError is raised when the request returns
   # a 429 status code.
+  #
+  # It is also raised when the body returns the following error_codes:
+  #   ComplexityException, COMPLEXITY_BUDGET_EXHAUSTED
   class RateLimitError < Error
   end
 

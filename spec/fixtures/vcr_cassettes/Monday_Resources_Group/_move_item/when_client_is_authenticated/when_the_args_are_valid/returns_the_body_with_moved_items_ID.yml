@@ -5,8 +5,8 @@ http_interactions:
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_board(board_name: \"Test Board\", board_kind:
-        private){id name description}}"}'
+      string: '{"query":"mutation{create_board(board_name: \"Move Item Valid Test\",
+        board_kind: private){id name description}}"}'
     headers:
       Content-Type:
       - application/json
@@ -24,128 +24,59 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 24 Jul 2024 08:05:17 GMT
+      - Fri, 24 Oct 2025 22:09:16 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Cf-Ray:
+      - 993ccc276d9b8538-EWR
+      X-Api-Router:
+      - 'true'
       Api-Version:
-      - 2024-07
-      Vary:
-      - Origin, Accept-Encoding
-      Etag:
-      - W/"3eb6999da9253961b3b6dcc70ce10900"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      - 2025-07
       X-Request-Id:
-      - c7e5bc81-af87-9e62-b08c-dd5635827d11
-      X-Runtime:
-      - '1.115957'
+      - 12e99b73-4a61-90ce-8f84-461309d04131
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
       X-Envoy-Upstream-Service-Time:
-      - '1118'
+      - '1463'
       Content-Security-Policy:
-      - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
-        https://*.bigbrain.me https://*.teams.microsoft.com https://microsoft365.com
-        https://*.microsoft365.com https://*.office.com https://m365.cloud.microsoft
-        https://*.microsoftonline.com https://*.office365.com https://*.microsoft.com
-        https://webbyawards.com https://www.webbyawards.com https://*.backend.monday.app
-        https://monday.lightning.force.com https://monday.force.com https://www.office.com
-        https://*.www.office.com https://outlook.live.com https://outlook-sdf.live.com
-        https://monday.vitally.io https://monday.zendesk.com; script-src 'self' 'unsafe-inline'
-        'unsafe-eval' https://*.monday.com https://webpack.llama.fan:* https://*.microsoft.com
-        https://*.hsforms.com https://*.pusher.com https://accounts.google.com https://ajax.googleapis.com
-        https://api.embed.ly https://apis.google.com https://app.box.com https://appvizer.one/ariadne/v1/ariadne.js
-        https://bat.bing.com https://cdn.broadcast.am https://cdn.simpo.io/actionbar.js
-        https://cdn.simpo.io/simpo-client.js https://cdn.walkme.com https://cdnjs.cloudflare.com
-        https://code.highcharts.com https://connect.facebook.net https://ct.capterra.com
-        https://d18vk66ftlazd2.cloudfront.net https://d2c7xlmseob604.cloudfront.net
-        https://edge.fullstory.com https://rs.fullstory.com https://googleads.g.doubleclick.net
-        https://js.hsforms.net https://js.live.net https://maps.googleapis.com https://monday.com
-        https://s.pinimg.com https://s.ytimg.com https://snap.licdn.com https://snippet.growsumo.com
-        https://songbird.cardinalcommerce.com https://static.cloudflareinsights.com
-        https://static.zdassets.com https://tpc.googlesyndication.com https://translate.googleapis.com
-        https://*.zopim.com https://*.smooch.io https://pod-18.zendesk.com https://ws.bluesnap.com
-        https://www.dropbox.com https://*.google-analytics.com https://www.google.com
-        https://www.googleadservices.com https://www.googletagmanager.com https://www.gstatic.com
-        https://www.youtube.com https://bigbrain.me https://*.bigbrain.me https://informer-cdn.monday.com
-        https://js.appboycdn.com/web-sdk/3.2/appboy.no-amd.min.js https://js.appboycdn.com/web-sdk/3.2/appboy.min.js
-        https://sdk.iad-06.braze.com https://*.cdn2.monday.app https://microfrontends.monday.com
-        https://js.braintreegateway.com https://assets.braintreegateway.com https://*.paypal.com
-        https://cdn.monday.com https://browser.sentry-cdn.com https://*.hotjar.com
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://ws.servicebell.com https://monday.ada.support https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.analytics.google.com https://px.ads.linkedin.com
-        https://tags.srv.stackadapt.com/events.js https://a.quora.com/qevents.js;
-        worker-src 'self' 'unsafe-inline' blob:; connect-src 'self' https://*.monday.com
-        https://monday.com wss://webpack.llama.fan:* https://webpack.llama.fan:* https://grsm.io
-        https://forms.hsforms.com https://*.algolia.net https://*.algolianet.com https://bat.bing.com
-        https://*.braze.com https://api.smartling.com https://us-central1-adaptive-growth.cloudfunctions.net
-        https://appvizer.one https://www.facebook.com https://graph.microsoft.com
-        https://graph.facebook.com https://api.giphy.com https://storage.monday.app
-        https://broadcast.am https://stats.g.doubleclick.net https://edge.fullstory.com
-        https://rs.fullstory.com https://*.cloudfront.net https://dapulse-res.cloudinary.com
-        https://static.cloudflareinsights.com https://*.bigbrain.me https://www.dropbox.com
-        https://www.googletagmanager.com https://ipinfo.io https://*.cardinalcommerce.com
-        https://www.bluesnap.com https://connect.facebook.net https://app.box.com
-        https://code.highcharts.com https://js.live.net https://monday.zendesk.com
-        https://monday-enterprise.zendesk.com https://static.zdassets.com https://ekr.zdassets.com
-        https://ekr.zendesk.com https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com
-        wss://*.zopim.com https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye
-        https://*.smooch.io wss://*.zendesk.com/sc/faye https://*.google-analytics.com
-        https://api.simpo.io https://cdn.simpo.io https://zh081jts88wj.statuspage.io
-        https://www.googleapis.com https://api.braintreegateway.com https://client-analytics.braintreegateway.com
-        https://*.braintree-api.com https://*.paypal.com https://*.sentry.io https://cdn.jsdelivr.net
-        https://prod-use1-crm-billing.s3.amazonaws.com https://prod-use1-crm-communication.s3.amazonaws.com
-        https://prod-use1-importer-uploads.s3.amazonaws.com https://files-monday-com.s3.amazonaws.com
-        https://prod-apse2-crm-billing.s3.ap-southeast-2.amazonaws.com https://prod-apse2-crm-communication.s3.ap-southeast-2.amazonaws.com
-        https://prod-apse2-importer-uploads.s3.ap-southeast-2.amazonaws.com https://prod-apse2-files-monday-com.s3.amazonaws.com
-        https://prod-euc1-crm-billing.s3.eu-central-1.amazonaws.com https://prod-euc1-crm-communication.s3.eu-central-1.amazonaws.com
-        https://prod-euc1-importer-uploads.s3.eu-central-1.amazonaws.com https://prod-euc1-files-monday-com.s3.amazonaws.com
-        https://microfrontends.monday.com https://*.hotjar.com https://*.hotjar.io
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://*.hotjar.com wss://ws.servicebell.com https://rum.browser-intake-datadoghq.eu
-        https://session-replay.browser-intake-datadoghq.eu https://cdnjs.cloudflare.com
-        https://fonts.gstatic.com https://fonts.googleapis.com https://googleads.g.doubleclick.net
-        https://snap.licdn.com https://www.google.com https://monday.ada.support https://monday-gen.ada.support
-        https://browser-http-intake.logs.datadoghq.com https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.demdex.net https://ib.adnxs.com https://*.analytics.google.com
-        https://px.ads.linkedin.com https://*.srv.stackadapt.com https://*.quora.com
-        https://www.ojrq.net https://logs-01.loggly.com https://mondaycom.sjv.io https://insight.adsrvr.org
-        https://analytics.google.com https://api.hsforms.com https://*.hightouch-events.com
-        https://google.com/pagead/form-data/933380251 https://google.com/ccm/form-data/933380251;
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=i5XkcTZ1aeK6TKa01DX3_1xRRkdK0xsnCcKGV.ccd1Y-1721808317-1.0.1.1-B.OvcH7MkWv_aKxNR_Lik6nUpRchMAxD7jzVdNoUbxCYqBVgLIMJ4_6nYv9iRNB11m.oKdnw6aO1nZpttKaOdIC4r9GZwhYp8KXyFc8uo_8;
-        path=/; expires=Wed, 24-Jul-24 08:35:17 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=ZFdZetNyHGFXQuhXhaaLNvX604fxrundvNx2MYrq67s-1761343756-1.0.1.1-UmaK5d8_ld8jM4fqkarCboJNTNqWxcEHuY3VMISftuwB4L8EydXKITwTgSXgLwZLiLcWy4nHXIllworivfrH7hDdbaonawVlLVNQOQOqbiUCLjPKUvDt9WTuckLwMZaQ;
+        path=/; expires=Fri, 24-Oct-25 22:39:16 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
+      - _cfuvid=rfkHEAfNOmq1KvdEvbw9ezPnODv51bqqvo58cq.RYlI-1761343756942-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains
+      - max-age=31536000; includeSubDomains
       Server:
       - cloudflare
-      Cf-Ray:
-      - 8a8267770bee1798-MAA
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_board":{"id":"7085181986","name":"Test Board","description":null}},"account_id":24308083}'
-  recorded_at: Wed, 24 Jul 2024 08:05:17 GMT
+      string: '{"data":{"create_board":{"id":"18267709251","name":"Move Item Valid
+        Test","description":null}},"extensions":{"request_id":"12e99b73-4a61-90ce-8f84-461309d04131"}}'
+  recorded_at: Fri, 24 Oct 2025 22:09:16 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_group(board_id: \"7085181986\", group_name:
-        \"Returned orders\"){id title}}"}'
+      string: '{"query":"mutation{create_group(board_id: \"18267709251\", group_name:
+        \"Test Group\"){id title}}"}'
     headers:
       Content-Type:
       - application/json
@@ -163,129 +94,58 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 24 Jul 2024 08:05:18 GMT
+      - Fri, 24 Oct 2025 22:09:17 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Cf-Ray:
+      - 993ccc3149667c9f-EWR
+      X-Api-Router:
+      - 'true'
       Api-Version:
-      - 2024-07
-      Vary:
-      - Origin, Accept-Encoding
-      Etag:
-      - W/"8c8c129a4a8c3b803fe6acdde85bf247"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      - 2025-07
       X-Request-Id:
-      - a1aaedbf-7ee2-96c9-a687-23bf628a4e57
-      X-Runtime:
-      - '0.370809'
+      - e3bee2ba-1be3-9908-b771-5cc46f7bc4d2
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
       X-Envoy-Upstream-Service-Time:
-      - '374'
+      - '762'
       Content-Security-Policy:
-      - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
-        https://*.bigbrain.me https://*.teams.microsoft.com https://microsoft365.com
-        https://*.microsoft365.com https://*.office.com https://m365.cloud.microsoft
-        https://*.microsoftonline.com https://*.office365.com https://*.microsoft.com
-        https://webbyawards.com https://www.webbyawards.com https://*.backend.monday.app
-        https://monday.lightning.force.com https://monday.force.com https://www.office.com
-        https://*.www.office.com https://outlook.live.com https://outlook-sdf.live.com
-        https://monday.vitally.io https://monday.zendesk.com; script-src 'self' 'unsafe-inline'
-        'unsafe-eval' https://*.monday.com https://webpack.llama.fan:* https://*.microsoft.com
-        https://*.hsforms.com https://*.pusher.com https://accounts.google.com https://ajax.googleapis.com
-        https://api.embed.ly https://apis.google.com https://app.box.com https://appvizer.one/ariadne/v1/ariadne.js
-        https://bat.bing.com https://cdn.broadcast.am https://cdn.simpo.io/actionbar.js
-        https://cdn.simpo.io/simpo-client.js https://cdn.walkme.com https://cdnjs.cloudflare.com
-        https://code.highcharts.com https://connect.facebook.net https://ct.capterra.com
-        https://d18vk66ftlazd2.cloudfront.net https://d2c7xlmseob604.cloudfront.net
-        https://edge.fullstory.com https://rs.fullstory.com https://googleads.g.doubleclick.net
-        https://js.hsforms.net https://js.live.net https://maps.googleapis.com https://monday.com
-        https://s.pinimg.com https://s.ytimg.com https://snap.licdn.com https://snippet.growsumo.com
-        https://songbird.cardinalcommerce.com https://static.cloudflareinsights.com
-        https://static.zdassets.com https://tpc.googlesyndication.com https://translate.googleapis.com
-        https://*.zopim.com https://*.smooch.io https://pod-18.zendesk.com https://ws.bluesnap.com
-        https://www.dropbox.com https://*.google-analytics.com https://www.google.com
-        https://www.googleadservices.com https://www.googletagmanager.com https://www.gstatic.com
-        https://www.youtube.com https://bigbrain.me https://*.bigbrain.me https://informer-cdn.monday.com
-        https://js.appboycdn.com/web-sdk/3.2/appboy.no-amd.min.js https://js.appboycdn.com/web-sdk/3.2/appboy.min.js
-        https://sdk.iad-06.braze.com https://*.cdn2.monday.app https://microfrontends.monday.com
-        https://js.braintreegateway.com https://assets.braintreegateway.com https://*.paypal.com
-        https://cdn.monday.com https://browser.sentry-cdn.com https://*.hotjar.com
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://ws.servicebell.com https://monday.ada.support https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.analytics.google.com https://px.ads.linkedin.com
-        https://tags.srv.stackadapt.com/events.js https://a.quora.com/qevents.js;
-        worker-src 'self' 'unsafe-inline' blob:; connect-src 'self' https://*.monday.com
-        https://monday.com wss://webpack.llama.fan:* https://webpack.llama.fan:* https://grsm.io
-        https://forms.hsforms.com https://*.algolia.net https://*.algolianet.com https://bat.bing.com
-        https://*.braze.com https://api.smartling.com https://us-central1-adaptive-growth.cloudfunctions.net
-        https://appvizer.one https://www.facebook.com https://graph.microsoft.com
-        https://graph.facebook.com https://api.giphy.com https://storage.monday.app
-        https://broadcast.am https://stats.g.doubleclick.net https://edge.fullstory.com
-        https://rs.fullstory.com https://*.cloudfront.net https://dapulse-res.cloudinary.com
-        https://static.cloudflareinsights.com https://*.bigbrain.me https://www.dropbox.com
-        https://www.googletagmanager.com https://ipinfo.io https://*.cardinalcommerce.com
-        https://www.bluesnap.com https://connect.facebook.net https://app.box.com
-        https://code.highcharts.com https://js.live.net https://monday.zendesk.com
-        https://monday-enterprise.zendesk.com https://static.zdassets.com https://ekr.zdassets.com
-        https://ekr.zendesk.com https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com
-        wss://*.zopim.com https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye
-        https://*.smooch.io wss://*.zendesk.com/sc/faye https://*.google-analytics.com
-        https://api.simpo.io https://cdn.simpo.io https://zh081jts88wj.statuspage.io
-        https://www.googleapis.com https://api.braintreegateway.com https://client-analytics.braintreegateway.com
-        https://*.braintree-api.com https://*.paypal.com https://*.sentry.io https://cdn.jsdelivr.net
-        https://prod-use1-crm-billing.s3.amazonaws.com https://prod-use1-crm-communication.s3.amazonaws.com
-        https://prod-use1-importer-uploads.s3.amazonaws.com https://files-monday-com.s3.amazonaws.com
-        https://prod-apse2-crm-billing.s3.ap-southeast-2.amazonaws.com https://prod-apse2-crm-communication.s3.ap-southeast-2.amazonaws.com
-        https://prod-apse2-importer-uploads.s3.ap-southeast-2.amazonaws.com https://prod-apse2-files-monday-com.s3.amazonaws.com
-        https://prod-euc1-crm-billing.s3.eu-central-1.amazonaws.com https://prod-euc1-crm-communication.s3.eu-central-1.amazonaws.com
-        https://prod-euc1-importer-uploads.s3.eu-central-1.amazonaws.com https://prod-euc1-files-monday-com.s3.amazonaws.com
-        https://microfrontends.monday.com https://*.hotjar.com https://*.hotjar.io
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://*.hotjar.com wss://ws.servicebell.com https://rum.browser-intake-datadoghq.eu
-        https://session-replay.browser-intake-datadoghq.eu https://cdnjs.cloudflare.com
-        https://fonts.gstatic.com https://fonts.googleapis.com https://googleads.g.doubleclick.net
-        https://snap.licdn.com https://www.google.com https://monday.ada.support https://monday-gen.ada.support
-        https://browser-http-intake.logs.datadoghq.com https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.demdex.net https://ib.adnxs.com https://*.analytics.google.com
-        https://px.ads.linkedin.com https://*.srv.stackadapt.com https://*.quora.com
-        https://www.ojrq.net https://logs-01.loggly.com https://mondaycom.sjv.io https://insight.adsrvr.org
-        https://analytics.google.com https://api.hsforms.com https://*.hightouch-events.com
-        https://google.com/pagead/form-data/933380251 https://google.com/ccm/form-data/933380251;
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=36fIEYa5X1FSRqaVadxuGYAI1S1KWQ3MV_NlF7F7S8o-1721808318-1.0.1.1-pUS0du2f1cGNNaAVOy6kpv5TyD6._AyJtf92yIVPuoBd6ZHFAu00y.WEz8QMVp5Oc5Zb9ivgL.qcNR__HCKzers9kmgjvJVIshZRddetQIM;
-        path=/; expires=Wed, 24-Jul-24 08:35:18 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=USnBNxeTReZ5PSx25q.4MDFjFXbg4FVMcM6OB9kjjpk-1761343757-1.0.1.1-nAjj6MklFALBF5_ZXr0ZyfN8URz7ixecK5KNkQZfzf9yfJ2y8Wz8Gk185S_AVoEHy5c8ihsSzfCfFB94s2qd6Qf3t5FVTO1_wCer.nWz10lgV89wY.M_CeQRykn.3ubO;
+        path=/; expires=Fri, 24-Oct-25 22:39:17 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
+      - _cfuvid=gpTYg2RygGk07Ylr.N3W.HJHh41CAOfD7punqSZ_gTo-1761343757817-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains
+      - max-age=31536000; includeSubDomains
       Server:
       - cloudflare
-      Cf-Ray:
-      - 8a826781c96b7f71-MAA
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_group":{"id":"returned_orders__1","title":"Returned
-        orders"}},"account_id":24308083}'
-  recorded_at: Wed, 24 Jul 2024 08:05:18 GMT
+      string: '{"data":{"create_group":{"id":"group_mkx1vb2r","title":"Test Group"}},"extensions":{"request_id":"e3bee2ba-1be3-9908-b771-5cc46f7bc4d2"}}'
+  recorded_at: Fri, 24 Oct 2025 22:09:17 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{create_item(board_id: \"7085181986\", item_name:
-        \"Test Item\"){id name created_at}}"}'
+      string: '{"query":"mutation{create_item(board_id: \"18267709251\", group_id:
+        \"group_mkx1vb2r\", item_name: \"Test Item 1\"){id name created_at}}"}'
     headers:
       Content-Type:
       - application/json
@@ -303,128 +163,58 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 24 Jul 2024 08:05:19 GMT
+      - Fri, 24 Oct 2025 22:09:18 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Cf-Ray:
+      - 993ccc36da1b4693-EWR
+      X-Api-Router:
+      - 'true'
       Api-Version:
-      - 2024-07
-      Vary:
-      - Origin, Accept-Encoding
-      Etag:
-      - W/"3e24192fa81d009682d53b105ce48942"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      - 2025-07
       X-Request-Id:
-      - f3a6e7b7-401a-9a12-9ef9-823de44f1014
-      X-Runtime:
-      - '0.426097'
+      - 1ebacd31-3fae-9b88-8d8f-a22e80f8302f
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
       X-Envoy-Upstream-Service-Time:
-      - '429'
+      - '940'
       Content-Security-Policy:
-      - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
-        https://*.bigbrain.me https://*.teams.microsoft.com https://microsoft365.com
-        https://*.microsoft365.com https://*.office.com https://m365.cloud.microsoft
-        https://*.microsoftonline.com https://*.office365.com https://*.microsoft.com
-        https://webbyawards.com https://www.webbyawards.com https://*.backend.monday.app
-        https://monday.lightning.force.com https://monday.force.com https://www.office.com
-        https://*.www.office.com https://outlook.live.com https://outlook-sdf.live.com
-        https://monday.vitally.io https://monday.zendesk.com; script-src 'self' 'unsafe-inline'
-        'unsafe-eval' https://*.monday.com https://webpack.llama.fan:* https://*.microsoft.com
-        https://*.hsforms.com https://*.pusher.com https://accounts.google.com https://ajax.googleapis.com
-        https://api.embed.ly https://apis.google.com https://app.box.com https://appvizer.one/ariadne/v1/ariadne.js
-        https://bat.bing.com https://cdn.broadcast.am https://cdn.simpo.io/actionbar.js
-        https://cdn.simpo.io/simpo-client.js https://cdn.walkme.com https://cdnjs.cloudflare.com
-        https://code.highcharts.com https://connect.facebook.net https://ct.capterra.com
-        https://d18vk66ftlazd2.cloudfront.net https://d2c7xlmseob604.cloudfront.net
-        https://edge.fullstory.com https://rs.fullstory.com https://googleads.g.doubleclick.net
-        https://js.hsforms.net https://js.live.net https://maps.googleapis.com https://monday.com
-        https://s.pinimg.com https://s.ytimg.com https://snap.licdn.com https://snippet.growsumo.com
-        https://songbird.cardinalcommerce.com https://static.cloudflareinsights.com
-        https://static.zdassets.com https://tpc.googlesyndication.com https://translate.googleapis.com
-        https://*.zopim.com https://*.smooch.io https://pod-18.zendesk.com https://ws.bluesnap.com
-        https://www.dropbox.com https://*.google-analytics.com https://www.google.com
-        https://www.googleadservices.com https://www.googletagmanager.com https://www.gstatic.com
-        https://www.youtube.com https://bigbrain.me https://*.bigbrain.me https://informer-cdn.monday.com
-        https://js.appboycdn.com/web-sdk/3.2/appboy.no-amd.min.js https://js.appboycdn.com/web-sdk/3.2/appboy.min.js
-        https://sdk.iad-06.braze.com https://*.cdn2.monday.app https://microfrontends.monday.com
-        https://js.braintreegateway.com https://assets.braintreegateway.com https://*.paypal.com
-        https://cdn.monday.com https://browser.sentry-cdn.com https://*.hotjar.com
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://ws.servicebell.com https://monday.ada.support https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.analytics.google.com https://px.ads.linkedin.com
-        https://tags.srv.stackadapt.com/events.js https://a.quora.com/qevents.js;
-        worker-src 'self' 'unsafe-inline' blob:; connect-src 'self' https://*.monday.com
-        https://monday.com wss://webpack.llama.fan:* https://webpack.llama.fan:* https://grsm.io
-        https://forms.hsforms.com https://*.algolia.net https://*.algolianet.com https://bat.bing.com
-        https://*.braze.com https://api.smartling.com https://us-central1-adaptive-growth.cloudfunctions.net
-        https://appvizer.one https://www.facebook.com https://graph.microsoft.com
-        https://graph.facebook.com https://api.giphy.com https://storage.monday.app
-        https://broadcast.am https://stats.g.doubleclick.net https://edge.fullstory.com
-        https://rs.fullstory.com https://*.cloudfront.net https://dapulse-res.cloudinary.com
-        https://static.cloudflareinsights.com https://*.bigbrain.me https://www.dropbox.com
-        https://www.googletagmanager.com https://ipinfo.io https://*.cardinalcommerce.com
-        https://www.bluesnap.com https://connect.facebook.net https://app.box.com
-        https://code.highcharts.com https://js.live.net https://monday.zendesk.com
-        https://monday-enterprise.zendesk.com https://static.zdassets.com https://ekr.zdassets.com
-        https://ekr.zendesk.com https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com
-        wss://*.zopim.com https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye
-        https://*.smooch.io wss://*.zendesk.com/sc/faye https://*.google-analytics.com
-        https://api.simpo.io https://cdn.simpo.io https://zh081jts88wj.statuspage.io
-        https://www.googleapis.com https://api.braintreegateway.com https://client-analytics.braintreegateway.com
-        https://*.braintree-api.com https://*.paypal.com https://*.sentry.io https://cdn.jsdelivr.net
-        https://prod-use1-crm-billing.s3.amazonaws.com https://prod-use1-crm-communication.s3.amazonaws.com
-        https://prod-use1-importer-uploads.s3.amazonaws.com https://files-monday-com.s3.amazonaws.com
-        https://prod-apse2-crm-billing.s3.ap-southeast-2.amazonaws.com https://prod-apse2-crm-communication.s3.ap-southeast-2.amazonaws.com
-        https://prod-apse2-importer-uploads.s3.ap-southeast-2.amazonaws.com https://prod-apse2-files-monday-com.s3.amazonaws.com
-        https://prod-euc1-crm-billing.s3.eu-central-1.amazonaws.com https://prod-euc1-crm-communication.s3.eu-central-1.amazonaws.com
-        https://prod-euc1-importer-uploads.s3.eu-central-1.amazonaws.com https://prod-euc1-files-monday-com.s3.amazonaws.com
-        https://microfrontends.monday.com https://*.hotjar.com https://*.hotjar.io
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://*.hotjar.com wss://ws.servicebell.com https://rum.browser-intake-datadoghq.eu
-        https://session-replay.browser-intake-datadoghq.eu https://cdnjs.cloudflare.com
-        https://fonts.gstatic.com https://fonts.googleapis.com https://googleads.g.doubleclick.net
-        https://snap.licdn.com https://www.google.com https://monday.ada.support https://monday-gen.ada.support
-        https://browser-http-intake.logs.datadoghq.com https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.demdex.net https://ib.adnxs.com https://*.analytics.google.com
-        https://px.ads.linkedin.com https://*.srv.stackadapt.com https://*.quora.com
-        https://www.ojrq.net https://logs-01.loggly.com https://mondaycom.sjv.io https://insight.adsrvr.org
-        https://analytics.google.com https://api.hsforms.com https://*.hightouch-events.com
-        https://google.com/pagead/form-data/933380251 https://google.com/ccm/form-data/933380251;
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=xEIoAF2pTrXuaVgdImb4zHdxsbyQcHBPSOWm4xPaaws-1721808319-1.0.1.1-NPmI6_TQqS3C4G0jN104vjvLZ_GvbT4UVLRxSNixYX8wt7v.BdOf8m7q3nOe5KR47OI4xW3xweDDhkRmnsVk8_r2ovzHcSwm9ZvO3HhZomY;
-        path=/; expires=Wed, 24-Jul-24 08:35:19 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=4PvEWuii9.xOAEKkSrphnOH8mJnZmoW614hRaJRI1CY-1761343758-1.0.1.1-67ZYrIwGV006Op4Xj3zy4J_12dN9hNBrYEneVHiUtAPat7mI7FXVEeFJIDJqjP10X3l6pivpkf1.Qc_Nc9WiMQzwpeklRjGh8UI9KokccFx.xqvQbxQDsqbBqzjFbuhU;
+        path=/; expires=Fri, 24-Oct-25 22:39:18 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
+      - _cfuvid=tz6FSf7mtpHy3lhG6KldkTCLOi.n23IX71EYMvafGbA-1761343758887-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains
+      - max-age=31536000; includeSubDomains
       Server:
       - cloudflare
-      Cf-Ray:
-      - 8a826787b84e7f25-MAA
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"create_item":{"id":"7085182344","name":"Test Item","created_at":"2024-07-24T08:05:19Z"}},"account_id":24308083}'
-  recorded_at: Wed, 24 Jul 2024 08:05:19 GMT
+      string: '{"data":{"create_item":{"id":"18267709396","name":"Test Item 1","created_at":"2025-10-24T22:09:18Z"}},"extensions":{"request_id":"1ebacd31-3fae-9b88-8d8f-a22e80f8302f"}}'
+  recorded_at: Fri, 24 Oct 2025 22:09:18 GMT
 - request:
     method: post
     uri: https://api.monday.com/v2
     body:
       encoding: UTF-8
-      string: '{"query":"mutation{move_item_to_group(item_id: \"7085182344\", group_id:
-        \"returned_orders__1\"){id}}"}'
+      string: '{"query":"mutation{move_item_to_group(item_id: \"18267709396\", group_id:
+        \"group_mkx1vb2r\"){id}}"}'
     headers:
       Content-Type:
       - application/json
@@ -442,119 +232,117 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 24 Jul 2024 08:05:20 GMT
+      - Fri, 24 Oct 2025 22:09:19 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Cf-Ray:
+      - 993ccc3d68aa424f-EWR
+      X-Api-Router:
+      - 'true'
       Api-Version:
-      - 2024-07
-      Vary:
-      - Origin, Accept-Encoding
-      Etag:
-      - W/"da0fbeb98f2932a1f1698d593ce96456"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      - 2025-07
       X-Request-Id:
-      - 60251b1b-da5e-9bdd-86a5-f36db1f9c981
-      X-Runtime:
-      - '0.753013'
+      - 693e52e9-4f8e-95a2-9ca5-e4a554d97bdf
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
       X-Envoy-Upstream-Service-Time:
-      - '756'
+      - '500'
       Content-Security-Policy:
-      - frame-ancestors https://monday.com https://*.monday.com https://bigbrain.me
-        https://*.bigbrain.me https://*.teams.microsoft.com https://microsoft365.com
-        https://*.microsoft365.com https://*.office.com https://m365.cloud.microsoft
-        https://*.microsoftonline.com https://*.office365.com https://*.microsoft.com
-        https://webbyawards.com https://www.webbyawards.com https://*.backend.monday.app
-        https://monday.lightning.force.com https://monday.force.com https://www.office.com
-        https://*.www.office.com https://outlook.live.com https://outlook-sdf.live.com
-        https://monday.vitally.io https://monday.zendesk.com; script-src 'self' 'unsafe-inline'
-        'unsafe-eval' https://*.monday.com https://webpack.llama.fan:* https://*.microsoft.com
-        https://*.hsforms.com https://*.pusher.com https://accounts.google.com https://ajax.googleapis.com
-        https://api.embed.ly https://apis.google.com https://app.box.com https://appvizer.one/ariadne/v1/ariadne.js
-        https://bat.bing.com https://cdn.broadcast.am https://cdn.simpo.io/actionbar.js
-        https://cdn.simpo.io/simpo-client.js https://cdn.walkme.com https://cdnjs.cloudflare.com
-        https://code.highcharts.com https://connect.facebook.net https://ct.capterra.com
-        https://d18vk66ftlazd2.cloudfront.net https://d2c7xlmseob604.cloudfront.net
-        https://edge.fullstory.com https://rs.fullstory.com https://googleads.g.doubleclick.net
-        https://js.hsforms.net https://js.live.net https://maps.googleapis.com https://monday.com
-        https://s.pinimg.com https://s.ytimg.com https://snap.licdn.com https://snippet.growsumo.com
-        https://songbird.cardinalcommerce.com https://static.cloudflareinsights.com
-        https://static.zdassets.com https://tpc.googlesyndication.com https://translate.googleapis.com
-        https://*.zopim.com https://*.smooch.io https://pod-18.zendesk.com https://ws.bluesnap.com
-        https://www.dropbox.com https://*.google-analytics.com https://www.google.com
-        https://www.googleadservices.com https://www.googletagmanager.com https://www.gstatic.com
-        https://www.youtube.com https://bigbrain.me https://*.bigbrain.me https://informer-cdn.monday.com
-        https://js.appboycdn.com/web-sdk/3.2/appboy.no-amd.min.js https://js.appboycdn.com/web-sdk/3.2/appboy.min.js
-        https://sdk.iad-06.braze.com https://*.cdn2.monday.app https://microfrontends.monday.com
-        https://js.braintreegateway.com https://assets.braintreegateway.com https://*.paypal.com
-        https://cdn.monday.com https://browser.sentry-cdn.com https://*.hotjar.com
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://ws.servicebell.com https://monday.ada.support https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.analytics.google.com https://px.ads.linkedin.com
-        https://tags.srv.stackadapt.com/events.js https://a.quora.com/qevents.js;
-        worker-src 'self' 'unsafe-inline' blob:; connect-src 'self' https://*.monday.com
-        https://monday.com wss://webpack.llama.fan:* https://webpack.llama.fan:* https://grsm.io
-        https://forms.hsforms.com https://*.algolia.net https://*.algolianet.com https://bat.bing.com
-        https://*.braze.com https://api.smartling.com https://us-central1-adaptive-growth.cloudfunctions.net
-        https://appvizer.one https://www.facebook.com https://graph.microsoft.com
-        https://graph.facebook.com https://api.giphy.com https://storage.monday.app
-        https://broadcast.am https://stats.g.doubleclick.net https://edge.fullstory.com
-        https://rs.fullstory.com https://*.cloudfront.net https://dapulse-res.cloudinary.com
-        https://static.cloudflareinsights.com https://*.bigbrain.me https://www.dropbox.com
-        https://www.googletagmanager.com https://ipinfo.io https://*.cardinalcommerce.com
-        https://www.bluesnap.com https://connect.facebook.net https://app.box.com
-        https://code.highcharts.com https://js.live.net https://monday.zendesk.com
-        https://monday-enterprise.zendesk.com https://static.zdassets.com https://ekr.zdassets.com
-        https://ekr.zendesk.com https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com
-        wss://*.zopim.com https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye
-        https://*.smooch.io wss://*.zendesk.com/sc/faye https://*.google-analytics.com
-        https://api.simpo.io https://cdn.simpo.io https://zh081jts88wj.statuspage.io
-        https://www.googleapis.com https://api.braintreegateway.com https://client-analytics.braintreegateway.com
-        https://*.braintree-api.com https://*.paypal.com https://*.sentry.io https://cdn.jsdelivr.net
-        https://prod-use1-crm-billing.s3.amazonaws.com https://prod-use1-crm-communication.s3.amazonaws.com
-        https://prod-use1-importer-uploads.s3.amazonaws.com https://files-monday-com.s3.amazonaws.com
-        https://prod-apse2-crm-billing.s3.ap-southeast-2.amazonaws.com https://prod-apse2-crm-communication.s3.ap-southeast-2.amazonaws.com
-        https://prod-apse2-importer-uploads.s3.ap-southeast-2.amazonaws.com https://prod-apse2-files-monday-com.s3.amazonaws.com
-        https://prod-euc1-crm-billing.s3.eu-central-1.amazonaws.com https://prod-euc1-crm-communication.s3.eu-central-1.amazonaws.com
-        https://prod-euc1-importer-uploads.s3.eu-central-1.amazonaws.com https://prod-euc1-files-monday-com.s3.amazonaws.com
-        https://microfrontends.monday.com https://*.hotjar.com https://*.hotjar.io
-        https://static.ads-twitter.com https://analytics.twitter.com https://analytics.tiktok.com
-        https://s.yimg.jp/images/listing/tool/cv/ytag.js https://cdn.linkedin.oribi.io
-        https://cdn.servicebell.com https://api.servicebell.com wss://api.servicebell.com
-        wss://*.hotjar.com wss://ws.servicebell.com https://rum.browser-intake-datadoghq.eu
-        https://session-replay.browser-intake-datadoghq.eu https://cdnjs.cloudflare.com
-        https://fonts.gstatic.com https://fonts.googleapis.com https://googleads.g.doubleclick.net
-        https://snap.licdn.com https://www.google.com https://monday.ada.support https://monday-gen.ada.support
-        https://browser-http-intake.logs.datadoghq.com https://static.ada.support
-        https://previews.ada.support https://ws-mt1.pusher.com https://rollout.ada.support
-        https://*.everestjs.net https://*.demdex.net https://ib.adnxs.com https://*.analytics.google.com
-        https://px.ads.linkedin.com https://*.srv.stackadapt.com https://*.quora.com
-        https://www.ojrq.net https://logs-01.loggly.com https://mondaycom.sjv.io https://insight.adsrvr.org
-        https://analytics.google.com https://api.hsforms.com https://*.hightouch-events.com
-        https://google.com/pagead/form-data/933380251 https://google.com/ccm/form-data/933380251;
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
       X-Monday-Rgn:
       - use1
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=On0DtSVpZTFZZj670A0CsqEpdRl8gQbrQL2uubtAbOk-1721808320-1.0.1.1-M4J1mmsscAI4PT0ZRUBuCzgJSkjOHDAeuBDpta0okaLJz8Slz2WHdw20ETpi7A4PMEXO5YoCKXb.uqDGmQLoz0TWzPWvGXf8R6zR7Ehh7Uc;
-        path=/; expires=Wed, 24-Jul-24 08:35:20 GMT; domain=.monday.com; HttpOnly;
+      - __cf_bm=jmLeI2wwohk7q6kwH83I7NcpVT.JZTjKzavqsMDmSTA-1761343759-1.0.1.1-dczt0CnWxB5LY2CbvOlfGXiQp9KPdQ2U_e_63iDaz5ukaGJH2r4InVAu7pGx56tgLnhnwvWt8FyXFOCMWRciaAByyZSmm.ipXJpdNtMIwohvITzxkuFGwyoMeWtNQURh;
+        path=/; expires=Fri, 24-Oct-25 22:39:19 GMT; domain=.monday.com; HttpOnly;
         Secure; SameSite=None
+      - _cfuvid=d3mR67QAMkj97BZVJmlqmG0PpNWKA_brfDW6ZznW5ms-1761343759498-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
       Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains
+      - max-age=31536000; includeSubDomains
       Server:
       - cloudflare
-      Cf-Ray:
-      - 8a82678f5f407feb-MAA
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"move_item_to_group":{"id":"7085182344"}},"account_id":24308083}'
-  recorded_at: Wed, 24 Jul 2024 08:05:20 GMT
-recorded_with: VCR 6.2.0
+      string: '{"data":{"move_item_to_group":{"id":"18267709396"}},"extensions":{"request_id":"693e52e9-4f8e-95a2-9ca5-e4a554d97bdf"}}'
+  recorded_at: Fri, 24 Oct 2025 22:09:19 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{delete_board(board_id: 18267709251){id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 Oct 2025 22:09:20 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 993ccc41bbb4efa7-EWR
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-07
+      X-Request-Id:
+      - 1db3a6c2-22c0-9e62-9087-ee7e231bcb34
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '830'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=aloszdI_FTQzdmM0oC8rcTtNktb_NJSL.zrkKtXCJek-1761343760-1.0.1.1-._j7QzYQQHbyNe2JVoLV5ZzvLQmpWyQX0Q2KJd1900r2nxOFPb9V9IdCU96MHQ1VUnhMXHj9jlsvHvdkNm4FjCSDcY4SI.egxi_3tq.alqmpoQ.2gyNksBYE.pgZQa8j;
+        path=/; expires=Fri, 24-Oct-25 22:39:20 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=IQLUeBCegHB9ata3hV7l8W7zayIKq6sPBcE65kULaK4-1761343760527-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"delete_board":{"id":"18267709251"}},"extensions":{"request_id":"1db3a6c2-22c0-9e62-9087-ee7e231bcb34"}}'
+  recorded_at: Fri, 24 Oct 2025 22:09:20 GMT
+recorded_with: VCR 6.3.1

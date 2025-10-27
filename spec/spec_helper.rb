@@ -10,6 +10,9 @@ require "webmock/rspec"
 Dotenv.load
 SimpleCov.start
 
+# Load support files
+Dir[File.join(__dir__, "support", "**", "*.rb")].sort.each { |f| require f }
+
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
@@ -20,7 +23,7 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = ".rspec_status"
   config.disable_monkey_patching!
   config.color_mode = :on
-  config.formatter = :documentation
+  config.formatter = :progress
   config.order = :random
   config.warnings = true
 
