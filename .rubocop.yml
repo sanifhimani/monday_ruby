@@ -1,6 +1,14 @@
+plugins:
+  - rubocop-rake
+  - rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - "spec/support/**/*.rb"
+    - "vendor/**/*"
 
 Style/StringLiterals:
   Enabled: true
@@ -20,3 +28,29 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Exclude:
     - "lib/monday/util.rb"
+
+Metrics/ParameterLists:
+  Exclude:
+    - "lib/monday/resources/group.rb"
+
+# RSpec cops disabled for now - to be fixed later
+RSpec/BeNil:
+  Enabled: false
+
+RSpec/ReceiveMessages:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
