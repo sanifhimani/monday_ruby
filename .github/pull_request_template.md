@@ -26,5 +26,10 @@ Please, describe the tests that you ran to verify your changes. Provide instruct
 - [ ] I have added tests that prove my fix is effective or that my feature works.
 - [ ] All tests pass locally (`bundle exec rake spec`).
 - [ ] RuboCop passes with no offenses (`bundle exec rake rubocop`).
-- [ ] I have updated the project documentation (README, Wiki, or inline docs).
 - [ ] I have added a changelog line.
+
+## Documentation:
+
+- [ ] N/A - No documentation changes needed
+- [ ] I have updated the [documentation site](https://sanifhimani.github.io/monday_ruby/) (see [Contributing Guide](../CONTRIBUTING.md#documentation))
+- [ ] I have updated the README if this changes public API or adds new features

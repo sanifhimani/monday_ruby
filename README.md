@@ -1,240 +1,243 @@
-# Monday API Library for Ruby
+# monday_ruby
 
 ![Build Status](https://github.com/sanifhimani/monday_ruby/actions/workflows/ci.yml/badge.svg)
 [![Gem Version](https://badge.fury.io/rb/monday_ruby.svg)](https://badge.fury.io/rb/monday_ruby)
 [![Coverage Status](https://coveralls.io/repos/github/sanifhimani/monday_ruby/badge.svg?branch=main)](https://coveralls.io/github/sanifhimani/monday_ruby?branch=main)
 
-This library provides convenient access to the monday.com API from the application written in Ruby.
+A Ruby client library for the [monday.com GraphQL API](https://developer.monday.com/api-reference). Build integrations with boards, items, columns, and more using idiomatic Ruby.
 
-The library provides:
+## Features
 
-1. A pre-defined set of methods to easily interact with the API resources.
-2. Easy configuration path for fast setup and use.
-3. Easy error handling.
+- **Resource-based API** - Clean, intuitive interface (`client.board.query`, `client.item.create`)
+- **Flexible configuration** - Global or per-client setup
+- **Comprehensive error handling** - Typed exceptions for different error scenarios
+- **Cursor-based pagination** - Efficiently handle large datasets
+- **Fully tested** - 100% test coverage with VCR-recorded fixtures
 
-**Check out the [Wiki](https://github.com/sanifhimani/monday_ruby/wiki) for detailed documentation on how to use the library.**
+## Documentation
+
+**[Complete Documentation →](https://sanifhimani.github.io/monday_ruby/)**
+
+- [Getting Started Tutorial](https://sanifhimani.github.io/monday_ruby/tutorial/first-integration)
+- [How-to Guides](https://sanifhimani.github.io/monday_ruby/guides/installation)
+- [API Reference](https://sanifhimani.github.io/monday_ruby/reference/client)
+- [Best Practices](https://sanifhimani.github.io/monday_ruby/explanation/best-practices/errors)
 
 ## Installation
+
+Add to your Gemfile:
+
+```ruby
+gem "monday_ruby"
+```
+
+Or install directly:
 
 ```bash
 gem install monday_ruby
 ```
 
+## Quick Start
+
+```ruby
+require "monday_ruby"
+
+# Configure with your API token
+Monday.configure do |config|
+  config.token = ENV["MONDAY_TOKEN"]
+end
+
+# Create a client
+client = Monday::Client.new
+
+# Query boards
+response = client.board.query(args: { limit: 5 })
+
+if response.success?
+  boards = response.body.dig("data", "boards")
+  boards.each { |board| puts board["name"] }
+end
+```
+
+Get your API token from your [monday.com Admin settings](https://support.monday.com/hc/en-us/articles/360005144659-Does-monday-com-have-an-API).
+
 ## Usage
-
-***Complete list of resources along with examples are provided in the [Wiki](https://github.com/sanifhimani/monday_ruby/wiki).***
-
-The library needs to be configured with your account's authentication token which is available on the Admin tab on monday.com. Elaborate documentation can be found [here](https://developer.monday.com/api-reference/docs/authentication).
 
 ### Configuration
 
-Once you have the authentication token, you can either globally configure the library or you can configure a specific client.
-
-#### Global config
+**Global configuration** (recommended):
 
 ```ruby
-require "monday_ruby"
-
 Monday.configure do |config|
-  config.token = "<AUTH_TOKEN>"
+  config.token = ENV["MONDAY_TOKEN"]
+  config.version = "2024-01"  # API version (optional)
 end
+
+client = Monday::Client.new
 ```
 
-#### Client specific config
-```ruby
-require "monday_ruby"
+**Per-client configuration**:
 
-client = Monday::Client.new(token: "<AUTH_TOKEN>")
+```ruby
+client = Monday::Client.new(
+  token: ENV["MONDAY_TOKEN"],
+  version: "2024-01"
+)
 ```
 
-The version configuration field allows you to optionally pass in the version of the API you want to use. By default, the latest stable version is used.
+**Configure timeouts**:
 
 ```ruby
-require "monday_ruby"
-
 Monday.configure do |config|
-  config.token = "<AUTH_TOKEN>"
-  config.version = "2023-07"
-end
-```
-
-You can also configure request timeouts (new in v1.1.0):
-
-```ruby
-require "monday_ruby"
-
-Monday.configure do |config|
-  config.token = "<AUTH_TOKEN>"
+  config.token = ENV["MONDAY_TOKEN"]
   config.open_timeout = 10  # seconds (default: 10)
   config.read_timeout = 30  # seconds (default: 30)
 end
+```
 
-# Or configure per client
-client = Monday::Client.new(
-  token: "<AUTH_TOKEN>",
-  open_timeout: 15,
-  read_timeout: 45
+### Working with Boards
+
+```ruby
+# Query boards
+response = client.board.query(
+  args: { ids: [1234567890] },
+  select: ["id", "name", "description"]
 )
+
+boards = response.body.dig("data", "boards")
+
+# Create a board
+response = client.board.create(
+  args: {
+    board_name: "Project Tasks",
+    board_kind: "public",
+    description: "Track project deliverables"
+  }
+)
+
+board = response.body.dig("data", "create_board")
 ```
 
-### Accessing a response object
-
-Get access to response objects by initializing a client and using the appropriate action you want to perform:
+### Working with Items
 
 ```ruby
-client = Monday::Client.new(token: "<AUTH_TOKEN>")
-response = client.boards
-
-puts response.success?
-puts response.body
-```
-
-### Use cases
-
-Here are some common use cases for the API client.
-
-#### Fetching all the boards
-
-Initialize the client with the auth token and call the `boards` method.
-
-```ruby
-client = Monday::Client.new(token: <AUTH_TOKEN>)
-
-response = client.boards # => <Monday::Response ...>
-
-# To check if the request was successful
-response.success? # => true
-
-# To get the boards from the response
-response.body.dig("data", "boards") # => [...]
-```
-
-#### Creating a new board
-
-Initialize the client with the auth token and call the `create_board` method.
-
-```ruby
-client = Monday::Client.new(token: <AUTH_TOKEN>)
-
-args = {
-  board_name: "Test board",
-  board_kind: "public",
-  description: "Test board description"
-}
-
-# => <Monday::Response ...>
-response = client.create_board(args: args)
-
-# To check if the request was successful
-response.success? # => true
-
-# To get the created board from the response
-response.body.dig("data", "create_board") # => { ... }
-```
-
-#### Creating a new item on board
-
-Initialize the client with the auth token and call the `create_item` method.
-
-```ruby
-client = Monday::Client.new(token: <AUTH_TOKEN>)
-
-args = {
-  board_id: <BOARD_ID>,
-  item_name: "New item",
-  column_values: {
-    status: {
-      label: "Working on it"
-    },
-    keywords: {
-      labels: ["Tech team", "DevOps team"]
+# Create an item
+response = client.item.create(
+  args: {
+    board_id: 1234567890,
+    item_name: "Implement authentication",
+    column_values: {
+      status: { label: "Working on it" },
+      date4: { date: "2024-12-31" }
     }
   }
-}
+)
 
-# => <Monday::Response ...>
-response = client.create_item(args: args)
+# Query items
+response = client.item.query(
+  args: { ids: [987654321] },
+  select: ["id", "name", { column_values: ["id", "text"] }]
+)
 
-# To check if the request was successful
-response.success? # => true
-
-# To get the created item from the response
-response.body.dig("data", "create_item") # => { ... }
+items = response.body.dig("data", "items")
 ```
 
-#### Fetching items with pagination (New in v1.1.0)
+### Pagination
 
-The library now supports efficient cursor-based pagination for retrieving large numbers of items. This is the recommended approach for working with boards, groups, or items that contain many records.
+Handle large datasets efficiently with cursor-based pagination:
 
 ```ruby
-client = Monday::Client.new(token: <AUTH_TOKEN>)
-
-# Fetch first page of items from a board (up to 500 items per page)
+# Fetch first page
 response = client.board.items_page(
-  board_ids: <BOARD_ID>,
+  board_ids: 1234567890,
   limit: 100
 )
 
-# Extract items and cursor from response
 items = response.body.dig("data", "boards", 0, "items_page", "items")
 cursor = response.body.dig("data", "boards", 0, "items_page", "cursor")
 
-# Fetch next page using cursor
+# Fetch next page
 if cursor
   next_response = client.board.items_page(
-    board_ids: <BOARD_ID>,
+    board_ids: 1234567890,
     limit: 100,
     cursor: cursor
   )
 end
-
-# You can also filter items using query_params
-response = client.board.items_page(
-  board_ids: <BOARD_ID>,
-  limit: 50,
-  query_params: {
-    rules: [{ column_id: "status", compare_value: [1] }],
-    operator: :and
-  }
-)
 ```
 
-Pagination is also available for groups and items:
+See the [Pagination Guide](https://sanifhimani.github.io/monday_ruby/guides/advanced/pagination) for more details.
+
+### Error Handling
+
+The library provides typed exceptions for different error scenarios:
 
 ```ruby
-# Fetch paginated items from a group
-response = client.group.items_page(
-  board_ids: <BOARD_ID>,
-  group_ids: "group_id",
-  limit: 100
-)
-
-# Fetch paginated items with custom query
-response = client.item.items_page(
-  limit: 100,
-  query_params: {
-    rules: [{ column_id: "status", compare_value: [5] }]
-  }
-)
+begin
+  response = client.board.query(args: { ids: [123] })
+rescue Monday::AuthorizationError => e
+  puts "Invalid API token: #{e.message}"
+rescue Monday::InvalidRequestError => e
+  puts "Invalid request: #{e.message}"
+rescue Monday::RateLimitError => e
+  puts "Rate limit exceeded: #{e.message}"
+rescue Monday::Error => e
+  puts "API error: #{e.message}"
+end
 ```
+
+See the [Error Handling Guide](https://sanifhimani.github.io/monday_ruby/guides/advanced/errors) for best practices.
+
+## Available Resources
+
+The client provides access to all monday.com resources:
+
+- **Boards** - `client.board`
+- **Items** - `client.item`
+- **Columns** - `client.column`
+- **Groups** - `client.group`
+- **Updates** - `client.update`
+- **Subitems** - `client.subitem`
+- **Workspaces** - `client.workspace`
+- **Folders** - `client.folder`
+- **Account** - `client.account`
+- **Activity Logs** - `client.activity_log`
+- **Board Views** - `client.board_view`
+
+For complete API documentation, see the [API Reference](https://sanifhimani.github.io/monday_ruby/reference/client).
 
 ## Development
 
-Run all tests:
+### Running Tests
 
 ```bash
 bundle exec rake spec
 ```
 
-Run linter:
+Tests use [VCR](https://github.com/vcr/vcr) to record HTTP interactions, so you don't need a monday.com API token to run them.
+
+### Linting
 
 ```bash
 bundle exec rake rubocop
 ```
 
+### All Checks
+
+```bash
+bundle exec rake  # Runs both tests and linter
+```
+
 ## Contributing
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/sanifhimani/monday_ruby). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sanifhimani/monday_ruby/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/sanifhimani/monday_ruby).
+
+Please read our [Contributing Guide](CONTRIBUTING.md) for details on:
+- Development setup and testing
+- Documentation guidelines
+- Code style and commit conventions
+
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

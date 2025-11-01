@@ -77,6 +77,110 @@ Run RuboCop to ensure code style compliance:
 bundle exec rake rubocop
 ```
 
+## Documentation
+
+The project uses [VitePress](https://vitepress.dev/) to generate documentation from Markdown files. The documentation site is hosted at [https://sanifhimani.github.io/monday_ruby/](https://sanifhimani.github.io/monday_ruby/).
+
+### When to Update Documentation
+
+Update documentation when you:
+- Add a new resource or method to the public API
+- Change the behavior of existing methods
+- Add new features or configuration options
+- Fix bugs that affect documented behavior
+
+### Documentation Structure
+
+Documentation follows the [Diataxis framework](https://diataxis.fr):
+
+- **Tutorial** (`docs/tutorial/`) - Learning-oriented, gets users started
+- **How-to Guides** (`docs/guides/`) - Task-oriented, solves specific problems
+- **Reference** (`docs/reference/`) - Information-oriented, describes the API
+- **Explanation** (`docs/explanation/`) - Understanding-oriented, explains concepts
+
+### Adding/Updating Documentation
+
+Documentation files are located in the `docs/` directory:
+
+```
+docs/
+├── .vitepress/
+│   └── config.mjs          # Navigation and site configuration
+├── guides/                 # How-to guides
+│   ├── boards/
+│   ├── items/
+│   ├── columns/
+│   └── advanced/
+├── reference/              # API reference
+│   ├── resources/
+│   └── client.md
+├── explanation/            # Conceptual documentation
+└── tutorial/               # Getting started tutorial
+```
+
+#### Steps to Update Documentation:
+
+1. **Find or create the appropriate file** based on what you're documenting
+2. **Follow the existing format** - look at similar documentation files for examples
+3. **Test your code examples** - all examples should be runnable and accurate
+4. **Update navigation** if adding new pages - edit `docs/.vitepress/config.mjs`
+5. **Build locally** to preview changes:
+
+```bash
+cd docs
+npm install  # First time only
+npm run dev  # Start local dev server
+```
+
+Visit `http://localhost:5173/monday_ruby/` to preview your changes.
+
+6. **Check for broken links** before submitting:
+
+```bash
+cd docs
+npm run build  # Build will fail if there are dead links
+```
+
+#### Documentation Guidelines:
+
+- **Code examples must be accurate** - verify against VCR test fixtures or real API
+- **Include practical examples** - show real-world usage, not just syntax
+- **Be consistent** - follow the style and tone of existing documentation
+- **No emojis** - maintain professional tone in documentation
+- **Link related pages** - help users discover relevant documentation
+- **Keep examples self-contained** - users should be able to copy-paste and run
+
+#### Example Documentation Pattern:
+
+```markdown
+# Resource Name
+
+Brief description of what this resource does.
+
+## Methods
+
+### method_name
+
+Description of what the method does.
+
+\`\`\`ruby
+# Example code that actually works
+client = Monday::Client.new(token: ENV["MONDAY_TOKEN"])
+response = client.resource.method_name(args: {})
+\`\`\`
+
+**Parameters:**
+- List parameters and their types
+
+**Returns:** Description of return value
+
+**See:** Link to monday.com API docs
+```
+
+### Deploying Documentation
+
+Documentation is automatically deployed via GitHub Actions when changes are merged to the `main` branch. You don't need to manually deploy.
+
 ## Commit message guidelines
 
 * Use present tense ("Add feature" not "Added feature")
