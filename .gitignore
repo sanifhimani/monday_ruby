@@ -24,3 +24,8 @@ test.rb
 
 # Ignore the build file
 *.gem
+
+# VitePress documentation
+/docs/node_modules/
+/docs/.vitepress/cache/
+/docs/.vitepress/dist/
