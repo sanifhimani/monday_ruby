@@ -32,7 +32,8 @@ module Monday
         make_file_request(query, variables)
       end
 
-      # Clear an item's files column.
+      # Clear an item's files column. This is a helper method for files
+      # and you could also use the column.change_value to clear the column as well.
       #
       # Allows customizing the update creation using the args option.
       # Allows customizing the values to retrieve using the select option.
