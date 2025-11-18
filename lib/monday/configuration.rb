@@ -7,8 +7,10 @@ module Monday
   #
   # token: used to authenticate the requests
   # host: defaults to https://api.monday.com/v2
+  # files_host: defaults to https://api.monday.com/v2/files
   class Configuration
     DEFAULT_HOST = "https://api.monday.com/v2"
+    DEFAULT_FILES_HOST = "#{DEFAULT_HOST}/file"
     DEFAULT_TOKEN = nil
     DEFAULT_VERSION = "2023-07"
     DEFAULT_OPEN_TIMEOUT = 10
@@ -17,6 +19,7 @@ module Monday
     CONFIGURATION_FIELDS = %i[
       token
       host
+      files_host
       version
       open_timeout
       read_timeout
@@ -29,6 +32,7 @@ module Monday
       raise ArgumentError, "Unknown arguments: #{invalid_keys}" unless invalid_keys.empty?
 
       @host = DEFAULT_HOST
+      @files_host = DEFAULT_FILES_HOST
       @token = DEFAULT_TOKEN
       @version = DEFAULT_VERSION
       @open_timeout = DEFAULT_OPEN_TIMEOUT
@@ -42,6 +46,7 @@ module Monday
     def reset
       @token = DEFAULT_TOKEN
       @host = DEFAULT_HOST
+      @files_host = DEFAULT_FILES_HOST
       @version = DEFAULT_VERSION
       @open_timeout = DEFAULT_OPEN_TIMEOUT
       @read_timeout = DEFAULT_READ_TIMEOUT
