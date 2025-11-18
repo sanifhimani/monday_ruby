@@ -2,7 +2,7 @@
 
 require "uri"
 require "net/http"
-require 'net/http/post/multipart'
+require "net/http/post/multipart"
 require "json"
 
 require_relative "configuration"
@@ -38,11 +38,10 @@ module Monday
       handle_response(Response.new(response))
     end
 
-    def make_file_request(body, variables)
+    def make_file_request(query, variables)
       response = Request.post_multipart(
         files_uri,
-        body,
-        variables,
+        { query: query, variables: variables },
         request_multipart_headers,
         open_timeout: @config.open_timeout,
         read_timeout: @config.read_timeout

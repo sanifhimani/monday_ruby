@@ -27,6 +27,7 @@ Metrics/BlockLength:
 
 Metrics/MethodLength:
   Exclude:
+    - "lib/monday/configuration.rb"
     - "lib/monday/util.rb"
 
 Metrics/ParameterLists:

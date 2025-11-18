@@ -14,8 +14,12 @@ module Monday
       def add_file_to_column(args: {}, select: DEFAULT_SELECT)
         cloned_args = args.clone
         variables = { file: cloned_args.delete(:file) }
-        cloned_args.merge!(file: '$file')
-        query = "mutation add_file($file: File!) { add_file_to_column#{Util.format_args(cloned_args)} {#{Util.format_select(select)}}}"
+        cloned_args.merge!(file: "$file")
+        query = <<~QUERY.squish
+          mutation add_file($file: File!) {
+            add_file_to_column#{Util.format_args(cloned_args)} {#{Util.format_select(select)}}
+          }
+        QUERY
         make_file_request(query, variables)
       end
 
@@ -27,8 +31,12 @@ module Monday
       def add_file_to_update(args: {}, select: DEFAULT_SELECT)
         cloned_args = args.clone
         variables = { file: cloned_args.delete(:file) }
-        cloned_args.merge!(file: '$file')
-        query = "mutation ($file: File!) { add_file_to_update#{Util.format_args(cloned_args)} {#{Util.format_select(select)}}}"
+        cloned_args.merge!(file: "$file")
+        query = <<~QUERY.squish
+          mutation ($file: File!) {
+            add_file_to_update#{Util.format_args(cloned_args)} {#{Util.format_select(select)}}
+          }
+        QUERY
         make_file_request(query, variables)
       end
 

@@ -19,15 +19,15 @@ module Monday
       http.request(request)
     end
 
-    def self.post_multipart(uri, body, variables, headers, open_timeout: 10, read_timeout: 30)
+    def self.post_multipart(uri, body, headers, open_timeout: 10, read_timeout: 30)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
       http.open_timeout = open_timeout
       http.read_timeout = read_timeout
 
       params = {
-        "query" => body,
-        'variables[file]' => variables[:file]
+        "query" => body[:query],
+        "variables[file]" => body[:variables][:file]
       }
 
       request = Net::HTTP::Post::Multipart.new(uri.request_uri, params, headers)
