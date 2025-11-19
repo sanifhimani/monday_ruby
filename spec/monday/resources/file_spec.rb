@@ -81,7 +81,7 @@ RSpec.describe Monday::Resources::File, :vcr do
           {
             item_id: item_id,
             column_id: column_id,
-            file: 'some_file_string' # Invalid file/stream
+            file: "some_file_string" # Invalid file/stream
           }
         end
         let(:file) { "some_file_string" }
