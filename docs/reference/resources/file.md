@@ -150,12 +150,6 @@ response = client.file.clear_file_column(
   }
 )
 
-    "data": {
-        "change_column_value": {
-            "id": "18370875011"
-        }
-    },
-
 result = response.body.dig("data", "change_column_value", "id")
 # => 123456
 ```
