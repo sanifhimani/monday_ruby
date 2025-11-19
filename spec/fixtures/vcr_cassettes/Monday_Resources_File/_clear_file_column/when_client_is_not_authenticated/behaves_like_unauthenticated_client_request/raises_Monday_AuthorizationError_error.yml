@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation { change_column_value(value: \"{\\\"clear_all\\\":
+        true}\") {id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - invalid_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 02:16:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9a0c3544887d28f9-LAX
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Powered-By:
+      - Express
+      Vary:
+      - Origin, Accept-Encoding
+      X-Monday-Auth:
+      - 'true'
+      X-Monday-Region:
+      - undefined
+      Etag:
+      - W/"56-jO0ghLOWWf8QDEiLlwC7K3Hc7eU"
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=e4Zvv3.9iRCm9yhU0wEFlmCHuMmPydll4NMhp2QUbQg-1763518613-1.0.1.1-939ubIMsRQkvxXM2B6kmGtQxhA1LEY58xz1iVEjD95sk5.g422VrEMSfcaLnfo6YMa9yMwv5acSYWOqV7si_7xUxASh98DkMcrc5WgtPzJSf5RrbWzynxS09Ot0rzFHS;
+        path=/; expires=Wed, 19-Nov-25 02:46:53 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=ieuQVeJgIhXAex6tbjjrjKHRtjT_mCHoJoGJXYfwYLg-1763518613325-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"message":"Not authenticated","extensions":{"code":"NOT_AUTHENTICATED"}}]}'
+  recorded_at: Wed, 19 Nov 2025 02:16:53 GMT
+recorded_with: VCR 6.2.0
