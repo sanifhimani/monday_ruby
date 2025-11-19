@@ -10,6 +10,7 @@
 
 - Updated gemspec dependency to use multipart-post (~> 2.4.0)
 - Updated rubocop RSpec/MultipleMemoizedHelpers from 10 to 11.
+- Updated Utils to allow GraphQL variables in queries.
 
 ## v1.1.0 (October 27, 2025)
 

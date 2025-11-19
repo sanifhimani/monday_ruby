@@ -57,6 +57,14 @@ RSpec.describe Monday::Util do
           end
         end
 
+        context "when the value is a variable" do
+          let(:value) { "$file" }
+
+          it "returns the formatted object string with key value pairs" do
+            expect(format_args).to eq("(key: $file)")
+          end
+        end
+
         context "when the value is a string" do
           let(:value) { "hello" }
 
