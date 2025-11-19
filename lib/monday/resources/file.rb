@@ -15,7 +15,7 @@ module Monday
         cloned_args = args.clone
         variables = { file: cloned_args.delete(:file) }
         cloned_args.merge!(file: "$file")
-        query = <<~QUERY.squish
+        query = <<~QUERY
           mutation add_file($file: File!) {
             add_file_to_column#{Util.format_args(cloned_args)} {#{Util.format_select(select)}}
           }
@@ -32,7 +32,7 @@ module Monday
         cloned_args = args.clone
         variables = { file: cloned_args.delete(:file) }
         cloned_args.merge!(file: "$file")
-        query = <<~QUERY.squish
+        query = <<~QUERY
           mutation ($file: File!) {
             add_file_to_update#{Util.format_args(cloned_args)} {#{Util.format_select(select)}}
           }
