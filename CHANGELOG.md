@@ -4,6 +4,7 @@
 
 - Added support for adding Files (Assets) to a File column.
 - Added support for adding Files (Assets) to an Update (Comments).
+- Added helper method for clearing a Files column.
 
 #### Changed
 
