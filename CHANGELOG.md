@@ -1,3 +1,15 @@
+## v1.2.0 (November 18, 2025)
+
+#### Added
+
+- Added support for adding Files (Assets) to a File column.
+- Added support for adding Files (Assets) to an Update (Comments).
+
+#### Changed
+
+- Updated gemspec dependency to use multipart-post (~> 2.4.0)
+- Updated rubocop RSpec/MultipleMemoizedHelpers from 10 to 11.
+
 ## v1.1.0 (October 27, 2025)
 
 ### Added
