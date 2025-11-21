@@ -1,0 +1,447 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_board(board_name: \"Test Board\", board_kind:
+        private){id name description}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 02:15:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9a0c33e8ba7ff208-LAX
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-10
+      X-Request-Id:
+      - fc862c7f-49c9-991d-be29-a4c2a388f3c9
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '1398'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=iWtp73bfdoqHNOpg8znXoQIxdZ0r.iPf3yFtrsWyp7w-1763518559-1.0.1.1-heXxgrhNDmDiCdTOT2.AjA8o1hPuRZRgyfZ3pXX49ewGMXyNMjKvtZnMU7hXvM5lD1.6H1T9U9AaSpJF0b6HHKVoZ1hYLA4njjtQMjfuxaSRWuIbcYBXm3.RDwq4yhfC;
+        path=/; expires=Wed, 19-Nov-25 02:45:59 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=I8fwdbvgrEoXdh79ZD3ewESQ6qvdgLpvThp4_fpnzXs-1763518559044-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_board":{"id":"18383915585","name":"Test Board","description":null}},"extensions":{"request_id":"fc862c7f-49c9-991d-be29-a4c2a388f3c9"}}'
+  recorded_at: Wed, 19 Nov 2025 02:15:59 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_item(board_id: \"18383915585\", item_name:
+        \"Test Item\"){id name created_at}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 02:16:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9a0c33f298191506-LAX
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-10
+      X-Request-Id:
+      - a66ce3f4-9a3f-94d9-8d36-1a61275bac73
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '905'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=C2ejYXE9s.9TUkgK6uEj3sQ0i_k7yY4ZDs1u1HTr7eg-1763518560-1.0.1.1-HcPdFZOc9ilcxw9Edce17Uz619xU6ybFKLCGXvgL9JQwSJS03gCEggoG5N9IWgwIhIyEagkGP00oZ2olj8vxMLZnDJWRC0.OIc9z5bgfwvICzROGWSB3WaYGbLYZKUM8;
+        path=/; expires=Wed, 19-Nov-25 02:46:00 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=n9n73EJIvO1GLMmqX7hVhIXrEYPMPqVA0YtPUswmTj8-1763518560134-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_item":{"id":"10593210357","name":"Test Item","created_at":"2025-11-19T02:15:59Z"}},"extensions":{"request_id":"a66ce3f4-9a3f-94d9-8d36-1a61275bac73"}}'
+  recorded_at: Wed, 19 Nov 2025 02:16:00 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{create_column(board_id: \"18383915585\", title:
+        \"Files\", description: \"Documents\", column_type: file){id title description}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 02:16:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9a0c33f98e7228fd-LAX
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-10
+      X-Request-Id:
+      - 0303b144-3e0c-96a0-ae89-7a6fefc356cc
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '976'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=408DAtWxeX6DJ88dYYgHb8jtDWJdSJBgeae6IsvPbMA-1763518561-1.0.1.1-ObtwlxDq7b7pezySQjQ1b5vRoTTm_HmfYXwZibDas8KRv3mWAtM2N4yKSO.phjglZ3b1YBs15_l5lWGOp69DOFpYiVJYqSCju0.k33850AVWSu6gAXjC28TGbVajhWqK;
+        path=/; expires=Wed, 19-Nov-25 02:46:01 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=AQCDlDgwsCwHshe5zu.IrmEbNX65TSqteY_xugu7PMc-1763518561329-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"create_column":{"id":"file_mkxv4m5t","title":"Files","description":"Documents"}},"extensions":{"request_id":"0303b144-3e0c-96a0-ae89-7a6fefc356cc"}}'
+  recorded_at: Wed, 19 Nov 2025 02:16:01 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2/file
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    headers:
+      Content-Type:
+      - multipart/form-data; boundary=--b7e204b7-ee89-475c-97cb-c3b975137af0
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Length:
+      - '10184'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 02:16:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9a0c3400d9aa5275-LAX
+      Api-Version:
+      - 2025-10
+      Etag:
+      - W/"3ba99370afc1725b1587d8481fb9d4ed"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b770ff08-0eb5-9266-9887-a560cacb289e
+      X-Runtime:
+      - '1.770051'
+      X-Envoy-Upstream-Service-Time:
+      - '1772'
+      Content-Security-Policy:
+      - frame-ancestors https://*.monday-it.com https://monday.com https://*.monday.com
+        https://bigbrain.me https://*.bigbrain.me https://*.teams.microsoft.com https://microsoft365.com
+        https://*.microsoft365.com https://*.office.com https://*.cloud.microsoft
+        https://*.microsoftonline.com https://*.office365.com https://*.microsoft.com
+        https://webbyawards.com https://www.webbyawards.com https://msteams.backend.monday.app
+        https://monday.lightning.force.com https://monday.force.com https://*.www.office.com
+        https://outlook.live.com https://outlook-sdf.live.com https://msteams-eu.backend.monday.app
+        https://msteams-au.backend.monday.app https://monday.vitally.io https://monday.zendesk.com
+        https://*.mondaymansion.com https://mondaymagic.ai https://monday-craft.pages.dev
+        https://mondayvibe.com https://*.id.opendns.com; script-src 'self' 'unsafe-inline'
+        'unsafe-eval' https://*.monday.com https://webpack.llama.fan:* https://*.microsoft.com
+        https://*.hsforms.com https://*.pusher.com https://accounts.google.com https://ajax.googleapis.com
+        https://api.embed.ly https://apis.google.com https://app.box.com https://appvizer.one/ariadne/v1/ariadne.js
+        https://bat.bing.com https://cdn.broadcast.am https://cdn.simpo.io/actionbar.js
+        https://cdn.simpo.io/simpo-client.js https://cdn.walkme.com https://cdnjs.cloudflare.com
+        https://code.highcharts.com https://connect.facebook.net https://ct.capterra.com
+        https://d18vk66ftlazd2.cloudfront.net https://d2c7xlmseob604.cloudfront.net
+        https://edge.fullstory.com https://rs.fullstory.com https://googleads.g.doubleclick.net
+        https://js.hsforms.net https://js.live.net https://maps.googleapis.com https://monday.com
+        https://s.pinimg.com https://s.ytimg.com https://snap.licdn.com https://snippet.growsumo.com
+        https://songbird.cardinalcommerce.com https://static.cloudflareinsights.com
+        https://static.zdassets.com https://tpc.googlesyndication.com https://translate.googleapis.com
+        https://*.zopim.com https://*.smooch.io https://pod-18.zendesk.com https://ws.bluesnap.com
+        https://www.dropbox.com https://*.google-analytics.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://www.gstatic.com
+        https://www.youtube.com https://bigbrain.me https://*.bigbrain.me https://js.appboycdn.com/web-sdk/3.2/appboy.no-amd.min.js
+        https://js.appboycdn.com/web-sdk/3.2/appboy.min.js https://sdk.iad-06.braze.com
+        https://*.cdn2.monday.app https://js.braintreegateway.com https://assets.braintreegateway.com
+        https://*.paypal.com https://browser.sentry-cdn.com https://*.hotjar.com https://static.ads-twitter.com
+        https://analytics.twitter.com https://analytics.tiktok.com https://s.yimg.jp/images/listing/tool/cv/ytag.js
+        https://cdn.linkedin.oribi.io https://cdn.servicebell.com https://api.servicebell.com
+        wss://api.servicebell.com wss://ws.servicebell.com https://monday.ada.support
+        https://static.ada.support https://previews.ada.support https://rollout.ada.support
+        https://*.everestjs.net https://*.analytics.google.com https://px.ads.linkedin.com
+        https://a.quora.com/qevents.js https://app.birdie.so https://monday.birdie.so
+        https://mondaycom.birdie.so https://share.birdie.so https://api.birdie.so
+        https://cdn.birdie.so https://proxy.birdie.so https://storm.birdie.so wss://sock.birdie.so
+        wss://sockp.birdie.so https://assets.calendly.com https://calendly.com https://cdn.cookiehub.eu
+        https://monday.ixopay.com https://secure.ixopay.com https://*.id.opendns.com;
+        worker-src 'self' 'unsafe-inline' blob:; connect-src 'self' https://*.monday.com
+        https://monday.com wss://webpack.llama.fan:* https://webpack.llama.fan:* https://grsm.io
+        https://forms.hsforms.com https://*.algolia.net https://*.algolianet.com https://bat.bing.com
+        https://*.braze.com https://api.smartling.com https://us-central1-adaptive-growth.cloudfunctions.net
+        https://appvizer.one https://www.facebook.com https://graph.microsoft.com
+        https://graph.facebook.com https://api.giphy.com https://storage.monday.app
+        https://broadcast.am https://stats.g.doubleclick.net https://edge.fullstory.com
+        https://rs.fullstory.com https://*.cloudfront.net https://dapulse-res.cloudinary.com
+        https://static.cloudflareinsights.com https://*.bigbrain.me https://www.dropbox.com
+        https://www.googletagmanager.com https://ipinfo.io https://*.cardinalcommerce.com
+        https://www.bluesnap.com https://connect.facebook.net https://app.box.com
+        https://code.highcharts.com https://js.live.net https://monday.zendesk.com
+        https://monday-enterprise.zendesk.com https://static.zdassets.com https://ekr.zdassets.com
+        https://ekr.zendesk.com https://maps.googleapis.com wss://*.pusher.com https://*.pusher.com
+        wss://*.zopim.com https://*.zopim.com wss://*.smooch.io wss://api.smooch.io/faye
+        https://*.smooch.io wss://*.zendesk.com/sc/faye https://*.google-analytics.com
+        https://api.simpo.io https://cdn.simpo.io https://zh081jts88wj.statuspage.io
+        https://www.googleapis.com https://api.braintreegateway.com https://client-analytics.braintreegateway.com
+        https://*.braintree-api.com https://*.paypal.com https://*.sentry.io https://cdn.jsdelivr.net
+        https://prod-use1-crm-billing.s3.amazonaws.com https://prod-use1-crm-communication.s3.amazonaws.com
+        https://prod-use1-importer-uploads.s3.amazonaws.com https://prod-use1-uploads-raw.s3.amazonaws.com
+        https://files-monday-com.s3.amazonaws.com https://prod-apse2-crm-billing.s3.ap-southeast-2.amazonaws.com
+        https://prod-apse2-crm-communication.s3.ap-southeast-2.amazonaws.com https://prod-apse2-importer-uploads.s3.ap-southeast-2.amazonaws.com
+        https://prod-apse2-uploads-raw.s3.ap-southeast-2.amazonaws.com https://prod-apse2-marketing-template-editor-templates.s3.ap-southeast-2.amazonaws.com
+        https://prod-use1-marketing-template-editor-templates.s3.us-east-1.amazonaws.com
+        https://prod-euc1-marketing-template-editor-templates.s3.eu-central-1.amazonaws.com
+        https://prod-apse2-files-monday-com.s3.amazonaws.com https://prod-euc1-crm-billing.s3.eu-central-1.amazonaws.com
+        https://prod-euc1-crm-communication.s3.eu-central-1.amazonaws.com https://prod-euc1-importer-uploads.s3.eu-central-1.amazonaws.com
+        https://prod-ilc1-importer-uploads.s3.il-central-1.amazonaws.com https://prod-euc1-uploads-raw.s3.eu-central-1.amazonaws.com
+        https://prod-ilc1-uploads-raw.s3.il-central-1.amazonaws.com https://prod-euc1-files-monday-com.s3.amazonaws.com
+        https://prod-ilc1-files-monday-com.s3.il-central-1.amazonaws.com https://prod-use1-quotes-and-invoices.s3.us-east-1.amazonaws.com
+        https://prod-euc1-quotes-and-invoices.s3.eu-central-1.amazonaws.com https://prod-apse2-quotes-and-invoices.s3.ap-southeast-2.amazonaws.com
+        https://*.hotjar.com https://*.hotjar.io https://static.ads-twitter.com https://analytics.twitter.com
+        https://analytics.tiktok.com https://s.yimg.jp/images/listing/tool/cv/ytag.js
+        https://cdn.linkedin.oribi.io https://cdn.servicebell.com https://api.servicebell.com
+        wss://api.servicebell.com wss://*.hotjar.com wss://ws.servicebell.com https://browser-intake-datadoghq.eu
+        https://cdnjs.cloudflare.com https://fonts.gstatic.com https://fonts.googleapis.com
+        https://googleads.g.doubleclick.net https://snap.licdn.com https://www.google.com
+        https://monday.ada.support https://monday-gen.ada.support https://monday-gen-sandbox3.ada.support
+        https://browser-http-intake.logs.datadoghq.com https://static.ada.support
+        https://previews.ada.support https://rollout.ada.support https://*.everestjs.net
+        https://*.demdex.net https://*.analytics.google.com https://px.ads.linkedin.com
+        https://*.quora.com https://www.ojrq.net https://logs-01.loggly.com https://mondaycom.sjv.io
+        https://insight.adsrvr.org https://analytics.google.com https://api.hsforms.com
+        https://*.hightouch-events.com https://google.com/pagead/form-data/933380251
+        https://google.com/ccm/form-data/933380251 https://app.birdie.so https://monday.birdie.so
+        https://mondaycom.birdie.so https://share.birdie.so https://api.birdie.so
+        https://cdn.birdie.so https://proxy.birdie.so https://storm.birdie.so wss://sock.birdie.so
+        wss://sockp.birdie.so https://cookiehub.net https://prod-apse2-widget-images-storage.s3.ap-southeast-2.amazonaws.com
+        https://prod-euc1-widget-images-storage.s3.eu-central-1.amazonaws.com https://prod-use1-widget-images-storage.s3.us-east-1.amazonaws.com
+        https://prod-ilc1-widget-images-storage.s3.il-central-1.amazonaws.com https://cdn.cookiehub.eu
+        https://*.mondayprograms.com https://monday.ixopay.com https://secure.ixopay.com
+        https://*.id.opendns.com https://www.googleadservices.com https://ad.doubleclick.net  https://proxy.kapa.ai
+        https://kapa-widget-proxy-la7dkmplpq-uc.a.run.app https://metrics.kapa.ai
+        https://hcaptcha.com https://*.hcaptcha.com https://accounts.google.com/gsi/;
+        report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      Server-Timing:
+      - amb_upstream_time;dur=1772
+      X-Robots-Tag:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=.1klTRnx.8wDrC_QJ_V7EqPNF9I7Z8EmaPMqFXGN.KA-1763518563-1.0.1.1-.M_KfTNUgu634VV8qTbmi6K4C4_yaKBOJ2dMyPgPqpmaxGLgInvXZi9awYgu0_GTcErWnpoRCAe.PZMVN.XqHsogBM2TKvP6tG9bN4T2ilZhmtUDwg56gBTgVJ6P12OB;
+        path=/; expires=Wed, 19-Nov-25 02:46:03 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=zciGCluzCYI8LEra74OnmR45yubhqW7Z_szQx7G_eFc-1763518563294-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"add_file_to_column":{"id":"2564096498"}},"account_id":15314314}'
+  recorded_at: Wed, 19 Nov 2025 02:16:03 GMT
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation{delete_board(board_id: 18383915585){id}}"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 19 Nov 2025 02:16:04 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9a0c340d1f04d90f-LAX
+      X-Api-Router:
+      - 'true'
+      Api-Version:
+      - 2025-10
+      X-Request-Id:
+      - 73c5c4c0-f32d-9d51-934d-bb0e3edb5dbd
+      Vary:
+      - accept-encoding
+      - origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '777'
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=1zZOLfFGRVCL9KtYkrkZWgpDY67sxo8XC2PbGp.4pWY-1763518564-1.0.1.1-ytZDon.qnDvTUgqa1miRD5RepSpGCV057t6pbM9siQIflKnQFrGMUqpizxGUItJzUFZP6qq7jy2kMx8HH8S8l.NJW6CAS9lff4qmwdnvSKfPc.gOmGuO6E7Z2USO4iHI;
+        path=/; expires=Wed, 19-Nov-25 02:46:04 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=GO64lb3hH9tGfVwUTim3ZpLEf9gfOafkIUAjDf4tRHE-1763518564241-0.0.1.1-604800000;
+        path=/; domain=.monday.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"delete_board":{"id":"18383915585"}},"extensions":{"request_id":"73c5c4c0-f32d-9d51-934d-bb0e3edb5dbd"}}'
+  recorded_at: Wed, 19 Nov 2025 02:16:04 GMT
+recorded_with: VCR 6.2.0

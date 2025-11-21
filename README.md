@@ -195,6 +195,7 @@ The client provides access to all monday.com resources:
 - **Boards** - `client.board`
 - **Items** - `client.item`
 - **Columns** - `client.column`
+- **Files** - `client.file`
 - **Groups** - `client.group`
 - **Updates** - `client.update`
 - **Subitems** - `client.subitem`

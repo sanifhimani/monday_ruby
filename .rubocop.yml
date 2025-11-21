@@ -27,6 +27,7 @@ Metrics/BlockLength:
 
 Metrics/MethodLength:
   Exclude:
+    - "lib/monday/configuration.rb"
     - "lib/monday/util.rb"
 
 Metrics/ParameterLists:
@@ -37,4 +38,4 @@ RSpec/NestedGroups:
   Max: 5
 
 RSpec/MultipleMemoizedHelpers:
-  Max: 10
+  Max: 11

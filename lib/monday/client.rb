@@ -2,6 +2,7 @@
 
 require "uri"
 require "net/http"
+require "net/http/post/multipart"
 require "json"
 
 require_relative "configuration"
@@ -37,6 +38,18 @@ module Monday
       handle_response(Response.new(response))
     end
 
+    def make_file_request(query, variables)
+      response = Request.post_multipart(
+        files_uri,
+        { query: query, variables: variables },
+        request_multipart_headers,
+        open_timeout: @config.open_timeout,
+        read_timeout: @config.read_timeout
+      )
+
+      handle_response(Response.new(response))
+    end
+
     private
 
     def configure(config_args)
@@ -49,9 +62,20 @@ module Monday
       URI(@config.host)
     end
 
+    def files_uri
+      URI(@config.files_host)
+    end
+
     def request_headers
       {
         "Content-Type": "application/json",
+        Authorization: @config.token
+      }
+    end
+
+    def request_multipart_headers
+      {
+        "Content-Type": "multipart/form-data",
         Authorization: @config.token
       }
     end

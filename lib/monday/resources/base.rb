@@ -12,6 +12,10 @@ module Monday
 
       protected
 
+      def make_file_request(query, variables)
+        client.make_file_request(query, variables)
+      end
+
       def make_request(query)
         client.make_request(query)
       end

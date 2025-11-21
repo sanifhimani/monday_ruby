@@ -125,6 +125,15 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Working with Files',
+            collapsed: true,
+            items: [
+              { text: 'Add Files to Column', link: '/guides/files/add-to-column' },
+              { text: 'Add Files to Update', link: '/guides/files/add-to-update' },
+              { text: 'Clear Files Column', link: '/guides/files/clear-column' }
+            ]
+          },
+          {
             text: 'Advanced Topics',
             collapsed: true,
             items: [

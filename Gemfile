@@ -6,6 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 group :development do
+  gem "bigdecimal", "~> 3.3"
   gem "byebug", "~> 11.1"
   gem "coveralls_reborn", "~> 0.27"
   gem "dotenv", "~> 2.8"
