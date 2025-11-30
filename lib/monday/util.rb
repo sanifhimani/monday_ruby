@@ -108,12 +108,19 @@ module Monday
 
       def formatted_args_value(value)
         return value if value.is_a?(Symbol)
-        return value if value.to_s.include?("$") # GraphQL query variable
+        return value if graphql_variable?(value)
         return value.to_json.to_json if value.is_a?(Hash)
         return value if integer?(value)
         return "[#{value.map { |v| formatted_args_value(v) }.join(", ")}]" if value.is_a?(Array)
 
         "\"#{value}\""
+      end
+
+      def graphql_variable?(value)
+        return false unless value.is_a?(String)
+        # GraphQL variables must start with $ followed by a valid identifier
+        # Pattern: $[A-Za-z_][A-Za-z0-9_]*
+        value.match?(/\A\$[A-Za-z_][A-Za-z0-9_]*\z/)
       end
 
       def integer?(value)

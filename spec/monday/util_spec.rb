@@ -65,6 +65,14 @@ RSpec.describe Monday::Util do
           end
         end
 
+        context "when the value is a string containing a dollar sign but not a valid GraphQL variable" do
+          let(:value) { "Price: $100" }
+
+          it "returns the formatted object string with quoted value" do
+            expect(format_args).to eq("(key: \"Price: $100\")")
+          end
+        end
+
         context "when the value is a string" do
           let(:value) { "hello" }
 
