@@ -118,6 +118,7 @@ module Monday
 
       def graphql_variable?(value)
         return false unless value.is_a?(String)
+
         # GraphQL variables must start with $ followed by a valid identifier
         # Pattern: $[A-Za-z_][A-Za-z0-9_]*
         value.match?(/\A\$[A-Za-z_][A-Za-z0-9_]*\z/)
