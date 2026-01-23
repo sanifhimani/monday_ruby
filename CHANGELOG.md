@@ -1,3 +1,13 @@
+## v1.2.1 (January 23, 2026)
+
+### Fixed
+
+- Fixed issue where any string containing a dollar sign was incorrectly treated as a GraphQL variable.
+
+### Changed
+
+- Updated `base64` dependency requirement from `~> 0.2.0` to `>= 0.2, < 0.4` for broader compatibility.
+
 ## v1.2.0 (November 18, 2025)
 
 #### Added
