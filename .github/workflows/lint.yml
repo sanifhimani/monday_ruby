@@ -11,7 +11,5 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
-        env:
-          BUNDLE_WITHOUT: docs
       - name: Rubocop
         run: bundle exec rake rubocop
