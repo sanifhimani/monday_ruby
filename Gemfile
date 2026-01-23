@@ -9,7 +9,6 @@ group :development do
   gem "bigdecimal", "~> 4.0"
   gem "byebug", "~> 11.1"
   gem "coveralls_reborn", "~> 0.27"
-  gem "docyard", "~> 1.0"
   gem "dotenv", "~> 2.8"
   gem "rake", "~> 13.0"
   gem "rspec", "~> 3.0"
@@ -19,4 +18,8 @@ group :development do
   gem "simplecov", "~> 0.22"
   gem "vcr", "~> 6.2"
   gem "webmock", "~> 3.18"
+end
+
+group :docs do
+  gem "docyard", "~> 1.0"
 end
