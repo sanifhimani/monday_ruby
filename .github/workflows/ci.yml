@@ -26,10 +26,8 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: Install dependencies
-        run: |
-          bundle config set --local without docs
-          bundle install
+        env:
+          BUNDLE_WITHOUT: docs
       - name: Run tests
         run: bundle exec rake spec
       - name: Coveralls Parallel
