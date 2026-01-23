@@ -20,6 +20,8 @@ group :development do
   gem "webmock", "~> 3.18"
 end
 
-group :docs do
-  gem "docyard", "~> 1.0"
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.2")
+  group :docs do
+    gem "docyard", "~> 1.0"
+  end
 end
