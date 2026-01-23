@@ -2,9 +2,6 @@ title: Monday Ruby
 description: A Ruby client library for the monday.com GraphQL API
 url: "https://sanifhimani.github.io/monday_ruby/"
 
-build:
-  base: /monday_ruby/
-
 sidebar: distributed
 
 branding:
@@ -23,3 +20,9 @@ repo:
 
 analytics:
   google: G-1TWB59K0W2
+
+feedback:
+  enabled: true
+
+build:
+  base: /monday_ruby/
