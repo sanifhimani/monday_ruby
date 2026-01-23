@@ -32,16 +32,20 @@ boards = response.body.dig("data", "boards")
 ## Documentation
 
 :::cards
-::card{title="Tutorial" icon="graduation-cap" href="/tutorial/first-integration"}
-New to monday_ruby? Learn by building your first monday.com integration.
+::card{title="Getting Started" icon="rocket-launch" href="/getting-started/introduction"}
+New to monday_ruby? Start here to get up and running quickly.
 ::
 
-::card{title="How-to Guides" icon="book-open" href="/guides/installation"}
+::card{title="Guides" icon="book-open" href="/guides/installation"}
 Task-based guides for creating boards, managing items, handling pagination, and more.
 ::
 
-::card{title="API Reference" icon="code" href="/reference/client"}
+::card{title="API Reference" icon="code" href="/reference/core-concepts/client"}
 Complete documentation for all resources, methods, parameters, and return values.
+::
+
+::card{title="Explanation" icon="info" href="/explanation/architecture"}
+Understand how the library works under the hood.
 ::
 :::
 
@@ -53,9 +57,5 @@ Complete documentation for all resources, methods, parameters, and return values
 
 ## Resources
 
-- :book: [monday.com API Documentation](https://developer.monday.com/api-reference/docs)
-- :bug: [Report an Issue](https://github.com/sanifhimani/monday_ruby/issues)
-
-## Support
-
-Need help? Check the [how-to guides](/guides/installation) or [open an issue](https://github.com/sanifhimani/monday_ruby/issues) on GitHub.
+- [monday.com API Documentation](https://developer.monday.com/api-reference/docs)
+- [Report an Issue](https://github.com/sanifhimani/monday_ruby/issues)
