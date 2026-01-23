@@ -2,7 +2,7 @@
 
 Access and manage updates (comments) via the `client.update` resource.
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>What are Updates?</span>
+:::tip What are Updates?
 Updates are comments or posts made on items in monday.com. They appear in the item's updates section and can include text, mentions, and attachments.
 :::
 
@@ -142,7 +142,7 @@ client.update.clear_item_updates(args: {}, select: ["id"])
 
 **Returns:** `Monday::Response`
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Destructive Operation</span>
+:::warning Destructive Operation
 This permanently deletes all updates from the item. This cannot be undone.
 :::
 
@@ -181,7 +181,7 @@ client.update.delete(args: {}, select: ["id"])
 
 **Returns:** `Monday::Response`
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Permanent Deletion</span>
+:::warning Permanent Deletion
 This operation cannot be undone. The update will be permanently deleted.
 :::
 
@@ -247,11 +247,6 @@ Common errors when working with updates:
 - `Monday::Error` - Invalid field requested or other API errors
 
 See the [Error Handling guide](/guides/advanced/errors) for more details.
-
-## Related Resources
-
-- [Item](/reference/resources/item) - Parent items that contain updates
-- [Board](/reference/resources/board) - Boards containing items
 
 ## External References
 

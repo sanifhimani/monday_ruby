@@ -70,7 +70,7 @@ if response.success?
 end
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Pulses = Items</span>
+:::tip Pulses = Items
 In monday.com's API, "pulses" is the legacy term for "items". Both refer to the same thing.
 :::
 
@@ -502,10 +502,3 @@ puts "  Columns: #{duplicated['columns'].length}"
 puts "  Groups: #{duplicated['groups'].length}"
 puts "=" * 50
 ```
-
-## Next Steps
-
-- [Create boards from scratch](/guides/boards/create)
-- [Update duplicated boards](/guides/boards/update)
-- [Add items to duplicated boards](/guides/items/create)
-- [Query boards](/guides/boards/query)

@@ -1412,10 +1412,3 @@ def fetch_recent_updates(board_id, since_date)
   end
 end
 ```
-
-## Next Steps
-
-- [Pagination guide](/guides/advanced/pagination) - Efficient data fetching
-- [Error handling](/guides/advanced/errors) - Robust error management
-- [Complex queries](/guides/advanced/complex-queries) - Advanced data retrieval
-- [Rate limiting](/guides/advanced/rate-limiting) - API usage optimization

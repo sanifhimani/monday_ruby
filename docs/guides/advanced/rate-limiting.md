@@ -48,7 +48,7 @@ Approximate complexity points per operation:
 - **Nested query** (boards with items): ~5,000-50,000 points
 - **Bulk operations**: Varies based on batch size
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Estimate Before Creating</span>
+:::tip Estimate Before Creating
 When creating items in bulk, avoid creating more than 10-20 items in rapid succession to prevent hitting the complexity limit.
 :::
 
@@ -972,10 +972,3 @@ class DistributedRateLimiter
   end
 end
 ```
-
-## Next Steps
-
-- [Error handling guide](/guides/advanced/errors)
-- [Optimize query performance](/guides/boards/query)
-- [Pagination strategies](/guides/items/query)
-- [monday.com API rate limits documentation](https://developer.monday.com/api-reference/docs/rate-limits)

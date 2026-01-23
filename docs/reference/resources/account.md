@@ -2,7 +2,7 @@
 
 Access your monday.com account information via the `client.account` resource.
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>What is an Account?</span>
+:::tip What is an Account?
 Your monday.com account represents your organization's account with billing, subscription, and account-level settings.
 :::
 
@@ -195,12 +195,6 @@ if response.success?
   puts "  Week starts: #{account['first_day_of_the_week']}"
 end
 ```
-
-## Related Resources
-
-- [Workspace](/reference/resources/workspace) - Workspaces within your account
-- [Board](/reference/resources/board) - Boards in your account
-- [Client](/reference/client) - Client authentication
 
 ## External References
 

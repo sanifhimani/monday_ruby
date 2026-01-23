@@ -2,7 +2,7 @@
 
 Access and manage board columns via the `client.column` resource.
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>What are Columns?</span>
+:::tip What are Columns?
 Columns define the structure of your board and the types of information you can track for each item (e.g., status, dates, people, text).
 :::
 
@@ -384,7 +384,7 @@ client.column.delete(board_id, column_id, select: ["id"])
 
 **Returns:** `Monday::Response`
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Permanent Deletion</span>
+:::warning Permanent Deletion
 Deleting a column removes it and all its data from every item. This cannot be undone.
 :::
 
@@ -405,7 +405,7 @@ end
 
 ### column_values (Deprecated)
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Deprecated</span>
+:::warning Deprecated
 This method is deprecated and will be removed in v2.0.0. Use `client.item.query` with `column_values` select instead.
 :::
 
@@ -529,12 +529,6 @@ Different column types require different value formats:
 ```
 
 See the [Update Column Values guide](/guides/columns/update-values) for complete examples of all column types.
-
-## Related Resources
-
-- [Item](/reference/resources/item) - Items with column values
-- [Board](/reference/resources/board) - Boards containing columns
-- [Group](/reference/resources/group) - Groups organizing items
 
 ## External References
 

@@ -16,35 +16,17 @@ ruby -v
 
 ## Install the Gem
 
-### Using Bundler (Recommended)
-
-Add to your `Gemfile`:
-
-```ruby
-gem 'monday_ruby'
-```
-
-Install:
-
-```bash
-bundle install
-```
-
-### Using RubyGems
-
-Install directly:
-
-```bash
+:::code-group
+```bash [Terminal]
 gem install monday_ruby
 ```
 
-Verify installation:
-
-```bash
-gem list monday_ruby
+```ruby [Gemfile]
+gem 'monday_ruby'
 ```
+:::
 
-You should see `monday_ruby` with the version number.
+Then run `bundle install` if using Bundler, or verify with `gem list monday_ruby`.
 
 ## Get Your API Token
 
@@ -100,7 +82,7 @@ Monday.configure do |config|
 end
 ```
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Security</span>
+:::warning Security
 Never commit API tokens to version control. Always use environment variables or secure credential storage.
 :::
 
@@ -138,6 +120,8 @@ Run this script. If you see "Connected successfully!", you're ready to go.
 
 ## Configuration Options
 
+:::details{title="Advanced configuration options"}
+
 ### API Version
 
 Specify the monday.com API version:
@@ -162,8 +146,4 @@ Monday.configure do |config|
 end
 ```
 
-## Next Steps
-
-- [Authenticate and make your first request →](/guides/first-request)
-- [Learn about configuration options →](/reference/configuration)
-- [Explore error handling →](/guides/advanced/errors)
+:::

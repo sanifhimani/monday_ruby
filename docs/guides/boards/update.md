@@ -367,7 +367,7 @@ update_and_verify(
 | `:description` | String | Board description text |
 | `:communication` | String | Communication link or meeting ID |
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Attribute Values</span>
+:::tip Attribute Values
 Only these three attributes can be updated via the `update_board` mutation. To change other properties (like permissions or workspace), use different methods.
 :::
 
@@ -444,10 +444,3 @@ else
   puts "✗ Could not verify changes"
 end
 ```
-
-## Next Steps
-
-- [Archive boards](/guides/boards/delete)
-- [Duplicate boards](/guides/boards/duplicate)
-- [Query boards](/guides/boards/query)
-- [Work with columns](/guides/columns/create)

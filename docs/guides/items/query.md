@@ -86,7 +86,7 @@ response = client.item.query(
 )
 ```
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Pagination Limits</span>
+:::warning Pagination Limits
 The `items` query has a maximum return limit. For large datasets, use [`items_page`](/guides/advanced/pagination) or [`page_by_column_values`](#filter-by-column-values) instead.
 :::
 
@@ -290,7 +290,7 @@ end
 
 Use `page_by_column_values` for advanced filtering:
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Column IDs are Board-Specific</span>
+:::warning Column IDs are Board-Specific
 **You must use your board's actual column IDs for filtering.** Query your board first to get column IDs:
 
 ```ruby
@@ -469,7 +469,7 @@ if response.success?
 end
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Better Counting</span>
+:::tip Better Counting
 For accurate counts on boards with many items, use `board.items_page` with minimal select fields instead.
 :::
 
@@ -595,11 +595,3 @@ end
 # Usage
 export_items_to_csv(client, 1234567890, "items_export.csv")
 ```
-
-## Next Steps
-
-- [Create items](/guides/items/create)
-- [Update item values](/guides/items/update)
-- [Advanced pagination](/guides/advanced/pagination)
-- [Filter with complex queries](/guides/advanced/complex-queries)
-- [Work with column values](/guides/columns/query)

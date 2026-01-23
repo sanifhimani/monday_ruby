@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.email = ["sanifhimani92@gmail.com", "weshays@gmail.com"]
 
   spec.summary = "Ruby bindings to use the monday.com API"
-  spec.description = "A Gem to easily interact with monday.com API using native Ruby"
+  spec.description = "A Ruby gem for interacting with monday.com's API"
   spec.homepage = repository
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
@@ -27,7 +27,9 @@ Gem::Specification.new do |spec|
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
       (File.expand_path(f) == __FILE__) ||
-        f.start_with?(*%w[bin/ test/ spec/ features/ .git Gemfile])
+        f.start_with?(*%w[bin/ test/ spec/ features/ docs/ .git .github .vscode .rubocop .rspec .env .simplecov
+                          Gemfile]) ||
+        f.match?(/\A(CONTRIBUTING|CODE_OF_CONDUCT|docyard|Rakefile)/)
     end
   end
 

@@ -6,7 +6,7 @@ Efficiently perform bulk create, update, and delete operations on monday.com boa
 
 Since monday_ruby doesn't provide native batch API endpoints, batch operations involve looping through items with proper rate limiting, error handling, and progress tracking. This guide shows production-ready patterns for bulk operations.
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Rate Limiting Required</span>
+:::warning Rate Limiting Required
 Always include delays between requests when performing batch operations to avoid hitting monday.com's API rate limits.
 :::
 
@@ -1265,10 +1265,3 @@ if results[:failed].any?
   end
 end
 ```
-
-## Next Steps
-
-- [Advanced pagination](/guides/advanced/pagination)
-- [Error handling patterns](/guides/advanced/errors)
-- [Update multiple columns](/guides/columns/update-multiple)
-- [Query items efficiently](/guides/items/query)

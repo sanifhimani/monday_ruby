@@ -810,9 +810,3 @@ end
 8. **Monitor rate limits**: Track your API usage to avoid rate limit errors
 9. **Check error_data**: Use the error_data hash for context-specific handling
 10. **Test error paths**: Write tests for your error handling code
-
-## Related Resources
-
-- [monday.com API Rate Limits](https://developer.monday.com/api-reference/docs/rate-limits)
-- [GraphQL Error Handling](https://developer.monday.com/api-reference/docs/errors)
-- [Authentication Guide](../authentication.md)

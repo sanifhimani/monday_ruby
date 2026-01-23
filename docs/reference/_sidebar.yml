@@ -1,0 +1,23 @@
+icon: book-open-text
+items:
+  - core-concepts:
+      collapsible: true
+      collapsed: false
+      items:
+        - client
+        - configuration
+        - response
+        - errors
+  - resources:
+      items:
+        - account
+        - activity-log
+        - board
+        - board-view
+        - column
+        - folder
+        - group
+        - item
+        - subitem
+        - update
+        - workspace

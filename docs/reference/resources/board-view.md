@@ -2,7 +2,7 @@
 
 Access board views via the `client.board_view` resource.
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>What are Board Views?</span>
+:::tip What are Board Views?
 Board views are different ways to visualize and interact with your board data, such as main table, kanban, calendar, chart, timeline, and more.
 :::
 
@@ -345,12 +345,6 @@ end
 # Usage
 export_views_to_csv(client, 1234567890, "board_views.csv")
 ```
-
-## Related Resources
-
-- [Board](/reference/resources/board) - Boards containing views
-- [Item](/reference/resources/item) - Items displayed in views
-- [Column](/reference/resources/column) - Columns shown in views
 
 ## External References
 

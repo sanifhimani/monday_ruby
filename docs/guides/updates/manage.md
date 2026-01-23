@@ -62,7 +62,7 @@ response = client.update.create(
 )
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>User ID Format</span>
+:::tip User ID Format
 Use `<@user_id>` to mention users. Replace `user_id` with the actual monday.com user ID. Mentioned users will receive a notification.
 :::
 
@@ -199,7 +199,7 @@ else
 end
 ```
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Permanent Deletion</span>
+:::warning Permanent Deletion
 Deleting an update is permanent and cannot be undone. Only the update creator or board admins can delete updates.
 :::
 
@@ -218,7 +218,7 @@ if response.success?
 end
 ```
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Destructive Operation</span>
+:::warning Destructive Operation
 This permanently deletes ALL updates from the item. This action cannot be undone. Use with caution.
 :::
 
@@ -330,7 +330,7 @@ response = client.update.create(
 )
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Replies</span>
+:::tip Replies
 While the API creates flat updates, the monday.com UI organizes them into threads. Updates are displayed chronologically within the item's updates section.
 :::
 
@@ -610,10 +610,3 @@ end
 # Monitor item for new updates every 60 seconds
 # monitor_item_activity(client, 123456, interval: 60)
 ```
-
-## Next Steps
-
-- [Query items](/guides/items/query)
-- [Create items](/guides/items/create)
-- [Update item values](/guides/items/update)
-- [Work with columns](/guides/columns/update-values)

@@ -1,4 +1,4 @@
-# Clear column files
+## Clear column files
 
 Clears all files in an item's File column. This is a helper method for files and you could also use the column.change_value to clear the column as well.
 

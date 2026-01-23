@@ -1,0 +1,35 @@
+icon: scroll
+items:
+  - architecture-design:
+      text: Architecture & Design
+      group: true
+      items:
+        - architecture:
+            text: Architecture Overview
+        - design:
+            text: Design Decisions
+  - concepts:
+      text: Concepts
+      group: true
+      items:
+        - graphql:
+            text: GraphQL Basics
+        - pagination:
+            text: Pagination Strategies
+        - column-values
+  - best-practices:
+      items:
+        - errors:
+            text: Error Handling
+        - rate-limiting:
+            text: Rate Limiting Strategies
+        - testing:
+            text: Test Your Integration
+        - performance:
+            text: Performance Optimization
+  - migration:
+      collapsible: false
+      items:
+        - v1:
+            text: v0.x to v1.x
+

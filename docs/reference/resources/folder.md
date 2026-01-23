@@ -2,7 +2,7 @@
 
 Access and manage folders via the `client.folder` resource.
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>What are Folders?</span>
+:::tip What are Folders?
 Folders help organize boards within workspaces. They act as containers that group related boards together, making it easier to navigate and structure your monday.com workspace. Each folder must belong to a workspace.
 :::
 
@@ -187,7 +187,7 @@ client.folder.delete(args: {}, select: ["id"])
 
 **Returns:** `Monday::Response`
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Permanent Deletion</span>
+:::warning Permanent Deletion
 This operation cannot be undone. All boards in the folder will be moved to the workspace root, not deleted.
 :::
 
@@ -374,11 +374,6 @@ if response.success?
   end
 end
 ```
-
-## Related Resources
-
-- [Board](/reference/resources/board) - Boards within folders
-- [Workspace](/reference/resources/workspace) - Folder parent workspaces
 
 ## External References
 

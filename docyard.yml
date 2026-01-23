@@ -1,0 +1,22 @@
+title: Monday Ruby
+description: A Ruby client library for the monday.com GraphQL API
+url: "https://sanifhimani.github.io/monday_ruby/"
+
+sidebar: distributed
+
+branding:
+  color: "#FB275D"
+
+socials:
+  github: https://github.com/sanifhimani/monday_ruby
+  custom:
+    - icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24"><path fill="currentColor" d="m7.900525 7.99205 -0.01305 -0.01305 -2.89835 2.898325 7.03695 7.0239 2.89835 -2.885275 4.1386 -4.138625L16.1647 7.979v-0.01305H7.887475l0.01305 0.0261Z"></path><path fill="currentColor" d="M11.99995 0.25 1.7513425 6.125v11.75L11.99995 23.75l10.248625 -5.875v-11.75L11.99995 0.25Zm8.290275 16.502225L11.99995 21.53055 3.709675 16.752225V7.221675L11.99995 2.4433325 20.290225 7.221675v9.53055Z"></path></svg>'
+      href: https://rubygems.org/gems/monday_ruby
+
+repo:
+  url: https://github.com/sanifhimani/monday_ruby
+  branch: main
+  edit_link: true
+
+analytics:
+  google: G-1TWB59K0W2

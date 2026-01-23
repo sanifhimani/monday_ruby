@@ -1297,14 +1297,6 @@ bug_task = TaskTemplate.bug_report(
 client.item.create(args: bug_task)
 ```
 
-## Next Steps
-
-- [Query Items](/guides/items/query) - Learn advanced item queries
-- [Update Column Values](/guides/columns/update-values) - Master column updates
-- [Pagination](/guides/advanced/pagination) - Handle large datasets
-- [Error Handling](/guides/advanced/errors) - Robust error handling
-- [Rate Limiting](/guides/advanced/rate-limiting) - Manage API limits
-
 ## Troubleshooting
 
 ### "Column not found" errors
