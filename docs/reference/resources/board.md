@@ -236,7 +236,7 @@ client.board.delete(board_id, select: ["id"])
 
 **Returns:** `Monday::Response`
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Permanent Deletion</span>
+:::warning Permanent Deletion
 This operation cannot be undone. All board data will be permanently lost.
 :::
 
@@ -313,7 +313,7 @@ response = client.board.items_page(
 
 ### delete_subscribers
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Deprecated</span>
+:::warning Deprecated
 This method is deprecated and will be removed in v2.0.0. Use `client.user.delete_from_board` instead.
 :::
 
@@ -379,13 +379,6 @@ Default fields returned by `items_page`:
 ## Error Handling
 
 See the [Error Handling guide](/guides/advanced/errors) for common errors and how to handle them.
-
-## Related Resources
-
-- [Item](/reference/resources/item) - Board items
-- [Column](/reference/resources/column) - Board columns
-- [Group](/reference/resources/group) - Board groups
-- [Workspace](/reference/resources/workspace) - Board workspaces
 
 ## External References
 

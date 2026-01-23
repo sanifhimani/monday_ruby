@@ -617,10 +617,3 @@ puts "Done group now has #{done_items.length} items"
 
 puts "\n=== Complete ==="
 ```
-
-## Next Steps
-
-- [Manage groups](/guides/groups/manage)
-- [Create items](/guides/items/create)
-- [Update item values](/guides/columns/update-values)
-- [Query items](/guides/items/query)

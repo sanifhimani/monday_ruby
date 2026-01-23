@@ -381,7 +381,7 @@ if response.success?
 end
 ```
 
-::: tip Column Value Indices
+:::tip Column Value Indices
 Status column values use numeric indices (0, 1, 2, etc.) corresponding to their position in the status settings. Query your board's columns to see the available indices.
 :::
 
@@ -1105,10 +1105,3 @@ puts "\n" + "=" * 70
 5. **Filter server-side**: Use `query_params` instead of fetching all items and filtering in Ruby
 6. **Monitor complexity**: monday.com has complexity limits - simpler queries are faster
 7. **Use cursors**: Cursor-based pagination is more efficient than offset-based
-
-## Next Steps
-
-- [Pagination guide](/guides/advanced/pagination)
-- [Error handling](/guides/advanced/errors)
-- [Rate limiting strategies](/guides/advanced/rate-limiting)
-- [Batch operations](/guides/advanced/batch)

@@ -2,7 +2,7 @@
 
 Access and manage subitems (child items) via the `client.subitem` resource.
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>What are Subitems?</span>
+:::tip What are Subitems?
 Subitems are child items that belong to a parent item. They help break down tasks into smaller, manageable pieces. Subitems live on their own separate board.
 :::
 
@@ -247,19 +247,13 @@ See the [Error Handling guide](/guides/advanced/errors) for more details.
 
 ## Important Notes
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Subitems Board</span>
+:::warning Subitems Board
 Subitems live on a separate board, not the parent board. To update subitem column values, you need the **subitems board ID**, not the parent board ID.
 :::
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>No Nested Subitems</span>
+:::tip No Nested Subitems
 Subitems cannot have their own subitems. monday.com only supports one level of parent-child relationship.
 :::
-
-## Related Resources
-
-- [Item](/reference/resources/item) - Parent items
-- [Column](/reference/resources/column) - Update subitem column values
-- [Board](/reference/resources/board) - Query boards and items
 
 ## External References
 

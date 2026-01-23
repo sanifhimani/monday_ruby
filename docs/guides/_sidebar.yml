@@ -1,0 +1,103 @@
+icon: map-trifold
+items:
+  - installation
+  - authentication
+  - first-request
+  - boards:
+      text: Working with Boards
+      icon: kanban
+      items:
+        - create:
+            text: Create a Board
+        - query:
+            text: Query Board
+        - update:
+            text: Update Board Settings
+        - delete:
+            text: Archive & Delete
+        - duplicate:
+            text: Duplicate Board
+  - items:
+      text: Working with Items
+      icon: rows
+      items:
+        - create:
+            text: Create Items
+        - query:
+            text: Query Items
+        - update:
+            text: Update Items
+        - subitems:
+            text: Manage Subitems
+        - delete:
+            text: Archive & Delete
+  - columns:
+      text: Working with Columns
+      icon: columns
+      items:
+        - create:
+            text: Create Columns
+        - update-values:
+            text: Update Values
+        - update-multiple:
+            text: Update Multiple Values
+        - query:
+            text: Query Values
+        - metadata:
+            text: Change Metadata
+  - groups:
+      text: Working with Groups
+      icon: stack
+      items:
+        - manage:
+            text: Manage Groups
+        - items:
+            text: Items in Groups
+  - folders:
+      text: Working with Folders
+      icon: folder-open
+      items:
+        - manage:
+            text: Manage Folders
+  - workspaces:
+      text: Working with Workspaces
+      icon: network
+      items:
+        - manage:
+            text: Manage Workspaces
+  - updates:
+      text: Working with Updates
+      icon: chat-text
+      items:
+        - manage:
+            text: Manage Updates
+  - files:
+      text: Working with Updates
+      icon: files
+      items:
+        - add-to-column:
+            text: Add Files to Column
+        - add-to-update:
+            text: Add Files to Update
+        - clear-column:
+            text: Clear Files Column
+  - advanced:
+      text: Advanced Topics
+      icon: brain
+      items:
+        - pagination
+        - errors:
+            text: Error Handling
+        - rate-limiting
+        - complex-queries
+        - batch:
+            text: Batch Operations
+  - use-cases:
+      text: Common Use Cases
+      icon: flow-arrow
+      items:
+        - task-management
+        - dashboard:
+            text: Project Dashboard
+        - import:
+            text: Data Import

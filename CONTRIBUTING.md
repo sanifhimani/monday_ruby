@@ -79,7 +79,7 @@ bundle exec rake rubocop
 
 ## Documentation
 
-The project uses [VitePress](https://vitepress.dev/) to generate documentation from Markdown files. The documentation site is hosted at [https://sanifhimani.github.io/monday_ruby/](https://sanifhimani.github.io/monday_ruby/).
+The project uses [Docyard](https://docyard.dev/) to generate documentation from Markdown files. The documentation site is hosted at [https://sanifhimani.github.io/monday_ruby/](https://sanifhimani.github.io/monday_ruby/).
 
 ### When to Update Documentation
 
@@ -93,53 +93,21 @@ Update documentation when you:
 
 Documentation follows the [Diataxis framework](https://diataxis.fr):
 
-- **Tutorial** (`docs/tutorial/`) - Learning-oriented, gets users started
-- **How-to Guides** (`docs/guides/`) - Task-oriented, solves specific problems
+- **Getting Started** (`docs/getting-started/`) - Learning-oriented, gets users started
+- **Guides** (`docs/guides/`) - Task-oriented, solves specific problems
 - **Reference** (`docs/reference/`) - Information-oriented, describes the API
 - **Explanation** (`docs/explanation/`) - Understanding-oriented, explains concepts
 
 ### Adding/Updating Documentation
 
-Documentation files are located in the `docs/` directory:
-
-```
-docs/
-├── .vitepress/
-│   └── config.mjs          # Navigation and site configuration
-├── guides/                 # How-to guides
-│   ├── boards/
-│   ├── items/
-│   ├── columns/
-│   └── advanced/
-├── reference/              # API reference
-│   ├── resources/
-│   └── client.md
-├── explanation/            # Conceptual documentation
-└── tutorial/               # Getting started tutorial
-```
+Documentation files are located in the `docs/` directory. Navigation is configured in `docs/_sidebar.yml`.
 
 #### Steps to Update Documentation:
 
 1. **Find or create the appropriate file** based on what you're documenting
 2. **Follow the existing format** - look at similar documentation files for examples
 3. **Test your code examples** - all examples should be runnable and accurate
-4. **Update navigation** if adding new pages - edit `docs/.vitepress/config.mjs`
-5. **Build locally** to preview changes:
-
-```bash
-cd docs
-npm install  # First time only
-npm run dev  # Start local dev server
-```
-
-Visit `http://localhost:5173/monday_ruby/` to preview your changes.
-
-6. **Check for broken links** before submitting:
-
-```bash
-cd docs
-npm run build  # Build will fail if there are dead links
-```
+4. **Update navigation** if adding new pages - edit `_sidebar.yml` for the respective folder
 
 #### Documentation Guidelines:
 
@@ -149,33 +117,6 @@ npm run build  # Build will fail if there are dead links
 - **No emojis** - maintain professional tone in documentation
 - **Link related pages** - help users discover relevant documentation
 - **Keep examples self-contained** - users should be able to copy-paste and run
-
-#### Example Documentation Pattern:
-
-```markdown
-# Resource Name
-
-Brief description of what this resource does.
-
-## Methods
-
-### method_name
-
-Description of what the method does.
-
-\`\`\`ruby
-# Example code that actually works
-client = Monday::Client.new(token: ENV["MONDAY_TOKEN"])
-response = client.resource.method_name(args: {})
-\`\`\`
-
-**Parameters:**
-- List parameters and their types
-
-**Returns:** Description of return value
-
-**See:** Link to monday.com API docs
-```
 
 ### Deploying Documentation
 

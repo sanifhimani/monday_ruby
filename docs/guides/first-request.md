@@ -123,7 +123,7 @@ if response.success?
 end
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Performance Tip</span>
+:::tip Performance Tip
 Only request fields you need. Smaller responses are faster and use less bandwidth.
 :::
 
@@ -216,13 +216,15 @@ end
 | 429 | Rate limited | Wait and retry |
 | 500 | Server error | Retry with backoff |
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>200 Doesn't Always Mean Success</span>
+:::warning 200 Doesn't Always Mean Success
 monday.com returns status 200 even for some errors. Always check `response.success?` which also validates the response body for error fields.
 :::
 
 ## Complete Example
 
 Put it all together:
+
+:::details{title="Complete Example"}
 
 ```ruby
 require "monday_ruby"
@@ -276,10 +278,4 @@ else
   end
 end
 ```
-
-## Next Steps
-
-- [Create a board](/guides/boards/create)
-- [Query boards with advanced filters](/guides/boards/query)
-- [Work with items](/guides/items/create)
-- [Handle errors properly](/guides/advanced/errors)
+:::

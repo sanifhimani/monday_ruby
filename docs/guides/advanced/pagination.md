@@ -926,9 +926,3 @@ client = Monday::Client.new(token: "your_api_token")
 items = paginate_with_retry(client, 12345)
 puts "Retrieved #{items.length} items"
 ```
-
-## Next Steps
-
-- Learn about [Error Handling](./errors) for robust pagination
-- Explore [Performance Optimization](/explanation/best-practices/performance) for better query performance
-- Check out [Batch Operations](./batch) for processing paginated data

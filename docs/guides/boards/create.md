@@ -121,7 +121,7 @@ if response.success?
 end
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Templates</span>
+:::tip Templates
 Templates copy the board structure (columns, groups, automations) but not the items. Perfect for recurring project types.
 :::
 
@@ -377,10 +377,3 @@ else
   puts "Invalid board name"
 end
 ```
-
-## Next Steps
-
-- [Query boards](/guides/boards/query)
-- [Update board settings](/guides/boards/update)
-- [Add items to boards](/guides/items/create)
-- [Duplicate boards](/guides/boards/duplicate)

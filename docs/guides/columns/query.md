@@ -446,10 +446,3 @@ Column Details:
 
 ============================================================
 ```
-
-## Next Steps
-
-- [Create columns](/guides/columns/create)
-- [Update column values](/guides/columns/update-values)
-- [Change column metadata](/guides/columns/metadata)
-- [Query items](/guides/items/query)

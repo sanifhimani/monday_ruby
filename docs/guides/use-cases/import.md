@@ -1947,16 +1947,3 @@ File.open('huge_file.json') do |file|
   end
 end
 ```
-
-## Next Steps
-
-- Read [Error Handling Guide](/guides/advanced/errors) for robust applications
-- Check [Performance Optimization](/explanation/best-practices/performance) for scaling imports
-- Learn about [Rate Limiting Strategy](/explanation/best-practices/rate-limiting) for large imports
-- Explore [Batch Operations](/guides/advanced/batch) for bulk data processing
-
-## Related Resources
-
-- [monday.com API Rate Limits](https://developer.monday.com/api-reference/docs/rate-limits)
-- [Column Values Reference](https://developer.monday.com/api-reference/docs/column-values)
-- [Items API Documentation](https://developer.monday.com/api-reference/docs/items)

@@ -679,13 +679,6 @@ end
 9. **User-Friendly Messages**: Convert technical errors to readable messages for end users
 10. **Test Error Paths**: Write tests for error handling code
 
-## Related Resources
-
-- [Error Handling Guide](/guides/advanced/errors) - Comprehensive error handling guide with patterns
-- [Rate Limiting Guide](/guides/advanced/rate-limiting) - Understanding and handling rate limits
-- [Client](/reference/client) - Main client class that raises errors
-- [Response](/reference/response) - Response object accessed via `error.response`
-
 ## External References
 
 - [monday.com API Errors](https://developer.monday.com/api-reference/docs/errors)

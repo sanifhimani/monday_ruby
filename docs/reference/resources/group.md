@@ -2,7 +2,7 @@
 
 Access and manage groups via the `client.group` resource.
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>What are Groups?</span>
+:::tip What are Groups?
 Groups are sections within boards that organize related items together. Think of them like folders or categories that help structure your board's content. Each board can have multiple groups, and items can be moved between groups.
 :::
 
@@ -155,7 +155,7 @@ client.group.delete(args: {}, select: ["id"])
 
 **Returns:** `Monday::Response`
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Permanent Deletion</span>
+:::warning Permanent Deletion
 Deleting a group permanently removes all items within it. This operation cannot be undone. Consider archiving instead to preserve data.
 :::
 
@@ -493,12 +493,6 @@ See the [Error Handling guide](/guides/advanced/errors) for common errors and ho
 - `Monday::ResourceNotFoundError` - Group or board not found
 - `Monday::AuthorizationError` - Invalid permissions or token
 - `Monday::InvalidRequestError` - Invalid arguments
-
-## Related Resources
-
-- [Item](/reference/resources/item) - Items within groups
-- [Board](/reference/resources/board) - Boards containing groups
-- [Column](/reference/resources/column) - Columns in groups
 
 ## External References
 

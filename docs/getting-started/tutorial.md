@@ -2,8 +2,7 @@
 
 Build a working monday.com integration from scratch. You'll create a project board, add tasks, and read data back.
 
-**Time**: ~15 minutes
-**Level**: Beginner
+:badge[~15 minutes]{type="note"} :badge[Beginner]{type="success"}
 
 ## What You'll Build
 
@@ -52,7 +51,7 @@ Every request to monday.com requires authentication. Here's how to get your toke
 5. Select **Personal API token** in the sidebar
 5. Copy your **Personal API Token**
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Security</span>
+:::warning Security
 Keep your API token secret. Never commit it to version control or share it publicly.
 :::
 
@@ -124,7 +123,7 @@ ruby monday_tutorial.rb
 Board ID: 1234567890 - Save this, we'll need it!
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verify in monday.com</span>
+:::tip Verify in monday.com
 Open monday.com in your browser. You should see your new "My Project Tasks" board!
 :::
 
@@ -253,7 +252,7 @@ Available Columns:
 ==================================================
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Column IDs</span>
+:::tip Column IDs
 Notice that column IDs have auto-generated suffixes like `__1` or random characters (e.g., `status__1`, `color_a8d9f`). The Status column type is `color`, not `status`. Always query the board first to discover the actual column IDs before updating values.
 :::
 
@@ -492,7 +491,7 @@ Testing error handling with invalid board...
   Error code: 200
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Error Types</span>
+:::tip Error Types
 monday_ruby provides specific error classes:
 - `Monday::AuthorizationError` - Invalid token
 - `Monday::ResourceNotFoundError` - Board/item doesn't exist
@@ -502,7 +501,7 @@ monday_ruby provides specific error classes:
 
 ## Complete Script
 
-Here's the final, production-ready version with everything combined:
+:::details{title="View the complete script"}
 
 ```ruby
 require "monday_ruby"
@@ -663,25 +662,20 @@ display_board(client, board_id)
 puts "\n✨ Integration complete! Check monday.com to see your board."
 ```
 
+:::
+
 ## What You've Learned
 
 Congratulations! You've built a complete monday.com integration. Here's what you now know:
 
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Installing and configuring** monday_ruby</span>
-
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Authenticating** with the API</span>
-
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Creating boards** programmatically</span>
-
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Adding items** to boards</span>
-
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Discovering column IDs** dynamically</span>
-
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Updating column values** on items</span>
-
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Querying data** and parsing responses</span>
-
-<span style="display: inline-flex; align-items: center; gap: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>**Handling errors** gracefully</span>
+- **Installing and configuring** monday_ruby
+- **Authenticating** with the API
+- **Creating boards** programmatically
+- **Adding items** to boards
+- **Discovering column IDs** dynamically
+- **Updating column values** on items
+- **Querying data** and parsing responses
+- **Handling errors** gracefully
 
 ## Next Steps
 
@@ -707,7 +701,7 @@ Now that you understand the basics, explore more:
 Stuck? Here's how to get help:
 
 - **Check the [how-to guides](/guides/installation)** for specific tasks
-- **Browse the [API reference](/reference/client)** for detailed documentation
+- **Browse the [API reference](/reference/core-concepts/client)** for detailed documentation
 - **Open an issue** on [GitHub](https://github.com/sanifhimani/monday_ruby/issues)
 
-Happy coding! 🎉
+Happy coding!

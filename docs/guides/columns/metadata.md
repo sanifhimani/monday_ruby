@@ -135,7 +135,7 @@ if response.success?
 end
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Column Settings</span>
+:::tip Column Settings
 Different column types have different metadata properties. Use `column.query` with `settings_str` to see available options for each column type.
 :::
 
@@ -483,10 +483,3 @@ else
   puts "Invalid column title"
 end
 ```
-
-## Next Steps
-
-- [Create columns](/guides/columns/create)
-- [Update column values](/guides/columns/update-values)
-- [Query column values](/guides/columns/query)
-- [Query boards](/guides/boards/query)

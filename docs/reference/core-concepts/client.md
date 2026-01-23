@@ -72,7 +72,7 @@ client = Monday::Client.new(
 | `open_timeout` | Integer | `10` | Connection timeout in seconds |
 | `read_timeout` | Integer | `30` | Read timeout in seconds |
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Getting Your API Token</span>
+:::tip Getting Your API Token
 Find your API token in your monday.com account under **Admin** → **API**. See the [Authentication guide](/guides/authentication) for detailed instructions.
 :::
 
@@ -364,7 +364,7 @@ rescue Monday::Error => e
 end
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Learn More About Error Handling</span>
+:::tip Learn More About Error Handling
 See the [Error Handling guide](/guides/advanced/errors) for comprehensive examples, retry strategies, and best practices.
 :::
 
@@ -490,7 +490,7 @@ These methods are private and used internally by the client:
 - `handle_response(response)` - Processes responses and raises errors
 - `raise_errors(response)` - Maps errors to exception classes
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Private Methods</span>
+:::warning Private Methods
 These methods are for internal use only. Do not call them directly. Use resource methods instead.
 :::
 
@@ -522,19 +522,3 @@ else
   error = response.body["error_message"]
 end
 ```
-
-## Related Documentation
-
-- [Configuration Reference](/reference/configuration) - Detailed configuration options
-- [Response Reference](/reference/response) - Response object structure
-- [Error Reference](/reference/errors) - Error classes and codes
-- [Authentication Guide](/guides/authentication) - How to get API tokens
-- [First Request Guide](/guides/first-request) - Step-by-step tutorial
-- [Error Handling Guide](/guides/advanced/errors) - Error handling strategies
-- [Rate Limiting Guide](/guides/advanced/rate-limiting) - Handling rate limits
-
-## External References
-
-- [monday.com API Documentation](https://developer.monday.com/api-reference/docs)
-- [monday.com Authentication](https://developer.monday.com/api-reference/docs/authentication)
-- [GraphQL API Overview](https://developer.monday.com/api-reference/docs/introduction-to-graphql)

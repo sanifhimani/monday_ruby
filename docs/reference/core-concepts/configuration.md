@@ -37,7 +37,7 @@ client = Monday::Client.new
 response = client.boards
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>When to Use Global Configuration</span>
+:::tip When to Use Global Configuration
 Use global configuration when your application uses a single monday.com account. This is the most common scenario.
 :::
 
@@ -82,7 +82,7 @@ response_a = client_a.boards
 response_b = client_b.boards
 ```
 
-::: tip <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>When to Use Instance Configuration</span>
+:::tip When to Use Instance Configuration
 Use instance configuration for multi-tenant applications or when connecting to multiple monday.com accounts simultaneously.
 :::
 
@@ -223,7 +223,7 @@ The version is sent in the `API-Version` header with every request:
 #   API-Version: 2024-10
 ```
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Breaking Changes</span>
+:::warning Breaking Changes
 API versions may introduce breaking changes. Test thoroughly before upgrading to a new version.
 :::
 
@@ -394,7 +394,7 @@ Monday.configure do |config|
 end
 ```
 
-::: warning <span style="display: inline-flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Custom Host Usage</span>
+:::warning Custom Host Usage
 Changing the `host` is rarely needed. Only modify this if you're connecting to a custom monday.com deployment or testing environment.
 :::
 
@@ -572,13 +572,6 @@ Array of valid configuration field names:
 Monday::Configuration::CONFIGURATION_FIELDS
 # => [:token, :host, :version, :open_timeout, :read_timeout]
 ```
-
-## Related Documentation
-
-- [Client](/reference/client) - Client initialization and usage
-- [Authentication](/guides/authentication) - Token management and security
-- [Installation](/guides/installation) - Initial setup
-- [Error Handling](/guides/advanced/errors) - Handling configuration errors
 
 ## External References
 

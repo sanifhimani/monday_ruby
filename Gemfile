@@ -19,3 +19,9 @@ group :development do
   gem "vcr", "~> 6.2"
   gem "webmock", "~> 3.18"
 end
+
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.2")
+  group :docs do
+    gem "docyard", "~> 1.0"
+  end
+end
