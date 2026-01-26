@@ -7,7 +7,7 @@ gemspec
 
 group :development do
   gem "bigdecimal", "~> 4.0"
-  gem "byebug", "~> 11.1"
+  gem "byebug", "~> 13.0"
   gem "coveralls_reborn", "~> 0.27"
   gem "dotenv", "~> 2.8"
   gem "rake", "~> 13.0"
